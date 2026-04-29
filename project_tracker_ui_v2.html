@@ -205,6 +205,28 @@
   .hidden { display: none !important; }
   select.form-control { cursor: pointer; }
 
+  /* ── Add-project wizard ────────────────────── */
+  .wizard-steps { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin: -20px -20px 20px; padding: 0 20px; }
+  .wizard-step-tab { padding: 10px 16px; font-size: 12px; font-weight: 600; color: var(--text3); border-bottom: 2px solid transparent; cursor: default; }
+  .wizard-step-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+  .wizard-step-tab.done { color: var(--text2); }
+  .parcel-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .parcel-row input { flex: 1; }
+  .parcel-row .rm-btn { background: none; border: none; color: var(--danger); font-size: 18px; cursor: pointer; line-height: 1; padding: 0 4px; }
+  .add-parcel-btn { background: none; border: 1px dashed var(--border); color: var(--text2); border-radius: 4px; padding: 6px 12px; font-size: 12px; cursor: pointer; width: 100%; margin-top: 4px; }
+  .add-parcel-btn:hover { border-color: var(--primary); color: var(--primary); }
+  .preview-box { background: var(--bg); border-radius: 6px; padding: 14px 16px; font-size: 13px; }
+  .preview-box .preview-row { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--border); }
+  .preview-box .preview-row:last-child { border-bottom: none; }
+  .preview-box .preview-label { color: var(--text2); }
+  .preview-ms-list { margin-top: 10px; font-size: 12px; color: var(--text2); }
+  .preview-ms-list li { padding: 2px 0; }
+  /* ── Lot modal ─────────────────────────────── */
+  .lot-chip-wrap { display: flex; flex-wrap: wrap; gap: 6px; min-height: 40px; padding: 8px; border: 1px solid var(--border); border-radius: 4px; background: var(--bg); margin-bottom: 10px; }
+  .lot-chip { background: var(--primary-light); color: var(--primary); border-radius: 12px; padding: 3px 10px; font-size: 12px; display: flex; align-items: center; gap: 4px; }
+  .lot-chip .chip-rm { cursor: pointer; font-size: 14px; color: var(--text3); }
+  .lot-chip .chip-rm:hover { color: var(--danger); }
+
   /* ── Stage status modal ─────────────────────── */
   .stage-update-row { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
   .stage-update-row:last-child { border-bottom: none; }
@@ -271,6 +293,7 @@
       <div class="sidebar-proj-header">
         <h2>專案列表</h2>
         <div class="pm-filter-wrap" id="pm-filter"></div>
+        <button onclick="showAddProjectModal()" style="width:100%;margin-top:8px;padding:6px;background:rgba(255,255,255,.07);border:1px dashed rgba(255,255,255,.25);border-radius:4px;color:rgba(255,255,255,.6);font-size:12px;cursor:pointer;">＋ 新增專案</button>
       </div>
       <div class="proj-list" id="proj-list"></div>
       <!-- Alerts for current project -->
@@ -338,6 +361,139 @@
 </div>
 
 <!-- GitHub PAT Modal -->
+<!-- ── Add Project Modal (3-step wizard) ─────────────────────────── -->
+<div id="add-project-modal" class="modal-overlay hidden">
+  <div class="modal" style="max-width:560px">
+    <div class="modal-header">
+      <h2>＋ 新增專案</h2>
+      <button class="modal-close" onclick="closeAddProjectModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="wizard-steps">
+        <div class="wizard-step-tab active" id="wz-tab-1">① 基本資料</div>
+        <div class="wizard-step-tab" id="wz-tab-2">② 地塊設定</div>
+        <div class="wizard-step-tab" id="wz-tab-3">③ 確認</div>
+      </div>
+
+      <!-- Step 1 -->
+      <div id="wz-step-1">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 16px">
+          <div class="form-group">
+            <label>專案代碼 <span class="req">*</span></label>
+            <input id="np-pid" class="form-control" placeholder="例：RXI0020">
+          </div>
+          <div class="form-group">
+            <label>容量 (kW) <span class="req">*</span></label>
+            <input id="np-kw" class="form-control" type="number" placeholder="例：20000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>專案名稱 <span class="req">*</span></label>
+          <input id="np-name" class="form-control" placeholder="例：RXI0020-某某漁電20M">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 16px">
+          <div class="form-group">
+            <label>專案類型 <span class="req">*</span></label>
+            <select id="np-type" class="form-control" onchange="onNpTypeChange()">
+              <option value="">— 選擇 —</option>
+              <option value="室內型漁電共生|一型電業">室內型漁電共生（一型電業）</option>
+              <option value="室內型漁電共生|三型設備">室內型漁電共生（三型設備）</option>
+              <option value="室內型農電共生|三型設備">室內型農電共生（三型設備）</option>
+              <option value="一般屋頂型(既有)|三型設備">一般屋頂型（三型設備）</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>地點</label>
+            <input id="np-loc" class="form-control" placeholder="例：台南市七股區">
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 16px">
+          <div class="form-group">
+            <label>負責 PM <span class="req">*</span></label>
+            <input id="np-pic" class="form-control" placeholder="例：Peter">
+          </div>
+          <div class="form-group">
+            <label>助理</label>
+            <input id="np-asst" class="form-control" placeholder="例：Vivian">
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 16px">
+          <div class="form-group">
+            <label>開始日期</label>
+            <input id="np-start" class="form-control" type="date">
+          </div>
+          <div class="form-group">
+            <label>狀態</label>
+            <select id="np-status" class="form-control">
+              <option value="開發中">開發中</option>
+              <option value="許可中">許可中</option>
+              <option value="施工中">施工中</option>
+              <option value="已完成">已完成</option>
+              <option value="暫停">暫停</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>備註</label>
+          <textarea id="np-notes" class="form-control" rows="2" placeholder="選填"></textarea>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div id="wz-step-2" class="hidden">
+        <p style="font-size:12px;color:var(--text2);margin-bottom:14px">每個地塊對應一個養殖業者／地主群組。地號之後可以在地塊管理中補填。</p>
+        <div id="parcel-rows"></div>
+        <button class="add-parcel-btn" onclick="addParcelRow()">＋ 新增地塊</button>
+        <p id="parcel-hint" style="font-size:11px;color:var(--text3);margin-top:10px"></p>
+      </div>
+
+      <!-- Step 3 -->
+      <div id="wz-step-3" class="hidden">
+        <div class="preview-box">
+          <div class="preview-row"><span class="preview-label">專案代碼</span><span id="pv-pid">—</span></div>
+          <div class="preview-row"><span class="preview-label">專案名稱</span><span id="pv-name">—</span></div>
+          <div class="preview-row"><span class="preview-label">類型</span><span id="pv-type">—</span></div>
+          <div class="preview-row"><span class="preview-label">容量</span><span id="pv-kw">—</span></div>
+          <div class="preview-row"><span class="preview-label">PM</span><span id="pv-pic">—</span></div>
+          <div class="preview-row"><span class="preview-label">地塊數</span><span id="pv-parcels">—</span></div>
+          <div class="preview-row"><span class="preview-label">將產生里程碑</span><span id="pv-ms-count">—</span></div>
+          <div class="preview-row"><span class="preview-label">將產生 Stage</span><span id="pv-st-count">—</span></div>
+        </div>
+        <ul class="preview-ms-list" id="pv-ms-list"></ul>
+        <p id="wz-error" style="color:var(--danger);font-size:12px;margin-top:10px;display:none"></p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" id="wz-back-btn" onclick="wzStep(-1)" style="display:none">← 上一步</button>
+      <button class="btn btn-secondary" onclick="closeAddProjectModal()">取消</button>
+      <button class="btn btn-primary" id="wz-next-btn" onclick="wzStep(1)">下一步 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Lot Management Modal ───────────────────────────────────────── -->
+<div id="lot-modal" class="modal-overlay hidden">
+  <div class="modal" style="max-width:500px">
+    <div class="modal-header">
+      <h2>📍 地號管理</h2>
+      <button class="modal-close" onclick="closeLotModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p id="lot-modal-subtitle" style="font-size:12px;color:var(--text2);margin-bottom:12px"></p>
+      <div class="lot-chip-wrap" id="lot-chip-wrap"></div>
+      <div class="form-group" style="margin-bottom:8px">
+        <label>批量新增（一行一筆地號）</label>
+        <textarea id="lot-bulk-input" class="form-control" rows="4" placeholder="台南市七股區下山子寮段76-1地號&#10;台南市七股區下山子寮段77地號"></textarea>
+      </div>
+      <button class="btn btn-secondary" style="font-size:12px;padding:5px 12px" onclick="addLotsFromBulk()">加入上方地號</button>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeLotModal()">取消</button>
+      <button class="btn btn-primary" onclick="saveLots()">儲存</button>
+    </div>
+  </div>
+</div>
+
 <div id="pat-modal" class="modal-overlay hidden">
   <div class="modal" style="max-width:440px">
     <div class="modal-header">
@@ -29448,8 +29604,10 @@ const CONFIG = {
   owner:    'jaytseng-del',
   repo:     'ren-energy-tracker-pm',
   branch:   'main',
-  projFile: 'projects.json',
-  logFile:  'updates_log.jsonl',
+  projFile:      'projects.json',
+  logFile:       'updates_log.jsonl',
+  snapshotFile:  'snapshots.jsonl',
+  templateFile:  'project_templates.json',
 };
 
 // ── GitHub API ───────────────────────────────────────────────────────────────
@@ -29468,18 +29626,28 @@ async function ghMeta(filename) {
   return resp.json();
 }
 
-// 讀 JSON（Public repo 直接抓 raw，不需要授權）
+// 讀 JSON（走 API endpoint，不走 CDN，確保拿到最新版本）
 async function ghReadJson(filename) {
-  const url = `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${filename}?t=${Date.now()}`;
-  const resp = await fetch(url);
+  const pat = getGhPat();
+  const headers = { Accept: 'application/vnd.github.raw+json' };
+  if (pat) headers.Authorization = `token ${pat}`;
+  const resp = await fetch(
+    `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filename}?ref=${CONFIG.branch}`,
+    { headers }
+  );
   if (!resp.ok) throw new Error(`GitHub read error ${resp.status}`);
   return resp.json();
 }
 
-// 讀純文字
+// 讀純文字（同上）
 async function ghReadText(filename) {
-  const url = `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${filename}?t=${Date.now()}`;
-  const resp = await fetch(url);
+  const pat = getGhPat();
+  const headers = { Accept: 'application/vnd.github.raw+json' };
+  if (pat) headers.Authorization = `token ${pat}`;
+  const resp = await fetch(
+    `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filename}?ref=${CONFIG.branch}`,
+    { headers }
+  );
   return resp.ok ? resp.text() : '';
 }
 
@@ -29508,6 +29676,8 @@ async function ghWrite(filename, content, sha) {
 }
 
 let pendingSync = false;
+let _cachedProjSha = null; // 快取最新 SHA，避免連續寫入時 CDN 回傳舊 SHA 造成 409
+
 async function syncToGitHub() {
   if (pendingSync) return;
   pendingSync = true;
@@ -29515,14 +29685,21 @@ async function syncToGitHub() {
   const orig = btn?.textContent;
   if (btn) btn.textContent = '⏳ 同步中…';
   try {
-    const meta = await ghMeta(CONFIG.projFile);
-    await ghWrite(CONFIG.projFile, STATE.data, meta.sha);
+    // 優先用快取的 SHA；若沒有則重新抓
+    if (!_cachedProjSha) {
+      const meta = await ghMeta(CONFIG.projFile);
+      _cachedProjSha = meta.sha;
+    }
+    const result = await ghWrite(CONFIG.projFile, STATE.data, _cachedProjSha);
+    // 寫入成功後更新 SHA 快取
+    _cachedProjSha = result.content?.sha || null;
     if (btn) btn.textContent = '✓ 已同步';
     setTimeout(() => { if (btn) btn.textContent = orig; }, 2000);
   } catch(e) {
     console.error('GitHub sync error:', e);
+    _cachedProjSha = null; // 失敗時清掉快取，下次重新抓
     if (btn) btn.textContent = '✗ 同步失敗';
-    alert('同步失敗：' + e.message + '\n\n請確認 PAT 有 repo 寫入權限，或至「🔑 Token 設定」重新設定。');
+    alert('同步失敗：' + e.message + '\n\n請確認 PAT 有 Contents 讀寫權限。');
     setTimeout(() => { if (btn) btn.textContent = orig; }, 3000);
   } finally { pendingSync = false; }
 }
@@ -29533,6 +29710,70 @@ async function ghAppendLog(entry) {
     try { const m = await ghMeta(CONFIG.logFile); sha = m.sha; existing = atob(m.content.replace(/\n/g,'')); } catch {}
     await ghWrite(CONFIG.logFile, existing + JSON.stringify(entry) + '\n', sha);
   } catch(e) { console.warn('Log append failed:', e); }
+}
+
+// ── 日誌快照機制 ──────────────────────────────────────────────────────────────
+// 從 STATE.data 提取精簡快照（只含狀態欄位，不含靜態模板資料）
+function buildSnapshot(data) {
+  const today = new Date().toISOString().substring(0, 10);
+  return {
+    snapshot_date: today,
+    projects: (data.projects || []).map(proj => ({
+      project_id: proj.project_id,
+      status:     proj.status,
+      milestones: (proj.milestones || []).map(ms => ({
+        milestone_id: ms.milestone_id,
+        parcel_id:    ms.parcel_id || null,
+        status:       ms.status,
+        forecast_end: ms.forecast_end || null,
+        actual_end:   ms.actual_end  || null,
+        stages: (ms.stages || []).map(st => ({
+          stage_id:   st.stage_id,
+          status:     st.status,
+          actual_end: st.actual_end || null,
+        })),
+        tasks: (ms.tasks || []).map(tk => ({
+          task_id:    tk.task_id,
+          status:     tk.status,
+          due_date:   tk.due_date   || null,
+          closed_at:  tk.closed_at  || null,
+          updates: (tk.updates || []).map(u => ({
+            update_id:  u.update_id,
+            created_at: u.created_at,
+            content:    u.content,
+          })),
+        })),
+      })),
+    })),
+  };
+}
+
+// App 開啟時呼叫：今天已有快照則跳過，否則 append 一筆
+async function ghAppendSnapshot() {
+  if (!getGhPat()) return; // 未設定 PAT，靜默跳過
+  try {
+    const today = new Date().toISOString().substring(0, 10);
+    let existing = '', sha = null;
+    try {
+      const m = await ghMeta(CONFIG.snapshotFile);
+      sha = m.sha;
+      existing = atob(m.content.replace(/\n/g, ''));
+    } catch(e) {
+      // 檔案不存在（404）→ 第一次，existing 維持空字串
+      if (!e.message.includes('404') && !e.message.includes('meta error')) console.warn('Snapshot meta error:', e);
+    }
+    // 檢查今天是否已有快照
+    if (existing.includes(`"snapshot_date":"${today}"`)) {
+      console.log(`Snapshot already exists for ${today}, skipping.`);
+      return;
+    }
+    const snap = buildSnapshot(STATE.data);
+    await ghWrite(CONFIG.snapshotFile, existing + JSON.stringify(snap) + '\n', sha);
+    console.log(`Snapshot appended for ${today}`);
+  } catch(e) {
+    console.warn('Snapshot append failed:', e);
+    // 快照失敗不影響主功能，靜默處理
+  }
 }
 
 // ── State ────────────────────────────────────────────────────────────────────
@@ -29558,6 +29799,349 @@ function dayOffset(dateStr) {
   return (d - GANTT_START) / 86400000;
 }
 function pct(days) { return Math.min(100, Math.max(0, days / GANTT_TOTAL_DAYS * 100)); }
+
+// ── Add Project Wizard ────────────────────────────────────────────────────────
+let _projectTemplates = null; // cache after first load
+let _wzCurrentStep = 1;
+let _wzParcelRows = []; // [{name}]
+let _lotContext = null; // {projId, parcelId}
+
+async function loadProjectTemplates() {
+  if (_projectTemplates) return _projectTemplates;
+  try {
+    const data = await ghReadJson(CONFIG.templateFile);
+    _projectTemplates = data.templates || data;
+    return _projectTemplates;
+  } catch(e) {
+    console.warn('Failed to load templates from GitHub:', e);
+    return null;
+  }
+}
+
+function showAddProjectModal() {
+  _wzCurrentStep = 1;
+  _wzParcelRows = [{ name: '' }];
+  document.getElementById('add-project-modal').classList.remove('hidden');
+  wzRender();
+}
+
+function closeAddProjectModal() {
+  document.getElementById('add-project-modal').classList.add('hidden');
+}
+
+function onNpTypeChange() {
+  // hint update if needed
+}
+
+function wzRender() {
+  // steps visibility
+  [1,2,3].forEach(n => {
+    document.getElementById(`wz-step-${n}`).classList.toggle('hidden', n !== _wzCurrentStep);
+    const tab = document.getElementById(`wz-tab-${n}`);
+    tab.classList.remove('active','done');
+    if (n === _wzCurrentStep) tab.classList.add('active');
+    else if (n < _wzCurrentStep) tab.classList.add('done');
+  });
+  document.getElementById('wz-back-btn').style.display = _wzCurrentStep > 1 ? '' : 'none';
+  document.getElementById('wz-next-btn').textContent = _wzCurrentStep === 3 ? '✓ 建立專案' : '下一步 →';
+
+  if (_wzCurrentStep === 2) wzRenderParcels();
+  if (_wzCurrentStep === 3) wzRenderPreview();
+}
+
+function wzRenderParcels() {
+  const wrap = document.getElementById('parcel-rows');
+  wrap.innerHTML = _wzParcelRows.map((p, i) => `
+    <div class="parcel-row">
+      <span style="font-size:12px;color:var(--text3);width:20px;text-align:right">${i+1}.</span>
+      <input class="form-control" placeholder="地塊名稱（例：水旺漁業）" value="${_esc(p.name)}"
+        oninput="_wzParcelRows[${i}].name=this.value">
+      ${_wzParcelRows.length > 1 ? `<button class="rm-btn" onclick="removeParcelRow(${i})">×</button>` : ''}
+    </div>`).join('');
+  const typeKey = document.getElementById('np-type').value;
+  const hint = typeKey.startsWith('一般屋頂型')
+    ? '屋頂型專案通常只有一個地塊。'
+    : `per_parcel 的里程碑（農業容許、建照等）將依地塊數各複製一份。`;
+  document.getElementById('parcel-hint').textContent = hint;
+}
+
+function addParcelRow() {
+  _wzParcelRows.push({ name: '' });
+  wzRenderParcels();
+}
+
+function removeParcelRow(i) {
+  _wzParcelRows.splice(i, 1);
+  wzRenderParcels();
+}
+
+async function wzRenderPreview() {
+  const pid = document.getElementById('np-pid').value.trim();
+  const name = document.getElementById('np-name').value.trim();
+  const typeKey = document.getElementById('np-type').value;
+  const kw = document.getElementById('np-kw').value.trim();
+  const pic = document.getElementById('np-pic').value.trim();
+  const parcels = _wzParcelRows.filter(p => p.name.trim());
+
+  document.getElementById('pv-pid').textContent = pid || '—';
+  document.getElementById('pv-name').textContent = name || '—';
+  document.getElementById('pv-type').textContent = typeKey ? typeKey.replace('|','（')+'）' : '—';
+  document.getElementById('pv-kw').textContent = kw ? kw + ' kW' : '—';
+  document.getElementById('pv-pic').textContent = pic || '—';
+  document.getElementById('pv-parcels').textContent = parcels.length + ' 個';
+
+  const tmplList = await loadProjectTemplates();
+  if (tmplList && typeKey && tmplList[typeKey]) {
+    const tmpl = tmplList[typeKey];
+    const perParcelMs = tmpl.milestones.filter(m => m.application_scope === 'per_parcel');
+    const wholeMs = tmpl.milestones.filter(m => m.application_scope !== 'per_parcel');
+    const totalMs = perParcelMs.length * parcels.length + wholeMs.length;
+    const totalSt = perParcelMs.reduce((s,m) => s + m.stages.length, 0) * parcels.length
+                  + wholeMs.reduce((s,m) => s + m.stages.length, 0);
+    document.getElementById('pv-ms-count').textContent = `${totalMs} 個`;
+    document.getElementById('pv-st-count').textContent = `${totalSt} 個`;
+    document.getElementById('pv-ms-list').innerHTML =
+      '<li style="color:var(--text2);font-weight:600;padding:4px 0">里程碑清單預覽：</li>' +
+      tmpl.milestones.map(m =>
+        `<li>${m.application_scope==='per_parcel' ? `[每地塊×${parcels.length}] ` : '[全案] '}${m.name}（${m.stages.length} stages）</li>`
+      ).join('');
+  } else {
+    document.getElementById('pv-ms-count').textContent = '—';
+    document.getElementById('pv-st-count').textContent = '—';
+    document.getElementById('pv-ms-list').innerHTML = '';
+  }
+}
+
+async function wzStep(dir) {
+  const err = document.getElementById('wz-error');
+  if (err) { err.style.display = 'none'; }
+
+  if (dir === 1) {
+    // validate current step
+    if (_wzCurrentStep === 1) {
+      const pid = document.getElementById('np-pid').value.trim();
+      const name = document.getElementById('np-name').value.trim();
+      const type = document.getElementById('np-type').value;
+      const kw = document.getElementById('np-kw').value.trim();
+      const pic = document.getElementById('np-pic').value.trim();
+      if (!pid || !name || !type || !kw || !pic) {
+        ['np-pid','np-name','np-type','np-kw','np-pic'].forEach(id => {
+          const el = document.getElementById(id);
+          el.classList.toggle('invalid', !el.value.trim());
+        });
+        return;
+      }
+      // check duplicate project_id
+      if (STATE.data?.projects?.some(p => p.project_id === pid)) {
+        document.getElementById('np-pid').classList.add('invalid');
+        alert(`專案代碼 "${pid}" 已存在，請使用不同的代碼。`);
+        return;
+      }
+    }
+    if (_wzCurrentStep === 2) {
+      const validParcels = _wzParcelRows.filter(p => p.name.trim());
+      if (validParcels.length === 0) {
+        alert('請至少新增一個地塊。');
+        return;
+      }
+    }
+    if (_wzCurrentStep === 3) {
+      await confirmAddProject();
+      return;
+    }
+  }
+
+  _wzCurrentStep = Math.max(1, Math.min(3, _wzCurrentStep + dir));
+  wzRender();
+}
+
+async function confirmAddProject() {
+  const err = document.getElementById('wz-error');
+  const btn = document.getElementById('wz-next-btn');
+  btn.textContent = '建立中…'; btn.disabled = true;
+
+  try {
+    const pid = document.getElementById('np-pid').value.trim();
+    const name = document.getElementById('np-name').value.trim();
+    const typeKey = document.getElementById('np-type').value;
+    const [ptype, elec_type] = typeKey.split('|');
+    const kw = parseFloat(document.getElementById('np-kw').value);
+    const pic = document.getElementById('np-pic').value.trim();
+    const asst = document.getElementById('np-asst').value.trim();
+    const loc = document.getElementById('np-loc').value.trim();
+    const startDate = document.getElementById('np-start').value || null;
+    const status = document.getElementById('np-status').value;
+    const notes = document.getElementById('np-notes').value.trim();
+    const now = new Date().toISOString();
+    const parcels = _wzParcelRows.filter(p => p.name.trim()).map((p, i) => ({
+      parcel_id: `${pid}-PCL-${String(i+1).padStart(3,'0')}`,
+      name: p.name.trim(),
+      status: 'active',
+      lots: [],
+    }));
+
+    // load template
+    const tmplList = await loadProjectTemplates();
+    if (!tmplList || !tmplList[typeKey]) throw new Error('無法載入里程碑模板，請確認 GitHub 上有 project_templates.json');
+
+    const tmpl = tmplList[typeKey];
+    const milestones = [];
+    let msSeq = 1;
+
+    for (const msTmpl of tmpl.milestones) {
+      const instances = msTmpl.application_scope === 'per_parcel' ? parcels : [null];
+      for (const parcel of instances) {
+        const msId = `${pid}-MS-${String(msSeq).padStart(3,'0')}`;
+        msSeq++;
+        const stages = msTmpl.stages.map((st, si) => ({
+          stage_id: `${msId}-ST${String(si+1).padStart(2,'0')}`,
+          sequence: st.sequence,
+          name: st.name,
+          authority: st.authority,
+          type: st.type,
+          estimated_days: st.estimated_days,
+          cc: st.cc,
+          status: 'pending',
+          planned_start: null,
+          planned_end: null,
+          actual_end: null,
+          notes: st.notes || '',
+          tasks: [],
+        }));
+        milestones.push({
+          milestone_id: msId,
+          name: msTmpl.name,
+          group: msTmpl.group,
+          application_scope: msTmpl.application_scope,
+          parcel_id: parcel ? parcel.parcel_id : null,
+          parcel_name: parcel ? parcel.name : null,
+          dependency_type: msTmpl.dependency_type || null,
+          depends_on: msTmpl.depends_on || [],
+          condition_description: msTmpl.condition_description || null,
+          payment_trigger: msTmpl.payment_trigger || false,
+          standard_days: msTmpl.standard_days || null,
+          baseline_start: null,
+          baseline_end: null,
+          forecast_end: null,
+          actual_end: null,
+          status: 'pending',
+          notes: null,
+          updated_at: now,
+          stages,
+          tasks: [],
+        });
+      }
+    }
+
+    const newProj = {
+      project_id: pid,
+      name,
+      type: ptype,
+      elec_type,
+      location: loc,
+      capacity_kw: kw,
+      status,
+      pic,
+      assistant: asst,
+      start_date: startDate,
+      notes: notes || null,
+      created_at: now,
+      updated_at: now,
+      lots: [],
+      parcels,
+      milestones,
+    };
+
+    // append to STATE and sync
+    STATE.data.projects.push(newProj);
+    _cachedProjSha = null; // force fresh SHA
+    await syncToGitHub();
+
+    closeAddProjectModal();
+    // switch to new project
+    STATE.currentProjIdx = STATE.data.projects.length - 1;
+    buildProjectSelector();
+    renderAll();
+    switchTab(0);
+    alert(`✓ 專案「${name}」已建立，共 ${milestones.length} 個里程碑。`);
+  } catch(e) {
+    if (err) { err.textContent = '建立失敗：' + e.message; err.style.display = 'block'; }
+    console.error(e);
+  } finally {
+    btn.textContent = '✓ 建立專案'; btn.disabled = false;
+  }
+}
+
+// ── Lot Management ────────────────────────────────────────────────────────────
+function showLotModal(projId, parcelId) {
+  _lotContext = { projId, parcelId };
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  const parcel = proj?.parcels.find(p => p.parcel_id === parcelId);
+  if (!parcel) return;
+  document.getElementById('lot-modal-subtitle').textContent =
+    `專案：${proj.name}　地塊：${parcel.name}`;
+  document.getElementById('lot-bulk-input').value = '';
+  renderLotChips(parcel.lots || []);
+  document.getElementById('lot-modal').classList.remove('hidden');
+}
+
+function closeLotModal() {
+  document.getElementById('lot-modal').classList.add('hidden');
+  _lotContext = null;
+}
+
+function renderLotChips(lots) {
+  document.getElementById('lot-chip-wrap').innerHTML = lots.length
+    ? lots.map((l, i) => `
+        <span class="lot-chip">
+          ${_esc(l)}
+          <span class="chip-rm" onclick="removeLot(${i})">×</span>
+        </span>`).join('')
+    : '<span style="font-size:12px;color:var(--text3)">尚無地號</span>';
+}
+
+function removeLot(i) {
+  const proj = STATE.data.projects.find(p => p.project_id === _lotContext.projId);
+  const parcel = proj?.parcels.find(p => p.parcel_id === _lotContext.parcelId);
+  if (!parcel) return;
+  parcel.lots.splice(i, 1);
+  // sync proj.lots too
+  syncProjLots(proj);
+  renderLotChips(parcel.lots);
+}
+
+function addLotsFromBulk() {
+  const raw = document.getElementById('lot-bulk-input').value.trim();
+  if (!raw) return;
+  const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
+  const proj = STATE.data.projects.find(p => p.project_id === _lotContext.projId);
+  const parcel = proj?.parcels.find(p => p.parcel_id === _lotContext.parcelId);
+  if (!parcel) return;
+  parcel.lots = parcel.lots || [];
+  lines.forEach(l => { if (!parcel.lots.includes(l)) parcel.lots.push(l); });
+  syncProjLots(proj);
+  renderLotChips(parcel.lots);
+  document.getElementById('lot-bulk-input').value = '';
+}
+
+function syncProjLots(proj) {
+  // rebuild proj.lots from all parcels
+  const allLots = [];
+  for (const parcel of proj.parcels) {
+    for (const lot of (parcel.lots || [])) {
+      if (!allLots.find(l => l.lot_number === lot)) {
+        allLots.push({ lot_number: lot, parcel_name: parcel.name, status: '在案', exit_reason: null, notes: null });
+      }
+    }
+  }
+  proj.lots = allLots;
+}
+
+async function saveLots() {
+  _cachedProjSha = null;
+  await syncToGitHub();
+  closeLotModal();
+}
 
 // ── Data loading ─────────────────────────────────────────────────────────────
 async function loadData() {
@@ -29594,6 +30178,9 @@ async function init() {
   buildProjectSelector();
   renderAll();
   switchTab(STATE.currentTab);
+
+  // 非同步 append 今日快照（失敗不影響主功能）
+  ghAppendSnapshot();
 }
 
 // PM badge colour helper
@@ -29905,6 +30492,7 @@ function renderTab0() {
               <h4>${ms.parcel_name || ms.parcel_id}</h4>
               <span class="ms-status ${statusMap[ms.status]||'pending'}" style="font-size:11px">${statusLabel[statusMap[ms.status]||'pending']||'未開始'}</span>
               <button class="ms-edit-btn" onclick="event.stopPropagation();openMsModal('${proj.project_id}','${ms.milestone_id}')">✎ 編輯</button>
+              <button class="ms-edit-btn" style="color:var(--text2)" onclick="event.stopPropagation();showLotModal('${proj.project_id}','${ms.parcel_id}')">📍 地號</button>
             </div>
             ${renderSingleMs(ms, true)}
           </div>`).join('')}
