@@ -260,7 +260,8 @@
     <h1>⚡ 再生能源專案管理</h1>
     <span id="topbar-proj-name" style="font-size:13px;opacity:.8;font-weight:400"></span>
     <span class="spacer"></span>
-    <button id="sync-btn" onclick="CONFIG.projectsFileId ? syncToDrive() : showDriveConfig()">☁ Google Drive 設定</button>
+    <button id="sync-btn" onclick="syncToGitHub()">☁ 同步</button>
+    <button onclick="showPatModal()" style="padding:6px 14px;border-radius:4px;border:1px solid rgba(255,255,255,.5);background:transparent;color:#fff;cursor:pointer;font-size:13px;margin-left:4px">🔑 Token 設定</button>
   </div>
 
   <div id="main">
@@ -336,31 +337,28 @@
   </div>
 </div>
 
-<!-- Drive Config Modal -->
-<div id="drive-modal" class="modal-overlay hidden">
-  <div class="modal">
+<!-- GitHub PAT Modal -->
+<div id="pat-modal" class="modal-overlay hidden">
+  <div class="modal" style="max-width:440px">
     <div class="modal-header">
-      <h2>☁ Google Drive 設定</h2>
-      <button class="modal-close" onclick="closeDriveModal()">✕</button>
+      <h2>🔑 GitHub 存取設定</h2>
+      <button class="modal-close" onclick="closePatModal()">✕</button>
     </div>
     <div class="modal-body">
-      <p style="font-size:13px;color:var(--text2);margin-bottom:16px;">填入 Google Drive 的 File ID 後，系統將從雲端讀取資料。未填則使用本機 <code>projects.json</code>。</p>
-      <div class="form-group">
-        <label>projects.json File ID</label>
-        <input id="cfg-proj-id" class="form-control" placeholder="1AbC…XyZ">
+      <p style="font-size:13px;color:var(--text2);margin-bottom:16px;">填入 GitHub Personal Access Token，系統才能把更新儲存回 GitHub。設定一次後永久有效（直到 Token 過期）。</p>
+      <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:6px;padding:10px 12px;font-size:12px;color:#795548;margin-bottom:16px">
+        <strong>如何取得 Token：</strong><br>
+        GitHub → 右上頭像 → Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token → 勾選 <code>repo</code> → 設定有效期（建議1年）→ 複製 token
       </div>
       <div class="form-group">
-        <label>updates_log.jsonl File ID</label>
-        <input id="cfg-log-id" class="form-control" placeholder="1AbC…XyZ">
+        <label>Personal Access Token <span class="req">*</span></label>
+        <input id="cfg-pat" type="password" class="form-control" placeholder="ghp_xxxxxxxxxxxxxxxx">
       </div>
-      <div class="form-group">
-        <label>Google OAuth Client ID</label>
-        <input id="cfg-client-id" class="form-control" placeholder="xxxxxxxx.apps.googleusercontent.com">
-      </div>
+      <div id="pat-status" style="font-size:12px;margin-top:-8px;margin-bottom:8px"></div>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-secondary" onclick="closeDriveModal()">取消</button>
-      <button class="btn btn-primary" onclick="saveDriveConfig()">儲存並重新載入</button>
+      <button class="btn btn-secondary" onclick="closePatModal()">取消</button>
+      <button class="btn btn-primary" onclick="savePatConfig()">驗證並儲存</button>
     </div>
   </div>
 </div>
@@ -29446,120 +29444,94 @@ window.INLINE_DATA = {
 </script>
 <script>
 // ── Config ───────────────────────────────────────────────────────────────────
-// ★ 部署前請填入以下三個值（Jay 設定一次，寫死在這裡，所有人共用）
 const CONFIG = {
-  projectsFileId: '1yRBpWK-pI6e9J3OiF0v9F8SnrQ0NteDI',
-  updatesFileId:  '1ZE8Szf8SztBQ8nv0qzu22jzZ6DnvOxzP',
-  clientId:       '579908363414-g6679n53nakv0chmooum8srnm4v9daa3.apps.googleusercontent.com',
+  owner:    'jaytseng-del',
+  repo:     'ren-energy-tracker',
+  branch:   'main',
+  projFile: 'projects.json',
+  logFile:  'updates_log.jsonl',
 };
 
-// ── Google Drive API ─────────────────────────────────────────────────────────
-let gisClient = null;
-let accessToken = null;
+// ── GitHub API ───────────────────────────────────────────────────────────────
+function getGhPat() { return localStorage.getItem('gh_pat') || ''; }
 
-function loadGisScript() {
-  return new Promise(resolve => {
-    if (window.google?.accounts) { resolve(); return; }
-    const s = document.createElement('script');
-    s.src = 'https://accounts.google.com/gsi/client';
-    s.onload = resolve;
-    document.head.appendChild(s);
-  });
-}
-
-async function ensureToken() {
-  if (accessToken) return accessToken;
-
-  // 從 localStorage 取快取的 token（55 分鐘內跨分頁、跨重整都不需再授權）
-  const cachedToken = localStorage.getItem('gd_token');
-  const cachedExp   = parseInt(localStorage.getItem('gd_token_exp') || '0');
-  if (cachedToken && Date.now() < cachedExp) {
-    accessToken = cachedToken;
-    return accessToken;
-  }
-
-  if (!CONFIG.clientId) return null;
-  await loadGisScript();
-
-  return new Promise((resolve, reject) => {
-    gisClient = google.accounts.oauth2.initTokenClient({
-      client_id: CONFIG.clientId,
-      scope: 'https://www.googleapis.com/auth/drive',
-      callback: (resp) => {
-        if (resp.error) { reject(new Error(resp.error)); return; }
-        accessToken = resp.access_token;
-        // 快取到 localStorage，55 分鐘後失效（Drive token 有效期 60 分）
-        const exp = Date.now() + 55 * 60 * 1000;
-        localStorage.setItem('gd_token', accessToken);
-        localStorage.setItem('gd_token_exp', String(exp));
-        setTimeout(() => {
-          accessToken = null;
-          localStorage.removeItem('gd_token');
-          localStorage.removeItem('gd_token_exp');
-        }, 55 * 60 * 1000);
-        resolve(accessToken);
-      },
-    });
-    gisClient.requestAccessToken({ prompt: '' });
-  });
-}
-
-async function driveReadFile(fileId) {
-  const token = await ensureToken();
-  if (!token) throw new Error('no token');
+// 取得檔案 meta（含 SHA，寫入時需要）
+async function ghMeta(filename) {
+  const pat = getGhPat();
+  const headers = { Accept: 'application/vnd.github.v3+json' };
+  if (pat) headers.Authorization = `token ${pat}`;
   const resp = await fetch(
-    `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media`,
-    { headers: { Authorization: `Bearer ${token}` } }
+    `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filename}?ref=${CONFIG.branch}`,
+    { headers }
   );
-  if (!resp.ok) throw new Error(`Drive read error ${resp.status}`);
+  if (!resp.ok) throw new Error(`GitHub meta error ${resp.status}`);
   return resp.json();
 }
 
-async function driveWriteFile(fileId, content) {
-  const token = await ensureToken();
-  if (!token) throw new Error('no token');
-  const blob = new Blob([JSON.stringify(content, null, 2)], { type: 'application/json' });
-  const resp = await fetch(
-    `https://www.googleapis.com/upload/drive/v3/files/${fileId}?uploadType=media`,
-    { method: 'PATCH', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }, body: blob }
-  );
-  if (!resp.ok) throw new Error(`Drive write error ${resp.status}`);
+// 讀 JSON（Public repo 直接抓 raw，不需要授權）
+async function ghReadJson(filename) {
+  const url = `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${filename}?t=${Date.now()}`;
+  const resp = await fetch(url);
+  if (!resp.ok) throw new Error(`GitHub read error ${resp.status}`);
   return resp.json();
 }
 
-async function driveAppendLog(fileId, entry) {
-  const token = await ensureToken();
-  if (!token) return;
-  // Read existing, append line, write back
-  const readResp = await fetch(
-    `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media`,
-    { headers: { Authorization: `Bearer ${token}` } }
+// 讀純文字
+async function ghReadText(filename) {
+  const url = `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${filename}?t=${Date.now()}`;
+  const resp = await fetch(url);
+  return resp.ok ? resp.text() : '';
+}
+
+// 寫入檔案（需要 PAT）
+async function ghWrite(filename, content, sha) {
+  const pat = getGhPat();
+  if (!pat) { showPatModal(); throw new Error('No PAT'); }
+  const strContent = typeof content === 'string' ? content : JSON.stringify(content, null, 2);
+  const encoded = btoa(unescape(encodeURIComponent(strContent)));
+  const body = {
+    message: `[App] ${filename} ${new Date().toISOString().substring(0,16)}`,
+    content: encoded,
+    branch: CONFIG.branch,
+  };
+  if (sha) body.sha = sha;
+  const resp = await fetch(
+    `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filename}`,
+    {
+      method: 'PUT',
+      headers: { Authorization: `token ${pat}`, 'Content-Type': 'application/json', Accept: 'application/vnd.github.v3+json' },
+      body: JSON.stringify(body),
+    }
   );
-  const existing = readResp.ok ? await readResp.text() : '';
-  const newContent = existing + JSON.stringify(entry) + '\n';
-  const blob = new Blob([newContent], { type: 'application/json' });
-  await fetch(
-    `https://www.googleapis.com/upload/drive/v3/files/${fileId}?uploadType=media`,
-    { method: 'PATCH', headers: { Authorization: `Bearer ${token}` }, body: blob }
-  );
+  if (!resp.ok) { const e = await resp.json(); throw new Error(e.message || `Write error ${resp.status}`); }
+  return resp.json();
 }
 
 let pendingSync = false;
-async function syncToDrive() {
-  if (!CONFIG.projectsFileId || pendingSync) return;
+async function syncToGitHub() {
+  if (pendingSync) return;
   pendingSync = true;
   const btn = document.getElementById('sync-btn');
-  const orig = btn.textContent;
-  btn.textContent = '⏳ 同步中…';
+  const orig = btn?.textContent;
+  if (btn) btn.textContent = '⏳ 同步中…';
   try {
-    await driveWriteFile(CONFIG.projectsFileId, STATE.data);
-    btn.textContent = '✓ 已同步';
-    setTimeout(() => { btn.textContent = orig; }, 2000);
+    const meta = await ghMeta(CONFIG.projFile);
+    await ghWrite(CONFIG.projFile, STATE.data, meta.sha);
+    if (btn) btn.textContent = '✓ 已同步';
+    setTimeout(() => { if (btn) btn.textContent = orig; }, 2000);
   } catch(e) {
-    btn.textContent = '✗ 同步失敗';
-    console.error('Drive sync error:', e);
-    setTimeout(() => { btn.textContent = orig; }, 3000);
+    console.error('GitHub sync error:', e);
+    if (btn) btn.textContent = '✗ 同步失敗';
+    setTimeout(() => { if (btn) btn.textContent = orig; }, 3000);
   } finally { pendingSync = false; }
+}
+
+async function ghAppendLog(entry) {
+  try {
+    let existing = '', sha = null;
+    try { const m = await ghMeta(CONFIG.logFile); sha = m.sha; existing = atob(m.content.replace(/\n/g,'')); } catch {}
+    await ghWrite(CONFIG.logFile, existing + JSON.stringify(entry) + '\n', sha);
+  } catch(e) { console.warn('Log append failed:', e); }
 }
 
 // ── State ────────────────────────────────────────────────────────────────────
@@ -29588,26 +29560,17 @@ function pct(days) { return Math.min(100, Math.max(0, days / GANTT_TOTAL_DAYS * 
 
 // ── Data loading ─────────────────────────────────────────────────────────────
 async function loadData() {
-  // 1. Try Google Drive if configured
-  if (CONFIG.projectsFileId && CONFIG.clientId) {
-    try {
-      const data = await driveReadFile(CONFIG.projectsFileId);
-      console.log('Loaded from Google Drive');
-      return data;
-    } catch(e) {
-      console.warn('Drive load failed, falling back to local:', e);
-    }
+  // 1. 從 GitHub 讀取（Public repo，不需授權）
+  try {
+    const data = await ghReadJson(CONFIG.projFile);
+    console.log('Loaded from GitHub');
+    return data;
+  } catch(e) {
+    console.warn('GitHub load failed, falling back to inline data:', e);
   }
-  // 2. Try local file (works when served via http)
-  for (const path of ['工具文件/ProjectTracker_v2_projects.json', 'ProjectTracker_v2_projects.json']) {
-    try {
-      const resp = await fetch(path);
-      if (resp.ok) return await resp.json();
-    } catch {}
-  }
-  // 3. Use inline embedded data (works with file://)
+  // 2. Fallback：HTML 內嵌資料（本機開發用）
   if (window.INLINE_DATA) {
-    console.log('Using embedded data');
+    console.log('Using embedded inline data');
     return window.INLINE_DATA;
   }
   return null;
@@ -29620,8 +29583,7 @@ async function init() {
       <div style="text-align:center;color:var(--danger);padding:40px">
         <div style="font-size:32px">⚠</div>
         <div style="margin-top:8px">無法載入 projects.json</div>
-        <div style="font-size:12px;color:var(--text3);margin-top:4px">請確認檔案位於同一資料夾，或設定 Google Drive</div>
-        <button class="btn btn-primary" style="margin-top:16px" onclick="showDriveConfig()">設定 Google Drive</button>
+        <div style="font-size:12px;color:var(--text3);margin-top:4px">請確認 GitHub repo 中有 projects.json，或檢查網路連線</div>
       </div>`;
     return;
   }
@@ -30435,14 +30397,10 @@ function submitUpdate() {
   closeModal();
   renderAll();
 
-  // Async: sync to Drive + append log
-  if (CONFIG.projectsFileId) {
-    syncToDrive();
-    if (CONFIG.updatesFileId) {
-      const logEntry = { ...update, project_id: projId, milestone_id: msId, task_id: taskId };
-      driveAppendLog(CONFIG.updatesFileId, logEntry).catch(console.warn);
-    }
-  }
+  // Async: sync to GitHub + append log
+  syncToGitHub();
+  const logEntry = { ...update, project_id: projId, milestone_id: msId, task_id: taskId };
+  ghAppendLog(logEntry);
 }
 
 // ── Stage Status Menu ─────────────────────────────────────────────────────────
@@ -30533,7 +30491,7 @@ function setStageStatus(status) {
 
   closeStageMenu();
   renderAll();
-  if (CONFIG.projectsFileId) syncToDrive();
+  syncToGitHub();
 }
 
 function closeStageMenu() {
@@ -30770,7 +30728,7 @@ function submitMilestone() {
   proj.updated_at = now;
   closeMsModal();
   renderAll();
-  if (CONFIG.projectsFileId) syncToDrive();
+  syncToGitHub();
 }
 
 function deleteMilestone() {
@@ -30783,7 +30741,7 @@ function deleteMilestone() {
   proj.updated_at = new Date().toISOString();
   closeMsModal();
   renderAll();
-  if (CONFIG.projectsFileId) syncToDrive();
+  syncToGitHub();
 }
 
 // ── Task Modal ────────────────────────────────────────────────────────────────
@@ -30867,23 +30825,38 @@ function submitTask() {
   closeTaskModal();
   renderAll();
 
-  if (CONFIG.projectsFileId) syncToDrive();
+  syncToGitHub();
 }
 
-// ── Drive Config ─────────────────────────────────────────────────────────────
-function showDriveConfig() {
-  document.getElementById('cfg-proj-id').value = CONFIG.projectsFileId;
-  document.getElementById('cfg-log-id').value  = CONFIG.updatesFileId;
-  document.getElementById('cfg-client-id').value = CONFIG.clientId;
-  document.getElementById('drive-modal').classList.remove('hidden');
+// ── PAT Config ───────────────────────────────────────────────────────────────
+function showPatModal() {
+  const input = document.getElementById('cfg-pat');
+  const cur = getGhPat();
+  input.value = cur ? '••••••••••••••••' : '';
+  document.getElementById('pat-status').textContent = cur ? '✓ 目前已設定 Token' : '';
+  document.getElementById('pat-status').style.color = 'var(--success)';
+  document.getElementById('pat-modal').classList.remove('hidden');
 }
-function closeDriveModal() { document.getElementById('drive-modal').classList.add('hidden'); }
-function saveDriveConfig() {
-  localStorage.setItem('cfg_proj_id',    document.getElementById('cfg-proj-id').value.trim());
-  localStorage.setItem('cfg_log_id',     document.getElementById('cfg-log-id').value.trim());
-  localStorage.setItem('cfg_client_id',  document.getElementById('cfg-client-id').value.trim());
-  closeDriveModal();
-  location.reload();
+function closePatModal() { document.getElementById('pat-modal').classList.add('hidden'); }
+async function savePatConfig() {
+  const pat = document.getElementById('cfg-pat').value.trim();
+  if (!pat || pat.startsWith('•')) { closePatModal(); return; }
+  const statusEl = document.getElementById('pat-status');
+  statusEl.textContent = '驗證中…'; statusEl.style.color = 'var(--text2)';
+  try {
+    const resp = await fetch(
+      `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.projFile}`,
+      { headers: { Authorization: `token ${pat}`, Accept: 'application/vnd.github.v3+json' } }
+    );
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    localStorage.setItem('gh_pat', pat);
+    statusEl.textContent = '✓ 驗證成功，Token 已儲存';
+    statusEl.style.color = 'var(--success)';
+    setTimeout(closePatModal, 1200);
+  } catch(e) {
+    statusEl.textContent = `✗ 驗證失敗：${e.message}，請確認 Token 正確且有 repo 權限`;
+    statusEl.style.color = 'var(--danger)';
+  }
 }
 
 // ── Start ─────────────────────────────────────────────────────────────────────
