@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-04-29T09:53:10.543Z",
+      "updated_at": "2026-04-29T09:54:54.704Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -237,7 +237,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-04-29T09:53:10.543Z",
+          "updated_at": "2026-04-29T09:54:54.704Z",
           "stages": [
             {
               "stage_id": "PRJ-001-MS-001-ST01",
