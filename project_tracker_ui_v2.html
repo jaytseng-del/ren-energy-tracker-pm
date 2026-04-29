@@ -257,6 +257,9 @@
   .proj-pm-badge { font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 8px; margin-bottom: 4px; display: inline-block; }
   .proj-name { font-size: 12px; color: rgba(255,255,255,.85); line-height: 1.35; word-break: break-all; }
   .proj-item.active .proj-name { color: #fff; font-weight: 500; }
+  .proj-delete-btn { background: none; border: none; color: rgba(255,255,255,0); font-size: 13px; cursor: pointer; padding: 2px 4px; border-radius: 3px; transition: color .15s, background .15s; line-height: 1; }
+  .proj-item:hover .proj-delete-btn { color: rgba(255,255,255,.35); }
+  .proj-delete-btn:hover { color: #ff6b6b !important; background: rgba(255,100,100,.15); }
   .proj-meta { font-size: 10px; color: rgba(255,255,255,.35); margin-top: 2px; }
   .proj-stale-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--warn); flex-shrink: 0; margin-top: 5px; margin-left: 6px; }
   .proj-stale-dot.hidden { display: none; }
@@ -511,6 +514,16 @@
         <input id="cfg-pat" type="password" class="form-control" placeholder="ghp_xxxxxxxxxxxxxxxx">
       </div>
       <div id="pat-status" style="font-size:12px;margin-top:-8px;margin-bottom:8px"></div>
+      <hr style="border:none;border-top:1px solid var(--border);margin:8px 0 16px">
+      <div id="cfg-pin-old-group" class="form-group" style="margin-bottom:8px;display:none">
+        <label>現有管理員 PIN <span class="req">*</span></label>
+        <input id="cfg-pin-old" type="password" class="form-control" placeholder="輸入現有 PIN 才能修改">
+      </div>
+      <div class="form-group" style="margin-bottom:4px">
+        <label id="cfg-pin-label">管理員 PIN <span style="font-weight:400;color:var(--text3)">（選填，設定後才能刪除專案）</span></label>
+        <input id="cfg-pin" type="password" class="form-control" placeholder="自訂數字或文字 PIN">
+      </div>
+      <p id="cfg-pin-hint" style="font-size:11px;color:var(--text3);margin-bottom:0">只有知道 PIN 的人才能刪除專案。留空表示不變更現有 PIN。</p>
     </div>
     <div class="modal-footer">
       <button class="btn btn-secondary" onclick="closePatModal()">取消</button>
@@ -29612,6 +29625,77 @@ const CONFIG = {
 
 // ── GitHub API ───────────────────────────────────────────────────────────────
 function getGhPat() { return localStorage.getItem('gh_pat') || ''; }
+function getAdminPin() { return localStorage.getItem('admin_pin') || ''; }
+
+function showPatModal() {
+  document.getElementById('cfg-pat').value = '';
+  document.getElementById('cfg-pin').value = '';
+  document.getElementById('cfg-pin-old').value = '';
+  const hasPin = !!getAdminPin();
+  // 已有 PIN → 顯示「舊 PIN」欄位 + 調整提示文字
+  document.getElementById('cfg-pin-old-group').style.display = hasPin ? '' : 'none';
+  document.getElementById('cfg-pin-label').innerHTML = hasPin
+    ? '新管理員 PIN <span style="font-weight:400;color:var(--text3)">（留空表示不變更）</span>'
+    : '管理員 PIN <span style="font-weight:400;color:var(--text3)">（選填，設定後才能刪除專案）</span>';
+  document.getElementById('cfg-pin-hint').textContent = hasPin
+    ? '必須先輸入現有 PIN，才能設定新 PIN。'
+    : '只有知道 PIN 的人才能刪除專案。留空表示不設定。';
+  const statusEl = document.getElementById('pat-status');
+  statusEl.style.color = '';
+  statusEl.textContent = getGhPat() ? '✓ 已設定 Token（可重新填入覆蓋）' : '';
+  document.getElementById('pat-modal').classList.remove('hidden');
+}
+function closePatModal() {
+  document.getElementById('pat-modal').classList.add('hidden');
+}
+async function savePatConfig() {
+  const pat    = document.getElementById('cfg-pat').value.trim();
+  const pinOld = document.getElementById('cfg-pin-old').value;
+  const pinNew = document.getElementById('cfg-pin').value.trim();
+  const statusEl = document.getElementById('pat-status');
+  statusEl.style.color = '';
+
+  // ── PAT 驗證 ──
+  if (pat) {
+    statusEl.textContent = '驗證中…';
+    try {
+      const resp = await fetch(
+        `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.projFile}`,
+        { headers: { Authorization: `token ${pat}`, Accept: 'application/vnd.github.v3+json' } }
+      );
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      localStorage.setItem('gh_pat', pat);
+      statusEl.style.color = 'green';
+      statusEl.textContent = '✓ 驗證成功，Token 已儲存';
+    } catch(e) {
+      statusEl.style.color = 'var(--danger)';
+      statusEl.textContent = `✗ 驗證失敗：${e.message}，請確認 Token 正確且有 repo 權限`;
+      return;
+    }
+  }
+
+  // ── PIN 修改 ──
+  if (pinNew) {
+    const stored = getAdminPin();
+    if (stored) {
+      // 已有 PIN → 必須先驗舊 PIN
+      if (pinOld !== stored) {
+        statusEl.style.color = 'var(--danger)';
+        statusEl.textContent = '✗ 現有 PIN 錯誤，無法修改。';
+        return;
+      }
+    }
+    localStorage.setItem('admin_pin', pinNew);
+    statusEl.style.color = 'green';
+    statusEl.textContent = (pat ? '✓ Token 已儲存，' : '') + '✓ 管理員 PIN 已更新';
+  }
+
+  if (!pat && !pinNew) {
+    closePatModal();
+    return;
+  }
+  setTimeout(() => closePatModal(), 1400);
+}
 
 // 取得檔案 meta（含 SHA，寫入時需要）
 async function ghMeta(filename) {
@@ -30236,7 +30320,11 @@ function buildProjectSelector() {
           <div class="proj-name">${p.name}</div>
           <div class="proj-meta">${p.project_id} · ${Number(p.capacity_kw).toLocaleString()} kW</div>
         </div>
-        <div class="proj-stale-dot${stale ? '' : ' hidden'}" title="本週尚未更新"></div>
+        <div style="display:flex;align-items:center;gap:4px;flex-shrink:0">
+          <div class="proj-stale-dot${stale ? '' : ' hidden'}" title="本週尚未更新"></div>
+          <button class="proj-delete-btn" title="刪除專案（需管理員 PIN）"
+            onclick="event.stopPropagation();deleteProject(${idx})">🗑</button>
+        </div>
       </div>`;
   }).join('');
 
@@ -30256,6 +30344,42 @@ function selectProject(idx) {
   STATE.expandedMs = new Set();
   buildProjectSelector();
   renderAll();
+}
+
+async function deleteProject(idx) {
+  const proj = STATE.data.projects[idx];
+  if (!proj) return;
+
+  // 1. 確認管理員 PIN
+  const storedPin = getAdminPin();
+  if (!storedPin) {
+    alert('尚未設定管理員 PIN。\n請先到「🔑 Token 設定」填入管理員 PIN，才能刪除專案。');
+    return;
+  }
+  const entered = prompt(`請輸入管理員 PIN 以刪除專案「${proj.name}」：`);
+  if (entered === null) return; // 取消
+  if (entered !== storedPin) {
+    alert('PIN 錯誤，無法刪除。');
+    return;
+  }
+
+  // 2. 二次確認
+  const confirmed = confirm(`確定要刪除專案「${proj.name}」（${proj.project_id}）？\n此操作無法復原，將從 GitHub 永久移除。`);
+  if (!confirmed) return;
+
+  // 3. 執行刪除
+  STATE.data.projects.splice(idx, 1);
+  STATE.currentProjIdx = Math.min(STATE.currentProjIdx, STATE.data.projects.length - 1);
+  _cachedProjSha = null;
+  try {
+    await syncToGitHub();
+    buildProjectSelector();
+    renderAll();
+  } catch(e) {
+    // 如果同步失敗，把資料還原
+    STATE.data.projects.splice(idx, 0, proj);
+    alert('刪除失敗（同步 GitHub 錯誤），專案已還原：' + e.message);
+  }
 }
 
 function currentProject() {
