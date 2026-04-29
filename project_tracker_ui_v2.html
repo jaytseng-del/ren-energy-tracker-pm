@@ -398,11 +398,7 @@
           <div class="form-group">
             <label>專案類型 <span class="req">*</span></label>
             <select id="np-type" class="form-control" onchange="onNpTypeChange()">
-              <option value="">— 選擇 —</option>
-              <option value="室內型漁電共生|一型電業">室內型漁電共生（一型電業）</option>
-              <option value="室內型漁電共生|三型設備">室內型漁電共生（三型設備）</option>
-              <option value="室內型農電共生|三型設備">室內型農電共生（三型設備）</option>
-              <option value="一般屋頂型(既有)|三型設備">一般屋頂型（三型設備）</option>
+              <option value="">載入中…</option>
             </select>
           </div>
           <div class="form-group">
@@ -29625,21 +29621,29 @@ const CONFIG = {
 
 // ── GitHub API ───────────────────────────────────────────────────────────────
 function getGhPat() { return localStorage.getItem('gh_pat') || ''; }
-function getAdminPin() { return localStorage.getItem('admin_pin') || ''; }
+// PIN 存在 projects.json 的 _admin_pin_hash 欄位，全域共用（SHA-256 hash）
+async function hashPin(pin) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pin));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+}
+function hasAdminPin() { return !!STATE.data?._admin_pin_hash; }
+async function verifyAdminPin(pin) {
+  if (!hasAdminPin()) return false;
+  return (await hashPin(pin)) === STATE.data._admin_pin_hash;
+}
 
 function showPatModal() {
   document.getElementById('cfg-pat').value = '';
   document.getElementById('cfg-pin').value = '';
   document.getElementById('cfg-pin-old').value = '';
-  const hasPin = !!getAdminPin();
-  // 已有 PIN → 顯示「舊 PIN」欄位 + 調整提示文字
-  document.getElementById('cfg-pin-old-group').style.display = hasPin ? '' : 'none';
-  document.getElementById('cfg-pin-label').innerHTML = hasPin
+  const pinSet = hasAdminPin();
+  document.getElementById('cfg-pin-old-group').style.display = pinSet ? '' : 'none';
+  document.getElementById('cfg-pin-label').innerHTML = pinSet
     ? '新管理員 PIN <span style="font-weight:400;color:var(--text3)">（留空表示不變更）</span>'
     : '管理員 PIN <span style="font-weight:400;color:var(--text3)">（選填，設定後才能刪除專案）</span>';
-  document.getElementById('cfg-pin-hint').textContent = hasPin
-    ? '必須先輸入現有 PIN，才能設定新 PIN。'
-    : '只有知道 PIN 的人才能刪除專案。留空表示不設定。';
+  document.getElementById('cfg-pin-hint').textContent = pinSet
+    ? '必須先輸入現有 PIN，才能設定新 PIN。PIN 儲存在 GitHub，全成員共用。'
+    : '設定後 PIN 會儲存到 GitHub，所有裝置共用同一組 PIN。';
   const statusEl = document.getElementById('pat-status');
   statusEl.style.color = '';
   statusEl.textContent = getGhPat() ? '✓ 已設定 Token（可重新填入覆蓋）' : '';
@@ -29661,7 +29665,7 @@ async function savePatConfig() {
     try {
       const resp = await fetch(
         `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.projFile}`,
-        { headers: { Authorization: `token ${pat}`, Accept: 'application/vnd.github.v3+json' } }
+        { headers: { Authorization: `token ${pat}`, Accept: 'application/vnd.github.v3+json' }, cache: 'no-store' }
       );
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       localStorage.setItem('gh_pat', pat);
@@ -29674,20 +29678,29 @@ async function savePatConfig() {
     }
   }
 
-  // ── PIN 修改 ──
+  // ── PIN 修改（hash 存到 GitHub 的 projects.json） ──
   if (pinNew) {
-    const stored = getAdminPin();
-    if (stored) {
+    if (hasAdminPin()) {
       // 已有 PIN → 必須先驗舊 PIN
-      if (pinOld !== stored) {
+      const oldOk = await verifyAdminPin(pinOld);
+      if (!oldOk) {
         statusEl.style.color = 'var(--danger)';
         statusEl.textContent = '✗ 現有 PIN 錯誤，無法修改。';
         return;
       }
     }
-    localStorage.setItem('admin_pin', pinNew);
-    statusEl.style.color = 'green';
-    statusEl.textContent = (pat ? '✓ Token 已儲存，' : '') + '✓ 管理員 PIN 已更新';
+    statusEl.textContent = '儲存 PIN…';
+    try {
+      STATE.data._admin_pin_hash = await hashPin(pinNew);
+      _cachedProjSha = null;
+      await syncToGitHub();
+      statusEl.style.color = 'green';
+      statusEl.textContent = (pat ? '✓ Token 已儲存，' : '') + '✓ 管理員 PIN 已更新（同步至 GitHub）';
+    } catch(e) {
+      statusEl.style.color = 'var(--danger)';
+      statusEl.textContent = '✗ PIN 同步失敗：' + e.message;
+      return;
+    }
   }
 
   if (!pat && !pinNew) {
@@ -29703,11 +29716,13 @@ async function ghMeta(filename) {
   const headers = { Accept: 'application/vnd.github.v3+json' };
   if (pat) headers.Authorization = `token ${pat}`;
   const resp = await fetch(
-    `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filename}?ref=${CONFIG.branch}`,
-    { headers }
+    `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filename}?ref=${CONFIG.branch}&_t=${Date.now()}`,
+    { headers, cache: 'no-store' }
   );
   if (!resp.ok) throw new Error(`GitHub meta error ${resp.status}`);
-  return resp.json();
+  const json = await resp.json();
+  if (!json.sha) throw new Error('GitHub 回傳資料不含 SHA，請重試');
+  return json;
 }
 
 // 讀 JSON（走 API endpoint，不走 CDN，確保拿到最新版本）
@@ -29902,11 +29917,22 @@ async function loadProjectTemplates() {
   }
 }
 
-function showAddProjectModal() {
+async function showAddProjectModal() {
   _wzCurrentStep = 1;
   _wzParcelRows = [{ name: '' }];
   document.getElementById('add-project-modal').classList.remove('hidden');
   wzRender();
+  // 動態填充類型下拉（從 project_templates.json 讀取）
+  const sel = document.getElementById('np-type');
+  const tmplList = await loadProjectTemplates();
+  if (tmplList) {
+    sel.innerHTML = '<option value="">— 選擇 —</option>' +
+      Object.entries(tmplList).map(([key, t]) =>
+        `<option value="${_esc(key)}">${_esc(t.label || key)}</option>`
+      ).join('');
+  } else {
+    sel.innerHTML = '<option value="">⚠ 無法載入模板，請確認 project_templates.json 已上傳</option>';
+  }
 }
 
 function closeAddProjectModal() {
@@ -30351,14 +30377,14 @@ async function deleteProject(idx) {
   if (!proj) return;
 
   // 1. 確認管理員 PIN
-  const storedPin = getAdminPin();
-  if (!storedPin) {
-    alert('尚未設定管理員 PIN。\n請先到「🔑 Token 設定」填入管理員 PIN，才能刪除專案。');
+  if (!hasAdminPin()) {
+    alert('尚未設定管理員 PIN。\n請先到「🔑 Token 設定」設定管理員 PIN，才能刪除專案。');
     return;
   }
   const entered = prompt(`請輸入管理員 PIN 以刪除專案「${proj.name}」：`);
   if (entered === null) return; // 取消
-  if (entered !== storedPin) {
+  const pinOk = await verifyAdminPin(entered);
+  if (!pinOk) {
     alert('PIN 錯誤，無法刪除。');
     return;
   }
