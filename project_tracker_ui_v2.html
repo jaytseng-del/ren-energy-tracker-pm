@@ -29522,6 +29522,7 @@ async function syncToGitHub() {
   } catch(e) {
     console.error('GitHub sync error:', e);
     if (btn) btn.textContent = '✗ 同步失敗';
+    alert('同步失敗：' + e.message + '\n\n請確認 PAT 有 repo 寫入權限，或至「🔑 Token 設定」重新設定。');
     setTimeout(() => { if (btn) btn.textContent = orig; }, 3000);
   } finally { pendingSync = false; }
 }
