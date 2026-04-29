@@ -29469,32 +29469,38 @@ function loadGisScript() {
 
 async function ensureToken() {
   if (accessToken) return accessToken;
+
+  // 從 localStorage 取快取的 token（55 分鐘內跨分頁、跨重整都不需再授權）
+  const cachedToken = localStorage.getItem('gd_token');
+  const cachedExp   = parseInt(localStorage.getItem('gd_token_exp') || '0');
+  if (cachedToken && Date.now() < cachedExp) {
+    accessToken = cachedToken;
+    return accessToken;
+  }
+
   if (!CONFIG.clientId) return null;
   await loadGisScript();
+
   return new Promise((resolve, reject) => {
-    const makeClient = (prompt) => google.accounts.oauth2.initTokenClient({
+    gisClient = google.accounts.oauth2.initTokenClient({
       client_id: CONFIG.clientId,
       scope: 'https://www.googleapis.com/auth/drive',
       callback: (resp) => {
-        if (resp.error) {
-          if (prompt === 'none') {
-            // 靜默失敗（第一次使用或 session 過期）→ 改用正常彈窗
-            gisClient = makeClient('');
-            gisClient.requestAccessToken({ prompt: '' });
-          } else {
-            reject(new Error(resp.error));
-          }
-          return;
-        }
+        if (resp.error) { reject(new Error(resp.error)); return; }
         accessToken = resp.access_token;
-        // 設定 55 分鐘後清掉 token（Drive token 有效期約 60 分）
-        setTimeout(() => { accessToken = null; }, 55 * 60 * 1000);
+        // 快取到 localStorage，55 分鐘後失效（Drive token 有效期 60 分）
+        const exp = Date.now() + 55 * 60 * 1000;
+        localStorage.setItem('gd_token', accessToken);
+        localStorage.setItem('gd_token_exp', String(exp));
+        setTimeout(() => {
+          accessToken = null;
+          localStorage.removeItem('gd_token');
+          localStorage.removeItem('gd_token_exp');
+        }, 55 * 60 * 1000);
         resolve(accessToken);
       },
     });
-    // 先嘗試靜默授權（不跳視窗）
-    gisClient = makeClient('none');
-    gisClient.requestAccessToken({ prompt: 'none' });
+    gisClient.requestAccessToken({ prompt: '' });
   });
 }
 
