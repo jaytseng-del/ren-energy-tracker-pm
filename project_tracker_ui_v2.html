@@ -29448,16 +29448,10 @@ window.INLINE_DATA = {
 // ── Config ───────────────────────────────────────────────────────────────────
 // ★ 部署前請填入以下三個值（Jay 設定一次，寫死在這裡，所有人共用）
 const CONFIG = {
-  projectsFileId: '在這裡填 projects.json 的 File ID',   // ← 填完刪掉這段中文
-  updatesFileId:  '在這裡填 updates_log.jsonl 的 File ID', // ← 填完刪掉這段中文
-  clientId:       '在這裡填 OAuth Client ID',             // ← 填完刪掉這段中文
+  projectsFileId: '1yRBpWK-pI6e9J3OiF0v9F8SnrQ0NteDI',
+  updatesFileId:  '1ZE8Szf8SztBQ8nv0qzu22jzZ6DnvOxzP',
+  clientId:       '579908363414-g6679n53nakv0chmooum8srnm4v9daa3.apps.googleusercontent.com',
 };
-// 若以上未填，fallback 讀 localStorage（本機測試用）
-if (!CONFIG.projectsFileId || CONFIG.projectsFileId.includes('填')) {
-  CONFIG.projectsFileId = localStorage.getItem('cfg_proj_id') || '';
-  CONFIG.updatesFileId  = localStorage.getItem('cfg_log_id')  || '';
-  CONFIG.clientId       = localStorage.getItem('cfg_client_id') || '';
-}
 
 // ── Google Drive API ─────────────────────────────────────────────────────────
 let gisClient = null;
