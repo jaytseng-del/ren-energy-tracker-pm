@@ -8975,7 +8975,7 @@
       "start_date": "2025-07-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-04-30T09:48:52.004Z",
+      "updated_at": "2026-04-30T09:59:29.383Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段38地號",
@@ -9012,11 +9012,11 @@
           "standard_days": "435",
           "baseline_start": "2025-07-14",
           "baseline_end": "2026-09-14",
-          "forecast_end": null,
+          "forecast_end": "2026-09-14",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-30T09:48:52.004Z",
+          "updated_at": "2026-04-30T09:59:29.383Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-001-ST01",
@@ -9154,7 +9154,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2025-07-14"
         },
         {
           "milestone_id": "PRJ-003-MS-002",
@@ -9172,11 +9173,11 @@
           "standard_days": "418",
           "baseline_start": "2025-10-06",
           "baseline_end": "2026-04-24",
-          "forecast_end": null,
+          "forecast_end": "2026-04-24",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-30T09:48:52.004Z",
+          "updated_at": "2026-04-30T09:59:29.383Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-002-ST01",
@@ -9299,7 +9300,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2025-10-06"
         },
         {
           "milestone_id": "PRJ-003-MS-003",
@@ -9317,11 +9319,11 @@
           "standard_days": "120",
           "baseline_start": "2026-09-14",
           "baseline_end": "2027-03-13",
-          "forecast_end": null,
+          "forecast_end": "2027-03-13",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-30T09:48:52.004Z",
+          "updated_at": "2026-04-30T09:59:29.383Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-003-ST01",
@@ -9414,7 +9416,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2026-09-14"
         },
         {
           "milestone_id": "PRJ-003-MS-004",
@@ -9432,11 +9435,11 @@
           "standard_days": "375",
           "baseline_start": "2027-02-11",
           "baseline_end": "2028-02-21",
-          "forecast_end": null,
+          "forecast_end": "2028-02-21",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-30T09:48:52.004Z",
+          "updated_at": "2026-04-30T09:59:29.383Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-004-ST01",
@@ -9544,7 +9547,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2027-02-11"
         },
         {
           "milestone_id": "PRJ-003-MS-005",
@@ -9562,11 +9566,11 @@
           "standard_days": "90",
           "baseline_start": "2028-02-21",
           "baseline_end": "2028-05-21",
-          "forecast_end": null,
+          "forecast_end": "2028-05-21",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-30T09:48:52.004Z",
+          "updated_at": "2026-04-30T09:59:29.383Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-005-ST01",
@@ -9659,7 +9663,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2028-02-21"
         },
         {
           "milestone_id": "PRJ-003-MS-006",
@@ -9677,11 +9682,11 @@
           "standard_days": "210",
           "baseline_start": "2028-01-22",
           "baseline_end": "2028-08-19",
-          "forecast_end": null,
+          "forecast_end": "2028-08-19",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-30T09:48:52.004Z",
+          "updated_at": "2026-04-30T09:59:29.383Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-006-ST01",
@@ -9834,7 +9839,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2028-01-22"
         },
         {
           "milestone_id": "PRJ-003-MS-007",
@@ -9852,11 +9858,11 @@
           "standard_days": "74",
           "baseline_start": "2027-02-11",
           "baseline_end": "2027-04-26",
-          "forecast_end": null,
+          "forecast_end": "2027-04-26",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-30T09:48:52.004Z",
+          "updated_at": "2026-04-30T09:59:29.383Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-007-ST01",
@@ -9964,7 +9970,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2027-02-11"
         },
         {
           "milestone_id": "PRJ-003-MS-008",
@@ -9982,11 +9989,11 @@
           "standard_days": "190",
           "baseline_start": "2027-04-11",
           "baseline_end": "2027-10-18",
-          "forecast_end": null,
+          "forecast_end": "2027-10-18",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-30T09:48:52.004Z",
+          "updated_at": "2026-04-30T09:59:29.383Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-008-ST01",
@@ -10199,7 +10206,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2027-04-11"
         },
         {
           "milestone_id": "PRJ-003-MS-009",
@@ -10215,11 +10223,11 @@
           "standard_days": "236",
           "baseline_start": "2027-10-18",
           "baseline_end": "2028-06-10",
-          "forecast_end": null,
+          "forecast_end": "2028-06-10",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-30T09:48:52.004Z",
+          "updated_at": "2026-04-30T09:59:29.383Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-009-ST01",
@@ -10372,7 +10380,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2027-10-18"
         },
         {
           "milestone_id": "PRJ-003-MS-010",
@@ -10390,11 +10399,11 @@
           "standard_days": "30",
           "baseline_start": "2027-10-23",
           "baseline_end": "2027-11-22",
-          "forecast_end": null,
+          "forecast_end": "2027-11-22",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-30T09:48:52.004Z",
+          "updated_at": "2026-04-30T09:59:29.383Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-010-ST01",
@@ -10487,7 +10496,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2027-10-23"
         },
         {
           "milestone_id": "PRJ-003-MS-011",
@@ -10505,11 +10515,11 @@
           "standard_days": "125",
           "baseline_start": "2027-11-22",
           "baseline_end": "2028-03-26",
-          "forecast_end": null,
+          "forecast_end": "2028-03-26",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-30T09:48:52.004Z",
+          "updated_at": "2026-04-30T09:59:29.383Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-011-ST01",
@@ -10617,7 +10627,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2027-11-22"
         },
         {
           "milestone_id": "PRJ-003-MS-012",
@@ -10635,11 +10646,11 @@
           "standard_days": "120",
           "baseline_start": "2028-06-05",
           "baseline_end": "2028-10-03",
-          "forecast_end": null,
+          "forecast_end": "2028-10-03",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-30T09:48:52.004Z",
+          "updated_at": "2026-04-30T09:59:29.383Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-012-ST01",
@@ -10717,7 +10728,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2028-06-05"
         },
         {
           "milestone_id": "PRJ-003-MS-013",
@@ -10736,13 +10748,14 @@
           "standard_days": "50",
           "baseline_start": "2028-10-03",
           "baseline_end": "2028-11-22",
-          "forecast_end": null,
+          "forecast_end": "2028-11-22",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-30T09:48:52.004Z",
+          "updated_at": "2026-04-30T09:59:29.383Z",
           "stages": [],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2028-10-03"
         },
         {
           "milestone_id": "PRJ-003-MS-014",
@@ -10760,11 +10773,11 @@
           "standard_days": "180",
           "baseline_start": "2028-12-07",
           "baseline_end": "2029-06-05",
-          "forecast_end": null,
+          "forecast_end": "2029-06-05",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-30T09:48:52.004Z",
+          "updated_at": "2026-04-30T09:59:29.383Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-014-ST01",
@@ -10932,7 +10945,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2028-12-07"
         }
       ]
     },
