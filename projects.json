@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-04-30T07:51:23.866Z",
+      "updated_at": "2026-04-30T09:23:09.394Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -237,7 +237,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-04-30T07:50:21.442Z",
+          "updated_at": "2026-04-30T09:23:09.394Z",
           "stages": [
             {
               "stage_id": "PRJ-001-MS-001-ST01",
@@ -327,7 +327,19 @@
               "planned_end": null,
               "actual_end": null,
               "notes": "",
-              "tasks": []
+              "tasks": [
+                {
+                  "task_id": "TSK-1777540989394",
+                  "name": "聯絡承辦",
+                  "task_type": "recurring",
+                  "status": "open",
+                  "next_action_due": null,
+                  "next_action": null,
+                  "notes": null,
+                  "updates": [],
+                  "created_at": "2026-04-30T09:23:09.394Z"
+                }
+              ]
             },
             {
               "stage_id": "PRJ-001-MS-001-ST07",
@@ -875,9 +887,9 @@
           "baseline_end": "2026-02-10",
           "forecast_end": "2026-02-10",
           "actual_end": null,
-          "status": "in_progress",
+          "status": "done",
           "notes": null,
-          "updated_at": "2026-04-30T07:51:23.866Z",
+          "updated_at": "2026-04-30T07:51:25.437Z",
           "stages": [
             {
               "stage_id": "PRJ-001-MS-005-ST01",
@@ -992,10 +1004,10 @@
               "type": "fixed",
               "estimated_days": "30",
               "cc": "15",
-              "status": "pending",
+              "status": "done",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": null,
+              "actual_end": "2026-04-30",
               "notes": "",
               "tasks": []
             }
