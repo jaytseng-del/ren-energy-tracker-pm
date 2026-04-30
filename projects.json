@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-04-30T09:23:09.394Z",
+      "updated_at": "2026-04-30T07:51:23.866Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -237,7 +237,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-04-30T09:23:09.394Z",
+          "updated_at": "2026-04-30T07:50:21.442Z",
           "stages": [
             {
               "stage_id": "PRJ-001-MS-001-ST01",
@@ -327,19 +327,7 @@
               "planned_end": null,
               "actual_end": null,
               "notes": "",
-              "tasks": [
-                {
-                  "task_id": "TSK-1777540989394",
-                  "name": "聯絡承辦",
-                  "task_type": "recurring",
-                  "status": "open",
-                  "next_action_due": null,
-                  "next_action": null,
-                  "notes": null,
-                  "updates": [],
-                  "created_at": "2026-04-30T09:23:09.394Z"
-                }
-              ]
+              "tasks": []
             },
             {
               "stage_id": "PRJ-001-MS-001-ST07",
@@ -887,9 +875,9 @@
           "baseline_end": "2026-02-10",
           "forecast_end": "2026-02-10",
           "actual_end": null,
-          "status": "done",
+          "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-04-30T07:51:25.437Z",
+          "updated_at": "2026-04-30T07:51:23.866Z",
           "stages": [
             {
               "stage_id": "PRJ-001-MS-005-ST01",
@@ -1004,10 +992,10 @@
               "type": "fixed",
               "estimated_days": "30",
               "cc": "15",
-              "status": "done",
+              "status": "pending",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": "2026-04-30",
+              "actual_end": null,
               "notes": "",
               "tasks": []
             }
@@ -8987,7 +8975,7 @@
       "start_date": "2025-07-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-04-23T16:12:19+08:00",
+      "updated_at": "2026-04-30T09:48:52.004Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段38地號",
@@ -9022,13 +9010,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "435",
-          "baseline_start": null,
-          "baseline_end": null,
+          "baseline_start": "2025-07-14",
+          "baseline_end": "2026-09-14",
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-04-30T09:48:52.004Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-001-ST01",
@@ -9182,13 +9170,13 @@
           "condition_description": null,
           "payment_trigger": false,
           "standard_days": "418",
-          "baseline_start": null,
-          "baseline_end": null,
+          "baseline_start": "2025-10-06",
+          "baseline_end": "2026-04-24",
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-04-30T09:48:52.004Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-002-ST01",
@@ -9327,13 +9315,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "120",
-          "baseline_start": null,
-          "baseline_end": null,
+          "baseline_start": "2026-09-14",
+          "baseline_end": "2027-03-13",
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-04-30T09:48:52.004Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-003-ST01",
@@ -9442,13 +9430,13 @@
           "condition_description": null,
           "payment_trigger": false,
           "standard_days": "375",
-          "baseline_start": null,
-          "baseline_end": null,
+          "baseline_start": "2027-02-11",
+          "baseline_end": "2028-02-21",
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-04-30T09:48:52.004Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-004-ST01",
@@ -9572,13 +9560,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "90",
-          "baseline_start": null,
-          "baseline_end": null,
+          "baseline_start": "2028-02-21",
+          "baseline_end": "2028-05-21",
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-04-30T09:48:52.004Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-005-ST01",
@@ -9687,13 +9675,13 @@
           "condition_description": "使照取得後需完成養殖實績達主管機關標準",
           "payment_trigger": true,
           "standard_days": "210",
-          "baseline_start": null,
-          "baseline_end": null,
+          "baseline_start": "2028-01-22",
+          "baseline_end": "2028-08-19",
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-04-30T09:48:52.004Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-006-ST01",
@@ -9862,13 +9850,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "74",
-          "baseline_start": null,
-          "baseline_end": null,
+          "baseline_start": "2027-02-11",
+          "baseline_end": "2027-04-26",
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-04-30T09:48:52.004Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-007-ST01",
@@ -9992,13 +9980,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "190",
-          "baseline_start": null,
-          "baseline_end": null,
+          "baseline_start": "2027-04-11",
+          "baseline_end": "2027-10-18",
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-04-30T09:48:52.004Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-008-ST01",
@@ -10225,13 +10213,13 @@
           "condition_description": "PM判斷申請時機",
           "payment_trigger": false,
           "standard_days": "236",
-          "baseline_start": null,
-          "baseline_end": null,
+          "baseline_start": "2027-10-18",
+          "baseline_end": "2028-06-10",
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-04-30T09:48:52.004Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-009-ST01",
@@ -10400,13 +10388,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "30",
-          "baseline_start": null,
-          "baseline_end": null,
+          "baseline_start": "2027-10-23",
+          "baseline_end": "2027-11-22",
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-04-30T09:48:52.004Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-010-ST01",
@@ -10515,13 +10503,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "125",
-          "baseline_start": null,
-          "baseline_end": null,
+          "baseline_start": "2027-11-22",
+          "baseline_end": "2028-03-26",
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-04-30T09:48:52.004Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-011-ST01",
@@ -10645,13 +10633,13 @@
           "condition_description": null,
           "payment_trigger": false,
           "standard_days": "120",
-          "baseline_start": null,
-          "baseline_end": null,
+          "baseline_start": "2028-06-05",
+          "baseline_end": "2028-10-03",
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-04-30T09:48:52.004Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-012-ST01",
@@ -10746,13 +10734,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "50",
-          "baseline_start": null,
-          "baseline_end": null,
+          "baseline_start": "2028-10-03",
+          "baseline_end": "2028-11-22",
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-04-30T09:48:52.004Z",
           "stages": [],
           "tasks": []
         },
@@ -10770,13 +10758,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "180",
-          "baseline_start": null,
-          "baseline_end": null,
+          "baseline_start": "2028-12-07",
+          "baseline_end": "2029-06-05",
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-04-30T09:48:52.004Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-014-ST01",
