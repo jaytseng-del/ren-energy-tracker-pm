@@ -522,6 +522,14 @@
         <input id="cfg-pin" type="password" class="form-control" placeholder="自訂數字或文字 PIN">
       </div>
       <p id="cfg-pin-hint" style="font-size:11px;color:var(--text3);margin-bottom:0">只有知道 PIN 的人才能刪除專案。留空表示不變更現有 PIN。</p>
+
+      <hr style="border:none;border-top:1px solid var(--border);margin:16px 0">
+      <div style="margin-bottom:4px">
+        <label style="font-size:13px;font-weight:600;color:var(--text1)">📦 更新內嵌 JSON</label>
+        <p style="font-size:12px;color:var(--text2);margin:4px 0 10px">上傳 <code>projects.json</code>，產生含最新資料的新版 HTML 供下載。下載後替換原檔並上傳至 GitHub。</p>
+        <button class="btn btn-secondary" style="width:100%" onclick="importAndRebuildHtml()">📂 選擇 JSON 並產生新 HTML</button>
+        <div id="rebuild-status" style="font-size:12px;margin-top:6px;color:var(--text2)"></div>
+      </div>
     </div>
     <div class="modal-footer">
       <button class="btn btn-secondary" onclick="closePatModal()">取消</button>
@@ -29817,6 +29825,70 @@ async function syncToGitHub() {
   } finally { pendingSync = false; }
 }
 
+// ── 更新內嵌 JSON ─────────────────────────────────────────────────────────────
+async function importAndRebuildHtml() {
+  const statusEl = document.getElementById('rebuild-status');
+  statusEl.textContent = '';
+
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = '.json,application/json';
+  input.onchange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    statusEl.textContent = '讀取 JSON 中…';
+    try {
+      // 1. 讀取並驗證 JSON
+      const jsonText = await file.text();
+      let jsonData;
+      try { jsonData = JSON.parse(jsonText); }
+      catch(pe) { throw new Error('JSON 格式錯誤，請確認上傳的是合法 JSON 檔案。'); }
+      if (!jsonData.projects) throw new Error('JSON 缺少 projects 欄位，請確認是正確的 projects.json。');
+
+      // 2. 抓取目前 HTML 原始碼
+      statusEl.textContent = '載入 HTML 原始碼中…';
+      const resp = await fetch(window.location.href, { cache: 'no-store' });
+      if (!resp.ok) throw new Error('無法讀取 HTML 原始碼（HTTP ' + resp.status + '）');
+      let html = await resp.text();
+
+      // 3. 找 INLINE_DATA 區塊並替換
+      const START_MARKER = 'window.INLINE_DATA = ';
+      const END_MARKER = ';\n<\/script>';
+      const startIdx = html.indexOf(START_MARKER);
+      if (startIdx === -1) throw new Error('找不到 window.INLINE_DATA 標記，HTML 結構可能已變更。');
+      const endIdx = html.indexOf(END_MARKER, startIdx);
+      if (endIdx === -1) throw new Error('找不到 INLINE_DATA 結尾標記。');
+
+      const now = new Date().toISOString();
+      jsonData.generated_at = now; // 更新時間戳
+      // newBlock 結尾是 }，endIdx 是 ; 的位置，substring(endIdx) 保留 ;\n<\/script>...
+      const newBlock = START_MARKER + JSON.stringify(jsonData, null, 2);
+      html = html.substring(0, startIdx) + newBlock + html.substring(endIdx);
+
+      // 4. 觸發下載
+      statusEl.textContent = '產生下載中…';
+      const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'project_tracker_ui_v2.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      const projCount = jsonData.projects?.length ?? 0;
+      statusEl.style.color = 'green';
+      statusEl.textContent = `✓ 完成！含 ${projCount} 個專案。下載後替換原檔並上傳 GitHub。`;
+    } catch(err) {
+      statusEl.style.color = 'red';
+      statusEl.textContent = '✗ ' + err.message;
+      console.error(err);
+    }
+  };
+  input.click();
+}
+
 // 直接寫入（不受 pendingSync 鎖、永遠抓最新 SHA、失敗時拋出錯誤）
 // 用於 confirmAddProject / deleteProject / saveLots 等關鍵操作
 async function ghWriteProjDirect() {
@@ -31522,6 +31594,80 @@ function openTaskModal(projId, msId) {
   ['t-name','t-type'].forEach(id => document.getElementById(id).classList.remove('invalid'));
 
   // Populate stage dropdown
+  const sel = document.getElementById('t-stage');
+  sel.innerHTML = '<option value="">— 不指定 Stage —</option>';
+  (ms?.stages || []).forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s.stage_id;
+    opt.textContent = s.name;
+    sel.appendChild(opt);
+  });
+
+  document.getElementById('task-modal').classList.remove('hidden');
+}
+
+function closeTaskModal() { document.getElementById('task-modal').classList.add('hidden'); }
+
+function submitTask() {
+  const name  = document.getElementById('t-name').value.trim();
+  const type  = document.getElementById('t-type').value;
+  const stageId = document.getElementById('t-stage').value;
+  const due   = document.getElementById('t-due').value;
+  const notes = document.getElementById('t-notes').value.trim();
+
+  let valid = true;
+  if (!name) { document.getElementById('t-name').classList.add('invalid'); valid = false; }
+  else document.getElementById('t-name').classList.remove('invalid');
+  if (!type) { document.getElementById('t-type').classList.add('invalid'); valid = false; }
+  else document.getElementById('t-type').classList.remove('invalid');
+  if (!valid) return;
+
+  const { projId, msId } = STATE.modalContext;
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  const ms = proj?.milestones.find(m => m.milestone_id === msId);
+  if (!ms) return;
+
+  const task = {
+    task_id: 'TSK-' + Date.now(),
+    name,
+    task_type: type,
+    status: 'open',
+    next_action_due: due || null,
+    next_action: null,
+    notes: notes || null,
+    updates: [],
+    created_at: new Date().toISOString(),
+  };
+
+  // Add to specified stage, or first stage, or create stage-less bucket
+  if (stageId) {
+    const st = ms.stages.find(s => s.stage_id === stageId);
+    if (st) { if (!st.tasks) st.tasks = []; st.tasks.push(task); }
+  } else {
+    // No stage selected → attach to first stage as fallback
+    if (ms.stages.length > 0) {
+      if (!ms.stages[0].tasks) ms.stages[0].tasks = [];
+      ms.stages[0].tasks.push(task);
+    } else {
+      if (!ms.tasks) ms.tasks = [];
+      ms.tasks.push(task);
+    }
+  }
+
+  ms.updated_at = task.created_at;
+  proj.updated_at = task.created_at;
+
+  closeTaskModal();
+  renderAll();
+
+  syncToGitHub();
+}
+
+// ── Start ─────────────────────────────────────────────────────────────────────
+init();
+</script>
+</body>
+</html>
   const sel = document.getElementById('t-stage');
   sel.innerHTML = '<option value="">— 不指定 Stage —</option>';
   (ms?.stages || []).forEach(s => {
