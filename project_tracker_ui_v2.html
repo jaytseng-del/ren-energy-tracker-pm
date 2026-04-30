@@ -29745,8 +29745,8 @@ async function ghReadJson(filename) {
   const headers = { Accept: 'application/vnd.github.raw+json' };
   if (pat) headers.Authorization = `token ${pat}`;
   const resp = await fetch(
-    `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filename}?ref=${CONFIG.branch}`,
-    { headers }
+    `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filename}?ref=${CONFIG.branch}&_t=${Date.now()}`,
+    { headers, cache: 'no-store' }
   );
   if (!resp.ok) throw new Error(`GitHub read error ${resp.status}`);
   return resp.json();
