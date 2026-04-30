@@ -29678,8 +29678,13 @@ async function savePatConfig() {
     }
   }
 
-  // ── PIN 修改（hash 存到 GitHub 的 projects.json） ──
+  // ── PIN 修改（hash 直接寫入 GitHub 的 projects.json） ──
   if (pinNew) {
+    if (!getGhPat()) {
+      statusEl.style.color = 'var(--danger)';
+      statusEl.textContent = '✗ 請先填入並驗證 PAT，才能儲存 PIN。';
+      return;
+    }
     if (hasAdminPin()) {
       // 已有 PIN → 必須先驗舊 PIN
       const oldOk = await verifyAdminPin(pinOld);
@@ -29689,16 +29694,23 @@ async function savePatConfig() {
         return;
       }
     }
-    statusEl.textContent = '儲存 PIN…';
+    statusEl.style.color = '';
+    statusEl.textContent = '儲存 PIN 中…';
     try {
-      STATE.data._admin_pin_hash = await hashPin(pinNew);
-      _cachedProjSha = null;
-      await syncToGitHub();
+      // 直接呼叫底層寫入，錯誤會正確往上拋
+      const hash = await hashPin(pinNew);
+      STATE.data._admin_pin_hash = hash;
+      const meta = await ghMeta(CONFIG.projFile);
+      const result = await ghWrite(CONFIG.projFile, STATE.data, meta.sha);
+      _cachedProjSha = result.content?.sha || null;
       statusEl.style.color = 'green';
-      statusEl.textContent = (pat ? '✓ Token 已儲存，' : '') + '✓ 管理員 PIN 已更新（同步至 GitHub）';
+      statusEl.textContent = (pat ? '' : '') + '✓ 管理員 PIN 已設定並同步至 GitHub';
     } catch(e) {
+      // 失敗時還原記憶體狀態
+      delete STATE.data._admin_pin_hash;
+      _cachedProjSha = null;
       statusEl.style.color = 'var(--danger)';
-      statusEl.textContent = '✗ PIN 同步失敗：' + e.message;
+      statusEl.textContent = '✗ PIN 儲存失敗：' + e.message;
       return;
     }
   }
