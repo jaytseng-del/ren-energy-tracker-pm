@@ -30398,21 +30398,11 @@ function pmBadgeClass(pm) {
   return 'pm-default';
 }
 
-// Check if a project has any update in the past 7 days (any recurring task)
+// Check if a project has any activity in the past 7 days
+// (Stage 狀態變更、Update 新增、里程碑修改等都算）
 function projHasRecentUpdate(proj) {
-  const now = Date.now();
-  const week = 7 * 86400000;
-  for (const ms of proj.milestones) {
-    for (const st of ms.stages) {
-      for (const tk of st.tasks || []) {
-        if (tk.task_type === 'recurring') {
-          const lastU = tk.updates?.[tk.updates.length - 1];
-          if (lastU && (now - new Date(lastU.created_at).getTime()) <= week) return true;
-        }
-      }
-    }
-  }
-  return false;
+  if (!proj.updated_at) return false;
+  return (Date.now() - new Date(proj.updated_at).getTime()) <= 7 * 86400000;
 }
 
 function buildProjectSelector() {
@@ -30530,26 +30520,27 @@ function renderSidebar() {
 
   const proj = currentProject();
   const list = document.getElementById('alert-list');
-  // 找本週（過去7天）沒有更新的 recurring tasks（僅目前專案）
+  const alertHeader = document.querySelector('.sidebar-alerts h3');
+  // 找過去7天內沒有任何 Update 的任務（所有類型，僅目前專案）
   const now = Date.now();
   const week = 7 * 86400000;
   const alerts = [];
   for (const ms of proj.milestones) {
     for (const st of ms.stages) {
       for (const tk of (st.tasks || [])) {
-        if (tk.task_type === 'recurring') {
-          const lastUpdate = tk.updates?.[tk.updates.length-1];
-          const lastTs = lastUpdate ? new Date(lastUpdate.created_at).getTime() : 0;
-          if (now - lastTs > week) {
-            alerts.push({ ms: ms.name, task: tk.name, days: Math.floor((now - lastTs) / 86400000) });
-          }
+        const lastUpdate = tk.updates?.[tk.updates.length-1];
+        const lastTs = lastUpdate ? new Date(lastUpdate.created_at).getTime() : 0;
+        if (now - lastTs > week) {
+          alerts.push({ ms: ms.name, task: tk.name, days: Math.floor((now - lastTs) / 86400000) });
         }
       }
     }
   }
   if (!alerts.length) {
-    list.innerHTML = '<div style="font-size:11px;color:rgba(255,255,255,.4);padding:2px 0">本週所有任務皆已更新 ✓</div>';
+    if (alertHeader) alertHeader.style.display = 'none';
+    list.innerHTML = '';
   } else {
+    if (alertHeader) alertHeader.style.display = '';
     list.innerHTML = alerts.slice(0, 8).map(a => `
       <div class="alert-item">
         <div class="alert-dot${a.days > 14 ? ' danger' : ''}"></div>
