@@ -30578,6 +30578,18 @@ function renderSidebar() {
 
 // ── 時程模板下載 / 上傳 ───────────────────────────────────────────────────────
 
+// 動態載入 SheetJS（CDN 失敗時的備援）
+function _ensureXLSX() {
+  return new Promise((resolve, reject) => {
+    if (typeof XLSX !== 'undefined') return resolve();
+    const s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';
+    s.onload = resolve;
+    s.onerror = () => reject(new Error('無法載入 SheetJS，請確認網路連線後重試。'));
+    document.head.appendChild(s);
+  });
+}
+
 function _parseExcelDate(val) {
   if (!val && val !== 0) return null;
   if (typeof val === 'string') return val.trim() || null;
@@ -30590,8 +30602,8 @@ function _parseExcelDate(val) {
   return null;
 }
 
-function downloadScheduleTemplate() {
-  if (typeof XLSX === 'undefined') { alert('試算表功能尚未載入，請稍後再試。'); return; }
+async function downloadScheduleTemplate() {
+  try { await _ensureXLSX(); } catch(e) { alert(e.message); return; }
   const proj = currentProject();
   const statusLabel = { pending:'未開始', in_progress:'進行中', done:'已完成', blocked:'受阻', completed:'已完成' };
   const headers = ['milestone_id','里程碑名稱','地塊','群組','狀態','基準開始日','基準完成日','預測起始日','預測完成日','實際起始日','實際完成日','備註'];
@@ -30626,7 +30638,7 @@ function downloadScheduleTemplate() {
 }
 
 async function uploadScheduleTemplate(input) {
-  if (typeof XLSX === 'undefined') { alert('試算表功能尚未載入，請稍後再試。'); return; }
+  try { await _ensureXLSX(); } catch(e) { alert(e.message); return; }
   const file = input.files[0];
   if (!file) return;
   input.value = '';
