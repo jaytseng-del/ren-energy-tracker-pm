@@ -1,9 +1,10 @@
 {
   "templates": {
-    "室內型漁電共生|一型電業": {
+    "室內型漁電共生|一型電業|配電": {
       "type": "室內型漁電共生",
       "elec_type": "一型電業",
-      "label": "室內型漁電共生（一型電業）",
+      "grid_type": "配電",
+      "label": "室內型漁電共生（一型電業・配電）",
       "milestones": [
         {
           "name": "農業容許",
@@ -1155,10 +1156,2322 @@
         }
       ]
     },
-    "室內型漁電共生|三型設備": {
+    "室內型漁電共生(可規)|一型電業|輸電": {
+      "type": "室內型漁電共生(可規)",
+      "elec_type": "一型電業",
+      "grid_type": "輸電",
+      "label": "室內型漁電共生(可規)（一型電業・輸電）",
+      "milestones": [
+        {
+          "name": "農業容許",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "soft_concurrent",
+          "depends_on": [
+            "出流管制"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "435",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "55",
+              "notes": "地主資料、切結書、養殖計劃書等"
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "補正 #1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #2",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "2",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "函轉地方政府",
+              "authority": "地方農業局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "補正 #1",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "90",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "補正 #2",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "90",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "現勘",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "視地方政府需求"
+            },
+            {
+              "sequence": 9,
+              "name": "取得農業容許",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "13",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "出流管制",
+          "group": "農業",
+          "application_scope": "whole_project",
+          "dependency_type": "soft_concurrent",
+          "depends_on": [
+            "農業容許"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "418",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "50",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "農業局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "函轉水利局",
+              "authority": "水利局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "現勘",
+              "authority": "水利局/水利局委辦機關",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #1",
+              "authority": "水利局/水利局委辦機關",
+              "type": "skippable",
+              "estimated_days": "20",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "補正 #2",
+              "authority": "水利局/水利局委辦機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "水利局委辦機關書面同意函轉水利局",
+              "authority": "水利局委辦機關",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "取得許可",
+              "authority": "水利局",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "建照",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "農業容許"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "120",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "55",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審核",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "90",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "取得建造執照",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "20",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "室內養殖設施施工",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "建照"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "375",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "開工前整地+假設工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "申請開工許可",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "180",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "基樁工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "鋼構工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "18",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "模組鋪設工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "魚塭工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "12",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "竣工查驗",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "使照",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "室內養殖設施施工"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "90",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "55",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件申請",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審核",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "90",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "取得使照",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "20",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "綠能容許",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "condition",
+          "depends_on": [
+            "使照"
+          ],
+          "condition_description": "使照取得後需完成養殖實績達主管機關標準",
+          "payment_trigger": true,
+          "standard_days": "210",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "放養",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "180",
+              "cc": "50",
+              "notes": "使照取得後計時"
+            },
+            {
+              "sequence": 2,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "30",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "送件",
+              "authority": "農業局",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "2",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "函轉地方政府",
+              "authority": "地方農業局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "補正 #1",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "90",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "補正 #2",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "90",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 9,
+              "name": "現勘",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "視地方政府需求"
+            },
+            {
+              "sequence": 10,
+              "name": "取得農業容許",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "13",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "併聯審查意見書",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "74",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "40",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "配電/輸電依電壓送不同單位"
+            },
+            {
+              "sequence": 3,
+              "name": "台電審查",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "現勘",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": "若有必要台電才會安排"
+            },
+            {
+              "sequence": 7,
+              "name": "取得併聯審查意見書",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "電業籌設許可",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯審查意見書"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "190",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "地方政府同意函審查",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "聯合審查會議",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "3",
+              "notes": "目前僅彰化縣政府有此程序"
+            },
+            {
+              "sequence": 7,
+              "name": "取得地方政府同意函",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "報請地方電業主管機關核轉予能源署",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 9,
+              "name": "核轉電業籌設予經濟部能源署",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "14",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "電業籌設審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 11,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 12,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 13,
+              "name": "現勘",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "必要時能源署才會要求"
+            },
+            {
+              "sequence": 14,
+              "name": "取得電業籌設",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "外線",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "pm_discretion",
+          "depends_on": [],
+          "condition_description": "PM判斷申請時機",
+          "payment_trigger": false,
+          "standard_days": "236",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "路證申請文件準備",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "路證審查",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "補正 #1",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #2",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "取得路證",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "電纜購置",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "電纜交貨",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "50",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "外線工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "80",
+              "cc": "15",
+              "notes": "安裝電纜固定架、管溝電纜工程等"
+            },
+            {
+              "sequence": 9,
+              "name": "加壓測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "5",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "6",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "同意備案",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "電業籌設許可"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "30",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "45",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "≥2000kW→能源署"
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審查",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "取得同意備案",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "光電施工許可",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "同意備案"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "125",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "40",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "現勘",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "必要時才要求"
+            },
+            {
+              "sequence": 7,
+              "name": "取得光電施工許可",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "光電設備施工",
+          "group": "電業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電施工許可"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "120",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "配電設施訂購",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "配電設施進場",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "15",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "配電設施工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "35",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "機電測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "併聯試運轉函",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電設備施工",
+            "使照",
+            "綠能容許"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "50",
+          "stages": []
+        },
+        {
+          "name": "電業執照",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯試運轉函"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "180",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "地方政府審查",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "地方政府核轉予經濟部能源署",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "電業執照審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "竣工查驗",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "13",
+              "notes": "相關機關及委員進行現場查驗"
+            },
+            {
+              "sequence": 9,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 11,
+              "name": "取得電業執照",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            }
+          ]
+        }
+      ]
+    },
+    "室內型漁電共生(海管)|一型電業|輸電": {
+      "type": "室內型漁電共生(海管)",
+      "elec_type": "一型電業",
+      "grid_type": "輸電",
+      "label": "室內型漁電共生(海管)（一型電業・輸電）",
+      "milestones": [
+        {
+          "name": "農業容許",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "soft_concurrent",
+          "depends_on": [
+            "出流管制"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "435",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "55",
+              "notes": "地主資料、切結書、養殖計劃書等"
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "補正 #1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #2",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "2",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "函轉地方政府",
+              "authority": "地方農業局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "補正 #1",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "90",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "補正 #2",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "90",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "現勘",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "視地方政府需求"
+            },
+            {
+              "sequence": 9,
+              "name": "取得農業容許",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "13",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "出流管制",
+          "group": "農業",
+          "application_scope": "whole_project",
+          "dependency_type": "soft_concurrent",
+          "depends_on": [
+            "農業容許"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "418",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "50",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "農業局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "函轉水利局",
+              "authority": "水利局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "現勘",
+              "authority": "水利局/水利局委辦機關",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #1",
+              "authority": "水利局/水利局委辦機關",
+              "type": "skippable",
+              "estimated_days": "20",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "補正 #2",
+              "authority": "水利局/水利局委辦機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "水利局委辦機關書面同意函轉水利局",
+              "authority": "水利局委辦機關",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "取得許可",
+              "authority": "水利局",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "建照",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "農業容許"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "120",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "55",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審核",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "90",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "取得建造執照",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "20",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "室內養殖設施施工",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "建照"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "375",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "開工前整地+假設工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "申請開工許可",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "180",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "基樁工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "鋼構工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "18",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "模組鋪設工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "魚塭工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "12",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "竣工查驗",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "使照",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "室內養殖設施施工"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "90",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "55",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件申請",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審核",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "90",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "取得使照",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "20",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "綠能容許",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "condition",
+          "depends_on": [
+            "使照"
+          ],
+          "condition_description": "使照取得後需完成養殖實績達主管機關標準",
+          "payment_trigger": true,
+          "standard_days": "210",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "放養",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "180",
+              "cc": "50",
+              "notes": "使照取得後計時"
+            },
+            {
+              "sequence": 2,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "30",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "送件",
+              "authority": "農業局",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "2",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "函轉地方政府",
+              "authority": "地方農業局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "補正 #1",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "90",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "補正 #2",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "90",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 9,
+              "name": "現勘",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "視地方政府需求"
+            },
+            {
+              "sequence": 10,
+              "name": "取得農業容許",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "13",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "併聯審查意見書",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "74",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "40",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "配電/輸電依電壓送不同單位"
+            },
+            {
+              "sequence": 3,
+              "name": "台電審查",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "現勘",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": "若有必要台電才會安排"
+            },
+            {
+              "sequence": 7,
+              "name": "取得併聯審查意見書",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "電業籌設許可",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯審查意見書"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "190",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "地方政府同意函審查",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "聯合審查會議",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "3",
+              "notes": "目前僅彰化縣政府有此程序"
+            },
+            {
+              "sequence": 7,
+              "name": "取得地方政府同意函",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "報請地方電業主管機關核轉予能源署",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 9,
+              "name": "核轉電業籌設予經濟部能源署",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "14",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "電業籌設審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 11,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 12,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 13,
+              "name": "現勘",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "必要時能源署才會要求"
+            },
+            {
+              "sequence": 14,
+              "name": "取得電業籌設",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "外線",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "pm_discretion",
+          "depends_on": [],
+          "condition_description": "PM判斷申請時機",
+          "payment_trigger": false,
+          "standard_days": "236",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "路證申請文件準備",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "路證審查",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "補正 #1",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #2",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "取得路證",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "電纜購置",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "電纜交貨",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "50",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "外線工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "80",
+              "cc": "15",
+              "notes": "安裝電纜固定架、管溝電纜工程等"
+            },
+            {
+              "sequence": 9,
+              "name": "加壓測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "5",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "6",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "同意備案",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "電業籌設許可"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "30",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "45",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "≥2000kW→能源署"
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審查",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "取得同意備案",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "光電施工許可",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "同意備案",
+            "建照"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "125",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "40",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "現勘",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "必要時才要求"
+            },
+            {
+              "sequence": 7,
+              "name": "取得光電施工許可",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "光電設備施工",
+          "group": "電業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電施工許可",
+            "使照"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "120",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "配電設施訂購",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "配電設施進場",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "15",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "配電設施工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "35",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "機電測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "併聯試運轉函",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電設備施工",
+            "綠能容許"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "50",
+          "stages": []
+        },
+        {
+          "name": "電業執照",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯試運轉函"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "180",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "地方政府審查",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "地方政府核轉予經濟部能源署",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "電業執照審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "竣工查驗",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "13",
+              "notes": "相關機關及委員進行現場查驗"
+            },
+            {
+              "sequence": 9,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 11,
+              "name": "取得電業執照",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            }
+          ]
+        }
+      ]
+    },
+    "室內型漁電共生|三型設備|配電": {
       "type": "室內型漁電共生",
       "elec_type": "三型設備",
-      "label": "室內型漁電共生（三型設備）",
+      "grid_type": "配電",
+      "label": "室內型漁電共生（三型設備・配電）",
       "milestones": [
         {
           "name": "農業容許",
@@ -1995,19 +4308,181 @@
         }
       ]
     },
-    "一般屋頂型(既有)|三型設備": {
-      "type": "一般屋頂型(既有)",
-      "elec_type": "三型設備",
-      "label": "一般屋頂型(既有)（三型設備）",
+    "室外型漁電共生|一型電業|輸電": {
+      "type": "室外型漁電共生",
+      "elec_type": "一型電業",
+      "grid_type": "輸電",
+      "label": "室外型漁電共生（一型電業・輸電）",
       "milestones": [
+        {
+          "name": "農業+綠能容許",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "soft_concurrent",
+          "depends_on": [],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "210",
+          "stages": []
+        },
+        {
+          "name": "出流管制",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "soft_concurrent",
+          "depends_on": [],
+          "condition_description": "非所有案場皆須取得出流管制，視每案農許之基樁面積是否超過1公頃，實際仍須向地方主管確認",
+          "payment_trigger": true,
+          "standard_days": "400",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "50",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "農業局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "函轉水利局",
+              "authority": "水利局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "現勘",
+              "authority": "水利局/水利局委辦機關",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #1",
+              "authority": "水利局/水利局委辦機關",
+              "type": "skippable",
+              "estimated_days": "20",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "補正 #2",
+              "authority": "水利局/水利局委辦機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "水利局委辦機關書面同意函轉水利局",
+              "authority": "水利局委辦機關",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "取得許可",
+              "authority": "水利局",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "室外養殖設施施工",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "農業+綠能容許"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "150",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "開工前整地+假設工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "申請開工許可",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "基礎工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "支撐架設工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "養殖池工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "竣工查驗",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
         {
           "name": "併聯審查意見書",
           "group": "電業",
           "application_scope": "whole_project",
           "dependency_type": "hard",
-          "depends_on": [
-            "建照"
-          ],
+          "depends_on": [],
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "74",
@@ -2078,7 +4553,7 @@
           ]
         },
         {
-          "name": "同意備案",
+          "name": "電業籌設許可",
           "group": "電業",
           "application_scope": "whole_project",
           "dependency_type": "hard",
@@ -2087,7 +4562,7 @@
           ],
           "condition_description": null,
           "payment_trigger": true,
-          "standard_days": "30",
+          "standard_days": "190",
           "stages": [
             {
               "sequence": 1,
@@ -2095,25 +4570,25 @@
               "authority": "（內部）",
               "type": "fixed",
               "estimated_days": "30",
-              "cc": "45",
+              "cc": "20",
               "notes": ""
             },
             {
               "sequence": 2,
               "name": "送件",
-              "authority": "地方政府/經濟部能源署（依容量）",
+              "authority": "地方電業主管機關",
               "type": "fixed",
               "estimated_days": "1",
-              "cc": "5",
-              "notes": "≥2000kW→能源署"
+              "cc": "3",
+              "notes": ""
             },
             {
               "sequence": 3,
-              "name": "主管機關審查",
-              "authority": "地方政府/經濟部能源署（依容量）",
+              "name": "地方政府同意函審查",
+              "authority": "地方電業主管機關",
               "type": "fixed",
-              "estimated_days": "30",
-              "cc": "25",
+              "estimated_days": "60",
+              "cc": "15",
               "notes": ""
             },
             {
@@ -2121,8 +4596,8 @@
               "name": "補正 #1",
               "authority": "地方電業主管機關",
               "type": "skippable",
-              "estimated_days": "14",
-              "cc": "8",
+              "estimated_days": "30",
+              "cc": "5",
               "notes": ""
             },
             {
@@ -2130,34 +4605,92 @@
               "name": "補正 #2",
               "authority": "地方電業主管機關",
               "type": "skippable",
-              "estimated_days": "14",
-              "cc": "7",
+              "estimated_days": "30",
+              "cc": "4",
               "notes": ""
             },
             {
               "sequence": 6,
-              "name": "取得同意備案",
+              "name": "聯合審查會議",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "3",
+              "notes": "目前僅彰化縣政府有此程序"
+            },
+            {
+              "sequence": 7,
+              "name": "取得地方政府同意函",
               "authority": "—",
               "type": "fixed",
               "estimated_days": "1",
-              "cc": "10",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "報請地方電業主管機關核轉予能源署",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 9,
+              "name": "核轉電業籌設予經濟部能源署",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "14",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "電業籌設審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 11,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 12,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 13,
+              "name": "現勘",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "必要時能源署才會要求"
+            },
+            {
+              "sequence": 14,
+              "name": "取得電業籌設",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
               "notes": ""
             }
           ]
-        },
-        {
-          "name": "免雜備查",
-          "group": "電業",
-          "application_scope": "whole_project",
-          "dependency_type": "hard",
-          "depends_on": [
-            "同意備案",
-            "使照"
-          ],
-          "condition_description": null,
-          "payment_trigger": false,
-          "standard_days": null,
-          "stages": []
         },
         {
           "name": "外線",
@@ -2167,7 +4700,7 @@
           "depends_on": [],
           "condition_description": "PM判斷申請時機",
           "payment_trigger": false,
-          "standard_days": "60",
+          "standard_days": "236",
           "stages": [
             {
               "sequence": 1,
@@ -2262,13 +4795,172 @@
           ]
         },
         {
-          "name": "光電設備施工",
+          "name": "同意備案",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "電業籌設許可"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "30",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "45",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "≥2000kW→能源署"
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審查",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "取得同意備案",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "光電施工許可",
           "group": "電業",
           "application_scope": "whole_project",
           "dependency_type": "hard",
           "depends_on": [
             "同意備案",
-            "使照"
+            "綠能容許",
+            "土地容許使用文件"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "125",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "40",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "現勘",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "必要時才要求"
+            },
+            {
+              "sequence": 7,
+              "name": "取得光電施工許可",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "免雜備查",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "同意備案"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "30",
+          "stages": []
+        },
+        {
+          "name": "光電設備施工",
+          "group": "電業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電施工許可"
           ],
           "condition_description": null,
           "payment_trigger": false,
@@ -2331,7 +5023,7 @@
           ],
           "condition_description": null,
           "payment_trigger": false,
-          "standard_days": null,
+          "standard_days": "30",
           "stages": []
         },
         {
@@ -2462,10 +5154,541 @@
         }
       ]
     },
-    "室內型農電共生|三型設備": {
+    "室外型漁電共生|三型設備|配電": {
+      "type": "室外型漁電共生",
+      "elec_type": "三型設備",
+      "grid_type": "配電",
+      "label": "室外型漁電共生（三型設備・配電）",
+      "milestones": [
+        {
+          "name": "農業+綠能容許",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "soft_concurrent",
+          "depends_on": [],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "210",
+          "stages": []
+        },
+        {
+          "name": "出流管制",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "soft_concurrent",
+          "depends_on": [],
+          "condition_description": "非所有案場皆須取得出流管制，視每案農許之基樁面積是否超過1公頃，實際仍須向地方主管確認",
+          "payment_trigger": true,
+          "standard_days": "400",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "50",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "農業局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "函轉水利局",
+              "authority": "水利局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "現勘",
+              "authority": "水利局/水利局委辦機關",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #1",
+              "authority": "水利局/水利局委辦機關",
+              "type": "skippable",
+              "estimated_days": "20",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "補正 #2",
+              "authority": "水利局/水利局委辦機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "水利局委辦機關書面同意函轉水利局",
+              "authority": "水利局委辦機關",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "取得許可",
+              "authority": "水利局",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "室外養殖設施施工",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "農業+綠能容許",
+            "出流管制"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "150",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "開工前整地+假設工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "申請開工許可",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "基礎工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "支撐架設工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "養殖池工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "竣工查驗",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "併聯審查意見書",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "74",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "40",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "配電/輸電依電壓送不同單位"
+            },
+            {
+              "sequence": 3,
+              "name": "台電審查",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "現勘",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": "若有必要台電才會安排"
+            },
+            {
+              "sequence": 7,
+              "name": "取得併聯審查意見書",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "同意備案",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯審查意見書",
+            "農業+綠能容許"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "30",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "45",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "≥2000kW→能源署"
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審查",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "取得同意備案",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "免雜備查",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "同意備案"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "30",
+          "stages": []
+        },
+        {
+          "name": "外線",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "pm_discretion",
+          "depends_on": [],
+          "condition_description": "PM判斷申請時機",
+          "payment_trigger": false,
+          "standard_days": "60",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "路證申請文件準備",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "路證審查",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "補正 #1",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #2",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "取得路證",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "電纜購置",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "電纜交貨",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "50",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "外線工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "80",
+              "cc": "15",
+              "notes": "安裝電纜固定架、管溝電纜工程等"
+            },
+            {
+              "sequence": 9,
+              "name": "加壓測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "5",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "6",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "光電設備施工",
+          "group": "電業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "免雜備查",
+            "同意備案"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "120",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "配電設施訂購",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "配電設施進場",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "15",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "配電設施工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "35",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "機電測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "免雜竣工",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電設備施工"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "30",
+          "stages": []
+        },
+        {
+          "name": "併聯試運轉函",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電設備施工"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "50",
+          "stages": []
+        },
+        {
+          "name": "設備登記",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯試運轉函"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "180",
+          "stages": []
+        }
+      ]
+    },
+    "室內型農電共生|三型設備|配電": {
       "type": "室內型農電共生",
       "elec_type": "三型設備",
-      "label": "室內型農電共生（三型設備）",
+      "grid_type": "配電",
+      "label": "室內型農電共生（三型設備・配電）",
       "milestones": [
         {
           "name": "農業容許",
@@ -3289,6 +6512,3096 @@
           "payment_trigger": true,
           "standard_days": "180",
           "stages": []
+        }
+      ]
+    },
+    "畜電共生|三型設備|配電": {
+      "type": "畜電共生",
+      "elec_type": "三型設備",
+      "grid_type": "配電",
+      "label": "畜電共生（三型設備・配電）",
+      "milestones": [
+        {
+          "name": "農業容許",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "soft_concurrent",
+          "depends_on": [
+            "出流管制"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "435",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "55",
+              "notes": "地主資料、切結書、養殖計劃書等"
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "補正 #1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #2",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "2",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "函轉地方政府",
+              "authority": "地方農業局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "補正 #1",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "90",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "補正 #2",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "90",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "現勘",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "視地方政府需求"
+            },
+            {
+              "sequence": 9,
+              "name": "取得農業容許",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "13",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "出流管制",
+          "group": "農業",
+          "application_scope": "whole_project",
+          "dependency_type": "soft_concurrent",
+          "depends_on": [
+            "農業容許"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "418",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "50",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "農業局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "函轉水利局",
+              "authority": "水利局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "現勘",
+              "authority": "水利局/水利局委辦機關",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #1",
+              "authority": "水利局/水利局委辦機關",
+              "type": "skippable",
+              "estimated_days": "20",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "補正 #2",
+              "authority": "水利局/水利局委辦機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "水利局委辦機關書面同意函轉水利局",
+              "authority": "水利局委辦機關",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "取得許可",
+              "authority": "水利局",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "建照",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "農業容許"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "120",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "55",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審核",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "90",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "取得建造執照",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "20",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "畜牧設施施工",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "建照"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "375",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "開工前整地+假設工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "申請開工許可",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "基礎工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "畜牧設施工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "環控系統工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "竣工查驗",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "使照",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "畜牧設施施工"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "90",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "55",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件申請",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審核",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "90",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "取得使照",
+              "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "20",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "綠能容許",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "dependency_type": "condition",
+          "depends_on": [
+            "使照"
+          ],
+          "condition_description": "使照取得後需完成畜牧實績達主管機關標準",
+          "payment_trigger": true,
+          "standard_days": "210",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "放養",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "180",
+              "cc": "50",
+              "notes": "使照取得後計時"
+            },
+            {
+              "sequence": 2,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "30",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "送件",
+              "authority": "農業局",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "2",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "函轉地方政府",
+              "authority": "地方農業局",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "補正 #1",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "90",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "補正 #2",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "90",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 9,
+              "name": "現勘",
+              "authority": "地方農業局",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "視地方政府需求"
+            },
+            {
+              "sequence": 10,
+              "name": "取得農業容許",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "13",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "併聯審查意見書",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "建照（任一地塊）"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "74",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "40",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "配電/輸電依電壓送不同單位"
+            },
+            {
+              "sequence": 3,
+              "name": "台電審查",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "現勘",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": "若有必要台電才會安排"
+            },
+            {
+              "sequence": 7,
+              "name": "取得併聯審查意見書",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "同意備案",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯審查意見書"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "30",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "45",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "≥2000kW→能源署"
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審查",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "取得同意備案",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "免雜備查",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "同意備案",
+            "使照"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": null,
+          "stages": []
+        },
+        {
+          "name": "外線",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "pm_discretion",
+          "depends_on": [],
+          "condition_description": "PM判斷申請時機",
+          "payment_trigger": false,
+          "standard_days": "60",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "路證申請文件準備",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "路證審查",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "補正 #1",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #2",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "取得路證",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "電纜購置",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "電纜交貨",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "50",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "外線工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "80",
+              "cc": "15",
+              "notes": "安裝電纜固定架、管溝電纜工程等"
+            },
+            {
+              "sequence": 9,
+              "name": "加壓測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "5",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "6",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "光電設備施工",
+          "group": "電業",
+          "application_scope": "per_parcel",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電施工許可",
+            "使照"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "120",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "配電設施訂購",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "配電設施進場",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "15",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "配電設施工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "35",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "機電測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "免雜竣工",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電設備施工"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": null,
+          "stages": []
+        },
+        {
+          "name": "併聯試運轉函",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電設備施工",
+            "綠能容許"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "50",
+          "stages": []
+        },
+        {
+          "name": "設備登記",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯試運轉函"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "180",
+          "stages": []
+        }
+      ]
+    },
+    "一般屋頂型(新建)|一型電業|輸電": {
+      "type": "一般屋頂型(新建)",
+      "elec_type": "一型電業",
+      "grid_type": "輸電",
+      "label": "一般屋頂型(新建)（一型電業・輸電）",
+      "milestones": [
+        {
+          "name": "併聯審查意見書",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "建照"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "74",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "40",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "配電/輸電依電壓送不同單位"
+            },
+            {
+              "sequence": 3,
+              "name": "台電審查",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "現勘",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": "若有必要台電才會安排"
+            },
+            {
+              "sequence": 7,
+              "name": "取得併聯審查意見書",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "電業籌設許可",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯審查意見書",
+            "使照"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "190",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "地方政府同意函審查",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "聯合審查會議",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "3",
+              "notes": "目前僅彰化縣政府有此程序"
+            },
+            {
+              "sequence": 7,
+              "name": "取得地方政府同意函",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "報請地方電業主管機關核轉予能源署",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 9,
+              "name": "核轉電業籌設予經濟部能源署",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "14",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "電業籌設審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 11,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 12,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 13,
+              "name": "現勘",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "必要時能源署才會要求"
+            },
+            {
+              "sequence": 14,
+              "name": "取得電業籌設",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "外線",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "pm_discretion",
+          "depends_on": [],
+          "condition_description": "PM判斷申請時機",
+          "payment_trigger": false,
+          "standard_days": "236",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "路證申請文件準備",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "路證審查",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "補正 #1",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #2",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "取得路證",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "電纜購置",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "電纜交貨",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "50",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "外線工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "80",
+              "cc": "15",
+              "notes": "安裝電纜固定架、管溝電纜工程等"
+            },
+            {
+              "sequence": 9,
+              "name": "加壓測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "5",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "6",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "同意備案",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "電業籌設許可"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "30",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "45",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "≥2000kW→能源署"
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審查",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "取得同意備案",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "光電施工許可",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "同意備案"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "125",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "40",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "現勘",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "必要時才要求"
+            },
+            {
+              "sequence": 7,
+              "name": "取得光電施工許可",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "光電設備施工",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電施工許可"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "120",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "配電設施訂購",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "配電設施進場",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "15",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "配電設施工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "35",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "機電測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "併聯試運轉函",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電設備施工"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "50",
+          "stages": []
+        },
+        {
+          "name": "電業執照",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯試運轉函"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "180",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "地方政府審查",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "地方政府核轉予經濟部能源署",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "電業執照審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "竣工查驗",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "13",
+              "notes": "相關機關及委員進行現場查驗"
+            },
+            {
+              "sequence": 9,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 11,
+              "name": "取得電業執照",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            }
+          ]
+        }
+      ]
+    },
+    "一般屋頂型(新建)|三型設備|配電": {
+      "type": "一般屋頂型(新建)",
+      "elec_type": "三型設備",
+      "grid_type": "配電",
+      "label": "一般屋頂型(新建)（三型設備・配電）",
+      "milestones": [
+        {
+          "name": "併聯審查意見書",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "建照"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "74",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "40",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "配電/輸電依電壓送不同單位"
+            },
+            {
+              "sequence": 3,
+              "name": "台電審查",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "現勘",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": "若有必要台電才會安排"
+            },
+            {
+              "sequence": 7,
+              "name": "取得併聯審查意見書",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "同意備案",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯審查意見書"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "30",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "45",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "≥2000kW→能源署"
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審查",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "取得同意備案",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "外線",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "pm_discretion",
+          "depends_on": [],
+          "condition_description": "PM判斷申請時機",
+          "payment_trigger": false,
+          "standard_days": "60",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "路證申請文件準備",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "路證審查",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "補正 #1",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #2",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "取得路證",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "電纜購置",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "電纜交貨",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "50",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "外線工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "80",
+              "cc": "15",
+              "notes": "安裝電纜固定架、管溝電纜工程等"
+            },
+            {
+              "sequence": 9,
+              "name": "加壓測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "5",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "6",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "光電設備施工",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "同意備案"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "120",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "配電設施訂購",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "配電設施進場",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "15",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "配電設施工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "35",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "機電測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "併聯試運轉函",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電設備施工"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "50",
+          "stages": []
+        },
+        {
+          "name": "電業執照",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯試運轉函"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "180",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "地方政府審查",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "地方政府核轉予經濟部能源署",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "電業執照審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "竣工查驗",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "13",
+              "notes": "相關機關及委員進行現場查驗"
+            },
+            {
+              "sequence": 9,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 11,
+              "name": "取得電業執照",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            }
+          ]
+        }
+      ]
+    },
+    "一般屋頂型(既有)|三型設備|配電": {
+      "type": "一般屋頂型(既有)",
+      "elec_type": "三型設備",
+      "grid_type": "配電",
+      "label": "一般屋頂型(既有)（三型設備・配電）",
+      "milestones": [
+        {
+          "name": "併聯審查意見書",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "建照"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "74",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "40",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "配電/輸電依電壓送不同單位"
+            },
+            {
+              "sequence": 3,
+              "name": "台電審查",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "現勘",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": "若有必要台電才會安排"
+            },
+            {
+              "sequence": 7,
+              "name": "取得併聯審查意見書",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "同意備案",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯審查意見書"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "30",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "45",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "≥2000kW→能源署"
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審查",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "取得同意備案",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "免雜備查",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "同意備案",
+            "使照"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": null,
+          "stages": []
+        },
+        {
+          "name": "外線",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "pm_discretion",
+          "depends_on": [],
+          "condition_description": "PM判斷申請時機",
+          "payment_trigger": false,
+          "standard_days": "60",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "路證申請文件準備",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "路證審查",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "補正 #1",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #2",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "取得路證",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "電纜購置",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "電纜交貨",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "50",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "外線工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "80",
+              "cc": "15",
+              "notes": "安裝電纜固定架、管溝電纜工程等"
+            },
+            {
+              "sequence": 9,
+              "name": "加壓測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "5",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "6",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "光電設備施工",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "同意備案",
+            "使照"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "120",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "配電設施訂購",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "配電設施進場",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "15",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "配電設施工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "35",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "機電測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "免雜竣工",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電設備施工"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": null,
+          "stages": []
+        },
+        {
+          "name": "併聯試運轉函",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電設備施工"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "50",
+          "stages": []
+        },
+        {
+          "name": "電業執照",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯試運轉函"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "180",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "地方政府審查",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "地方政府核轉予經濟部能源署",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "電業執照審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "竣工查驗",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "13",
+              "notes": "相關機關及委員進行現場查驗"
+            },
+            {
+              "sequence": 9,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 11,
+              "name": "取得電業執照",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            }
+          ]
+        }
+      ]
+    },
+    "地面型|一型電業|輸電": {
+      "type": "地面型",
+      "elec_type": "一型電業",
+      "grid_type": "輸電",
+      "label": "地面型（一型電業・輸電）",
+      "milestones": [
+        {
+          "name": "土地容許使用文件",
+          "group": "土地",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "180",
+          "stages": []
+        },
+        {
+          "name": "併聯審查意見書",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "74",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "40",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "配電/輸電依電壓送不同單位"
+            },
+            {
+              "sequence": 3,
+              "name": "台電審查",
+              "authority": "台電",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "現勘",
+              "authority": "台電",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": "若有必要台電才會安排"
+            },
+            {
+              "sequence": 7,
+              "name": "取得併聯審查意見書",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "電業籌設許可",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯審查意見書"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "190",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "地方政府同意函審查",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "聯合審查會議",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "3",
+              "notes": "目前僅彰化縣政府有此程序"
+            },
+            {
+              "sequence": 7,
+              "name": "取得地方政府同意函",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "報請地方電業主管機關核轉予能源署",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 9,
+              "name": "核轉電業籌設予經濟部能源署",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "14",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "電業籌設審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 11,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 12,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 13,
+              "name": "現勘",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "必要時能源署才會要求"
+            },
+            {
+              "sequence": 14,
+              "name": "取得電業籌設",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "外線",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "pm_discretion",
+          "depends_on": [],
+          "condition_description": "PM判斷申請時機",
+          "payment_trigger": false,
+          "standard_days": "236",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "路證申請文件準備",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "路證審查",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "補正 #1",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #2",
+              "authority": "公所/地方政府",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "取得路證",
+              "authority": "公所/地方政府",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "電纜購置",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "電纜交貨",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "50",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "外線工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "80",
+              "cc": "15",
+              "notes": "安裝電纜固定架、管溝電纜工程等"
+            },
+            {
+              "sequence": 9,
+              "name": "加壓測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "5",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "6",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "同意備案",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "電業籌設許可"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "30",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "45",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": "≥2000kW→能源署"
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審查",
+              "authority": "地方政府/經濟部能源署（依容量）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "取得同意備案",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "光電施工許可",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "同意備案"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "125",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "40",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "主管機關審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "8",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "7",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "現勘",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": "必要時才要求"
+            },
+            {
+              "sequence": 7,
+              "name": "取得光電施工許可",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "光電設備施工",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電施工許可"
+          ],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": "120",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "配電設施訂購",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "25",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "配電設施進場",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "15",
+              "cc": "10",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "配電設施工程",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "100",
+              "cc": "35",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "機電測試",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "45",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "驗收",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "10",
+              "notes": ""
+            }
+          ]
+        },
+        {
+          "name": "併聯試運轉函",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電設備施工"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "50",
+          "stages": []
+        },
+        {
+          "name": "電業執照",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "dependency_type": "hard",
+          "depends_on": [
+            "併連試運轉函"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "180",
+          "stages": [
+            {
+              "sequence": 1,
+              "name": "申請文件準備",
+              "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 2,
+              "name": "送件",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "3",
+              "notes": ""
+            },
+            {
+              "sequence": 3,
+              "name": "地方政府審查",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "notes": ""
+            },
+            {
+              "sequence": 4,
+              "name": "補正 #1",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "4",
+              "notes": ""
+            },
+            {
+              "sequence": 6,
+              "name": "地方政府核轉予經濟部能源署",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "14",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 7,
+              "name": "電業執照審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "notes": ""
+            },
+            {
+              "sequence": 8,
+              "name": "竣工查驗",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "13",
+              "notes": "相關機關及委員進行現場查驗"
+            },
+            {
+              "sequence": 9,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 10,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "notes": ""
+            },
+            {
+              "sequence": 11,
+              "name": "取得電業執照",
+              "authority": "—",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
+              "notes": ""
+            }
+          ]
         }
       ]
     }
