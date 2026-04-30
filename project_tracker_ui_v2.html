@@ -635,8 +635,18 @@
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
         <div class="form-group">
+          <label>預測起始日</label>
+          <input id="ms-forecast-start" type="date" class="form-control">
+        </div>
+        <div class="form-group">
           <label>預測完成日</label>
           <input id="ms-forecast" type="date" class="form-control">
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="form-group">
+          <label>實際起始日</label>
+          <input id="ms-actual-start" type="date" class="form-control">
         </div>
         <div class="form-group">
           <label>實際完成日</label>
@@ -29919,8 +29929,10 @@ function buildSnapshot(data) {
         milestone_id: ms.milestone_id,
         parcel_id:    ms.parcel_id || null,
         status:       ms.status,
-        forecast_end: ms.forecast_end || null,
-        actual_end:   ms.actual_end  || null,
+        forecast_start: ms.forecast_start || null,
+        forecast_end:   ms.forecast_end   || null,
+        actual_start:   ms.actual_start   || null,
+        actual_end:     ms.actual_end     || null,
         stages: (ms.stages || []).map(st => ({
           stage_id:   st.stage_id,
           status:     st.status,
@@ -30227,7 +30239,9 @@ async function confirmAddProject() {
           standard_days: msTmpl.standard_days || null,
           baseline_start: null,
           baseline_end: null,
+          forecast_start: null,
           forecast_end: null,
+          actual_start: null,
           actual_end: null,
           status: 'pending',
           notes: null,
@@ -30580,23 +30594,25 @@ function downloadScheduleTemplate() {
   if (typeof XLSX === 'undefined') { alert('試算表功能尚未載入，請稍後再試。'); return; }
   const proj = currentProject();
   const statusLabel = { pending:'未開始', in_progress:'進行中', done:'已完成', blocked:'受阻', completed:'已完成' };
-  const headers = ['milestone_id','里程碑名稱','地塊','群組','狀態','基準開始日','基準完成日','預估完成日','實際完成日','備註'];
+  const headers = ['milestone_id','里程碑名稱','地塊','群組','狀態','基準開始日','基準完成日','預測起始日','預測完成日','實際起始日','實際完成日','備註'];
   const rows = proj.milestones.map(ms => [
     ms.milestone_id,
     ms.name,
     ms.parcel_name || '（整案）',
     ms.group || '',
     statusLabel[ms.status] || '未開始',
-    ms.baseline_start || '',
-    ms.baseline_end   || '',
-    ms.forecast_end   || '',
-    ms.actual_end     || '',
-    ms.notes          || '',
+    ms.baseline_start  || '',
+    ms.baseline_end    || '',
+    ms.forecast_start  || '',
+    ms.forecast_end    || '',
+    ms.actual_start    || '',
+    ms.actual_end      || '',
+    ms.notes           || '',
   ]);
   const ws = XLSX.utils.aoa_to_sheet([headers, ...rows]);
   ws['!cols'] = [
     {wch:22},{wch:26},{wch:14},{wch:6},{wch:8},
-    {wch:14},{wch:14},{wch:14},{wch:14},{wch:30},
+    {wch:14},{wch:14},{wch:14},{wch:14},{wch:14},{wch:14},{wch:30},
   ];
   // 鎖定第一欄（milestone_id）提示用色
   const range = XLSX.utils.decode_range(ws['!ref']);
@@ -30628,10 +30644,12 @@ async function uploadScheduleTemplate(input) {
       const ms = proj.milestones.find(m => m.milestone_id === msId);
       if (!ms) continue;
       if (row['狀態'])    ms.status        = statusMap[row['狀態']] || ms.status;
-      ms.baseline_start = _parseExcelDate(row['基準開始日']) ?? ms.baseline_start;
-      ms.baseline_end   = _parseExcelDate(row['基準完成日']) ?? ms.baseline_end;
-      ms.forecast_end   = _parseExcelDate(row['預估完成日']) ?? ms.forecast_end;
-      ms.actual_end     = _parseExcelDate(row['實際完成日']) ?? ms.actual_end;
+      ms.baseline_start  = _parseExcelDate(row['基準開始日']) ?? ms.baseline_start;
+      ms.baseline_end    = _parseExcelDate(row['基準完成日']) ?? ms.baseline_end;
+      ms.forecast_start  = _parseExcelDate(row['預測起始日']) ?? ms.forecast_start;
+      ms.forecast_end    = _parseExcelDate(row['預測完成日']) ?? ms.forecast_end;
+      ms.actual_start    = _parseExcelDate(row['實際起始日']) ?? ms.actual_start;
+      ms.actual_end      = _parseExcelDate(row['實際完成日']) ?? ms.actual_end;
       if (row['備註'] !== undefined) ms.notes = row['備註'] || null;
       ms.updated_at = now;
       updated++;
@@ -30975,19 +30993,21 @@ function renderTab1() {
   }
 
   function barRow(ms) {
-    const bl_s = ms.baseline_start ? pct(dayOffset(ms.baseline_start)) : null;
-    const bl_e = ms.baseline_end   ? pct(dayOffset(ms.baseline_end))   : null;
-    const fc_e = ms.forecast_end   ? pct(dayOffset(ms.forecast_end))   : null;
+    const bl_s  = ms.baseline_start  ? pct(dayOffset(ms.baseline_start))  : null;
+    const bl_e  = ms.baseline_end    ? pct(dayOffset(ms.baseline_end))    : null;
+    const fc_s  = ms.forecast_start  ? pct(dayOffset(ms.forecast_start))  : null;
+    const fc_e  = ms.forecast_end    ? pct(dayOffset(ms.forecast_end))    : null;
     const today_s = pct(todayOffset);
+    // Forecast bar 起點：優先用 forecast_start，其次 fallback 到 baseline_start
+    const fc_bar_s = fc_s ?? bl_s;
     let bars = '';
     if (bl_s !== null && bl_e !== null) {
       bars += `<div class="gantt-bar baseline" style="left:${bl_s}%;width:${bl_e-bl_s}%"></div>`;
     }
-    if (bl_s !== null && fc_e !== null) {
-      bars += `<div class="gantt-bar forecast" style="left:${bl_s}%;width:${fc_e-bl_s}%"></div>`;
+    if (fc_bar_s !== null && fc_e !== null) {
+      bars += `<div class="gantt-bar forecast" style="left:${fc_bar_s}%;width:${fc_e-fc_bar_s}%"></div>`;
     }
     if (!bars) {
-      // No dates - show "no data" indicator at today
       bars = `<div style="position:absolute;left:${today_s}%;font-size:10px;color:var(--text3);top:10px;white-space:nowrap">—</div>`;
     }
     return `<div class="gantt-bar-row">${bars}</div>`;
@@ -31577,10 +31597,12 @@ function openMsModal(projId, msId) {
     document.getElementById('ms-name').value     = ms.name || '';
     document.getElementById('ms-group').value    = ms.group || '農業';
     document.getElementById('ms-status').value   = ms.status || 'pending';
-    document.getElementById('ms-bl-start').value = ms.baseline_start || '';
-    document.getElementById('ms-bl-end').value   = ms.baseline_end || '';
-    document.getElementById('ms-forecast').value = ms.forecast_end || '';
-    document.getElementById('ms-actual').value   = ms.actual_end || '';
+    document.getElementById('ms-bl-start').value      = ms.baseline_start  || '';
+    document.getElementById('ms-bl-end').value        = ms.baseline_end    || '';
+    document.getElementById('ms-forecast-start').value= ms.forecast_start  || '';
+    document.getElementById('ms-forecast').value      = ms.forecast_end    || '';
+    document.getElementById('ms-actual-start').value  = ms.actual_start    || '';
+    document.getElementById('ms-actual').value        = ms.actual_end      || '';
     document.getElementById('ms-notes').value    = ms.notes || '';
     _stageDraft = (ms.stages || []).map(s => ({...s}));
   } else {
@@ -31627,10 +31649,12 @@ function submitMilestone() {
     ms.name           = name;
     ms.group          = document.getElementById('ms-group').value;
     ms.status         = document.getElementById('ms-status').value;
-    ms.baseline_start = document.getElementById('ms-bl-start').value || null;
-    ms.baseline_end   = document.getElementById('ms-bl-end').value   || null;
-    ms.forecast_end   = document.getElementById('ms-forecast').value  || null;
-    ms.actual_end     = document.getElementById('ms-actual').value    || null;
+    ms.baseline_start  = document.getElementById('ms-bl-start').value       || null;
+    ms.baseline_end    = document.getElementById('ms-bl-end').value         || null;
+    ms.forecast_start  = document.getElementById('ms-forecast-start').value || null;
+    ms.forecast_end    = document.getElementById('ms-forecast').value       || null;
+    ms.actual_start    = document.getElementById('ms-actual-start').value   || null;
+    ms.actual_end      = document.getElementById('ms-actual').value         || null;
     ms.notes          = document.getElementById('ms-notes').value.trim() || null;
     ms.stages         = finalizeStages(msId);
     ms.updated_at     = now;
@@ -31650,10 +31674,12 @@ function submitMilestone() {
       condition_description: null,
       payment_trigger:       false,
       standard_days:         null,
-      baseline_start:        document.getElementById('ms-bl-start').value || null,
-      baseline_end:          document.getElementById('ms-bl-end').value   || null,
-      forecast_end:          document.getElementById('ms-forecast').value  || null,
-      actual_end:            document.getElementById('ms-actual').value    || null,
+      baseline_start:        document.getElementById('ms-bl-start').value       || null,
+      baseline_end:          document.getElementById('ms-bl-end').value         || null,
+      forecast_start:        document.getElementById('ms-forecast-start').value || null,
+      forecast_end:          document.getElementById('ms-forecast').value       || null,
+      actual_start:          document.getElementById('ms-actual-start').value   || null,
+      actual_end:            document.getElementById('ms-actual').value         || null,
       status:                'pending',
       notes:                 document.getElementById('ms-notes').value.trim() || null,
       updated_at:            now,
