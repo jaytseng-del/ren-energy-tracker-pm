@@ -30399,10 +30399,22 @@ function pmBadgeClass(pm) {
 }
 
 // Check if a project has any activity in the past 7 days
-// (Stage 狀態變更、Update 新增、里程碑修改等都算）
+// 檢查：任何任務的 Update、或任何 Stage 的完成日期（actual_end）
 function projHasRecentUpdate(proj) {
-  if (!proj.updated_at) return false;
-  return (Date.now() - new Date(proj.updated_at).getTime()) <= 7 * 86400000;
+  const now = Date.now();
+  const week = 7 * 86400000;
+  for (const ms of proj.milestones) {
+    for (const st of ms.stages) {
+      // Stage 本週內標為完成
+      if (st.actual_end && (now - new Date(st.actual_end).getTime()) <= week) return true;
+      // 任何任務（不限類型）本週內有新增 Update
+      for (const tk of (st.tasks || [])) {
+        const lastU = tk.updates?.[tk.updates.length - 1];
+        if (lastU && (now - new Date(lastU.created_at).getTime()) <= week) return true;
+      }
+    }
+  }
+  return false;
 }
 
 function buildProjectSelector() {
