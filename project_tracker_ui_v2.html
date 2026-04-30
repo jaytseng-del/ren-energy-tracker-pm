@@ -29991,7 +29991,8 @@ let STATE = {
   expandedGanttParcels: new Set(),
   modalContext: null,  // { projectId, milestoneId, stageId, taskId }
   pmFilter: null,      // null = show all, string = filter by PM name
-  msStatusFilter: 'all', // 'all' | 'pending' | 'in_progress' | 'done'
+  msStatusFilter: 'all',  // 'all' | 'pending' | 'in_progress' | 'done'
+  taskStatusFilter: 'all', // 'all' | 'pending' | 'in_progress' | 'done' | 'cancelled'
 };
 
 // ── Gantt time range ─────────────────────────────────────────────────────────
@@ -30731,7 +30732,13 @@ function renderTab0() {
     const isOpen = STATE.expandedMs.has(ms.milestone_id);
     const st = statusMap[ms.status] || 'pending';
     const hasStages = ms.stages && ms.stages.length > 0;
-    const allTasks = ms.stages.flatMap(s => (s.tasks || []).map(t => ({...t, stageName: s.name})));
+    const allTasksRaw = ms.stages.flatMap(s => (s.tasks || []).map(t => ({...t, stageName: s.name, _stageId: s.stage_id})));
+    const allTasks = STATE.taskStatusFilter === 'all' ? allTasksRaw
+      : allTasksRaw.filter(t => {
+          const st = t.status || 'pending';
+          if (STATE.taskStatusFilter === 'in_progress') return st === 'in_progress' || st === 'open';
+          return st === STATE.taskStatusFilter;
+        });
     const indent = indented ? 'padding-left:36px' : '';
 
     // 子項（indented）時不渲染 header，避免和 ms-parcel-header 重複
@@ -30883,11 +30890,19 @@ function setMsFilter(key) {
   renderTab0();
 }
 
+const TASK_STATUS_CFG = {
+  pending:     { label:'未開始', color:'#9e9e9e' },
+  open:        { label:'進行中', color:'var(--primary)' },
+  in_progress: { label:'進行中', color:'var(--primary)' },
+  done:        { label:'完成',   color:'var(--success)' },
+  cancelled:   { label:'終止',   color:'#f44336' },
+};
+
 function renderTaskRow(task, ms) {
   const proj = currentProject();
   const updates = task.updates || [];
-  const lastUpdate = updates[updates.length - 1];
   const showUpdates = STATE.expandedMs.has('updates-' + task.task_id);
+  const stId = task._stageId || null;
 
   let dueClass = '';
   if (task.next_action_due) {
@@ -30895,10 +30910,26 @@ function renderTaskRow(task, ms) {
     dueClass = due < new Date() ? 'overdue' : 'task-due';
   }
 
+  const stCfg = TASK_STATUS_CFG[task.status || 'pending'] || TASK_STATUS_CFG.pending;
+  const statusOpts = [
+    {val:'pending',    label:'未開始'},
+    {val:'in_progress',label:'進行中'},
+    {val:'done',       label:'完成'},
+    {val:'cancelled',  label:'終止'},
+  ];
+  const statusSelect = `<select class="task-status-select"
+    style="font-size:11px;padding:2px 4px;border-radius:4px;border:1px solid ${stCfg.color};color:${stCfg.color};background:transparent;cursor:pointer"
+    onchange="setTaskStatus('${proj.project_id}','${ms.milestone_id}','${stId}','${task.task_id}',this.value)">
+    ${statusOpts.map(o => `<option value="${o.val}"${(task.status===o.val||(o.val==='in_progress'&&task.status==='open'))?'selected':''}>${o.label}</option>`).join('')}
+  </select>`;
+
   return `
-  <div class="task-row">
+  <div class="task-row" style="${task.status==='done'?'opacity:.6':''}${task.status==='cancelled'?'opacity:.4;text-decoration:line-through':''}">
     <div class="task-body">
-      <div class="task-name">${task.name}</div>
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <div class="task-name" style="flex:1">${task.name}</div>
+        ${statusSelect}
+      </div>
       <div class="task-meta">
         <span>${task.task_type === 'recurring' ? '🔁 週期性' : '☑ 一次性'}</span>
         ${task.next_action_due ? `<span class="${dueClass}">📅 ${task.next_action_due.substring(0,10)}</span>` : ''}
@@ -30919,13 +30950,54 @@ function renderTaskRow(task, ms) {
         </div>` : ''}
       ` : ''}
     </div>
-    <button class="update-btn" onclick="openUpdateModal('${proj.project_id}','${ms.milestone_id}',null,'${task.task_id}')">+ 更新</button>
+    <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end;flex-shrink:0">
+      <button class="update-btn" onclick="openUpdateModal('${proj.project_id}','${ms.milestone_id}',null,'${task.task_id}')">+ 更新</button>
+      <button class="update-btn" style="color:var(--danger);border-color:var(--danger)"
+        onclick="deleteTask('${proj.project_id}','${ms.milestone_id}','${stId}','${task.task_id}')">刪除</button>
+    </div>
   </div>`;
 }
 
 function impactLabel(v) {
   return { none:'無影響', possible_delay:'可能延誤', confirmed_delay:'確認延誤',
            possible_early:'可能提前', confirmed_early:'確認提前' }[v] || v || '';
+}
+
+function setTaskFilter(key) {
+  STATE.taskStatusFilter = key;
+  renderTab0();
+}
+
+function setTaskStatus(projId, msId, stageId, taskId, newStatus) {
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  const ms   = proj?.milestones.find(m => m.milestone_id === msId);
+  let task;
+  if (stageId) {
+    const st = ms?.stages.find(s => s.stage_id === stageId);
+    task = st?.tasks?.find(t => t.task_id === taskId);
+  }
+  if (!task) task = ms?.tasks?.find(t => t.task_id === taskId);
+  if (!task) return;
+  task.status = newStatus;
+  task.updated_at = new Date().toISOString();
+  proj.updated_at = task.updated_at;
+  renderTab0();
+  syncToGitHub();
+}
+
+function deleteTask(projId, msId, stageId, taskId) {
+  if (!confirm('確定要刪除此任務？')) return;
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  const ms   = proj?.milestones.find(m => m.milestone_id === msId);
+  if (stageId) {
+    const st = ms?.stages.find(s => s.stage_id === stageId);
+    if (st) st.tasks = (st.tasks || []).filter(t => t.task_id !== taskId);
+  } else {
+    if (ms) ms.tasks = (ms.tasks || []).filter(t => t.task_id !== taskId);
+  }
+  proj.updated_at = new Date().toISOString();
+  renderTab0();
+  syncToGitHub();
 }
 
 function toggleMs(id) {
@@ -31770,7 +31842,7 @@ function submitTask() {
     task_id: 'TSK-' + Date.now(),
     name,
     task_type: type,
-    status: 'open',
+    status: 'pending',
     next_action_due: due || null,
     next_action: null,
     notes: notes || null,
