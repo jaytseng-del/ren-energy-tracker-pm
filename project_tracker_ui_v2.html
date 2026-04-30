@@ -1,3 +1,4 @@
+<!-- APP_VERSION: 2026-04-30-v3 -->
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -287,6 +288,7 @@
     <span class="spacer"></span>
     <button id="sync-btn" onclick="syncToGitHub()">☁ 同步</button>
     <button onclick="showPatModal()" style="padding:6px 14px;border-radius:4px;border:1px solid rgba(255,255,255,.5);background:transparent;color:#fff;cursor:pointer;font-size:13px;margin-left:4px">🔑 Token 設定</button>
+    <span style="font-size:10px;opacity:.35;margin-left:8px">v3.0 · 2026-04-30</span>
   </div>
 
   <div id="main">
@@ -31577,37 +31579,6 @@ function submitTask() {
   renderAll();
 
   syncToGitHub();
-}
-
-// ── PAT Config ───────────────────────────────────────────────────────────────
-function showPatModal() {
-  const input = document.getElementById('cfg-pat');
-  const cur = getGhPat();
-  input.value = cur ? '••••••••••••••••' : '';
-  document.getElementById('pat-status').textContent = cur ? '✓ 目前已設定 Token' : '';
-  document.getElementById('pat-status').style.color = 'var(--success)';
-  document.getElementById('pat-modal').classList.remove('hidden');
-}
-function closePatModal() { document.getElementById('pat-modal').classList.add('hidden'); }
-async function savePatConfig() {
-  const pat = document.getElementById('cfg-pat').value.trim();
-  if (!pat || pat.startsWith('•')) { closePatModal(); return; }
-  const statusEl = document.getElementById('pat-status');
-  statusEl.textContent = '驗證中…'; statusEl.style.color = 'var(--text2)';
-  try {
-    const resp = await fetch(
-      `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.projFile}`,
-      { headers: { Authorization: `token ${pat}`, Accept: 'application/vnd.github.v3+json' } }
-    );
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    localStorage.setItem('gh_pat', pat);
-    statusEl.textContent = '✓ 驗證成功，Token 已儲存';
-    statusEl.style.color = 'var(--success)';
-    setTimeout(closePatModal, 1200);
-  } catch(e) {
-    statusEl.textContent = `✗ 驗證失敗：${e.message}，請確認 Token 正確且有 repo 權限`;
-    statusEl.style.color = 'var(--danger)';
-  }
 }
 
 // ── Start ─────────────────────────────────────────────────────────────────────
