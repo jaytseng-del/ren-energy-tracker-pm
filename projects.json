@@ -12506,7 +12506,7 @@
       "start_date": "2025-05-14 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-04T06:56:38.420Z",
+      "updated_at": "2026-05-04T06:56:41.822Z",
       "lots": [
         {
           "lot_number": "台中市龍井區忠和段1000地號",
@@ -12791,9 +12791,9 @@
           "baseline_end": null,
           "forecast_end": null,
           "actual_end": null,
-          "status": "pending",
+          "status": "done",
           "notes": null,
-          "updated_at": "2026-05-04T06:56:38.420Z",
+          "updated_at": "2026-05-04T06:56:41.822Z",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-003-ST01",
@@ -12803,10 +12803,10 @@
               "cc": "50",
               "estimated_days": "30",
               "authority": "",
-              "status": "pending",
+              "status": "done",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": null,
+              "actual_end": "2026-05-04",
               "notes": "",
               "tasks": []
             },
@@ -12818,10 +12818,10 @@
               "cc": "50",
               "estimated_days": "30",
               "authority": "",
-              "status": "pending",
+              "status": "done",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": null,
+              "actual_end": "2026-05-04",
               "notes": "",
               "tasks": []
             }
