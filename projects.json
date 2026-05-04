@@ -12506,7 +12506,7 @@
       "start_date": "2025-05-14 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-04T07:01:09.690Z",
+      "updated_at": "2026-05-04T07:01:24.865Z",
       "lots": [
         {
           "lot_number": "台中市龍井區忠和段1000地號",
@@ -13008,7 +13008,7 @@
           "actual_end": null,
           "status": "done",
           "notes": null,
-          "updated_at": "2026-05-04T07:01:09.690Z",
+          "updated_at": "2026-05-04T07:01:24.865Z",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-007-ST01",
@@ -13017,6 +13017,21 @@
               "type": "fixed",
               "cc": "50",
               "estimated_days": "7",
+              "authority": "",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-005-MS-007-ST02",
+              "sequence": 2,
+              "name": "併聯試運轉",
+              "type": "fixed",
+              "cc": "50",
+              "estimated_days": "14",
               "authority": "",
               "status": "pending",
               "planned_start": null,
