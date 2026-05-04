@@ -12506,7 +12506,7 @@
       "start_date": "2025-05-14 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-04T06:45:12.986Z",
+      "updated_at": "2026-05-04T06:45:15.531Z",
       "lots": [
         {
           "lot_number": "台中市龍井區忠和段1000地號",
@@ -12547,7 +12547,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-04T06:45:12.986Z",
+          "updated_at": "2026-05-04T06:45:15.531Z",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-001-ST01",
@@ -12572,10 +12572,10 @@
               "type": "fixed",
               "estimated_days": "1",
               "cc": "5",
-              "status": "pending",
+              "status": "done",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": null,
+              "actual_end": "2026-05-04",
               "notes": "配電/輸電依電壓送不同單位",
               "tasks": []
             },
@@ -12587,10 +12587,10 @@
               "type": "fixed",
               "estimated_days": "30",
               "cc": "25",
-              "status": "pending",
+              "status": "done",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": null,
+              "actual_end": "2026-05-04",
               "notes": "",
               "tasks": []
             },
