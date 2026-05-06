@@ -24346,7 +24346,7 @@
       "start_date": "2024-01-03 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-06T10:35:01.470Z",
+      "updated_at": "2026-05-06T10:35:05.219Z",
       "lots": [
         {
           "lot_number": "屏東縣高樹鄉南華段652",
@@ -25354,9 +25354,9 @@
           "baseline_end": "2025-12-22",
           "forecast_end": "2025-12-22",
           "actual_end": "2025-12-22",
-          "status": "in_progress",
+          "status": "done",
           "notes": null,
-          "updated_at": "2026-05-06T10:35:01.470Z",
+          "updated_at": "2026-05-06T10:35:05.219Z",
           "stages": [
             {
               "stage_id": "PRJ-008-MS-009-ST01",
@@ -25411,7 +25411,7 @@
               "type": "skippable",
               "estimated_days": "14",
               "cc": "10",
-              "status": "pending",
+              "status": "skipped",
               "planned_start": null,
               "planned_end": null,
               "actual_end": null,
@@ -25426,10 +25426,10 @@
               "type": "fixed",
               "estimated_days": "1",
               "cc": "10",
-              "status": "pending",
+              "status": "done",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": null,
+              "actual_end": "2026-05-06",
               "notes": "",
               "tasks": []
             }
