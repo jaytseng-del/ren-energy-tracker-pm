@@ -24346,7 +24346,7 @@
       "start_date": "2024-01-03 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-06T10:41:27.719Z",
+      "updated_at": "2026-05-06T10:42:29.832Z",
       "lots": [
         {
           "lot_number": "屏東縣高樹鄉南華段652",
@@ -25241,7 +25241,7 @@
           "actual_end": "2025-03-02",
           "status": "done",
           "notes": null,
-          "updated_at": "2026-05-06T10:32:13.301Z",
+          "updated_at": "2026-05-06T10:42:29.832Z",
           "stages": [
             {
               "stage_id": "PRJ-008-MS-008-ST01",
@@ -25265,7 +25265,7 @@
               "authority": "地方政府/經濟部能源署（依容量）",
               "type": "fixed",
               "estimated_days": "1",
-              "cc": "5",
+              "cc": "10",
               "status": "done",
               "planned_start": null,
               "planned_end": null,
@@ -25295,7 +25295,7 @@
               "authority": "地方電業主管機關",
               "type": "skippable",
               "estimated_days": "14",
-              "cc": "8",
+              "cc": "5",
               "status": "skipped",
               "planned_start": null,
               "planned_end": null,
@@ -25310,7 +25310,7 @@
               "authority": "地方電業主管機關",
               "type": "skippable",
               "estimated_days": "14",
-              "cc": "7",
+              "cc": "5",
               "status": "skipped",
               "planned_start": null,
               "planned_end": null,
