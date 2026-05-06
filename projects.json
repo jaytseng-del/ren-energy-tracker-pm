@@ -11035,7 +11035,7 @@
       "start_date": "2024-10-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-05T07:33:04.059Z",
+      "updated_at": "2026-05-04T06:44:14.187Z",
       "lots": [
         {
           "lot_number": "嘉義縣東石鄉鰲鼓段436地號",
@@ -11100,7 +11100,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-05T07:33:04.059Z",
+          "updated_at": "2026-05-04T06:35:28.096Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-001-ST01",
@@ -11190,19 +11190,7 @@
               "planned_end": null,
               "actual_end": null,
               "notes": "",
-              "tasks": [
-                {
-                  "task_id": "TSK-1777966384059",
-                  "name": "農許補件掛件",
-                  "task_type": "recurring",
-                  "status": "pending",
-                  "next_action_due": "2026-05-05",
-                  "next_action": null,
-                  "notes": null,
-                  "updates": [],
-                  "created_at": "2026-05-05T07:33:04.059Z"
-                }
-              ]
+              "tasks": []
             },
             {
               "stage_id": "PRJ-004-MS-001-ST07",
@@ -12518,7 +12506,7 @@
       "start_date": "2025-05-14 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-04T09:35:22.837Z",
+      "updated_at": "2026-05-04T07:01:27.717Z",
       "lots": [
         {
           "lot_number": "台中市龍井區忠和段1000地號",
@@ -12553,13 +12541,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "74",
-          "baseline_start": "2025-05-14",
-          "baseline_end": "2025-07-12",
-          "forecast_end": "2025-07-12",
-          "actual_end": "2025-07-12",
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_end": null,
+          "actual_end": null,
           "status": "done",
           "notes": null,
-          "updated_at": "2026-05-04T09:35:22.837Z",
+          "updated_at": "2026-05-04T06:45:19.633Z",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-001-ST01",
@@ -12667,9 +12655,7 @@
               "tasks": []
             }
           ],
-          "tasks": [],
-          "forecast_start": "2025-05-14",
-          "actual_start": "2025-05-14"
+          "tasks": []
         },
         {
           "milestone_id": "PRJ-005-MS-002",
@@ -12685,13 +12671,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "30",
-          "baseline_start": "2025-07-05",
-          "baseline_end": "2025-09-12",
-          "forecast_end": "2025-09-12",
-          "actual_end": "2025-09-12",
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_end": null,
+          "actual_end": null,
           "status": "done",
           "notes": null,
-          "updated_at": "2026-05-04T09:35:22.837Z",
+          "updated_at": "2026-05-04T06:45:58.079Z",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-002-ST01",
@@ -12784,9 +12770,7 @@
               "tasks": []
             }
           ],
-          "tasks": [],
-          "forecast_start": "2025-07-05",
-          "actual_start": "2025-07-05"
+          "tasks": []
         },
         {
           "milestone_id": "PRJ-005-MS-003",
@@ -12803,13 +12787,13 @@
           "condition_description": null,
           "payment_trigger": false,
           "standard_days": null,
-          "baseline_start": "2025-08-29",
-          "baseline_end": "2025-10-28",
-          "forecast_end": "2025-10-28",
-          "actual_end": "2025-10-28",
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_end": null,
+          "actual_end": null,
           "status": "done",
           "notes": null,
-          "updated_at": "2026-05-04T09:35:22.837Z",
+          "updated_at": "2026-05-04T06:56:41.822Z",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-003-ST01",
@@ -12843,8 +12827,8 @@
             }
           ],
           "tasks": [],
-          "forecast_start": "2025-08-29",
-          "actual_start": "2025-08-29"
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-005-MS-005",
@@ -12861,13 +12845,13 @@
           "condition_description": null,
           "payment_trigger": false,
           "standard_days": "120",
-          "baseline_start": "2025-11-07",
-          "baseline_end": "2025-12-21",
-          "forecast_end": "2025-12-21",
-          "actual_end": "2025-12-21",
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_end": null,
+          "actual_end": null,
           "status": "done",
           "notes": null,
-          "updated_at": "2026-05-04T09:35:22.837Z",
+          "updated_at": "2026-05-04T06:52:59.615Z",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-005-ST01",
@@ -12945,9 +12929,7 @@
               "tasks": []
             }
           ],
-          "tasks": [],
-          "forecast_start": "2025-11-07",
-          "actual_start": "2025-11-07"
+          "tasks": []
         },
         {
           "milestone_id": "PRJ-005-MS-006",
@@ -12963,13 +12945,13 @@
           "condition_description": null,
           "payment_trigger": false,
           "standard_days": null,
-          "baseline_start": "2025-12-07",
-          "baseline_end": "2025-12-21",
-          "forecast_end": "2025-12-21",
-          "actual_end": "2025-12-21",
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_end": null,
+          "actual_end": null,
           "status": "done",
           "notes": null,
-          "updated_at": "2026-05-04T09:35:22.837Z",
+          "updated_at": "2026-05-04T06:54:26.934Z",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-006-ST01",
@@ -13003,8 +12985,8 @@
             }
           ],
           "tasks": [],
-          "forecast_start": "2025-12-07",
-          "actual_start": "2025-12-07"
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-005-MS-007",
@@ -13020,13 +13002,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "50",
-          "baseline_start": "2025-12-07",
-          "baseline_end": "2025-12-28",
-          "forecast_end": "2026-03-01",
-          "actual_end": "2026-03-01",
-          "status": "done",
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_end": null,
+          "actual_end": null,
+          "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-04T09:35:22.837Z",
+          "updated_at": "2026-05-04T07:01:27.717Z",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-007-ST01",
@@ -13051,21 +13033,21 @@
               "cc": "50",
               "estimated_days": "14",
               "authority": "",
-              "status": "done",
+              "status": "pending",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": "2026-05-04",
+              "actual_end": null,
               "notes": "",
               "tasks": []
             }
           ],
           "tasks": [],
-          "forecast_start": "2025-12-07",
-          "actual_start": "2025-12-07"
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-005-MS-008",
-          "name": "設備登記",
+          "name": "電業執照",
           "group": "電業",
           "application_scope": "whole_project",
           "parcel_id": null,
@@ -13077,13 +13059,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "180",
-          "baseline_start": "2025-12-14",
-          "baseline_end": "2026-01-04",
-          "forecast_end": "2026-05-16",
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_end": null,
           "actual_end": null,
-          "status": "in_progress",
+          "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-04T09:35:22.837Z",
+          "updated_at": "2026-04-23T16:12:19+08:00",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-008-ST01",
@@ -13092,11 +13074,11 @@
               "authority": "（內部）",
               "type": "fixed",
               "estimated_days": "30",
-              "cc": "30",
-              "status": "done",
+              "cc": "20",
+              "status": "pending",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": "2026-05-04",
+              "actual_end": null,
               "notes": "",
               "tasks": []
             },
@@ -13107,23 +13089,128 @@
               "authority": "地方電業主管機關",
               "type": "fixed",
               "estimated_days": "1",
-              "cc": "30",
-              "status": "done",
+              "cc": "3",
+              "status": "pending",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": "2026-05-04",
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-005-MS-008-ST03",
+              "sequence": 3,
+              "name": "地方政府審查",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
               "notes": "",
               "tasks": []
             },
             {
               "stage_id": "PRJ-005-MS-008-ST04",
-              "sequence": 3,
+              "sequence": 4,
               "name": "補正 #1",
               "authority": "地方電業主管機關",
               "type": "skippable",
               "estimated_days": "14",
               "cc": "5",
-              "status": "in_progress",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-005-MS-008-ST05",
+              "sequence": 5,
+              "name": "補正 #2",
+              "authority": "地方電業主管機關",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "4",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-005-MS-008-ST06",
+              "sequence": 6,
+              "name": "地方政府核轉予經濟部能源署",
+              "authority": "地方電業主管機關",
+              "type": "fixed",
+              "estimated_days": "14",
+              "cc": "5",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-005-MS-008-ST07",
+              "sequence": 7,
+              "name": "電業執照審查",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "20",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-005-MS-008-ST08",
+              "sequence": 8,
+              "name": "竣工查驗",
+              "authority": "經濟部能源署",
+              "type": "fixed",
+              "estimated_days": "60",
+              "cc": "13",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "相關機關及委員進行現場查驗",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-005-MS-008-ST09",
+              "sequence": 9,
+              "name": "補正 #1",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-005-MS-008-ST10",
+              "sequence": 10,
+              "name": "補正 #2",
+              "authority": "經濟部能源署",
+              "type": "skippable",
+              "estimated_days": "30",
+              "cc": "5",
+              "status": "pending",
               "planned_start": null,
               "planned_end": null,
               "actual_end": null,
@@ -13132,12 +13219,12 @@
             },
             {
               "stage_id": "PRJ-005-MS-008-ST11",
-              "sequence": 4,
-              "name": "取得設備登記",
+              "sequence": 11,
+              "name": "取得電業執照",
               "authority": "—",
               "type": "fixed",
               "estimated_days": "1",
-              "cc": "35",
+              "cc": "5",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -13146,9 +13233,7 @@
               "tasks": []
             }
           ],
-          "tasks": [],
-          "forecast_start": "2026-03-01",
-          "actual_start": "2026-03-01"
+          "tasks": []
         }
       ]
     },
@@ -13165,7 +13250,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-04-23T16:12:19+08:00",
+      "updated_at": "2026-05-06T03:30:24.242Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -14045,9 +14130,9 @@
           "baseline_end": null,
           "forecast_end": null,
           "actual_end": null,
-          "status": "pending",
+          "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-05-06T03:30:24.242Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-001-ST01",
@@ -14057,10 +14142,10 @@
               "type": "fixed",
               "estimated_days": "30",
               "cc": "55",
-              "status": "pending",
+              "status": "done",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": null,
+              "actual_end": "2026-05-06",
               "notes": "地主資料、切結書、養殖計劃書等",
               "tasks": []
             },
