@@ -11044,7 +11044,7 @@
       "start_date": "2024-10-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-05T07:33:19.579Z",
+      "updated_at": "2026-05-06T08:26:39.763Z",
       "lots": [
         {
           "lot_number": "嘉義縣東石鄉鰲鼓段436地號",
@@ -11103,13 +11103,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "435",
-          "baseline_start": null,
-          "baseline_end": null,
-          "forecast_end": null,
+          "baseline_start": "2024-09-30",
+          "baseline_end": "2025-06-27",
+          "forecast_end": "2026-05-30",
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-05T07:33:19.579Z",
+          "updated_at": "2026-05-06T08:26:39.763Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-001-ST01",
@@ -11268,7 +11268,9 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2024-09-30",
+          "actual_start": "2024-09-30"
         },
         {
           "milestone_id": "PRJ-004-MS-002",
@@ -11284,13 +11286,13 @@
           "condition_description": null,
           "payment_trigger": false,
           "standard_days": "418",
-          "baseline_start": null,
-          "baseline_end": null,
-          "forecast_end": null,
+          "baseline_start": "2024-10-31",
+          "baseline_end": "2026-07-02",
+          "forecast_end": "2027-03-31",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-04T06:44:14.187Z",
+          "updated_at": "2026-05-06T08:26:39.763Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-002-ST01",
@@ -11414,7 +11416,7 @@
             }
           ],
           "tasks": [],
-          "forecast_start": null,
+          "forecast_start": "2024-10-31",
           "actual_start": null
         },
         {
@@ -11431,13 +11433,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "120",
-          "baseline_start": null,
-          "baseline_end": null,
-          "forecast_end": null,
+          "baseline_start": "2026-07-07",
+          "baseline_end": "2026-09-05",
+          "forecast_end": "2027-05-30",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-05-06T08:26:39.763Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-003-ST01",
@@ -11530,7 +11532,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2027-03-31"
         },
         {
           "milestone_id": "PRJ-004-MS-004",
@@ -11546,13 +11549,13 @@
           "condition_description": null,
           "payment_trigger": false,
           "standard_days": "375",
-          "baseline_start": null,
-          "baseline_end": null,
-          "forecast_end": null,
+          "baseline_start": "2026-08-06",
+          "baseline_end": "2026-12-15",
+          "forecast_end": "2027-09-08",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-05-06T08:26:39.763Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-004-ST01",
@@ -11660,7 +11663,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2027-04-30"
         },
         {
           "milestone_id": "PRJ-004-MS-005",
@@ -11676,13 +11680,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "90",
-          "baseline_start": null,
-          "baseline_end": null,
-          "forecast_end": null,
+          "baseline_start": "2026-12-20",
+          "baseline_end": "2027-01-19",
+          "forecast_end": "2027-10-13",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-05-06T08:26:39.763Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-005-ST01",
@@ -11775,7 +11779,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2027-09-13"
         },
         {
           "milestone_id": "PRJ-004-MS-006",
@@ -11791,13 +11796,13 @@
           "condition_description": "使照取得後需完成養殖實績達主管機關標準",
           "payment_trigger": true,
           "standard_days": "210",
-          "baseline_start": null,
-          "baseline_end": null,
-          "forecast_end": null,
+          "baseline_start": "2027-05-29",
+          "baseline_end": "2027-09-26",
+          "forecast_end": "2028-07-19",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-05-06T08:26:39.763Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-006-ST01",
@@ -11950,7 +11955,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2028-02-20"
         },
         {
           "milestone_id": "PRJ-004-MS-007",
@@ -11966,13 +11972,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "74",
-          "baseline_start": null,
-          "baseline_end": null,
-          "forecast_end": null,
+          "baseline_start": "2026-09-10",
+          "baseline_end": "2026-10-10",
+          "forecast_end": "2027-07-04",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-05-06T08:26:39.763Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-007-ST01",
@@ -12080,7 +12086,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2027-06-04"
         },
         {
           "milestone_id": "PRJ-004-MS-008",
@@ -12096,13 +12103,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "30",
-          "baseline_start": null,
-          "baseline_end": null,
-          "forecast_end": null,
+          "baseline_start": "2026-10-15",
+          "baseline_end": "2026-11-14",
+          "forecast_end": "2027-08-08",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-05-06T08:26:39.763Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-008-ST01",
@@ -12195,7 +12202,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2027-07-09"
         },
         {
           "milestone_id": "PRJ-004-MS-009",
@@ -12386,13 +12394,13 @@
           "condition_description": null,
           "payment_trigger": false,
           "standard_days": "120",
-          "baseline_start": null,
-          "baseline_end": null,
-          "forecast_end": null,
+          "baseline_start": "2027-05-29",
+          "baseline_end": "2027-11-30",
+          "forecast_end": "2028-09-22",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-05-06T08:26:39.763Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-010-ST01",
@@ -12470,7 +12478,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2028-02-20"
         },
         {
           "milestone_id": "PRJ-004-MS-011",
@@ -12487,15 +12496,16 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "50",
-          "baseline_start": null,
-          "baseline_end": null,
-          "forecast_end": null,
+          "baseline_start": "2027-12-05",
+          "baseline_end": "2028-01-04",
+          "forecast_end": "2028-10-27",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-05-06T08:26:39.763Z",
           "stages": [],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2028-09-27"
         },
         {
           "milestone_id": "PRJ-004-MS-012",
@@ -12511,15 +12521,16 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "180",
-          "baseline_start": null,
-          "baseline_end": null,
-          "forecast_end": null,
+          "baseline_start": "2028-01-19",
+          "baseline_end": "2028-02-18",
+          "forecast_end": "2028-12-11",
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-04-23T16:12:19+08:00",
+          "updated_at": "2026-05-06T08:26:39.763Z",
           "stages": [],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2028-11-11"
         }
       ]
     },
