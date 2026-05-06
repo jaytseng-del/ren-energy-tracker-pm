@@ -24346,7 +24346,7 @@
       "start_date": "2024-01-03 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-06T10:35:05.219Z",
+      "updated_at": "2026-05-06T10:36:40.490Z",
       "lots": [
         {
           "lot_number": "屏東縣高樹鄉南華段652",
@@ -25453,13 +25453,13 @@
           "condition_description": null,
           "payment_trigger": false,
           "standard_days": "120",
-          "baseline_start": null,
-          "baseline_end": null,
-          "forecast_end": null,
-          "actual_end": null,
-          "status": "pending",
+          "baseline_start": "2025-12-23",
+          "baseline_end": "2026-01-06",
+          "forecast_end": "2026-01-06",
+          "actual_end": "2026-01-06",
+          "status": "done",
           "notes": null,
-          "updated_at": "2026-05-06T10:29:38.171Z",
+          "updated_at": "2026-05-06T10:36:40.490Z",
           "stages": [
             {
               "stage_id": "PRJ-008-MS-010-ST01",
@@ -25468,7 +25468,7 @@
               "authority": "（內部）",
               "type": "fixed",
               "estimated_days": "60",
-              "cc": "25",
+              "cc": "30",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -25498,7 +25498,7 @@
               "authority": "（內部）",
               "type": "fixed",
               "estimated_days": "100",
-              "cc": "35",
+              "cc": "40",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -25520,24 +25520,11 @@
               "actual_end": null,
               "notes": "",
               "tasks": []
-            },
-            {
-              "stage_id": "PRJ-008-MS-010-ST05",
-              "sequence": 5,
-              "name": "驗收",
-              "authority": "（內部）",
-              "type": "fixed",
-              "estimated_days": "30",
-              "cc": "10",
-              "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": null,
-              "notes": "",
-              "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": "2025-12-23",
+          "actual_start": "2025-12-23"
         },
         {
           "milestone_id": "PRJ-008-MS-011",
