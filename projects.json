@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-07T03:09:58.995Z",
+      "updated_at": "2026-05-07T03:10:42.821Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -237,7 +237,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-07T03:09:58.995Z",
+          "updated_at": "2026-05-07T03:10:42.821Z",
           "stages": [
             {
               "stage_id": "PRJ-001-MS-001-ST01",
@@ -362,7 +362,16 @@
                   "next_action_due": null,
                   "next_action": null,
                   "notes": null,
-                  "updates": [],
+                  "updates": [
+                    {
+                      "update_id": "UPD-1778123442821",
+                      "created_at": "2026-05-07T03:10:42.821Z",
+                      "content": "香印及麗崴新能源都需召開董事會,兩邊過案後才能簽約",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    }
+                  ],
                   "created_at": "2026-05-07T03:09:58.995Z"
                 }
               ]
@@ -4727,7 +4736,7 @@
       "start_date": "2024-05-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-04T05:54:43.897Z",
+      "updated_at": "2026-05-07T03:11:47.527Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段15地號",
@@ -5469,7 +5478,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-04T05:54:43.897Z",
+          "updated_at": "2026-05-07T03:11:47.527Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-005-ST01",
@@ -5514,7 +5523,19 @@
               "planned_end": null,
               "actual_end": "2026-05-04",
               "notes": "",
-              "tasks": []
+              "tasks": [
+                {
+                  "task_id": "TSK-1778123507527",
+                  "name": "承辦審查中",
+                  "task_type": "one-off",
+                  "status": "pending",
+                  "next_action_due": null,
+                  "next_action": null,
+                  "notes": null,
+                  "updates": [],
+                  "created_at": "2026-05-07T03:11:47.527Z"
+                }
+              ]
             },
             {
               "stage_id": "PRJ-002-MS-005-ST04",
