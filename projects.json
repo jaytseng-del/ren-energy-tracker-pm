@@ -9210,7 +9210,7 @@
       "start_date": "2025-07-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-07T03:45:07.183Z",
+      "updated_at": "2026-05-07T03:45:59.454Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段38地號",
@@ -9251,7 +9251,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-07T03:45:07.183Z",
+          "updated_at": "2026-05-07T03:45:39.322Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-001-ST01",
@@ -9275,7 +9275,16 @@
                   "next_action_due": "2026-05-06",
                   "next_action": null,
                   "notes": null,
-                  "updates": [],
+                  "updates": [
+                    {
+                      "update_id": "UPD-1778125539322",
+                      "created_at": "2026-05-07T03:45:39.322Z",
+                      "content": "5/6合約已確認完成,目前提供給日力確認,沒問題再送內部申請",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    }
+                  ],
                   "created_at": "2026-05-07T03:45:07.183Z"
                 }
               ]
@@ -9424,7 +9433,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-04T05:45:42.599Z",
+          "updated_at": "2026-05-07T03:45:59.454Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-002-ST01",
@@ -9544,7 +9553,19 @@
               "planned_end": null,
               "actual_end": null,
               "notes": "",
-              "tasks": []
+              "tasks": [
+                {
+                  "task_id": "TSK-1778125559454",
+                  "name": "follow 核可狀況",
+                  "task_type": "recurring",
+                  "status": "pending",
+                  "next_action_due": null,
+                  "next_action": null,
+                  "notes": null,
+                  "updates": [],
+                  "created_at": "2026-05-07T03:45:59.454Z"
+                }
+              ]
             }
           ],
           "tasks": [],
