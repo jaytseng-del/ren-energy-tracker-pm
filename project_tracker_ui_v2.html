@@ -29636,6 +29636,7 @@ const CONFIG = {
   branch:   'main',
   projFile:      'projects.json',
   logFile:       'updates_log.jsonl',
+  eventsFile:    'events.jsonl',
   snapshotFile:  'snapshots.jsonl',
   templateFile:  'project_templates.json',
 };
@@ -29980,6 +29981,170 @@ async function ghAppendSnapshot() {
     console.warn('Snapshot append failed:', e);
     // 快照失敗不影響主功能，靜默處理
   }
+}
+
+// ── Event Sourcing ────────────────────────────────────────────────────────────
+
+// Append a single event line to events.jsonl on GitHub
+async function ghAppendEvent(event) {
+  try {
+    let existing = '', sha = null;
+    try {
+      const m = await ghMeta(CONFIG.eventsFile);
+      sha = m.sha;
+      existing = atob(m.content.replace(/\n/g, ''));
+    } catch(e) {
+      // File doesn't exist yet (404) → first event, existing stays ''
+      if (!e.message?.includes('meta error') && !e.message?.includes('404')) console.warn('Event meta error:', e);
+    }
+    await ghWrite(CONFIG.eventsFile, existing + JSON.stringify(event) + '\n', sha);
+  } catch(e) { console.warn('Event append failed (non-blocking):', e); }
+}
+
+// Derive milestone status from its stages (shared logic used by setStageStatus & applyEvents)
+function deriveMilestoneStatus(ms) {
+  const stages = ms.stages || [];
+  if (!stages.length) return ms.status;
+  if (stages.some(s => s.status === 'blocked')) return 'blocked';
+  if (stages.every(s => s.status === 'done' || s.status === 'completed' || s.status === 'skipped')) return 'done';
+  if (stages.some(s => s.status === 'in_progress' || s.status === 'done' || s.status === 'completed')) return 'in_progress';
+  return 'pending';
+}
+
+// Replay events.jsonl on top of the base data from projects.json
+// Each event mutates the in-memory data object so we arrive at the current state
+function applyEvents(data, events) {
+  for (const ev of events) {
+    try {
+      const proj = data.projects?.find(p => p.project_id === ev.project_id);
+      if (!proj && ev.event !== 'milestone_created') continue; // milestone_created also needs proj
+
+      switch (ev.event) {
+
+        case 'stage_status_changed': {
+          const ms = proj.milestones?.find(m => m.milestone_id === ev.milestone_id);
+          const st = ms?.stages?.find(s => s.stage_id === ev.stage_id);
+          if (!st) break;
+          st.status = ev.new_status;
+          if (ev.actual_end) st.actual_end = ev.actual_end;
+          ms.status = deriveMilestoneStatus(ms);
+          ms.updated_at = ev.ts;
+          proj.updated_at = ev.ts;
+          break;
+        }
+
+        case 'milestone_edited': {
+          const ms = proj.milestones?.find(m => m.milestone_id === ev.milestone_id);
+          if (!ms) break;
+          Object.assign(ms, ev.changes);
+          ms.updated_at = ev.ts;
+          proj.updated_at = ev.ts;
+          break;
+        }
+
+        case 'milestone_created': {
+          if (!proj) break;
+          if (!proj.milestones) proj.milestones = [];
+          // Avoid duplicate if replayed twice
+          if (!proj.milestones.find(m => m.milestone_id === ev.milestone.milestone_id)) {
+            proj.milestones.push(ev.milestone);
+          }
+          proj.updated_at = ev.ts;
+          break;
+        }
+
+        case 'milestone_deleted': {
+          proj.milestones = (proj.milestones || []).filter(m => m.milestone_id !== ev.milestone_id);
+          proj.updated_at = ev.ts;
+          break;
+        }
+
+        case 'task_created': {
+          const ms = proj.milestones?.find(m => m.milestone_id === ev.milestone_id);
+          if (!ms) break;
+          // Avoid duplicate
+          const allTasks = [...(ms.tasks || []), ...(ms.stages || []).flatMap(s => s.tasks || [])];
+          if (allTasks.find(t => t.task_id === ev.task.task_id)) break;
+          if (ev.stage_id) {
+            const st = ms.stages?.find(s => s.stage_id === ev.stage_id);
+            if (st) { if (!st.tasks) st.tasks = []; st.tasks.push(ev.task); }
+          } else {
+            if (ms.stages?.length > 0) {
+              if (!ms.stages[0].tasks) ms.stages[0].tasks = [];
+              ms.stages[0].tasks.push(ev.task);
+            } else {
+              if (!ms.tasks) ms.tasks = [];
+              ms.tasks.push(ev.task);
+            }
+          }
+          ms.updated_at = ev.ts;
+          proj.updated_at = ev.ts;
+          break;
+        }
+
+        case 'task_status_changed': {
+          const ms = proj.milestones?.find(m => m.milestone_id === ev.milestone_id);
+          let task;
+          if (ev.stage_id) {
+            const st = ms?.stages?.find(s => s.stage_id === ev.stage_id);
+            task = st?.tasks?.find(t => t.task_id === ev.task_id);
+          }
+          if (!task) task = ms?.tasks?.find(t => t.task_id === ev.task_id);
+          if (task) { task.status = ev.new_status; task.updated_at = ev.ts; }
+          proj.updated_at = ev.ts;
+          break;
+        }
+
+        case 'task_deleted': {
+          const ms = proj.milestones?.find(m => m.milestone_id === ev.milestone_id);
+          if (!ms) break;
+          if (ev.stage_id) {
+            const st = ms.stages?.find(s => s.stage_id === ev.stage_id);
+            if (st) st.tasks = (st.tasks || []).filter(t => t.task_id !== ev.task_id);
+          } else {
+            ms.tasks = (ms.tasks || []).filter(t => t.task_id !== ev.task_id);
+          }
+          proj.updated_at = ev.ts;
+          break;
+        }
+
+        case 'update_added': {
+          const ms = proj.milestones?.find(m => m.milestone_id === ev.milestone_id);
+          if (!ms) break;
+          let found = false;
+          for (const st of (ms.stages || [])) {
+            const tk = st.tasks?.find(t => t.task_id === ev.task_id);
+            if (tk) {
+              // Avoid duplicate
+              if (!(tk.updates || []).find(u => u.update_id === ev.update.update_id)) {
+                if (!tk.updates) tk.updates = [];
+                tk.updates.push(ev.update);
+                if (ev.update.next_action) tk.next_action = ev.update.next_action;
+              }
+              found = true; break;
+            }
+          }
+          if (!found) {
+            const tk = ms.tasks?.find(t => t.task_id === ev.task_id);
+            if (tk && !(tk.updates || []).find(u => u.update_id === ev.update.update_id)) {
+              if (!tk.updates) tk.updates = [];
+              tk.updates.push(ev.update);
+              if (ev.update.next_action) tk.next_action = ev.update.next_action;
+            }
+          }
+          ms.updated_at = ev.ts;
+          proj.updated_at = ev.ts;
+          break;
+        }
+
+        default:
+          console.warn('Unknown event type:', ev.event);
+      }
+    } catch(err) {
+      console.warn('applyEvents: error processing event', ev, err);
+    }
+  }
+  return data;
 }
 
 // ── State ────────────────────────────────────────────────────────────────────
@@ -30370,14 +30535,27 @@ async function loadData() {
   // 1. 從 GitHub 讀取（Public repo，不需授權）
   try {
     const data = await ghReadJson(CONFIG.projFile);
-    console.log('Loaded from GitHub');
+    console.log('Loaded projects.json from GitHub');
+
+    // 2. 讀取 events.jsonl 並重播，得到最新狀態
+    try {
+      const eventsText = await ghReadText(CONFIG.eventsFile);
+      if (eventsText && eventsText.trim()) {
+        const events = eventsText.trim().split('\n').filter(Boolean).map(l => JSON.parse(l));
+        applyEvents(data, events);
+        console.log(`Replayed ${events.length} events from events.jsonl`);
+      }
+    } catch(evErr) {
+      console.warn('Events load/replay failed (non-blocking):', evErr);
+    }
+
     return data;
   } catch(e) {
     console.warn('GitHub load failed, falling back to inline data:', e);
   }
-  // 2. Fallback：HTML 內嵌資料（本機開發用）
+  // 3. Fallback：HTML 內嵌資料（本機開發用，無 events replay）
   if (window.INLINE_DATA) {
-    console.log('Using embedded inline data');
+    console.log('Using embedded inline data (local mode)');
     return window.INLINE_DATA;
   }
   return null;
@@ -30978,11 +31156,20 @@ function setTaskStatus(projId, msId, stageId, taskId, newStatus) {
   }
   if (!task) task = ms?.tasks?.find(t => t.task_id === taskId);
   if (!task) return;
+  const now = new Date().toISOString();
   task.status = newStatus;
-  task.updated_at = new Date().toISOString();
-  proj.updated_at = task.updated_at;
+  task.updated_at = now;
+  proj.updated_at = now;
   renderTab0();
-  syncToGitHub();
+  ghAppendEvent({
+    event: 'task_status_changed',
+    project_id: projId,
+    milestone_id: msId,
+    stage_id: stageId || null,
+    task_id: taskId,
+    new_status: newStatus,
+    ts: now,
+  });
 }
 
 function deleteTask(projId, msId, stageId, taskId) {
@@ -30995,9 +31182,17 @@ function deleteTask(projId, msId, stageId, taskId) {
   } else {
     if (ms) ms.tasks = (ms.tasks || []).filter(t => t.task_id !== taskId);
   }
-  proj.updated_at = new Date().toISOString();
+  const now = new Date().toISOString();
+  proj.updated_at = now;
   renderTab0();
-  syncToGitHub();
+  ghAppendEvent({
+    event: 'task_deleted',
+    project_id: projId,
+    milestone_id: msId,
+    stage_id: stageId || null,
+    task_id: taskId,
+    ts: now,
+  });
 }
 
 function toggleMs(id) {
@@ -31437,8 +31632,16 @@ function submitUpdate() {
   closeModal();
   renderAll();
 
-  // Async: sync to GitHub + append log
-  syncToGitHub();
+  // Async: append event (replaces syncToGitHub)
+  ghAppendEvent({
+    event: 'update_added',
+    project_id: projId,
+    milestone_id: msId,
+    task_id: taskId,
+    update,
+    ts: update.created_at,
+  });
+  // Also append to legacy updates_log.jsonl for backward compatibility
   const logEntry = { ...update, project_id: projId, milestone_id: msId, task_id: taskId };
   ghAppendLog(logEntry);
 }
@@ -31510,28 +31713,30 @@ function setStageStatus(status) {
   // Guard: 設完成前必須確認前置 Stage 都已完成或跳過
   if (status === 'done' && !isPrevStagesDone(ms, stageId)) return;
 
+  const oldStatus = st.status;
   st.status = status;
   const now = new Date().toISOString();
-  if (status === 'done' || status === 'completed') st.actual_end = st.actual_end || now.substring(0,10);
+  const actualEnd = (status === 'done' || status === 'completed') ? (st.actual_end || now.substring(0,10)) : null;
+  if (actualEnd) st.actual_end = actualEnd;
 
-  // Auto-derive milestone status from stages
-  const stages = ms.stages || [];
-  if (stages.some(s => s.status === 'blocked')) {
-    ms.status = 'blocked';
-  } else if (stages.every(s => s.status === 'done' || s.status === 'completed' || s.status === 'skipped')) {
-    ms.status = 'done';
-  } else if (stages.some(s => s.status === 'in_progress' || s.status === 'done' || s.status === 'completed')) {
-    ms.status = 'in_progress';
-  } else {
-    ms.status = 'pending';
-  }
+  // Auto-derive milestone status from stages (shared helper)
+  ms.status = deriveMilestoneStatus(ms);
 
   ms.updated_at = now;
   proj.updated_at = now;
 
   closeStageMenu();
   renderAll();
-  syncToGitHub();
+  ghAppendEvent({
+    event: 'stage_status_changed',
+    project_id: projId,
+    milestone_id: msId,
+    stage_id: stageId,
+    old_status: oldStatus,
+    new_status: status,
+    actual_end: actualEnd,
+    ts: now,
+  });
 }
 
 function closeStageMenu() {
@@ -31774,7 +31979,37 @@ function submitMilestone() {
   proj.updated_at = now;
   closeMsModal();
   renderAll();
-  syncToGitHub();
+
+  if (_msModeEdit) {
+    const ms = proj.milestones.find(m => m.milestone_id === msId);
+    ghAppendEvent({
+      event: 'milestone_edited',
+      project_id: projId,
+      milestone_id: msId,
+      changes: {
+        name:           ms.name,
+        group:          ms.group,
+        status:         ms.status,
+        baseline_start: ms.baseline_start,
+        baseline_end:   ms.baseline_end,
+        forecast_start: ms.forecast_start,
+        forecast_end:   ms.forecast_end,
+        actual_start:   ms.actual_start,
+        actual_end:     ms.actual_end,
+        notes:          ms.notes,
+        stages:         ms.stages,
+      },
+      ts: now,
+    });
+  } else {
+    const newMs = proj.milestones[proj.milestones.length - 1];
+    ghAppendEvent({
+      event: 'milestone_created',
+      project_id: projId,
+      milestone: newMs,
+      ts: now,
+    });
+  }
 }
 
 function deleteMilestone() {
@@ -31784,10 +32019,16 @@ function deleteMilestone() {
   if (!ms) return;
   if (!confirm(`確定要刪除里程碑「${ms.name}」${ms.parcel_name ? `（${ms.parcel_name}）` : ''}？\n此操作無法復原。`)) return;
   proj.milestones = proj.milestones.filter(m => m.milestone_id !== msId);
-  proj.updated_at = new Date().toISOString();
+  const now = new Date().toISOString();
+  proj.updated_at = now;
   closeMsModal();
   renderAll();
-  syncToGitHub();
+  ghAppendEvent({
+    event: 'milestone_deleted',
+    project_id: projId,
+    milestone_id: msId,
+    ts: now,
+  });
 }
 
 // ── Task Modal ────────────────────────────────────────────────────────────────
@@ -31871,7 +32112,14 @@ function submitTask() {
   closeTaskModal();
   renderAll();
 
-  syncToGitHub();
+  ghAppendEvent({
+    event: 'task_created',
+    project_id: projId,
+    milestone_id: msId,
+    stage_id: stageId || null,
+    task,
+    ts: task.created_at,
+  });
 }
 
 // ── Start ─────────────────────────────────────────────────────────────────────
