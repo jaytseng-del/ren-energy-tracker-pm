@@ -4736,7 +4736,7 @@
       "start_date": "2024-05-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-07T03:37:30.896Z",
+      "updated_at": "2026-05-07T03:37:49.264Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段15地號",
@@ -5478,7 +5478,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-07T03:37:30.896Z",
+          "updated_at": "2026-05-07T03:37:49.264Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-005-ST01",
@@ -5532,7 +5532,16 @@
                   "next_action_due": null,
                   "next_action": null,
                   "notes": null,
-                  "updates": [],
+                  "updates": [
+                    {
+                      "update_id": "UPD-1778125069264",
+                      "created_at": "2026-05-07T03:37:49.264Z",
+                      "content": "5/6 承辦還在審查中",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    }
+                  ],
                   "created_at": "2026-05-07T03:37:30.896Z"
                 }
               ]
