@@ -4736,7 +4736,7 @@
       "start_date": "2024-05-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-07T03:44:06.798Z",
+      "updated_at": "2026-05-07T05:32:34.494Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段15地號",
@@ -4858,12 +4858,13 @@
                   "task_id": "TSK-1778125446798",
                   "name": "update時程表",
                   "task_type": "one-off",
-                  "status": "pending",
+                  "status": "done",
                   "next_action_due": "2026-05-06",
                   "next_action": null,
                   "notes": null,
                   "updates": [],
-                  "created_at": "2026-05-07T03:44:06.798Z"
+                  "created_at": "2026-05-07T03:44:06.798Z",
+                  "updated_at": "2026-05-07T05:32:34.494Z"
                 }
               ]
             },
