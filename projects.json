@@ -9210,7 +9210,7 @@
       "start_date": "2025-07-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-04T05:45:42.599Z",
+      "updated_at": "2026-05-07T03:45:07.183Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段38地號",
@@ -9251,7 +9251,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-04T05:44:48.971Z",
+          "updated_at": "2026-05-07T03:45:07.183Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-001-ST01",
@@ -9266,7 +9266,19 @@
               "planned_end": null,
               "actual_end": "2026-05-04",
               "notes": "地主資料、切結書、養殖計劃書等",
-              "tasks": []
+              "tasks": [
+                {
+                  "task_id": "TSK-1778125507183",
+                  "name": "日力系統增補調整",
+                  "task_type": "one-off",
+                  "status": "pending",
+                  "next_action_due": "2026-05-06",
+                  "next_action": null,
+                  "notes": null,
+                  "updates": [],
+                  "created_at": "2026-05-07T03:45:07.183Z"
+                }
+              ]
             },
             {
               "stage_id": "PRJ-003-MS-001-ST02",
