@@ -11240,7 +11240,7 @@
       "start_date": "2024-10-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-07T03:55:29.940Z",
+      "updated_at": "2026-05-07T05:32:07.637Z",
       "lots": [
         {
           "lot_number": "嘉義縣東石鄉鰲鼓段436地號",
@@ -11325,12 +11325,13 @@
                   "task_id": "TSK-1778126103358",
                   "name": "update時程表",
                   "task_type": "one-off",
-                  "status": "pending",
+                  "status": "in_progress",
                   "next_action_due": null,
                   "next_action": null,
                   "notes": null,
                   "updates": [],
-                  "created_at": "2026-05-07T03:55:03.358Z"
+                  "created_at": "2026-05-07T03:55:03.358Z",
+                  "updated_at": "2026-05-07T05:32:07.637Z"
                 }
               ]
             },
