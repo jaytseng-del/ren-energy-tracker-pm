@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-07T02:44:26.982Z",
+      "updated_at": "2026-05-07T02:45:56.665Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -237,7 +237,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-07T02:41:14.955Z",
+          "updated_at": "2026-05-07T02:45:56.665Z",
           "stages": [
             {
               "stage_id": "PRJ-001-MS-001-ST01",
@@ -294,6 +294,17 @@
                   ],
                   "created_at": "2026-05-07T02:40:45.700Z",
                   "updated_at": "2026-05-07T02:40:52.490Z"
+                },
+                {
+                  "task_id": "TSK-1778121956665",
+                  "name": "七股社會議題調查",
+                  "task_type": "recurring",
+                  "status": "pending",
+                  "next_action_due": "2026-05-31",
+                  "next_action": null,
+                  "notes": null,
+                  "updates": [],
+                  "created_at": "2026-05-07T02:45:56.665Z"
                 }
               ]
             },
