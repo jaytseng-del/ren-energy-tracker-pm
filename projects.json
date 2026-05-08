@@ -13213,7 +13213,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-08T06:29:27.186Z",
+      "updated_at": "2026-05-08T06:29:50.906Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -21234,7 +21234,7 @@
           "actual_end": null,
           "status": "done",
           "notes": null,
-          "updated_at": "2026-05-08T06:29:27.186Z",
+          "updated_at": "2026-05-08T06:29:48.076Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-052-ST01",
@@ -21258,20 +21258,18 @@
                   "next_action_due": "2026-05-31",
                   "next_action": null,
                   "notes": null,
-                  "updates": [],
+                  "updates": [
+                    {
+                      "update_id": "UPD-1778221788076",
+                      "created_at": "2026-05-08T06:29:48.076Z",
+                      "content": "5/15前麗升內部確認共識申請併接芳興R/S or 漢寶D/S",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    }
+                  ],
                   "created_at": "2026-05-08T06:28:23.529Z",
                   "updated_at": "2026-05-08T06:28:27.308Z"
-                },
-                {
-                  "task_id": "TSK-1778221767186",
-                  "name": "5/15前麗升內部確認共識申請併接芳興R/S or 漢寶D/S",
-                  "task_type": "one-off",
-                  "status": "pending",
-                  "next_action_due": "2026-05-15",
-                  "next_action": null,
-                  "notes": null,
-                  "updates": [],
-                  "created_at": "2026-05-08T06:29:27.186Z"
                 }
               ]
             },
