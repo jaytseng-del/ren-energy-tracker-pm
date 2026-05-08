@@ -13213,7 +13213,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-08T06:26:22.308Z",
+      "updated_at": "2026-05-08T06:28:23.529Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -21234,7 +21234,7 @@
           "actual_end": null,
           "status": "done",
           "notes": null,
-          "updated_at": "2026-05-08T06:18:08.262Z",
+          "updated_at": "2026-05-08T06:28:23.529Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-052-ST01",
@@ -21249,7 +21249,19 @@
               "planned_end": null,
               "actual_end": "2026-05-08",
               "notes": "",
-              "tasks": []
+              "tasks": [
+                {
+                  "task_id": "TSK-1778221703529",
+                  "name": "併審重新申請",
+                  "task_type": "one-off",
+                  "status": "pending",
+                  "next_action_due": "2026-05-31",
+                  "next_action": null,
+                  "notes": null,
+                  "updates": [],
+                  "created_at": "2026-05-08T06:28:23.529Z"
+                }
+              ]
             },
             {
               "stage_id": "PRJ-006-MS-052-ST02",
