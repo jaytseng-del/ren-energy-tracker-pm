@@ -23183,7 +23183,7 @@
       "start_date": "2023-09-26 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-08T06:12:29.856Z",
+      "updated_at": "2026-05-08T06:13:41.442Z",
       "lots": [
         {
           "lot_number": "桃園市新屋區後庄段976",
@@ -23664,7 +23664,7 @@
           "actual_end": "2026-01-22",
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-08T06:12:29.856Z",
+          "updated_at": "2026-05-08T06:13:41.442Z",
           "stages": [
             {
               "stage_id": "PRJ-007-MS-004-ST01",
@@ -23799,6 +23799,27 @@
                   ],
                   "created_at": "2026-05-08T06:12:03.248Z",
                   "updated_at": "2026-05-08T06:12:07.508Z"
+                },
+                {
+                  "task_id": "TSK-1778220790234",
+                  "name": "c鋼磨平補強工程",
+                  "task_type": "recurring",
+                  "status": "in_progress",
+                  "next_action_due": "2026-05-22",
+                  "next_action": "持續追蹤進場時間及完成時間",
+                  "notes": "種疄廠商已報價，漢企正在等待廠商確認進場時間",
+                  "updates": [
+                    {
+                      "update_id": "UPD-1778220821442",
+                      "created_at": "2026-05-08T06:13:41.442Z",
+                      "content": "5/8種疄廠商已報價，漢企正在等待廠商確認進場時間",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "持續追蹤進場時間及完成時間"
+                    }
+                  ],
+                  "created_at": "2026-05-08T06:13:10.234Z",
+                  "updated_at": "2026-05-08T06:13:13.454Z"
                 }
               ]
             }
