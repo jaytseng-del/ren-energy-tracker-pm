@@ -13213,7 +13213,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-08T06:21:18.036Z",
+      "updated_at": "2026-05-08T06:23:34.780Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -14597,7 +14597,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-08T06:17:15.472Z",
+          "updated_at": "2026-05-08T06:23:34.780Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-004-ST01",
@@ -14642,7 +14642,29 @@
               "planned_end": null,
               "actual_end": null,
               "notes": "",
-              "tasks": []
+              "tasks": [
+                {
+                  "task_id": "TSK-1778221393580",
+                  "name": "5/11農許補正(海尾段1531)",
+                  "task_type": "one-off",
+                  "status": "in_progress",
+                  "next_action_due": "2026-05-11",
+                  "next_action": null,
+                  "notes": "5/8完成用印，預計5/11掛件補正",
+                  "updates": [
+                    {
+                      "update_id": "UPD-1778221414780",
+                      "created_at": "2026-05-08T06:23:34.780Z",
+                      "content": "5/8完成用印，預計5/11掛件補正",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    }
+                  ],
+                  "created_at": "2026-05-08T06:23:13.580Z",
+                  "updated_at": "2026-05-08T06:23:17.821Z"
+                }
+              ]
             },
             {
               "stage_id": "PRJ-006-MS-004-ST04",
