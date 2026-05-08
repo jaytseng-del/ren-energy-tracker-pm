@@ -13213,7 +13213,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-08T06:23:34.780Z",
+      "updated_at": "2026-05-08T06:26:22.308Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -21364,7 +21364,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-08T06:18:14.866Z",
+          "updated_at": "2026-05-08T06:26:22.308Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-053-ST01",
@@ -21424,7 +21424,29 @@
               "planned_end": null,
               "actual_end": null,
               "notes": "",
-              "tasks": []
+              "tasks": [
+                {
+                  "task_id": "TSK-1778221499396",
+                  "name": "農業機關意見書取得",
+                  "task_type": "one-off",
+                  "status": "in_progress",
+                  "next_action_due": "2026-05-31",
+                  "next_action": "持續追蹤EPC進度",
+                  "notes": null,
+                  "updates": [
+                    {
+                      "update_id": "UPD-1778221582308",
+                      "created_at": "2026-05-08T06:26:22.308Z",
+                      "content": "目前正在撰寫農業機關計畫書，預計5/15完成，5/22掛件補正",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "持續追蹤EPC進度"
+                    }
+                  ],
+                  "created_at": "2026-05-08T06:24:59.396Z",
+                  "updated_at": "2026-05-08T06:25:01.702Z"
+                }
+              ]
             },
             {
               "stage_id": "PRJ-006-MS-053-ST05",
