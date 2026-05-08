@@ -13213,7 +13213,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-08T06:28:23.529Z",
+      "updated_at": "2026-05-08T06:29:27.186Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -21234,7 +21234,7 @@
           "actual_end": null,
           "status": "done",
           "notes": null,
-          "updated_at": "2026-05-08T06:28:23.529Z",
+          "updated_at": "2026-05-08T06:29:27.186Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-052-ST01",
@@ -21254,12 +21254,24 @@
                   "task_id": "TSK-1778221703529",
                   "name": "併審重新申請",
                   "task_type": "one-off",
-                  "status": "pending",
+                  "status": "in_progress",
                   "next_action_due": "2026-05-31",
                   "next_action": null,
                   "notes": null,
                   "updates": [],
-                  "created_at": "2026-05-08T06:28:23.529Z"
+                  "created_at": "2026-05-08T06:28:23.529Z",
+                  "updated_at": "2026-05-08T06:28:27.308Z"
+                },
+                {
+                  "task_id": "TSK-1778221767186",
+                  "name": "5/15前麗升內部確認共識申請併接芳興R/S or 漢寶D/S",
+                  "task_type": "one-off",
+                  "status": "pending",
+                  "next_action_due": "2026-05-15",
+                  "next_action": null,
+                  "notes": null,
+                  "updates": [],
+                  "created_at": "2026-05-08T06:29:27.186Z"
                 }
               ]
             },
