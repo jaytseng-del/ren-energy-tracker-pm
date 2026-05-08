@@ -23183,7 +23183,7 @@
       "start_date": "2023-09-26 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-08T06:06:49.414Z",
+      "updated_at": "2026-05-08T06:07:19.236Z",
       "lots": [
         {
           "lot_number": "桃園市新屋區後庄段976",
@@ -23240,7 +23240,7 @@
           "actual_end": "2024-01-16",
           "status": "done",
           "notes": null,
-          "updated_at": "2026-05-08T06:06:31.875Z",
+          "updated_at": "2026-05-08T06:06:30.851Z",
           "stages": [
             {
               "stage_id": "PRJ-007-MS-001-ST01",
@@ -23547,7 +23547,7 @@
           "actual_end": "2024-10-24",
           "status": "done",
           "notes": null,
-          "updated_at": "2026-05-08T06:06:49.414Z",
+          "updated_at": "2026-05-08T06:06:48.494Z",
           "stages": [
             {
               "stage_id": "PRJ-007-MS-003-ST01",
@@ -23664,7 +23664,7 @@
           "actual_end": "2026-01-22",
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-08T06:05:55.883Z",
+          "updated_at": "2026-05-08T06:07:19.236Z",
           "stages": [
             {
               "stage_id": "PRJ-007-MS-004-ST01",
@@ -23754,7 +23754,19 @@
               "planned_end": null,
               "actual_end": null,
               "notes": "",
-              "tasks": []
+              "tasks": [
+                {
+                  "task_id": "TSK-1778220439236",
+                  "name": "5/5土地平整驗收",
+                  "task_type": "one-off",
+                  "status": "pending",
+                  "next_action_due": "2026-05-05",
+                  "next_action": null,
+                  "notes": "5/5土地平整驗收完成",
+                  "updates": [],
+                  "created_at": "2026-05-08T06:07:19.236Z"
+                }
+              ]
             }
           ],
           "tasks": [],
