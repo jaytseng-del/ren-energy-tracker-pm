@@ -13213,7 +13213,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-08T06:33:57.527Z",
+      "updated_at": "2026-05-08T06:35:50.709Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -14450,7 +14450,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-08T06:17:11.653Z",
+          "updated_at": "2026-05-08T06:34:48.930Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-003-ST01",
@@ -14465,7 +14465,19 @@
               "planned_end": null,
               "actual_end": "2026-05-08",
               "notes": "地主資料、切結書、養殖計劃書等",
-              "tasks": []
+              "tasks": [
+                {
+                  "task_id": "TSK-1778222088930",
+                  "name": "4/16農許(北漢寶段669,670)完成現勘，預計5月取得",
+                  "task_type": "one-off",
+                  "status": "pending",
+                  "next_action_due": "2026-05-31",
+                  "next_action": null,
+                  "notes": null,
+                  "updates": [],
+                  "created_at": "2026-05-08T06:34:48.930Z"
+                }
+              ]
             },
             {
               "stage_id": "PRJ-006-MS-003-ST02",
@@ -15124,7 +15136,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-08T06:17:25.904Z",
+          "updated_at": "2026-05-08T06:35:50.709Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-007-ST01",
@@ -15139,7 +15151,19 @@
               "planned_end": null,
               "actual_end": "2026-05-08",
               "notes": "地主資料、切結書、養殖計劃書等",
-              "tasks": []
+              "tasks": [
+                {
+                  "task_id": "TSK-1778222150709",
+                  "name": "4/16農許(王功段1766,1766-1)完成現勘，預計5月取得",
+                  "task_type": "one-off",
+                  "status": "pending",
+                  "next_action_due": "2026-05-31",
+                  "next_action": null,
+                  "notes": null,
+                  "updates": [],
+                  "created_at": "2026-05-08T06:35:50.709Z"
+                }
+              ]
             },
             {
               "stage_id": "PRJ-006-MS-007-ST02",
