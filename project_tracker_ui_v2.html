@@ -71,13 +71,14 @@
   .ms-parcel-list { border-top: 1px solid var(--border); }
   .ms-parcel-item { border-bottom: 1px solid var(--border); }
   .ms-parcel-item:last-child { border-bottom: none; }
-  .ms-parcel-header { display: flex; align-items: center; gap: 10px; padding: 9px 16px 9px 36px; cursor: pointer; background: #fafafa; }
+  .ms-parcel-header { display: flex; align-items: center; gap: 10px; padding: 9px 16px 9px 36px; cursor: pointer; background: #fafafa; min-width: 0; }
   .ms-parcel-header:hover { background: #f0f4ff; }
-  .ms-parcel-header h4 { font-size: 13px; font-weight: 500; flex: 1; color: var(--text2); }
+  .ms-parcel-header h4 { font-size: 13px; font-weight: 500; flex: 1; color: var(--text2); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .ms-parcel-body { background: var(--surface); }
   .ms-header { display: flex; align-items: center; gap: 10px; padding: 12px 16px; cursor: pointer; background: var(--surface); user-select: none; }
   .ms-header:hover { background: #fafafa; }
-  .ms-header h3 { font-size: 14px; font-weight: 600; flex: 1; }
+  .ms-header h3 { font-size: 14px; font-weight: 600; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ms-edit-btn { flex-shrink: 0; }
   .ms-tag { font-size: 11px; padding: 2px 7px; border-radius: 10px; }
   .ms-tag.farm { background: var(--tag-farm); color: var(--tag-farm-text); }
   .ms-tag.elec { background: var(--tag-elec); color: var(--tag-elec-text); }
@@ -29918,7 +29919,7 @@ async function ghWriteProjDirect() {
 async function ghAppendLog(entry) {
   try {
     let existing = '', sha = null;
-    try { const m = await ghMeta(CONFIG.logFile); sha = m.sha; existing = atob(m.content.replace(/\n/g,'')); } catch {}
+    try { const m = await ghMeta(CONFIG.logFile); sha = m.sha; existing = decodeURIComponent(escape(atob(m.content.replace(/\n/g,'')))); } catch {}
     await ghWrite(CONFIG.logFile, existing + JSON.stringify(entry) + '\n', sha);
   } catch(e) { console.warn('Log append failed:', e); }
 }
@@ -30139,6 +30140,44 @@ function applyEvents(data, events) {
             }
           }
           ms.updated_at = ev.ts;
+          proj.updated_at = ev.ts;
+          break;
+        }
+
+        case 'update_deleted': {
+          const ms = proj.milestones?.find(m => m.milestone_id === ev.milestone_id);
+          if (!ms) break;
+          for (const st of (ms.stages || [])) {
+            const tk = st.tasks?.find(t => t.task_id === ev.task_id);
+            if (tk && tk.updates) {
+              tk.updates = tk.updates.filter(u => u.update_id !== ev.update_id);
+              break;
+            }
+          }
+          const msTask = ms.tasks?.find(t => t.task_id === ev.task_id);
+          if (msTask && msTask.updates) {
+            msTask.updates = msTask.updates.filter(u => u.update_id !== ev.update_id);
+          }
+          proj.updated_at = ev.ts;
+          break;
+        }
+
+        case 'update_edited': {
+          const ms = proj.milestones?.find(m => m.milestone_id === ev.milestone_id);
+          if (!ms) break;
+          for (const st of (ms.stages || [])) {
+            const tk = st.tasks?.find(t => t.task_id === ev.task_id);
+            if (tk && tk.updates) {
+              const upd = tk.updates.find(u => u.update_id === ev.update.update_id);
+              if (upd) Object.assign(upd, ev.update);
+              break;
+            }
+          }
+          const msTask = ms.tasks?.find(t => t.task_id === ev.task_id);
+          if (msTask && msTask.updates) {
+            const upd = msTask.updates.find(u => u.update_id === ev.update.update_id);
+            if (upd) Object.assign(upd, ev.update);
+          }
           proj.updated_at = ev.ts;
           break;
         }
@@ -32221,12 +32260,15 @@ function deleteMilestone() {
   const proj = STATE.data.projects.find(p => p.project_id === projId);
   const ms   = proj?.milestones.find(m => m.milestone_id === msId);
   if (!ms) return;
-  if (!confirm(`確定要刪除里程碑「${ms.name}」${ms.parcel_name ? `（${ms.parcel_name}）` : ''}？\n此操作無法復原。`)) return;
+  const displayName = ms.name?.length > 30 ? ms.milestone_id : `「${ms.name}」${ms.parcel_name ? `（${ms.parcel_name}）` : ''}`;
+  if (!confirm(`確定要刪除里程碑 ${displayName}？\n此操作無法復原。`)) return;
   proj.milestones = proj.milestones.filter(m => m.milestone_id !== msId);
   const now = new Date().toISOString();
   proj.updated_at = now;
   closeMsModal();
   renderAll();
+  // 寫入 projects.json（確保持久化，不依賴 events.jsonl）
+  ghWriteProjDirect();
   ghAppendEvent({
     event: 'milestone_deleted',
     project_id: projId,
