@@ -289,8 +289,9 @@
     <span id="topbar-proj-name" style="font-size:13px;opacity:.8;font-weight:400"></span>
     <span class="spacer"></span>
     <button id="sync-btn" onclick="syncToGitHub()">☁ 同步</button>
+    <span id="event-sync-status" style="font-size:11px;margin-left:6px;opacity:.8"></span>
     <button onclick="showPatModal()" style="padding:6px 14px;border-radius:4px;border:1px solid rgba(255,255,255,.5);background:transparent;color:#fff;cursor:pointer;font-size:13px;margin-left:4px">🔑 Token 設定</button>
-    <span style="font-size:10px;opacity:.35;margin-left:8px">v3.0 · 2026-04-30</span>
+    <span style="font-size:10px;opacity:.35;margin-left:8px">v3.0 · 2026-05-13</span>
   </div>
 
   <div id="main">
@@ -29971,7 +29972,7 @@ async function ghAppendSnapshot() {
     try {
       const m = await ghMeta(CONFIG.snapshotFile);
       sha = m.sha;
-      existing = atob(m.content.replace(/\n/g, ''));
+      existing = decodeURIComponent(escape(atob(m.content.replace(/\n/g, ''))));
     } catch(e) {
       // 檔案不存在（404）→ 第一次，existing 維持空字串
       if (!e.message.includes('404') && !e.message.includes('meta error')) console.warn('Snapshot meta error:', e);
@@ -29993,19 +29994,32 @@ async function ghAppendSnapshot() {
 // ── Event Sourcing ────────────────────────────────────────────────────────────
 
 // Append a single event line to events.jsonl on GitHub
+function showEventSyncStatus(ok, msg) {
+  const el = document.getElementById('event-sync-status');
+  if (!el) return;
+  el.textContent = ok ? `✓ ${msg}` : `✗ 未同步：${msg}`;
+  el.style.color = ok ? '#7fff9a' : '#ff8a8a';
+  if (ok) setTimeout(() => { el.textContent = ''; }, 4000);
+}
+
 async function ghAppendEvent(event) {
   try {
     let existing = '', sha = null;
     try {
       const m = await ghMeta(CONFIG.eventsFile);
       sha = m.sha;
-      existing = atob(m.content.replace(/\n/g, ''));
+      existing = decodeURIComponent(escape(atob(m.content.replace(/\n/g, ''))));
     } catch(e) {
       // File doesn't exist yet (404) → first event, existing stays ''
       if (!e.message?.includes('meta error') && !e.message?.includes('404')) console.warn('Event meta error:', e);
     }
     await ghWrite(CONFIG.eventsFile, existing + JSON.stringify(event) + '\n', sha);
-  } catch(e) { console.warn('Event append failed (non-blocking):', e); }
+    const t = new Date().toLocaleTimeString('zh-TW', {hour:'2-digit', minute:'2-digit', second:'2-digit'});
+    showEventSyncStatus(true, t);
+  } catch(e) {
+    console.warn('Event append failed:', e);
+    showEventSyncStatus(false, e.message || '請確認 PAT 已設定');
+  }
 }
 
 // Derive milestone status from its stages (shared logic used by setStageStatus & applyEvents)
@@ -32267,8 +32281,6 @@ function deleteMilestone() {
   proj.updated_at = now;
   closeMsModal();
   renderAll();
-  // 寫入 projects.json（確保持久化，不依賴 events.jsonl）
-  ghWriteProjDirect();
   ghAppendEvent({
     event: 'milestone_deleted',
     project_id: projId,
