@@ -31640,7 +31640,6 @@ function openEditUpdateModal(projId, msId, taskId, updateId) {
 function deleteUpdateItem() {
   const { projId, msId, taskId, editUpdateId } = STATE.modalContext;
   if (!editUpdateId) return;
-  if (!confirm('確定要刪除此筆更新記錄？')) return;
   const proj = STATE.data.projects.find(p => p.project_id === projId);
   const ms = proj?.milestones.find(m => m.milestone_id === msId);
   for (const st of (ms?.stages || [])) {
@@ -31656,7 +31655,6 @@ function deleteUpdateItem() {
 }
 
 function quickDeleteUpdate(projId, msId, taskId, updateId) {
-  if (!confirm('確定要刪除此筆更新記錄？')) return;
   const proj = STATE.data.projects.find(p => p.project_id === projId);
   const ms = proj?.milestones.find(m => m.milestone_id === msId);
   for (const st of (ms?.stages || [])) {
