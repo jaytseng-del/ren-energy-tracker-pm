@@ -330,11 +330,16 @@
 <div id="update-modal" class="modal-overlay hidden">
   <div class="modal">
     <div class="modal-header">
-      <h2>新增更新</h2>
+      <h2 id="update-modal-title">新增更新</h2>
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-body">
+      <input type="hidden" id="f-edit-update-id" value="">
       <div id="modal-context" style="font-size:12px;color:var(--text2);margin-bottom:16px;padding:8px;background:var(--bg);border-radius:4px;"></div>
+      <div class="form-group">
+        <label>更新日期</label>
+        <input id="f-update-date" type="date" class="form-control">
+      </div>
       <div class="form-group">
         <label>發生了什麼 <span class="req">*</span></label>
         <textarea id="f-content" class="form-control" rows="3" placeholder="描述本次狀況…"></textarea>
@@ -360,6 +365,7 @@
       </div>
     </div>
     <div class="modal-footer">
+      <button id="update-modal-del-btn" class="btn" style="background:var(--danger);color:#fff;margin-right:auto;display:none" onclick="deleteUpdateItem()">刪除此更新</button>
       <button class="btn btn-secondary" onclick="closeModal()">取消</button>
       <button class="btn btn-primary" onclick="submitUpdate()">儲存更新</button>
     </div>
@@ -30735,9 +30741,14 @@ function renderSidebar() {
     for (const st of ms.stages) {
       for (const tk of (st.tasks || [])) {
         const lastUpdate = tk.updates?.[tk.updates.length-1];
-        const lastTs = lastUpdate ? new Date(lastUpdate.created_at).getTime() : 0;
-        if (now - lastTs > week) {
-          alerts.push({ ms: ms.name, task: tk.name, days: Math.floor((now - lastTs) / 86400000) });
+        // 有 update 用最後 update 時間；沒有 update 用 task 建立時間；都沒有就跳過
+        const refTs = lastUpdate
+          ? new Date(lastUpdate.created_at).getTime()
+          : (tk.created_at ? new Date(tk.created_at).getTime() : null);
+        if (refTs !== null && now - refTs > week) {
+          const days = Math.floor((now - refTs) / 86400000);
+          const label = lastUpdate ? `${days}天未更新` : `建立後 ${days} 天無更新`;
+          alerts.push({ ms: ms.name, task: tk.name, days, label });
         }
       }
     }
@@ -30750,7 +30761,7 @@ function renderSidebar() {
     list.innerHTML = alerts.slice(0, 8).map(a => `
       <div class="alert-item">
         <div class="alert-dot${a.days > 14 ? ' danger' : ''}"></div>
-        <div class="alert-text"><strong>${a.task}</strong><br>${a.ms}・${a.days}天未更新</div>
+        <div class="alert-text"><strong>${a.task}</strong><br>${a.ms}・${a.label}</div>
       </div>`).join('');
   }
 }
@@ -30927,6 +30938,8 @@ function renderTab0() {
         <h3>${ms.name}</h3>
         <span class="ms-status ${st}">${statusLabel[st]||'未開始'}</span>
         <button class="ms-edit-btn" onclick="event.stopPropagation();openMsModal('${proj.project_id}','${ms.milestone_id}')">✎ 編輯</button>
+        <button class="ms-edit-btn" title="上移" onclick="event.stopPropagation();moveMilestoneGroup('${proj.project_id}','${ms.name}',-1)">↑</button>
+        <button class="ms-edit-btn" title="下移" onclick="event.stopPropagation();moveMilestoneGroup('${proj.project_id}','${ms.name}',1)">↓</button>
       </div>`;
 
     // showContent 統一由 isOpen 控制（含頂層里程碑）
@@ -31040,6 +31053,8 @@ function renderTab0() {
         <h3>${msName}</h3>
         <span style="font-size:11px;color:var(--text3);margin-right:4px">${instances.length} 地塊</span>
         <span class="ms-status ${st}">${statusLabel[st]||'未開始'}</span>
+        <button class="ms-edit-btn" title="上移" onclick="event.stopPropagation();moveMilestoneGroup('${proj.project_id}','${msName}',-1)">↑</button>
+        <button class="ms-edit-btn" title="下移" onclick="event.stopPropagation();moveMilestoneGroup('${proj.project_id}','${msName}',1)">↓</button>
       </div>
       <div class="ms-progress">
         <div class="progress-bar"><div class="progress-fill" style="width:${avgPct}%"></div></div>
@@ -31058,6 +31073,9 @@ function renderTab0() {
             </div>
             ${renderSingleMs(ms, true)}
           </div>`).join('')}
+        <div style="padding:8px 16px">
+          <button class="add-parcel-btn" onclick="openAddParcelToMsModal('${proj.project_id}','${msName}')">＋ 新增地塊</button>
+        </div>
       </div>` : ''}
     </div>`;
   }).join('')) + addMsBtn;
@@ -31119,10 +31137,18 @@ function renderTaskRow(task, ms) {
           ${showUpdates ? '▾ 收起' : `▸ ${updates.length} 筆更新`}
         </div>
         ${showUpdates ? `<div class="updates-inline">${updates.slice(-3).reverse().map(u => `
-          <div class="update-entry">
-            <span class="update-ts">${(u.created_at||'').substring(0,10)}</span>
-            <span class="update-impact ${u.impact}">${impactLabel(u.impact)}</span>
-            ${u.impact_days ? `<span style="font-size:11px;color:var(--text3)">  ${u.impact_days}天</span>` : ''}
+          <div class="update-entry" style="position:relative">
+            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+              <span class="update-ts">${(u.created_at||'').substring(0,10)}</span>
+              <span class="update-impact ${u.impact}">${impactLabel(u.impact)}</span>
+              ${u.impact_days ? `<span style="font-size:11px;color:var(--text3)">${u.impact_days}天</span>` : ''}
+              <span style="margin-left:auto;display:flex;gap:4px">
+                <button onclick="event.stopPropagation();openEditUpdateModal('${proj.project_id}','${ms.milestone_id}','${task.task_id}','${u.update_id}')"
+                  style="font-size:11px;padding:1px 6px;border:1px solid var(--border);border-radius:3px;background:transparent;cursor:pointer;color:var(--text2)">✎</button>
+                <button onclick="event.stopPropagation();quickDeleteUpdate('${proj.project_id}','${ms.milestone_id}','${task.task_id}','${u.update_id}')"
+                  style="font-size:11px;padding:1px 6px;border:1px solid var(--danger);border-radius:3px;background:transparent;cursor:pointer;color:var(--danger)">✕</button>
+              </span>
+            </div>
             <div style="margin-top:4px">${u.content}</div>
           </div>`).join('')}
         </div>` : ''}
@@ -31555,7 +31581,7 @@ function renderTab2() {
 
 // ── Update Modal ─────────────────────────────────────────────────────────────
 function openUpdateModal(projId, msId, stageId, taskId) {
-  STATE.modalContext = { projId, msId, stageId, taskId };
+  STATE.modalContext = { projId, msId, stageId, taskId, editUpdateId: null };
   const proj = STATE.data.projects.find(p => p.project_id === projId);
   const ms = proj?.milestones.find(m => m.milestone_id === msId);
   let taskName = '（Stage 層級更新）';
@@ -31567,14 +31593,81 @@ function openUpdateModal(projId, msId, stageId, taskId) {
   }
   document.getElementById('modal-context').textContent =
     `${ms?.name || ''}${ms?.parcel_name ? ` (${ms.parcel_name})` : ''} › ${taskName}`;
+  document.getElementById('update-modal-title').textContent = '新增更新';
+  document.getElementById('f-edit-update-id').value = '';
+  document.getElementById('update-modal-del-btn').style.display = 'none';
 
-  // Reset form
+  // Reset form & set date to today
   ['f-content','f-next'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('f-update-date').value = new Date().toISOString().substring(0,10);
   document.getElementById('f-impact').value = '';
   document.getElementById('f-days').value = '';
   document.getElementById('f-days-group').style.display = 'none';
   ['f-content','f-impact'].forEach(id => document.getElementById(id).classList.remove('invalid'));
   document.getElementById('update-modal').classList.remove('hidden');
+}
+
+function openEditUpdateModal(projId, msId, taskId, updateId) {
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  const ms = proj?.milestones.find(m => m.milestone_id === msId);
+  let target = null, taskName = '';
+  for (const st of (ms?.stages || [])) {
+    const tk = st.tasks?.find(t => t.task_id === taskId);
+    if (tk) { target = tk; taskName = tk.name; break; }
+  }
+  if (!target) return;
+  const upd = (target.updates || []).find(u => u.update_id === updateId);
+  if (!upd) return;
+
+  STATE.modalContext = { projId, msId, stageId: null, taskId, editUpdateId: updateId };
+  document.getElementById('modal-context').textContent =
+    `${ms?.name || ''}${ms?.parcel_name ? ` (${ms.parcel_name})` : ''} › ${taskName}`;
+  document.getElementById('update-modal-title').textContent = '編輯更新';
+  document.getElementById('f-edit-update-id').value = updateId;
+  document.getElementById('update-modal-del-btn').style.display = '';
+
+  // Pre-fill
+  document.getElementById('f-update-date').value = (upd.created_at || '').substring(0,10) || new Date().toISOString().substring(0,10);
+  document.getElementById('f-content').value = upd.content || '';
+  document.getElementById('f-impact').value = upd.impact || '';
+  document.getElementById('f-days').value = upd.impact_days || '';
+  document.getElementById('f-days-group').style.display = (upd.impact && upd.impact !== 'none') ? 'block' : 'none';
+  document.getElementById('f-next').value = upd.next_action || '';
+  ['f-content','f-impact','f-days'].forEach(id => document.getElementById(id).classList.remove('invalid'));
+  document.getElementById('update-modal').classList.remove('hidden');
+}
+
+function deleteUpdateItem() {
+  const { projId, msId, taskId, editUpdateId } = STATE.modalContext;
+  if (!editUpdateId) return;
+  if (!confirm('確定要刪除此筆更新記錄？')) return;
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  const ms = proj?.milestones.find(m => m.milestone_id === msId);
+  for (const st of (ms?.stages || [])) {
+    const tk = st.tasks?.find(t => t.task_id === taskId);
+    if (tk && tk.updates) {
+      tk.updates = tk.updates.filter(u => u.update_id !== editUpdateId);
+      break;
+    }
+  }
+  closeModal();
+  renderAll();
+  ghAppendEvent({ event: 'update_deleted', project_id: projId, milestone_id: msId, task_id: taskId, update_id: editUpdateId, ts: new Date().toISOString() });
+}
+
+function quickDeleteUpdate(projId, msId, taskId, updateId) {
+  if (!confirm('確定要刪除此筆更新記錄？')) return;
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  const ms = proj?.milestones.find(m => m.milestone_id === msId);
+  for (const st of (ms?.stages || [])) {
+    const tk = st.tasks?.find(t => t.task_id === taskId);
+    if (tk && tk.updates) {
+      tk.updates = tk.updates.filter(u => u.update_id !== updateId);
+      break;
+    }
+  }
+  renderAll();
+  ghAppendEvent({ event: 'update_deleted', project_id: projId, milestone_id: msId, task_id: taskId, update_id: updateId, ts: new Date().toISOString() });
 }
 
 function closeModal() { document.getElementById('update-modal').classList.add('hidden'); }
@@ -31599,19 +31692,16 @@ function submitUpdate() {
   } else document.getElementById('f-days').classList.remove('invalid');
   if (!valid) return;
 
-  const { projId, msId, taskId } = STATE.modalContext;
+  const { projId, msId, taskId, editUpdateId } = STATE.modalContext;
   const proj = STATE.data.projects.find(p => p.project_id === projId);
   const ms = proj?.milestones.find(m => m.milestone_id === msId);
   if (!ms) return;
 
-  const update = {
-    update_id: 'UPD-' + Date.now(),
-    created_at: new Date().toISOString(),
-    content,
-    impact,
-    impact_days: days ? +days : null,
-    next_action: next || null,
-  };
+  // 處理日期：用選取的日期（台灣時間中午 12:00），fallback 到現在
+  const dateVal = document.getElementById('f-update-date').value;
+  const created_at = dateVal
+    ? new Date(dateVal + 'T12:00:00+08:00').toISOString()
+    : new Date().toISOString();
 
   let target = null;
   if (taskId) {
@@ -31620,30 +31710,45 @@ function submitUpdate() {
       if (tk) { target = tk; break; }
     }
   }
+  if (!target) return;
 
-  if (target) {
+  if (editUpdateId) {
+    // ── 編輯模式：就地修改既有 update ──
+    const upd = (target.updates || []).find(u => u.update_id === editUpdateId);
+    if (upd) {
+      upd.created_at = created_at;
+      upd.content = content;
+      upd.impact = impact;
+      upd.impact_days = days ? +days : null;
+      upd.next_action = next || null;
+    }
+    if (next) target.next_action = next;
+    ms.updated_at = new Date().toISOString();
+    proj.updated_at = new Date().toISOString();
+    closeModal();
+    renderAll();
+    ghAppendEvent({ event: 'update_edited', project_id: projId, milestone_id: msId, task_id: taskId, update: upd, ts: new Date().toISOString() });
+  } else {
+    // ── 新增模式 ──
+    const update = {
+      update_id: 'UPD-' + Date.now(),
+      created_at,
+      content,
+      impact,
+      impact_days: days ? +days : null,
+      next_action: next || null,
+    };
     if (!target.updates) target.updates = [];
     target.updates.push(update);
     if (next) target.next_action = next;
     ms.updated_at = update.created_at;
     proj.updated_at = update.created_at;
+    closeModal();
+    renderAll();
+    ghAppendEvent({ event: 'update_added', project_id: projId, milestone_id: msId, task_id: taskId, update, ts: update.created_at });
+    const logEntry = { ...update, project_id: projId, milestone_id: msId, task_id: taskId };
+    ghAppendLog(logEntry);
   }
-
-  closeModal();
-  renderAll();
-
-  // Async: append event (replaces syncToGitHub)
-  ghAppendEvent({
-    event: 'update_added',
-    project_id: projId,
-    milestone_id: msId,
-    task_id: taskId,
-    update,
-    ts: update.created_at,
-  });
-  // Also append to legacy updates_log.jsonl for backward compatibility
-  const logEntry = { ...update, project_id: projId, milestone_id: msId, task_id: taskId };
-  ghAppendLog(logEntry);
 }
 
 // ── Stage Status Menu ─────────────────────────────────────────────────────────
@@ -31868,6 +31973,107 @@ function removeStageDraft(i) {
   _stageDraft.splice(i, 1);
   _stageDraft.forEach((st, idx) => { st.sequence = idx + 1; });
   renderStageDraftList();
+}
+
+// ── 里程碑順序調整 ────────────────────────────────────────────────────────────
+function moveMilestoneGroup(projId, msName, dir) {
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  if (!proj) return;
+
+  const milestones = proj.milestones;
+
+  // 找出所有 msName 在陣列中的 index
+  const ownIdxs = milestones.map((m, i) => m.name === msName ? i : -1).filter(i => i >= 0);
+  if (!ownIdxs.length) return;
+
+  const firstOwn = ownIdxs[0];
+  const lastOwn  = ownIdxs[ownIdxs.length - 1];
+
+  if (dir === -1) {
+    // 往上：找緊靠前面的那個「不同 msName」的區塊，把它整段移到 ownIdxs 後面
+    if (firstOwn === 0) return; // 已在最頂
+    // 找前一個區塊的 msName
+    const prevName = milestones[firstOwn - 1].name;
+    const prevIdxs = milestones.map((m, i) => m.name === prevName ? i : -1).filter(i => i >= 0);
+    const prevFirst = prevIdxs[0];
+    const prevLast  = prevIdxs[prevIdxs.length - 1];
+    // 把 prev 區塊取出，插入到 own 區塊後面
+    const prevBlock = milestones.splice(prevFirst, prevIdxs.length);
+    milestones.splice(lastOwn - prevIdxs.length + 1, 0, ...prevBlock);
+  } else {
+    // 往下：找緊靠後面的那個區塊，把它整段移到 ownIdxs 前面
+    if (lastOwn >= milestones.length - 1) return; // 已在最底
+    const nextName = milestones[lastOwn + 1].name;
+    const nextIdxs = milestones.map((m, i) => m.name === nextName ? i : -1).filter(i => i >= 0);
+    const nextFirst = nextIdxs[0];
+    const nextBlock = milestones.splice(nextFirst, nextIdxs.length);
+    milestones.splice(firstOwn, 0, ...nextBlock);
+  }
+
+  renderAll();
+  ghWriteProjDirect();
+}
+
+// ── 新增地塊到既有 per_parcel 里程碑群組 ───────────────────────────────────────
+function openAddParcelToMsModal(projId, msName) {
+  const parcelName = prompt(`在「${msName}」底下新增地塊\n\n請輸入地塊名稱（例：麗升七股二區）：`);
+  if (!parcelName || !parcelName.trim()) return;
+  const name = parcelName.trim();
+
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  if (!proj) return;
+
+  // 找同名第一個實例，clone 它的 Stage 結構（狀態重置）
+  const template = proj.milestones.find(m => m.name === msName && m.application_scope === 'per_parcel');
+  if (!template) return;
+
+  const newMsId = `${projId}-MS-${Date.now()}`;
+  const newParcelId = `PCL-${Date.now()}`;
+
+  const clonedStages = (template.stages || []).map((st, idx) => ({
+    stage_id: `${newMsId}-ST${String(idx+1).padStart(2,'0')}`,
+    name: st.name,
+    stage_type: st.stage_type,
+    cc_percent: st.cc_percent,
+    estimated_days: st.estimated_days,
+    authority: st.authority || '',
+    status: 'pending',
+    actual_end: null,
+    tasks: [],
+  }));
+
+  const newMs = {
+    milestone_id: newMsId,
+    name: msName,
+    group: template.group,
+    application_scope: 'per_parcel',
+    parcel_id: newParcelId,
+    parcel_name: name,
+    dependency_type: template.dependency_type,
+    depends_on: template.depends_on || [],
+    baseline_start: null,
+    baseline_end: null,
+    forecast_start: null,
+    forecast_end: null,
+    actual_start: null,
+    actual_end: null,
+    status: 'pending',
+    notes: '',
+    stages: clonedStages,
+    updated_at: new Date().toISOString(),
+  };
+
+  // 插入到同名最後一個實例之後
+  const lastIdx = proj.milestones.reduce((acc, m, i) => m.name === msName ? i : acc, -1);
+  if (lastIdx >= 0) {
+    proj.milestones.splice(lastIdx + 1, 0, newMs);
+  } else {
+    proj.milestones.push(newMs);
+  }
+
+  renderAll();
+  ghWriteProjDirect();
+  ghAppendEvent({ event: 'milestone_created', project_id: projId, milestone: newMs, ts: new Date().toISOString() });
 }
 
 function openMsModal(projId, msId) {
