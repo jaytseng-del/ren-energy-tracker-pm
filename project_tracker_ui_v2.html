@@ -30638,8 +30638,8 @@ async function init() {
   renderAll();
   switchTab(STATE.currentTab);
 
-  // 非同步 append 今日快照（失敗不影響主功能）
-  ghAppendSnapshot();
+  // 快照機制已停用：本機端透過 github_sync_history/ 按日期保留完整歷史，不需要 snapshots.jsonl
+  // ghAppendSnapshot();
 }
 
 // PM badge colour helper
