@@ -23422,7 +23422,7 @@
       "start_date": "2023-09-26 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-08T07:15:00.972Z",
+      "updated_at": "2026-05-14T03:42:06.617Z",
       "lots": [
         {
           "lot_number": "桃園市新屋區後庄段976",
@@ -23903,7 +23903,7 @@
           "actual_end": "2026-01-22",
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-08T06:55:36.152Z",
+          "updated_at": "2026-05-14T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-007-MS-004-ST01",
@@ -23925,7 +23925,7 @@
                   "task_type": "recurring",
                   "status": "in_progress",
                   "next_action_due": "2026-05-15",
-                  "next_action": "後續要再更明確的詢問，C鋼的添加是否需辦理變更",
+                  "next_action": "1.盡快與種疄確認擋水板高度\n2.辦理農許變更",
                   "notes": "跟農業處,建管確認擋水板及C鋼可否架設",
                   "updates": [
                     {
@@ -23935,6 +23935,22 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": "後續要再更明確的詢問，C鋼的添加是否需辦理變更"
+                    },
+                    {
+                      "update_id": "UPD-1778729655208",
+                      "created_at": "2026-05-14T04:00:00.000Z",
+                      "content": "5/13 農業處余承辦：目前沒辦過綠能容許的案件，需要確認綠能容許\n1.向縣府直接申請或公所核轉縣府\n2.確認是否需會勘或會辦各單位",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "要再電話詢問"
+                    },
+                    {
+                      "update_id": "UPD-1778729973149",
+                      "created_at": "2026-05-14T04:00:00.000Z",
+                      "content": "5/14與種疄聯繫：\n1.擋水板材質為塑膠，僅架設擋水板非固定結構(不用變更使照)，原預計高度為30公分，現建議增至最下C鋼高度增加至95-100公分\n2.如增加一根C鋼，此C鋼為固定結構(需要變更使照)\n3.會繼續使用目前漢企磨平工程之工班，希望麗升可以加速確認擋水板訂購尺寸",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "1.盡快與種疄確認擋水板高度\n2.辦理農許變更"
                     }
                   ],
                   "created_at": "2026-05-08T06:08:44.459Z",
@@ -24034,7 +24050,7 @@
                   "task_type": "recurring",
                   "status": "in_progress",
                   "next_action_due": "2026-05-22",
-                  "next_action": "持續追蹤確認施作完成時間",
+                  "next_action": "持續追蹤",
                   "notes": "5/11開始施作",
                   "updates": [
                     {
@@ -24044,6 +24060,14 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": "持續追蹤確認施作完成時間"
+                    },
+                    {
+                      "update_id": "UPD-1778729548156",
+                      "created_at": "2026-05-14T04:00:00.000Z",
+                      "content": "5/14詢問漢企，目前施作中，完成會以email通知，暫無確定完成日期",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "持續追蹤"
                     }
                   ],
                   "created_at": "2026-05-08T06:12:03.248Z",
@@ -24055,7 +24079,7 @@
                   "task_type": "recurring",
                   "status": "in_progress",
                   "next_action_due": "2026-05-22",
-                  "next_action": "持續追蹤進場時間及完成時間",
+                  "next_action": "持續追蹤",
                   "notes": "種疄廠商已報價，漢企正在等待廠商確認進場時間",
                   "updates": [
                     {
@@ -24065,6 +24089,14 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": "持續追蹤進場時間及完成時間"
+                    },
+                    {
+                      "update_id": "UPD-1778729492946",
+                      "created_at": "2026-05-14T04:00:00.000Z",
+                      "content": "5/14詢問漢企，原5/12進場，因下雨改5/16進場施作，預計15-20(5/30)天完成",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "持續追蹤"
                     }
                   ],
                   "created_at": "2026-05-08T06:13:10.234Z",
@@ -24214,16 +24246,31 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-08T04:57:32.562Z",
+          "updated_at": "2026-05-14T03:42:06.617Z",
           "stages": [
             {
               "stage_id": "PRJ-007-MS-006-ST01",
               "sequence": 1,
-              "name": "放養",
-              "authority": "—",
+              "name": "種植設備進場及架設完成",
+              "type": "fixed",
+              "cc": "15",
+              "estimated_days": "60",
+              "authority": "（內部）",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-007-MS-006-ST01",
+              "sequence": 2,
+              "name": "種植",
+              "authority": "（內部）",
               "type": "fixed",
               "estimated_days": "180",
-              "cc": "50",
+              "cc": "20",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -24233,24 +24280,9 @@
             },
             {
               "stage_id": "PRJ-007-MS-006-ST02",
-              "sequence": 2,
+              "sequence": 3,
               "name": "申請文件準備",
               "authority": "（內部）",
-              "type": "fixed",
-              "estimated_days": "30",
-              "cc": "30",
-              "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": null,
-              "notes": "",
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-007-MS-006-ST03",
-              "sequence": 3,
-              "name": "送件",
-              "authority": "農業局",
               "type": "fixed",
               "estimated_days": "30",
               "cc": "20",
@@ -24262,13 +24294,28 @@
               "tasks": []
             },
             {
-              "stage_id": "PRJ-007-MS-006-ST04",
+              "stage_id": "PRJ-007-MS-006-ST03",
               "sequence": 4,
+              "name": "送件",
+              "authority": "農業局",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-007-MS-006-ST04",
+              "sequence": 5,
               "name": "補正 #1",
               "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "skippable",
               "estimated_days": "30",
-              "cc": "3",
+              "cc": "2",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -24278,7 +24325,7 @@
             },
             {
               "stage_id": "PRJ-007-MS-006-ST05",
-              "sequence": 5,
+              "sequence": 6,
               "name": "補正 #2",
               "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "skippable",
@@ -24293,7 +24340,7 @@
             },
             {
               "stage_id": "PRJ-007-MS-006-ST06",
-              "sequence": 6,
+              "sequence": 7,
               "name": "函轉地方政府",
               "authority": "地方農業局",
               "type": "fixed",
@@ -24308,12 +24355,12 @@
             },
             {
               "stage_id": "PRJ-007-MS-006-ST07",
-              "sequence": 7,
+              "sequence": 8,
               "name": "補正 #1",
               "authority": "地方農業局",
               "type": "skippable",
               "estimated_days": "90",
-              "cc": "8",
+              "cc": "2",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -24323,12 +24370,12 @@
             },
             {
               "stage_id": "PRJ-007-MS-006-ST08",
-              "sequence": 8,
+              "sequence": 9,
               "name": "補正 #2",
               "authority": "地方農業局",
               "type": "skippable",
               "estimated_days": "90",
-              "cc": "4",
+              "cc": "2",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -24338,12 +24385,12 @@
             },
             {
               "stage_id": "PRJ-007-MS-006-ST09",
-              "sequence": 9,
+              "sequence": 10,
               "name": "現勘",
               "authority": "地方農業局",
               "type": "skippable",
               "estimated_days": "14",
-              "cc": "5",
+              "cc": "2",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -24353,12 +24400,12 @@
             },
             {
               "stage_id": "PRJ-007-MS-006-ST10",
-              "sequence": 10,
+              "sequence": 11,
               "name": "取得農業容許",
               "authority": "—",
               "type": "fixed",
               "estimated_days": "1",
-              "cc": "13",
+              "cc": "15",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -24368,7 +24415,8 @@
             }
           ],
           "tasks": [],
-          "forecast_start": "2026-06-28"
+          "forecast_start": "2026-06-28",
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-007-MS-007",
