@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-13T09:09:55.208Z",
+      "updated_at": "2026-05-14T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -237,7 +237,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-13T04:00:00.000Z",
+          "updated_at": "2026-05-14T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-001-MS-001-ST01",
@@ -350,7 +350,7 @@
                   "task_type": "one-off",
                   "status": "in_progress",
                   "next_action_due": null,
-                  "next_action": "111",
+                  "next_action": "地主還是連絡不上",
                   "notes": null,
                   "updates": [
                     {
@@ -360,6 +360,14 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": "聯絡不上"
+                    },
+                    {
+                      "update_id": "UPD-1778721970961",
+                      "created_at": "2026-05-14T04:00:00.000Z",
+                      "content": "follow 開發商",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "地主還是連絡不上"
                     }
                   ],
                   "created_at": "2026-05-07T03:00:46.399Z",
