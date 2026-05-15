@@ -23538,7 +23538,7 @@
       "start_date": "2023-09-26 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T03:31:52.368Z",
+      "updated_at": "2026-05-15T03:33:46.877Z",
       "lots": [
         {
           "lot_number": "桃園市新屋區後庄段976",
@@ -24019,7 +24019,7 @@
           "actual_end": "2026-01-22",
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T03:31:52.368Z",
+          "updated_at": "2026-05-15T03:33:46.877Z",
           "stages": [
             {
               "stage_id": "PRJ-007-MS-004-ST01",
@@ -24041,7 +24041,7 @@
                   "task_type": "recurring",
                   "status": "in_progress",
                   "next_action_due": "2026-05-15",
-                  "next_action": "與Jill確認追加費用流程",
+                  "next_action": "跟PLL說明追加原因",
                   "notes": "跟農業處,建管確認擋水板及C鋼可否架設",
                   "updates": [
                     {
@@ -24059,6 +24059,14 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": "與Jill確認追加費用流程"
+                    },
+                    {
+                      "update_id": "UPD-1778816019711",
+                      "created_at": "2026-05-15T04:00:00.000Z",
+                      "content": "5/15追加費用流程：附請購+合約+追加報價單(29萬未稅)進行簽呈，建議簽出去前要先跟PLL說明",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "跟PLL說明追加原因"
                     }
                   ],
                   "created_at": "2026-05-08T06:08:44.459Z",
