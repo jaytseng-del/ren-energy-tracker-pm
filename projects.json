@@ -13353,7 +13353,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:47:37.254Z",
+      "updated_at": "2026-05-14T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -21698,7 +21698,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T05:47:37.254Z",
+          "updated_at": "2026-05-14T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-053-ST01",
@@ -21807,9 +21807,18 @@
                   "task_type": "one-off",
                   "status": "in_progress",
                   "next_action_due": "2026-05-21",
-                  "next_action": null,
+                  "next_action": "持續追蹤",
                   "notes": null,
-                  "updates": [],
+                  "updates": [
+                    {
+                      "update_id": "UPD-1778824089403",
+                      "created_at": "2026-05-14T04:00:00.000Z",
+                      "content": "5/14光浴預計下周回復補正時間",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "持續追蹤"
+                    }
+                  ],
                   "created_at": "2026-05-15T05:46:54.660Z",
                   "updated_at": "2026-05-15T05:46:57.934Z"
                 },
