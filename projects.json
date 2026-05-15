@@ -4780,7 +4780,7 @@
       "start_date": "2024-05-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-07T05:34:00.436Z",
+      "updated_at": "2026-05-14T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段15地號",
@@ -5535,7 +5535,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-07T03:43:24.740Z",
+          "updated_at": "2026-05-14T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-005-ST01",
@@ -5564,6 +5564,14 @@
                       "update_id": "UPD-1778125404740",
                       "created_at": "2026-05-07T03:43:24.740Z",
                       "content": "星凱提供的地質鑽探報告與原先我們提供的報告地下水位高程有差幾十cm,已跟技師確認,目前會算一下這樣改動滯洪池頂部高程需要多高,確認數字後再與星凱確認土方",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1778739293590",
+                      "created_at": "2026-05-14T04:00:00.000Z",
+                      "content": "5/14 技師告知星凱量測的新水位大概只會與他們目前送件的GL+0.7M差0.1-0.2M左右,星凱的水位是GL+0.2-0.6M,取最高點就是0.6M",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -5607,7 +5615,7 @@
                   "task_id": "TSK-1778125050896",
                   "name": "follow 審查狀況",
                   "task_type": "recurring",
-                  "status": "pending",
+                  "status": "in_progress",
                   "next_action_due": null,
                   "next_action": null,
                   "notes": null,
@@ -5619,9 +5627,18 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1778739353492",
+                      "created_at": "2026-05-14T04:00:00.000Z",
+                      "content": "5/14 5/21日為審委員現勘日",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
                     }
                   ],
-                  "created_at": "2026-05-07T03:37:30.896Z"
+                  "created_at": "2026-05-07T03:37:30.896Z",
+                  "updated_at": "2026-05-14T06:14:59.165Z"
                 }
               ]
             },
@@ -9256,7 +9273,7 @@
       "start_date": "2025-07-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-07T05:32:28.494Z",
+      "updated_at": "2026-05-14T06:18:15.999Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段38地號",
@@ -9605,7 +9622,7 @@
                   "task_id": "TSK-1778125559454",
                   "name": "follow 核可狀況",
                   "task_type": "recurring",
-                  "status": "done",
+                  "status": "in_progress",
                   "next_action_due": null,
                   "next_action": null,
                   "notes": null,
@@ -9620,7 +9637,7 @@
                     }
                   ],
                   "created_at": "2026-05-07T03:45:59.454Z",
-                  "updated_at": "2026-05-07T05:32:28.494Z"
+                  "updated_at": "2026-05-14T06:18:15.999Z"
                 }
               ]
             }
@@ -11288,7 +11305,7 @@
       "start_date": "2024-10-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-07T08:20:16.958Z",
+      "updated_at": "2026-05-14T06:38:12.863Z",
       "lots": [
         {
           "lot_number": "嘉義縣東石鄉鰲鼓段436地號",
@@ -12166,9 +12183,9 @@
           "baseline_end": "2026-10-10",
           "forecast_end": "2027-07-04",
           "actual_end": null,
-          "status": "pending",
+          "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-06T08:26:39.763Z",
+          "updated_at": "2026-05-14T06:27:56.745Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-007-ST01",
@@ -12178,12 +12195,34 @@
               "type": "fixed",
               "estimated_days": "30",
               "cc": "40",
-              "status": "pending",
+              "status": "in_progress",
               "planned_start": null,
               "planned_end": null,
               "actual_end": null,
               "notes": "",
-              "tasks": []
+              "tasks": [
+                {
+                  "task_id": "TSK-1778740005848",
+                  "name": "定期確認饋線",
+                  "task_type": "recurring",
+                  "status": "in_progress",
+                  "next_action_due": null,
+                  "next_action": null,
+                  "notes": null,
+                  "updates": [
+                    {
+                      "update_id": "UPD-1778740027130",
+                      "created_at": "2026-05-14T04:00:00.000Z",
+                      "content": "5/14確認目前無饋線容量",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    }
+                  ],
+                  "created_at": "2026-05-14T06:26:45.848Z",
+                  "updated_at": "2026-05-14T06:26:48.274Z"
+                }
+              ]
             },
             {
               "stage_id": "PRJ-004-MS-007-ST02",
@@ -12564,7 +12603,7 @@
       "start_date": "2025-05-14 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-07T05:33:05.548Z",
+      "updated_at": "2026-05-15T02:22:05.653Z",
       "lots": [
         {
           "lot_number": "台中市龍井區忠和段1000地號",
@@ -13127,9 +13166,9 @@
           "baseline_end": "2026-01-04",
           "forecast_end": "2026-05-16",
           "actual_end": null,
-          "status": "in_progress",
+          "status": "done",
           "notes": null,
-          "updated_at": "2026-05-07T05:32:58.037Z",
+          "updated_at": "2026-05-14T09:11:27.628Z",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-008-ST01",
@@ -13182,10 +13221,10 @@
               "type": "skippable",
               "estimated_days": "14",
               "cc": "5",
-              "status": "in_progress",
+              "status": "done",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": null,
+              "actual_end": "2026-05-14",
               "notes": "",
               "tasks": [
                 {
@@ -13219,6 +13258,76 @@
               "type": "fixed",
               "estimated_days": "1",
               "cc": "35",
+              "status": "done",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": "2026-05-14",
+              "notes": "",
+              "tasks": []
+            }
+          ],
+          "tasks": [],
+          "forecast_start": "2026-03-01",
+          "actual_start": "2026-03-01"
+        },
+        {
+          "milestone_id": "PRJ-005-MS-1778751286224",
+          "name": "台電正式躉售函",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "parcel_id": null,
+          "parcel_name": null,
+          "dependency_type": "pm_discretion",
+          "depends_on": [],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": null,
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_start": null,
+          "forecast_end": null,
+          "actual_start": null,
+          "actual_end": null,
+          "status": "in_progress",
+          "notes": null,
+          "updated_at": "2026-05-14T09:35:57.845Z",
+          "stages": [
+            {
+              "stage_id": "PRJ-005-MS-1778751286224-ST01",
+              "sequence": 1,
+              "name": "申請文件",
+              "type": "fixed",
+              "cc": "50",
+              "estimated_days": null,
+              "authority": "",
+              "status": "in_progress",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": [
+                {
+                  "task_id": "TSK-1778751357845",
+                  "name": "研究後續須要做什麼",
+                  "task_type": "one-off",
+                  "status": "in_progress",
+                  "next_action_due": null,
+                  "next_action": null,
+                  "notes": null,
+                  "updates": [],
+                  "created_at": "2026-05-14T09:35:57.845Z",
+                  "updated_at": "2026-05-14T09:36:00.758Z"
+                }
+              ]
+            },
+            {
+              "stage_id": "PRJ-005-MS-1778751286224-ST02",
+              "sequence": 2,
+              "name": "審核通過",
+              "type": "fixed",
+              "cc": "50",
+              "estimated_days": null,
+              "authority": "",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -13227,9 +13336,7 @@
               "tasks": []
             }
           ],
-          "tasks": [],
-          "forecast_start": "2026-03-01",
-          "actual_start": "2026-03-01"
+          "tasks": []
         }
       ]
     },
@@ -23431,7 +23538,7 @@
       "start_date": "2023-09-26 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-08T07:15:00.972Z",
+      "updated_at": "2026-05-15T03:05:24.349Z",
       "lots": [
         {
           "lot_number": "桃園市新屋區後庄段976",
@@ -23912,7 +24019,7 @@
           "actual_end": "2026-01-22",
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-08T06:55:36.152Z",
+          "updated_at": "2026-05-15T03:05:24.349Z",
           "stages": [
             {
               "stage_id": "PRJ-007-MS-004-ST01",
@@ -24053,6 +24160,14 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": "持續追蹤確認施作完成時間"
+                    },
+                    {
+                      "update_id": "UPD-1778814317881",
+                      "created_at": "2026-05-15T04:00:00.000Z",
+                      "content": "5/14漢企回覆目前正在進行膠膜包覆、漏水補強工程，經與Jet確認回復一致",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
                     }
                   ],
                   "created_at": "2026-05-08T06:12:03.248Z",
@@ -24064,7 +24179,7 @@
                   "task_type": "recurring",
                   "status": "in_progress",
                   "next_action_due": "2026-05-22",
-                  "next_action": "持續追蹤進場時間及完成時間",
+                  "next_action": "持續追蹤",
                   "notes": "種疄廠商已報價，漢企正在等待廠商確認進場時間",
                   "updates": [
                     {
@@ -24074,6 +24189,14 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": "持續追蹤進場時間及完成時間"
+                    },
+                    {
+                      "update_id": "UPD-1778729492946",
+                      "created_at": "2026-05-14T04:00:00.000Z",
+                      "content": "5/14詢問漢企，原5/12進場，因下雨改5/16進場施作，預計15-20(5/30)天完成，經與Jet確認回復一致",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "持續追蹤"
                     }
                   ],
                   "created_at": "2026-05-08T06:13:10.234Z",
@@ -24223,16 +24346,31 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-08T04:57:32.562Z",
+          "updated_at": "2026-05-14T03:42:06.617Z",
           "stages": [
             {
               "stage_id": "PRJ-007-MS-006-ST01",
               "sequence": 1,
-              "name": "放養",
-              "authority": "—",
+              "name": "種植設備進場及架設完成",
+              "type": "fixed",
+              "cc": "15",
+              "estimated_days": "60",
+              "authority": "（內部）",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-007-MS-006-ST01",
+              "sequence": 2,
+              "name": "種植",
+              "authority": "（內部）",
               "type": "fixed",
               "estimated_days": "180",
-              "cc": "50",
+              "cc": "20",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -24242,24 +24380,9 @@
             },
             {
               "stage_id": "PRJ-007-MS-006-ST02",
-              "sequence": 2,
+              "sequence": 3,
               "name": "申請文件準備",
               "authority": "（內部）",
-              "type": "fixed",
-              "estimated_days": "30",
-              "cc": "30",
-              "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": null,
-              "notes": "",
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-007-MS-006-ST03",
-              "sequence": 3,
-              "name": "送件",
-              "authority": "農業局",
               "type": "fixed",
               "estimated_days": "30",
               "cc": "20",
@@ -24271,13 +24394,28 @@
               "tasks": []
             },
             {
-              "stage_id": "PRJ-007-MS-006-ST04",
+              "stage_id": "PRJ-007-MS-006-ST03",
               "sequence": 4,
+              "name": "送件",
+              "authority": "農業局",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "15",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-007-MS-006-ST04",
+              "sequence": 5,
               "name": "補正 #1",
               "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "skippable",
               "estimated_days": "30",
-              "cc": "3",
+              "cc": "2",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -24287,7 +24425,7 @@
             },
             {
               "stage_id": "PRJ-007-MS-006-ST05",
-              "sequence": 5,
+              "sequence": 6,
               "name": "補正 #2",
               "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "skippable",
@@ -24302,7 +24440,7 @@
             },
             {
               "stage_id": "PRJ-007-MS-006-ST06",
-              "sequence": 6,
+              "sequence": 7,
               "name": "函轉地方政府",
               "authority": "地方農業局",
               "type": "fixed",
@@ -24317,12 +24455,12 @@
             },
             {
               "stage_id": "PRJ-007-MS-006-ST07",
-              "sequence": 7,
+              "sequence": 8,
               "name": "補正 #1",
               "authority": "地方農業局",
               "type": "skippable",
               "estimated_days": "90",
-              "cc": "8",
+              "cc": "2",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -24332,12 +24470,12 @@
             },
             {
               "stage_id": "PRJ-007-MS-006-ST08",
-              "sequence": 8,
+              "sequence": 9,
               "name": "補正 #2",
               "authority": "地方農業局",
               "type": "skippable",
               "estimated_days": "90",
-              "cc": "4",
+              "cc": "2",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -24347,12 +24485,12 @@
             },
             {
               "stage_id": "PRJ-007-MS-006-ST09",
-              "sequence": 9,
+              "sequence": 10,
               "name": "現勘",
               "authority": "地方農業局",
               "type": "skippable",
               "estimated_days": "14",
-              "cc": "5",
+              "cc": "2",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -24362,12 +24500,12 @@
             },
             {
               "stage_id": "PRJ-007-MS-006-ST10",
-              "sequence": 10,
+              "sequence": 11,
               "name": "取得農業容許",
               "authority": "—",
               "type": "fixed",
               "estimated_days": "1",
-              "cc": "13",
+              "cc": "15",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -24377,7 +24515,8 @@
             }
           ],
           "tasks": [],
-          "forecast_start": "2026-06-28"
+          "forecast_start": "2026-06-28",
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-007-MS-007",
@@ -24970,7 +25109,7 @@
       "start_date": "2024-01-03 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-13T08:05:41.662Z",
+      "updated_at": "2026-05-14T03:49:29.875Z",
       "lots": [
         {
           "lot_number": "屏東縣高樹鄉南華段652",
@@ -26384,6 +26523,106 @@
           "tasks": [],
           "forecast_start": "2025-09-27",
           "actual_start": "2025-09-27"
+        },
+        {
+          "milestone_id": "PRJ-008-MS-1778730569875",
+          "name": "設備登記移轉",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "parcel_id": null,
+          "parcel_name": null,
+          "dependency_type": "pm_discretion",
+          "depends_on": [],
+          "condition_description": null,
+          "payment_trigger": false,
+          "standard_days": null,
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_start": "2026-06-28",
+          "forecast_end": null,
+          "actual_start": null,
+          "actual_end": null,
+          "status": "pending",
+          "notes": null,
+          "updated_at": "2026-05-14T03:49:29.875Z",
+          "stages": [
+            {
+              "stage_id": "PRJ-008-MS-1778730569875-ST01",
+              "sequence": 1,
+              "name": "申請文件準備",
+              "type": "fixed",
+              "cc": "50",
+              "estimated_days": null,
+              "authority": "（內部）",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-008-MS-1778730569875-ST02",
+              "sequence": 2,
+              "name": "送件",
+              "type": "fixed",
+              "cc": "30",
+              "estimated_days": null,
+              "authority": "地方政府",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-008-MS-1778730569875-ST03",
+              "sequence": 3,
+              "name": "補正 #1",
+              "type": "fixed",
+              "cc": "5",
+              "estimated_days": null,
+              "authority": "地方政府",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-008-MS-1778730569875-ST04",
+              "sequence": 4,
+              "name": "補正 #2",
+              "type": "fixed",
+              "cc": "5",
+              "estimated_days": null,
+              "authority": "地方政府",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-008-MS-1778730569875-ST05",
+              "sequence": 5,
+              "name": "取得設備登記移轉",
+              "type": "fixed",
+              "cc": "10",
+              "estimated_days": null,
+              "authority": "地方政府",
+              "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
+              "actual_end": null,
+              "notes": "",
+              "tasks": []
+            }
+          ],
+          "tasks": []
         }
       ]
     },
