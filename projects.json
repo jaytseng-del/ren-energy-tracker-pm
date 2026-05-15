@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:42:40.814Z",
+      "updated_at": "2026-05-15T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -237,7 +237,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-14T04:00:00.000Z",
+          "updated_at": "2026-05-15T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-001-MS-001-ST01",
@@ -386,7 +386,7 @@
                   "task_id": "TSK-1778123398995",
                   "name": "售電合約簽約",
                   "task_type": "one-off",
-                  "status": "pending",
+                  "status": "in_progress",
                   "next_action_due": null,
                   "next_action": null,
                   "notes": null,
@@ -406,9 +406,18 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1778823956567",
+                      "created_at": "2026-05-15T04:00:00.000Z",
+                      "content": "已告知Jason pan請法務擬合約",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
                     }
                   ],
-                  "created_at": "2026-05-07T03:09:58.995Z"
+                  "created_at": "2026-05-07T03:09:58.995Z",
+                  "updated_at": "2026-05-15T05:44:43.787Z"
                 }
               ]
             },
@@ -13353,7 +13362,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-14T04:00:00.000Z",
+      "updated_at": "2026-05-15T05:49:31.194Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -21698,7 +21707,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-14T04:00:00.000Z",
+          "updated_at": "2026-05-15T05:45:46.579Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-053-ST01",
@@ -21821,17 +21830,6 @@
                   ],
                   "created_at": "2026-05-15T05:46:54.660Z",
                   "updated_at": "2026-05-15T05:46:57.934Z"
-                },
-                {
-                  "task_id": "TSK-1778824057254",
-                  "name": "5/14光浴預計下周回復補正時間",
-                  "task_type": "one-off",
-                  "status": "pending",
-                  "next_action_due": "2026-05-21",
-                  "next_action": null,
-                  "notes": "持續追蹤",
-                  "updates": [],
-                  "created_at": "2026-05-15T05:47:37.254Z"
                 }
               ]
             },
@@ -23641,7 +23639,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T04:00:00.000Z",
+          "updated_at": "2026-05-15T05:49:31.194Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1778816898105-ST01",
@@ -23651,7 +23649,7 @@
               "cc": "45",
               "estimated_days": null,
               "authority": "（內部）",
-              "status": "pending",
+              "status": "in_progress",
               "planned_start": null,
               "planned_end": null,
               "actual_end": null,
