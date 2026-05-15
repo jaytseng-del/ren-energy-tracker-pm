@@ -13353,7 +13353,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:45:18.745Z",
+      "updated_at": "2026-05-15T05:47:37.254Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -21698,7 +21698,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T05:45:18.745Z",
+          "updated_at": "2026-05-15T05:47:37.254Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-053-ST01",
@@ -21718,12 +21718,13 @@
                   "task_id": "TSK-1778823918745",
                   "name": "6月中旬辦理說明會",
                   "task_type": "one-off",
-                  "status": "pending",
+                  "status": "in_progress",
                   "next_action_due": "2026-06-26",
                   "next_action": null,
                   "notes": "追蹤時程(會議通知發文、會議時間、地點)",
                   "updates": [],
-                  "created_at": "2026-05-15T05:45:18.745Z"
+                  "created_at": "2026-05-15T05:45:18.745Z",
+                  "updated_at": "2026-05-15T05:47:00.984Z"
                 }
               ]
             },
@@ -21799,6 +21800,29 @@
                   ],
                   "created_at": "2026-05-08T06:24:59.396Z",
                   "updated_at": "2026-05-08T06:25:01.702Z"
+                },
+                {
+                  "task_id": "TSK-1778824014660",
+                  "name": "電籌補正時間確認",
+                  "task_type": "one-off",
+                  "status": "in_progress",
+                  "next_action_due": "2026-05-21",
+                  "next_action": null,
+                  "notes": null,
+                  "updates": [],
+                  "created_at": "2026-05-15T05:46:54.660Z",
+                  "updated_at": "2026-05-15T05:46:57.934Z"
+                },
+                {
+                  "task_id": "TSK-1778824057254",
+                  "name": "5/14光浴預計下周回復補正時間",
+                  "task_type": "one-off",
+                  "status": "pending",
+                  "next_action_due": "2026-05-21",
+                  "next_action": null,
+                  "notes": "持續追蹤",
+                  "updates": [],
+                  "created_at": "2026-05-15T05:47:37.254Z"
                 }
               ]
             },
