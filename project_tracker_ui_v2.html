@@ -29788,14 +29788,14 @@ async function ghReadJson(filename) {
   return resp.json();
 }
 
-// 讀純文字（同上）
+// 讀純文字（走 API endpoint，加 cache buster 確保拿最新版本）
 async function ghReadText(filename) {
   const pat = getGhPat();
   const headers = { Accept: 'application/vnd.github.raw+json' };
   if (pat) headers.Authorization = `token ${pat}`;
   const resp = await fetch(
-    `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filename}?ref=${CONFIG.branch}`,
-    { headers }
+    `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${filename}?ref=${CONFIG.branch}&_t=${Date.now()}`,
+    { headers, cache: 'no-store' }
   );
   return resp.ok ? resp.text() : '';
 }
@@ -30011,22 +30011,36 @@ function showEventSyncStatus(ok, msg) {
 }
 
 async function ghAppendEvent(event) {
-  try {
-    let existing = '', sha = null;
+  const MAX_RETRIES = 3;
+  let attempt = 0;
+  while (attempt < MAX_RETRIES) {
     try {
-      const m = await ghMeta(CONFIG.eventsFile);
-      sha = m.sha;
-      existing = decodeURIComponent(escape(atob(m.content.replace(/\n/g, ''))));
+      // 每次嘗試都重新抓最新 SHA，確保不用過期的版本
+      let existing = '', sha = null;
+      try {
+        const m = await ghMeta(CONFIG.eventsFile);
+        sha = m.sha;
+        existing = decodeURIComponent(escape(atob(m.content.replace(/\n/g, ''))));
+      } catch(e) {
+        // 404 → 檔案尚不存在，existing 維持空字串
+        if (!e.message?.includes('meta error') && !e.message?.includes('404')) console.warn('Event meta error:', e);
+      }
+      await ghWrite(CONFIG.eventsFile, existing + JSON.stringify(event) + '\n', sha);
+      const t = new Date().toLocaleTimeString('zh-TW', {hour:'2-digit', minute:'2-digit', second:'2-digit'});
+      showEventSyncStatus(true, t);
+      return; // 成功，離開
     } catch(e) {
-      // File doesn't exist yet (404) → first event, existing stays ''
-      if (!e.message?.includes('meta error') && !e.message?.includes('404')) console.warn('Event meta error:', e);
+      const isConflict = e.message?.includes('409') || e.message?.includes('conflict') || e.message?.includes('sha');
+      if (isConflict && attempt < MAX_RETRIES - 1) {
+        attempt++;
+        console.warn(`Event append 409 conflict，重試第 ${attempt} 次...`);
+        await new Promise(r => setTimeout(r, 300 * attempt)); // 間隔遞增：300ms / 600ms
+      } else {
+        console.warn('Event append failed:', e);
+        showEventSyncStatus(false, e.message || '請確認 PAT 已設定');
+        return;
+      }
     }
-    await ghWrite(CONFIG.eventsFile, existing + JSON.stringify(event) + '\n', sha);
-    const t = new Date().toLocaleTimeString('zh-TW', {hour:'2-digit', minute:'2-digit', second:'2-digit'});
-    showEventSyncStatus(true, t);
-  } catch(e) {
-    console.warn('Event append failed:', e);
-    showEventSyncStatus(false, e.message || '請確認 PAT 已設定');
   }
 }
 
