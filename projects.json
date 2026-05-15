@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-14T04:00:00.000Z",
+      "updated_at": "2026-05-15T05:42:40.814Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -13353,7 +13353,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T04:00:00.000Z",
+      "updated_at": "2026-05-15T05:45:18.745Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -21698,7 +21698,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-08T06:26:22.308Z",
+          "updated_at": "2026-05-15T05:45:18.745Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-053-ST01",
@@ -21713,7 +21713,19 @@
               "planned_end": null,
               "actual_end": "2026-05-08",
               "notes": "",
-              "tasks": []
+              "tasks": [
+                {
+                  "task_id": "TSK-1778823918745",
+                  "name": "6月中旬辦理說明會",
+                  "task_type": "one-off",
+                  "status": "pending",
+                  "next_action_due": "2026-06-26",
+                  "next_action": null,
+                  "notes": "追蹤時程(會議通知發文、會議時間、地點)",
+                  "updates": [],
+                  "created_at": "2026-05-15T05:45:18.745Z"
+                }
+              ]
             },
             {
               "stage_id": "PRJ-006-MS-053-ST02",
@@ -21765,7 +21777,7 @@
                   "task_type": "one-off",
                   "status": "in_progress",
                   "next_action_due": "2026-05-31",
-                  "next_action": "持續追蹤EPC進度",
+                  "next_action": "持續追蹤",
                   "notes": null,
                   "updates": [
                     {
@@ -21775,6 +21787,14 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": "持續追蹤EPC進度"
+                    },
+                    {
+                      "update_id": "UPD-1778823875046",
+                      "created_at": "2026-05-14T04:00:00.000Z",
+                      "content": "5/14光浴尚在準備補正文件",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "持續追蹤"
                     }
                   ],
                   "created_at": "2026-05-08T06:24:59.396Z",
