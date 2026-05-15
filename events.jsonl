@@ -87,3 +87,4 @@
 {"event":"task_deleted","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-053","stage_id":"PRJ-006-MS-053-ST04","task_id":"TSK-1778824057254","ts":"2026-05-15T05:48:22.892Z"}
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1778816898105","stage_id":"PRJ-006-MS-1778816898105-ST01","old_status":"pending","new_status":"in_progress","actual_end":null,"ts":"2026-05-15T05:49:31.194Z"}
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1778816898105","stage_id":"PRJ-006-MS-1778816898105-ST01","old_status":"in_progress","new_status":"done","actual_end":"2026-05-15","ts":"2026-05-15T05:50:50.372Z"}
+{"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1778816898105","stage_id":"PRJ-006-MS-1778816898105-ST01","old_status":"done","new_status":"in_progress","actual_end":null,"ts":"2026-05-15T05:50:58.431Z"}
