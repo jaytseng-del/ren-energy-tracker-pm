@@ -26925,7 +26925,7 @@
       "start_date": "2024-02-05 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:52:19.469Z",
+      "updated_at": "2026-05-15T05:53:35.563Z",
       "lots": [
         {
           "lot_number": "六龜區埔仔厝段363",
@@ -27182,7 +27182,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-15T05:52:19.469Z",
+          "updated_at": "2026-05-15T05:53:35.563Z",
           "stages": [
             {
               "stage_id": "PRJ-009-MS-001-ST01",
@@ -27202,12 +27202,24 @@
                   "task_id": "TSK-1778824339469",
                   "name": "約農技時間討論設計及後續工項進度",
                   "task_type": "one-off",
-                  "status": "pending",
+                  "status": "in_progress",
                   "next_action_due": "2026-05-22",
                   "next_action": null,
                   "notes": null,
                   "updates": [],
-                  "created_at": "2026-05-15T05:52:19.469Z"
+                  "created_at": "2026-05-15T05:52:19.469Z",
+                  "updated_at": "2026-05-15T05:52:31.753Z"
+                },
+                {
+                  "task_id": "TSK-1778824415563",
+                  "name": "5/15先跟Jill確認目前情形，Jill有提供農技目前設計圖，預計今天發信跟農技約會議",
+                  "task_type": "one-off",
+                  "status": "pending",
+                  "next_action_due": "2026-05-15",
+                  "next_action": null,
+                  "notes": null,
+                  "updates": [],
+                  "created_at": "2026-05-15T05:53:35.563Z"
                 }
               ]
             },
