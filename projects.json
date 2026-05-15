@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T04:00:00.000Z",
+      "updated_at": "2026-05-15T05:52:18.880Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -516,6 +516,14 @@
                       "update_id": "UPD-1778132027376",
                       "created_at": "2026-05-07T05:33:47.376Z",
                       "content": "5/7電話連絡承辦不在",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1778824163656",
+                      "created_at": "2026-05-15T04:00:00.000Z",
+                      "content": "5/14聯絡承辦,承辦告知目前是台南市府已經討論出一個結論,但沒有辦法透漏太多,僅說應該會朝向條件式進行，應該是有達成哪些條件之後農許會核發",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -9323,7 +9331,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-07T03:45:39.322Z",
+          "updated_at": "2026-05-15T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-001-ST01",
@@ -9352,6 +9360,22 @@
                       "update_id": "UPD-1778125539322",
                       "created_at": "2026-05-07T03:45:39.322Z",
                       "content": "5/6合約已確認完成,目前提供給日力確認,沒問題再送內部申請",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1778824413881",
+                      "created_at": "2026-05-13T04:00:00.000Z",
+                      "content": "日力告知目前報的價格不含敦親睦鄰,若需要含要再另外報價",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1778824462212",
+                      "created_at": "2026-05-15T04:00:00.000Z",
+                      "content": "5/15中午日力提供新版報價,目前還沒確認細節",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -12612,7 +12636,7 @@
       "start_date": "2025-05-14 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T02:22:05.653Z",
+      "updated_at": "2026-05-15T05:51:19.233Z",
       "lots": [
         {
           "lot_number": "台中市龍井區忠和段1000地號",
@@ -13299,7 +13323,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-14T09:35:57.845Z",
+          "updated_at": "2026-05-15T05:51:19.233Z",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-1778751286224-ST01",
@@ -13362,7 +13386,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:49:31.194Z",
+      "updated_at": "2026-05-15T05:50:58.431Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -14882,7 +14906,7 @@
                   "task_type": "one-off",
                   "status": "in_progress",
                   "next_action_due": "2026-05-11",
-                  "next_action": "追蹤現勘日期",
+                  "next_action": null,
                   "notes": "5/8完成用印，預計5/11掛件補正",
                   "updates": [
                     {
@@ -21707,7 +21731,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T05:45:46.579Z",
+          "updated_at": "2026-05-15T05:47:37.254Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-053-ST01",
@@ -21787,7 +21811,7 @@
                   "task_type": "one-off",
                   "status": "in_progress",
                   "next_action_due": "2026-05-31",
-                  "next_action": "持續追蹤",
+                  "next_action": "持續追蹤EPC進度",
                   "notes": null,
                   "updates": [
                     {
@@ -21797,14 +21821,6 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": "持續追蹤EPC進度"
-                    },
-                    {
-                      "update_id": "UPD-1778823875046",
-                      "created_at": "2026-05-14T04:00:00.000Z",
-                      "content": "5/14光浴尚在準備補正文件",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": "持續追蹤"
                     }
                   ],
                   "created_at": "2026-05-08T06:24:59.396Z",
@@ -21816,18 +21832,9 @@
                   "task_type": "one-off",
                   "status": "in_progress",
                   "next_action_due": "2026-05-21",
-                  "next_action": "持續追蹤",
+                  "next_action": null,
                   "notes": null,
-                  "updates": [
-                    {
-                      "update_id": "UPD-1778824089403",
-                      "created_at": "2026-05-14T04:00:00.000Z",
-                      "content": "5/14光浴預計下周回復補正時間",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": "持續追蹤"
-                    }
-                  ],
+                  "updates": [],
                   "created_at": "2026-05-15T05:46:54.660Z",
                   "updated_at": "2026-05-15T05:46:57.934Z"
                 }
@@ -23639,7 +23646,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T05:49:31.194Z",
+          "updated_at": "2026-05-15T05:50:58.431Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1778816898105-ST01",
@@ -23652,7 +23659,7 @@
               "status": "in_progress",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": null,
+              "actual_end": "2026-05-15",
               "notes": "",
               "tasks": [
                 {
@@ -26925,7 +26932,7 @@
       "start_date": "2024-02-05 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:54:58.146Z",
+      "updated_at": "2026-05-15T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "六龜區埔仔厝段363",
@@ -27208,7 +27215,7 @@
                   "notes": null,
                   "updates": [
                     {
-                      "update_id": "UPD-1778824494583",
+                      "update_id": "UPD-1778824516526",
                       "created_at": "2026-05-15T04:00:00.000Z",
                       "content": "5/15先跟Jill確認目前情形，Jill有提供農技目前設計圖，預計今天發信跟農技約會議",
                       "impact": "none",
