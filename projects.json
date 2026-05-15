@@ -519,6 +519,14 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1778824163656",
+                      "created_at": "2026-05-15T04:00:00.000Z",
+                      "content": "5/14聯絡承辦,承辦告知目前是台南市府已經討論出一個結論,但沒有辦法透漏太多,僅說應該回朝向條件式進行，應該是",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
                     }
                   ],
                   "created_at": "2026-05-04T03:31:00.551Z",
@@ -13362,7 +13370,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:49:31.194Z",
+      "updated_at": "2026-05-15T05:42:21.155Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -14830,7 +14838,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T04:00:00.000Z",
+          "updated_at": "2026-05-15T05:42:15.776Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-004-ST01",
@@ -14882,7 +14890,7 @@
                   "task_type": "one-off",
                   "status": "in_progress",
                   "next_action_due": "2026-05-11",
-                  "next_action": "追蹤現勘日期",
+                  "next_action": null,
                   "notes": "5/8完成用印，預計5/11掛件補正",
                   "updates": [
                     {
@@ -14913,16 +14921,7 @@
                   "next_action_due": "2026-05-21",
                   "next_action": null,
                   "notes": null,
-                  "updates": [
-                    {
-                      "update_id": "UPD-1778823792090",
-                      "created_at": "2026-05-15T04:00:00.000Z",
-                      "content": "5/15用印寄出給光浴，預計下週掛件補正",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": null
-                    }
-                  ],
+                  "updates": [],
                   "created_at": "2026-05-15T05:42:15.776Z",
                   "updated_at": "2026-05-15T05:42:21.155Z"
                 }
@@ -21707,7 +21706,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T05:45:46.579Z",
+          "updated_at": "2026-05-08T06:26:22.308Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-053-ST01",
@@ -21722,20 +21721,7 @@
               "planned_end": null,
               "actual_end": "2026-05-08",
               "notes": "",
-              "tasks": [
-                {
-                  "task_id": "TSK-1778823918745",
-                  "name": "6月中旬辦理說明會",
-                  "task_type": "one-off",
-                  "status": "in_progress",
-                  "next_action_due": "2026-06-26",
-                  "next_action": null,
-                  "notes": "追蹤時程(會議通知發文、會議時間、地點)",
-                  "updates": [],
-                  "created_at": "2026-05-15T05:45:18.745Z",
-                  "updated_at": "2026-05-15T05:47:00.984Z"
-                }
-              ]
+              "tasks": []
             },
             {
               "stage_id": "PRJ-006-MS-053-ST02",
@@ -21787,7 +21773,7 @@
                   "task_type": "one-off",
                   "status": "in_progress",
                   "next_action_due": "2026-05-31",
-                  "next_action": "持續追蹤",
+                  "next_action": "持續追蹤EPC進度",
                   "notes": null,
                   "updates": [
                     {
@@ -21797,39 +21783,10 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": "持續追蹤EPC進度"
-                    },
-                    {
-                      "update_id": "UPD-1778823875046",
-                      "created_at": "2026-05-14T04:00:00.000Z",
-                      "content": "5/14光浴尚在準備補正文件",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": "持續追蹤"
                     }
                   ],
                   "created_at": "2026-05-08T06:24:59.396Z",
                   "updated_at": "2026-05-08T06:25:01.702Z"
-                },
-                {
-                  "task_id": "TSK-1778824014660",
-                  "name": "電籌補正時間確認",
-                  "task_type": "one-off",
-                  "status": "in_progress",
-                  "next_action_due": "2026-05-21",
-                  "next_action": "持續追蹤",
-                  "notes": null,
-                  "updates": [
-                    {
-                      "update_id": "UPD-1778824089403",
-                      "created_at": "2026-05-14T04:00:00.000Z",
-                      "content": "5/14光浴預計下周回復補正時間",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": "持續追蹤"
-                    }
-                  ],
-                  "created_at": "2026-05-15T05:46:54.660Z",
-                  "updated_at": "2026-05-15T05:46:57.934Z"
                 }
               ]
             },
@@ -23639,7 +23596,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T05:49:31.194Z",
+          "updated_at": "2026-05-15T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1778816898105-ST01",
@@ -23649,7 +23606,7 @@
               "cc": "45",
               "estimated_days": null,
               "authority": "（內部）",
-              "status": "in_progress",
+              "status": "pending",
               "planned_start": null,
               "planned_end": null,
               "actual_end": null,
