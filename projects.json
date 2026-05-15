@@ -12636,7 +12636,7 @@
       "start_date": "2025-05-14 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:51:19.233Z",
+      "updated_at": "2026-05-15T05:58:38.152Z",
       "lots": [
         {
           "lot_number": "台中市龍井區忠和段1000地號",
@@ -13323,7 +13323,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T05:51:19.233Z",
+          "updated_at": "2026-05-15T05:58:32.479Z",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-1778751286224-ST01",
@@ -13340,16 +13340,16 @@
               "notes": "",
               "tasks": [
                 {
-                  "task_id": "TSK-1778751357845",
-                  "name": "研究後續須要做什麼",
+                  "task_id": "TSK-1778824712479",
+                  "name": "申請用印",
                   "task_type": "one-off",
                   "status": "in_progress",
                   "next_action_due": null,
                   "next_action": null,
                   "notes": null,
                   "updates": [],
-                  "created_at": "2026-05-14T09:35:57.845Z",
-                  "updated_at": "2026-05-14T09:36:00.758Z"
+                  "created_at": "2026-05-15T05:58:32.479Z",
+                  "updated_at": "2026-05-15T05:58:38.152Z"
                 }
               ]
             },
@@ -13386,7 +13386,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:50:58.431Z",
+      "updated_at": "2026-05-15T06:48:28.352Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -23646,7 +23646,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T05:50:58.431Z",
+          "updated_at": "2026-05-15T06:48:28.352Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1778816898105-ST01",
@@ -23656,7 +23656,7 @@
               "cc": "45",
               "estimated_days": null,
               "authority": "（內部）",
-              "status": "in_progress",
+              "status": "done",
               "planned_start": null,
               "planned_end": null,
               "actual_end": "2026-05-15",
@@ -26932,7 +26932,7 @@
       "start_date": "2024-02-05 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:54:58.146Z",
+      "updated_at": "2026-05-15T05:58:01.728Z",
       "lots": [
         {
           "lot_number": "六龜區埔仔厝段363",
@@ -27187,9 +27187,9 @@
           "baseline_end": null,
           "forecast_end": null,
           "actual_end": null,
-          "status": "pending",
+          "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T05:53:35.563Z",
+          "updated_at": "2026-05-15T05:58:01.728Z",
           "stages": [
             {
               "stage_id": "PRJ-009-MS-001-ST01",
@@ -27199,10 +27199,10 @@
               "type": "fixed",
               "estimated_days": "30",
               "cc": "55",
-              "status": "pending",
+              "status": "done",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": null,
+              "actual_end": "2026-05-15",
               "notes": "地主資料、切結書、養殖計劃書等",
               "tasks": [
                 {
