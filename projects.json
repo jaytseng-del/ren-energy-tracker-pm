@@ -13353,7 +13353,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:32:28.440Z",
+      "updated_at": "2026-05-15T05:32:42.522Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -23586,18 +23586,6 @@
                   "updates": [],
                   "created_at": "2026-05-15T03:48:51.881Z",
                   "updated_at": "2026-05-15T03:48:54.770Z"
-                },
-                {
-                  "task_id": "TSK-1778823146462",
-                  "name": "確認併接點",
-                  "task_type": "one-off",
-                  "status": "in_progress",
-                  "next_action_due": "2026-05-21",
-                  "next_action": null,
-                  "notes": "光浴下週確認申請漢堡D/S或芳興R/S併審",
-                  "updates": [],
-                  "created_at": "2026-05-15T05:32:26.462Z",
-                  "updated_at": "2026-05-15T05:32:28.440Z"
                 }
               ]
             },
