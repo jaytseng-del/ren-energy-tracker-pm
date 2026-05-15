@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:52:18.880Z",
+      "updated_at": "2026-05-15T11:11:33.855Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -359,7 +359,7 @@
                   "task_type": "one-off",
                   "status": "in_progress",
                   "next_action_due": null,
-                  "next_action": "111",
+                  "next_action": null,
                   "notes": null,
                   "updates": [
                     {
@@ -13386,7 +13386,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T09:42:18.014Z",
+      "updated_at": "2026-05-15T09:42:18.019Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -23646,7 +23646,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T09:42:18.014Z",
+          "updated_at": "2026-05-15T06:48:28.352Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1778816898105-ST01",
