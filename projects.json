@@ -13353,7 +13353,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-14T04:00:00.000Z",
+      "updated_at": "2026-05-15T05:32:28.440Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -14235,7 +14235,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T04:00:00.000Z",
+          "updated_at": "2026-05-08T07:25:04.776Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-001-ST01",
@@ -23559,7 +23559,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-14T04:00:00.000Z",
+          "updated_at": "2026-05-15T05:32:26.462Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1778816898105-ST01",
@@ -23583,18 +23583,21 @@
                   "next_action_due": "2026-05-21",
                   "next_action": null,
                   "notes": null,
-                  "updates": [
-                    {
-                      "update_id": "UPD-1778816972407",
-                      "created_at": "2026-05-14T04:00:00.000Z",
-                      "content": "光浴下週確認申請漢寶D/S或芳興R/S併審",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": null
-                    }
-                  ],
+                  "updates": [],
                   "created_at": "2026-05-15T03:48:51.881Z",
                   "updated_at": "2026-05-15T03:48:54.770Z"
+                },
+                {
+                  "task_id": "TSK-1778823146462",
+                  "name": "確認併接點",
+                  "task_type": "one-off",
+                  "status": "in_progress",
+                  "next_action_due": "2026-05-21",
+                  "next_action": null,
+                  "notes": "光浴下週確認申請漢堡D/S或芳興R/S併審",
+                  "updates": [],
+                  "created_at": "2026-05-15T05:32:26.462Z",
+                  "updated_at": "2026-05-15T05:32:28.440Z"
                 }
               ]
             },
@@ -23691,7 +23694,7 @@
       "start_date": "2023-09-26 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T03:33:46.877Z",
+      "updated_at": "2026-05-15T03:33:46.884Z",
       "lots": [
         {
           "lot_number": "桃園市新屋區後庄段976",
@@ -24172,7 +24175,7 @@
           "actual_end": "2026-01-22",
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T03:33:46.877Z",
+          "updated_at": "2026-05-15T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-007-MS-004-ST01",
@@ -26738,22 +26741,6 @@
                   "next_action": "1.持續追蹤請漢企提出\n2.尚未確認取代建物移轉之細部方案\n3.下週向董事長說明",
                   "notes": null,
                   "updates": [
-                    {
-                      "update_id": "UPD-1778816343742",
-                      "created_at": "2026-05-07T04:00:00.000Z",
-                      "content": "漢企通知暫停執行合約：1.針對政府機關不可抗力的因素造成設備登記延遲罰款的事項提出增補合約條款修正2. 針對本案件貴公司支付65%的金額.針對合約內容建物的部分有不合理的條款 我們想暫停交易 請回報給主管",
-                      "impact": "possible_delay",
-                      "impact_days": 20,
-                      "next_action": "PM內部討論確認後續執行方向"
-                    },
-                    {
-                      "update_id": "UPD-1778816484865",
-                      "created_at": "2026-05-11T04:00:00.000Z",
-                      "content": "PM討論結果：1.請漢企提供主管機關延遲證明文件2.傳物無法移轉其他方案ex設定抵押權限制買賣處分",
-                      "impact": "possible_delay",
-                      "impact_days": 20,
-                      "next_action": "向董事長說明"
-                    },
                     {
                       "update_id": "UPD-1778816597189",
                       "created_at": "2026-05-13T04:00:00.000Z",
