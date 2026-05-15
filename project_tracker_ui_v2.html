@@ -32,7 +32,7 @@
     --tab-h: 48px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); font-size: 14px; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); font-size: 15px; }
 
   /* ── Layout ─────────────────────────────────── */
   #app { display: flex; flex-direction: column; height: 100vh; }
@@ -77,12 +77,12 @@
   .ms-parcel-body { background: var(--surface); }
   .ms-header { display: flex; align-items: center; gap: 10px; padding: 12px 16px; cursor: pointer; background: var(--surface); user-select: none; }
   .ms-header:hover { background: #fafafa; }
-  .ms-header h3 { font-size: 14px; font-weight: 600; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ms-header h3 { font-size: 15px; font-weight: 600; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .ms-edit-btn { flex-shrink: 0; }
   .ms-tag { font-size: 11px; padding: 2px 7px; border-radius: 10px; }
   .ms-tag.farm { background: var(--tag-farm); color: var(--tag-farm-text); }
   .ms-tag.elec { background: var(--tag-elec); color: var(--tag-elec-text); }
-  .ms-status { font-size: 12px; padding: 2px 8px; border-radius: 10px; }
+  .ms-status { font-size: 13px; padding: 2px 8px; border-radius: 10px; }
   .ms-status.pending { background: #f5f5f5; color: var(--text3); }
   .ms-status.in_progress { background: #fff3e0; color: var(--warn); }
   .ms-status.done { background: #e8f5e9; color: var(--success); }
@@ -92,14 +92,14 @@
   .ms-progress { padding: 8px 16px; border-top: 1px solid var(--border); }
   .progress-bar { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
   .progress-fill { height: 100%; background: var(--primary); border-radius: 3px; transition: width .3s; }
-  .progress-label { font-size: 11px; color: var(--text3); margin-top: 4px; }
+  .progress-label { font-size: 12px; color: var(--text3); margin-top: 4px; }
 
   .stage-bar { padding: 10px 16px; border-top: 1px solid var(--border); background: #fafafa; }
   .stage-bar-label { font-size: 11px; color: var(--text3); margin-bottom: 6px; }
   .stage-list { display: flex; gap: 4px; flex-wrap: wrap; }
   .ms-edit-btn { margin-left:auto; flex-shrink:0; padding:2px 8px; border:1px solid var(--border); background:transparent; border-radius:4px; cursor:pointer; font-size:11px; color:var(--text2); }
   .ms-edit-btn:hover { background:var(--bg); color:var(--primary); border-color:var(--primary); }
-  .stage-pill { font-size: 11px; padding: 2px 8px; border-radius: 10px; background: #eeeeee; color: var(--text2); cursor: pointer; user-select: none; }
+  .stage-pill { font-size: 12px; padding: 3px 9px; border-radius: 10px; background: #eeeeee; color: var(--text2); cursor: pointer; user-select: none; }
   .stage-pill:hover { filter: brightness(0.93); }
   .stage-pill.current { background: var(--primary); color: #fff; }
   .stage-pill.done { background: var(--success); color: #fff; }
@@ -117,18 +117,18 @@
   .task-row { display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
   .task-row:last-child { border-bottom: none; }
   .task-body { flex: 1; }
-  .task-name { font-weight: 500; font-size: 13px; }
+  .task-name { font-weight: 500; font-size: 14px; }
   .task-meta { display: flex; gap: 12px; margin-top: 4px; }
-  .task-meta span { font-size: 12px; color: var(--text2); }
+  .task-meta span { font-size: 13px; color: var(--text2); }
   .task-due { color: var(--warn) !important; }
   .task-due.overdue { color: var(--danger) !important; }
-  .next-action { margin-top: 6px; font-size: 12px; color: var(--text2); background: var(--bg); padding: 4px 8px; border-radius: 4px; border-left: 3px solid var(--primary); }
-  .update-btn { padding: 4px 12px; border: 1px solid var(--primary); color: var(--primary); background: transparent; border-radius: 4px; cursor: pointer; font-size: 12px; white-space: nowrap; margin-top: 2px; }
+  .next-action { margin-top: 6px; font-size: 13px; color: var(--text2); background: var(--bg); padding: 4px 8px; border-radius: 4px; border-left: 3px solid var(--primary); }
+  .update-btn { padding: 4px 12px; border: 1px solid var(--primary); color: var(--primary); background: transparent; border-radius: 4px; cursor: pointer; font-size: 13px; white-space: nowrap; margin-top: 2px; }
   .update-btn:hover { background: var(--primary-light); }
-  .update-count { font-size: 11px; color: var(--text3); cursor: pointer; margin-top: 4px; }
+  .update-count { font-size: 12px; color: var(--text3); cursor: pointer; margin-top: 4px; }
   .update-count:hover { color: var(--primary); text-decoration: underline; }
   .updates-inline { margin-top: 8px; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
-  .update-entry { padding: 8px 10px; border-bottom: 1px solid var(--border); font-size: 12px; }
+  .update-entry { padding: 8px 10px; border-bottom: 1px solid var(--border); font-size: 13px; }
   .update-entry:last-child { border-bottom: none; }
   .update-ts { color: var(--text3); }
   .update-impact { display: inline-block; font-size: 11px; padding: 1px 6px; border-radius: 8px; margin-left: 6px; }
@@ -245,7 +245,14 @@
   @keyframes spin { to { transform: rotate(360deg); } }
 
   /* ── Sidebar Project Nav ────────────────────────── */
-  #sidebar { width: var(--sidebar-w); background: #1e2533; border-right: none; overflow-y: auto; flex-shrink: 0; display: flex; flex-direction: column; }
+  #sidebar { width: var(--sidebar-w); background: #1e2533; border-right: none; overflow-y: auto; flex-shrink: 0; display: flex; flex-direction: column; transition: width .2s ease; position: relative; }
+  #sidebar.collapsed { width: 36px; overflow: hidden; }
+  #sidebar.collapsed .sidebar-proj-header,
+  #sidebar.collapsed .proj-list,
+  #sidebar.collapsed .sidebar-alerts { opacity: 0; pointer-events: none; }
+  #sidebar-toggle { position: absolute; top: 14px; right: 6px; z-index: 10; background: rgba(255,255,255,.1); border: none; border-radius: 4px; color: rgba(255,255,255,.6); cursor: pointer; font-size: 14px; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; transition: background .15s; flex-shrink: 0; }
+  #sidebar-toggle:hover { background: rgba(255,255,255,.2); color: #fff; }
+  #sidebar.collapsed #sidebar-toggle { right: 6px; top: 14px; }
   .sidebar-proj-header { padding: 14px 16px 10px; background: #1e2533; flex-shrink: 0; }
   .sidebar-proj-header h2 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,.4); margin-bottom: 10px; }
   .pm-filter-wrap { display: flex; gap: 6px; flex-wrap: wrap; }
@@ -297,6 +304,7 @@
   <div id="main">
     <!-- Sidebar -->
     <div id="sidebar">
+      <button id="sidebar-toggle" onclick="toggleSidebar()" title="收合/展開側欄">◀</button>
       <!-- Project List -->
       <div class="sidebar-proj-header">
         <h2>專案列表</h2>
@@ -30196,6 +30204,18 @@ function applyEvents(data, events) {
           break;
         }
 
+        case 'task_next_action_cleared': {
+          const ms = proj.milestones?.find(m => m.milestone_id === ev.milestone_id);
+          let task;
+          if (ev.stage_id) {
+            const st = ms?.stages?.find(s => s.stage_id === ev.stage_id);
+            task = st?.tasks?.find(t => t.task_id === ev.task_id);
+          }
+          if (!task) task = ms?.tasks?.find(t => t.task_id === ev.task_id);
+          if (task) { task.next_action = null; }
+          break;
+        }
+
         default:
           console.warn('Unknown event type:', ev.event);
       }
@@ -30711,6 +30731,14 @@ function buildProjectSelector() {
   if (nameEl && cur) nameEl.textContent = cur.name;
 }
 
+function toggleSidebar() {
+  const sb = document.getElementById('sidebar');
+  const btn = document.getElementById('sidebar-toggle');
+  const collapsed = sb.classList.toggle('collapsed');
+  btn.textContent = collapsed ? '▶' : '◀';
+  btn.title = collapsed ? '展開側欄' : '收合側欄';
+}
+
 function setPmFilter(pm) {
   STATE.pmFilter = pm;
   buildProjectSelector();
@@ -31069,10 +31097,12 @@ function renderTab0() {
   const filteredMsOrder = msOrder.filter(msName => {
     if (STATE.msStatusFilter === 'all') return true;
     const instances = proj.milestones.filter(m => m.name === msName);
-    const avgPct = Math.round(instances.reduce((s, m) => s + calcMsProgress(m), 0) / instances.length);
-    if (STATE.msStatusFilter === 'pending')     return avgPct === 0;
-    if (STATE.msStatusFilter === 'in_progress') return avgPct > 0 && avgPct < 100;
-    if (STATE.msStatusFilter === 'done')        return avgPct === 100;
+    if (STATE.msStatusFilter === 'pending')
+      return instances.every(m => !m.status || m.status === 'pending');
+    if (STATE.msStatusFilter === 'in_progress')
+      return instances.some(m => m.status === 'in_progress' || m.status === 'blocked');
+    if (STATE.msStatusFilter === 'done')
+      return instances.every(m => m.status === 'done' || m.status === 'completed');
     return true;
   });
 
@@ -31184,7 +31214,12 @@ function renderTaskRow(task, ms) {
         ${task.next_action_due ? `<span class="${dueClass}">📅 ${task.next_action_due.substring(0,10)}</span>` : ''}
         <span style="color:var(--text3)">${task.stageName || ''}</span>
       </div>
-      ${task.next_action ? `<div class="next-action">→ ${task.next_action}</div>` : ''}
+      ${task.next_action ? `<div class="next-action" style="display:flex;align-items:center;gap:6px">
+        <span style="flex:1">→ ${task.next_action}</span>
+        <button onclick="event.stopPropagation();clearNextAction('${proj.project_id}','${ms.milestone_id}','${stId}','${task.task_id}')"
+          title="清除下一步備註"
+          style="font-size:10px;padding:1px 5px;border:1px solid var(--border);border-radius:3px;background:transparent;cursor:pointer;color:var(--text3);line-height:1.4;flex-shrink:0">✕</button>
+      </div>` : ''}
       ${updates.length ? `
         <div class="update-count" onclick="toggleUpdates('${task.task_id}')">
           ${showUpdates ? '▾ 收起' : `▸ ${updates.length} 筆更新`}
@@ -31719,6 +31754,23 @@ function quickDeleteUpdate(projId, msId, taskId, updateId) {
   }
   renderAll();
   ghAppendEvent({ event: 'update_deleted', project_id: projId, milestone_id: msId, task_id: taskId, update_id: updateId, ts: new Date().toISOString() });
+}
+
+function clearNextAction(projId, msId, stageId, taskId) {
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  const ms   = proj?.milestones.find(m => m.milestone_id === msId);
+  let task;
+  if (stageId) {
+    const st = ms?.stages?.find(s => s.stage_id === stageId);
+    task = st?.tasks?.find(t => t.task_id === taskId);
+  }
+  if (!task) task = ms?.tasks?.find(t => t.task_id === taskId);
+  if (!task) return;
+  task.next_action = null;
+  const now = new Date().toISOString();
+  proj.updated_at = now;
+  renderAll();
+  ghAppendEvent({ event: 'task_next_action_cleared', project_id: projId, milestone_id: msId, stage_id: stageId || null, task_id: taskId, ts: now });
 }
 
 function closeModal() { document.getElementById('update-modal').classList.add('hidden'); }
