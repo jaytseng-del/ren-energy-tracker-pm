@@ -13386,7 +13386,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T11:16:40.280Z",
+      "updated_at": "2026-05-18T08:25:51.398Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -15587,7 +15587,7 @@
           "actual_end": null,
           "status": "done",
           "notes": null,
-          "updated_at": "2026-05-08T06:17:38.417Z",
+          "updated_at": "2026-05-18T08:25:51.398Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-008-ST01",
@@ -15722,7 +15722,37 @@
               "planned_end": null,
               "actual_end": "2026-05-08",
               "notes": "",
-              "tasks": []
+              "tasks": [
+                {
+                  "task_id": "TSK-1779092608414",
+                  "name": "農許1(王功段1503-1,1504-1,1505-1,1506-1,1507-1)",
+                  "task_type": "one-off",
+                  "status": "in_progress",
+                  "next_action_due": "2026-07-23",
+                  "next_action": "有效期限內申請建照",
+                  "notes": null,
+                  "updates": [
+                    {
+                      "update_id": "UPD-1779092701992",
+                      "created_at": "2025-07-23T04:00:00.000Z",
+                      "content": "2025/7/23取得(12500平方公尺,1,752.597kW)",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "有效期限內申請建照"
+                    },
+                    {
+                      "update_id": "UPD-1779092743698",
+                      "created_at": "2026-01-06T04:00:00.000Z",
+                      "content": "農許有效期限至2026/7/23",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "有效期限內申請建照"
+                    }
+                  ],
+                  "created_at": "2026-05-18T08:23:28.414Z",
+                  "updated_at": "2026-05-18T08:23:33.497Z"
+                }
+              ]
             }
           ],
           "tasks": []
