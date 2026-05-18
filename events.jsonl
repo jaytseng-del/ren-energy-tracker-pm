@@ -111,3 +111,4 @@
 {"event":"parcel_updated","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-003","area_m2":44100,"capacity_kw":6586.03,"ts":"2026-05-18T08:05:01.687Z"}
 {"event":"parcel_updated","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-004","area_m2":47700,"capacity_kw":7044.015,"ts":"2026-05-18T08:09:05.681Z"}
 {"event":"parcel_updated","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-005","area_m2":49000,"capacity_kw":7189.82,"ts":"2026-05-18T08:10:08.891Z"}
+{"event":"parcel_updated","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-006","area_m2":48400,"capacity_kw":7121.455,"ts":"2026-05-18T08:11:17.451Z"}
