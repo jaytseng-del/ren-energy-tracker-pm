@@ -13386,7 +13386,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-18T08:25:51.398Z",
+      "updated_at": "2026-03-04T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -15587,7 +15587,7 @@
           "actual_end": null,
           "status": "done",
           "notes": null,
-          "updated_at": "2026-05-18T08:25:51.398Z",
+          "updated_at": "2026-03-04T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-008-ST01",
@@ -15751,6 +15751,35 @@
                   ],
                   "created_at": "2026-05-18T08:23:28.414Z",
                   "updated_at": "2026-05-18T08:23:33.497Z"
+                },
+                {
+                  "task_id": "TSK-1779092791022",
+                  "name": "農許2(王功段1508-1)",
+                  "task_type": "one-off",
+                  "status": "in_progress",
+                  "next_action_due": "2026-09-05",
+                  "next_action": "有效期限內申請建照",
+                  "notes": null,
+                  "updates": [
+                    {
+                      "update_id": "UPD-1779092835652",
+                      "created_at": "2025-09-05T04:00:00.000Z",
+                      "content": "2025/9/5取得( 2800平方公尺,402.03kW)",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1779092886533",
+                      "created_at": "2026-03-04T04:00:00.000Z",
+                      "content": "農許有效期限至2026/9/5",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "有效期限內申請建照"
+                    }
+                  ],
+                  "created_at": "2026-05-18T08:26:31.022Z",
+                  "updated_at": "2026-05-18T08:26:34.240Z"
                 }
               ]
             }
