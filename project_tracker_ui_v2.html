@@ -274,7 +274,12 @@
   .proj-stale-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--warn); flex-shrink: 0; margin-top: 5px; margin-left: 6px; }
   .proj-stale-dot.hidden { display: none; }
   .sidebar-alerts { background: #151b27; border-top: 1px solid rgba(255,255,255,.08); padding: 12px 14px; flex-shrink: 0; }
-  .sidebar-alerts h3 { font-size: 10px; text-transform: uppercase; letter-spacing: .8px; color: rgba(255,255,255,.3); margin-bottom: 8px; font-weight: 700; }
+  .sidebar-alerts h3 { font-size: 10px; text-transform: uppercase; letter-spacing: .8px; color: rgba(255,255,255,.3); margin-bottom: 8px; font-weight: 700; display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none; }
+  .sidebar-alerts h3:hover { color: rgba(255,255,255,.55); }
+  .sidebar-alerts h3 .alert-chevron { font-size: 9px; transition: transform .2s ease; }
+  .sidebar-alerts.alerts-collapsed h3 { margin-bottom: 0; }
+  .sidebar-alerts.alerts-collapsed h3 .alert-chevron { transform: rotate(-90deg); }
+  .sidebar-alerts.alerts-collapsed #alert-list { display: none; }
   .alert-item { display: flex; align-items: flex-start; gap: 8px; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,.05); }
   .alert-item:last-child { border-bottom: none; }
   .alert-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--warn); flex-shrink: 0; margin-top: 4px; }
@@ -313,8 +318,8 @@
       </div>
       <div class="proj-list" id="proj-list"></div>
       <!-- Alerts for current project -->
-      <div class="sidebar-alerts">
-        <h3>⚠ 本週未更新</h3>
+      <div class="sidebar-alerts" id="sidebar-alerts-wrap">
+        <h3 onclick="toggleAlerts()"><span id="alert-header-text">⚠ 本週未更新</span><span class="alert-chevron">▼</span></h3>
         <div id="alert-list"><div style="font-size:11px;color:rgba(255,255,255,.3)">載入中…</div></div>
       </div>
     </div>
@@ -30793,6 +30798,12 @@ function toggleSidebar() {
   btn.title = collapsed ? '展開側欄' : '收合側欄';
 }
 
+function toggleAlerts() {
+  const wrap = document.getElementById('sidebar-alerts-wrap');
+  if (!wrap) return;
+  wrap.classList.toggle('alerts-collapsed');
+}
+
 function setPmFilter(pm) {
   STATE.pmFilter = pm;
   buildProjectSelector();
@@ -30888,15 +30899,18 @@ function renderSidebar() {
       }
     }
   }
+  const alertsWrap = document.getElementById('sidebar-alerts-wrap');
+  const headerText = document.getElementById('alert-header-text');
   if (!alerts.length) {
-    if (alertHeader) alertHeader.style.display = 'none';
+    if (alertsWrap) alertsWrap.style.display = 'none';
     list.innerHTML = '';
   } else {
-    if (alertHeader) alertHeader.style.display = '';
-    list.innerHTML = alerts.slice(0, 8).map(a => `
+    if (alertsWrap) alertsWrap.style.display = '';
+    if (headerText) headerText.textContent = `⚠ 本週未更新 (${alerts.length})`;
+    list.innerHTML = alerts.map(a => `
       <div class="alert-item">
         <div class="alert-dot${a.days > 14 ? ' danger' : ''}"></div>
-        <div class="alert-text"><strong>${a.task}</strong><br>${a.ms}・${a.label}</div>
+        <div class="alert-text"><strong>${_esc(a.task)}</strong><br>${_esc(a.ms)}・${a.label}</div>
       </div>`).join('');
   }
 }
