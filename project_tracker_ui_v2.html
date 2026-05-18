@@ -498,6 +498,16 @@
     </div>
     <div class="modal-body">
       <p id="lot-modal-subtitle" style="font-size:12px;color:var(--text2);margin-bottom:12px"></p>
+      <div style="display:flex;gap:12px;margin-bottom:12px">
+        <div class="form-group" style="flex:1;margin-bottom:0">
+          <label>面積 (m²)</label>
+          <input type="number" id="lot-area-input" class="form-control" placeholder="例：12500" min="0" step="any">
+        </div>
+        <div class="form-group" style="flex:1;margin-bottom:0">
+          <label>容量 (kW)</label>
+          <input type="number" id="lot-capacity-input" class="form-control" placeholder="例：999.9" min="0" step="any">
+        </div>
+      </div>
       <div class="lot-chip-wrap" id="lot-chip-wrap"></div>
       <div class="form-group" style="margin-bottom:8px">
         <label>批量新增（一行一筆地號）</label>
@@ -30230,6 +30240,15 @@ function applyEvents(data, events) {
           break;
         }
 
+        case 'parcel_updated': {
+          const parcel = proj.parcels?.find(p => p.parcel_id === ev.parcel_id);
+          if (parcel) {
+            if (ev.area_m2     !== undefined) parcel.area_m2     = ev.area_m2;
+            if (ev.capacity_kw !== undefined) parcel.capacity_kw = ev.capacity_kw;
+          }
+          break;
+        }
+
         default:
           console.warn('Unknown event type:', ev.event);
       }
@@ -30557,6 +30576,8 @@ function showLotModal(projId, parcelId) {
   if (!parcel) return;
   document.getElementById('lot-modal-subtitle').textContent =
     `專案：${proj.name}　地塊：${parcel.name}`;
+  document.getElementById('lot-area-input').value = parcel.area_m2 != null ? parcel.area_m2 : '';
+  document.getElementById('lot-capacity-input').value = parcel.capacity_kw != null ? parcel.capacity_kw : '';
   document.getElementById('lot-bulk-input').value = '';
   renderLotChips(parcel.lots || []);
   document.getElementById('lot-modal').classList.remove('hidden');
@@ -30616,7 +30637,26 @@ function syncProjLots(proj) {
 
 async function saveLots() {
   try {
+    const proj = STATE.data.projects.find(p => p.project_id === _lotContext.projId);
+    const parcel = proj?.parcels.find(p => p.parcel_id === _lotContext.parcelId);
+    if (parcel) {
+      const areaVal = document.getElementById('lot-area-input').value.trim();
+      const capVal  = document.getElementById('lot-capacity-input').value.trim();
+      parcel.area_m2     = areaVal  !== '' ? parseFloat(areaVal)  : null;
+      parcel.capacity_kw = capVal   !== '' ? parseFloat(capVal)   : null;
+    }
     await ghWriteProjDirect();
+    if (parcel) {
+      const now = new Date().toISOString();
+      await ghAppendEvent({
+        event: 'parcel_updated',
+        project_id: _lotContext.projId,
+        parcel_id: _lotContext.parcelId,
+        area_m2: parcel.area_m2,
+        capacity_kw: parcel.capacity_kw,
+        ts: now
+      });
+    }
     closeLotModal();
   } catch(e) {
     alert('地號儲存失敗：' + e.message + '\n\n請確認 PAT 有 Contents 讀寫權限。');
