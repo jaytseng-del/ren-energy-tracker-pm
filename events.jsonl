@@ -108,3 +108,4 @@
 {"event":"update_added","project_id":"PRJ-007","milestone_id":"PRJ-007-MS-004","task_id":"TSK-1778220524459","update":{"update_id":"UPD-1779088447216","created_at":"2026-05-18T04:00:00.000Z","content":"5/18已請種疄以email提出擋水板高度變更原因及追加費用需求","impact":"none","impact_days":null,"next_action":"跟PLL說明追加原因+申請農許變更"},"ts":"2026-05-18T04:00:00.000Z"}
 {"event":"parcel_updated","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-001","area_m2":48500,"capacity_kw":7146.26,"ts":"2026-05-18T08:02:10.558Z"}
 {"event":"parcel_updated","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-002","area_m2":47000,"capacity_kw":7012.555,"ts":"2026-05-18T08:04:16.220Z"}
+{"event":"parcel_updated","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-003","area_m2":44100,"capacity_kw":6586.03,"ts":"2026-05-18T08:05:01.687Z"}
