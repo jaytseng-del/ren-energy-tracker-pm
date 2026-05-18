@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T11:11:33.855Z",
+      "updated_at": "2026-05-15T05:52:18.880Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -13386,7 +13386,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T09:42:18.019Z",
+      "updated_at": "2026-05-15T11:16:40.280Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -23646,7 +23646,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T06:48:28.352Z",
+          "updated_at": "2026-05-15T11:16:40.280Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1778816898105-ST01",
@@ -23656,7 +23656,7 @@
               "cc": "45",
               "estimated_days": null,
               "authority": "（內部）",
-              "status": "done",
+              "status": "in_progress",
               "planned_start": null,
               "planned_end": null,
               "actual_end": "2026-05-15",
@@ -26932,7 +26932,7 @@
       "start_date": "2024-02-05 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:58:01.728Z",
+      "updated_at": "2026-05-18T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "六龜區埔仔厝段363",
@@ -27189,7 +27189,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T05:58:01.728Z",
+          "updated_at": "2026-05-18T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-009-MS-001-ST01",
@@ -27211,13 +27211,29 @@
                   "task_type": "one-off",
                   "status": "in_progress",
                   "next_action_due": "2026-05-22",
-                  "next_action": null,
+                  "next_action": "確認線上會議時間",
                   "notes": null,
                   "updates": [
                     {
                       "update_id": "UPD-1778824516526",
                       "created_at": "2026-05-15T04:00:00.000Z",
                       "content": "5/15先跟Jill確認目前情形，Jill有提供農技目前設計圖，預計今天發信跟農技約會議",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1779088210761",
+                      "created_at": "2026-05-15T04:00:00.000Z",
+                      "content": "5/15已發信約農技線上會議時間",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "確認線上會議時間"
+                    },
+                    {
+                      "update_id": "UPD-1779088309972",
+                      "created_at": "2026-05-18T04:00:00.000Z",
+                      "content": "5/18農技確認於5/19(二)上午10:00線上會議，會議討論內容：1. 溫室初步設計討論(如光電鋪排、側披覆材質、擋水板規劃、建物高度、現有種植戶種植意願及原因等)\n2.農許申設文件準備及提供",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
