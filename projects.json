@@ -4878,7 +4878,9 @@
           "status": "active",
           "lots": [
             "台南市七股區台區段15-3地號"
-          ]
+          ],
+          "area_m2": 25688.29,
+          "capacity_kw": 3534.3
         },
         {
           "parcel_id": "PRJ-002-PCL-004",
