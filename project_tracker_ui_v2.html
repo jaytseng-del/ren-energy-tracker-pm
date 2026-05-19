@@ -32543,7 +32543,15 @@ function deletePcl(parcelId) {
   if (!proj) return;
   const inUse = (proj.milestones || []).some(m => m.parcel_id === parcelId);
   if (inUse && !confirm('此地塊已有關聯的里程碑，仍要刪除嗎？')) return;
-  proj.parcels = (proj.parcels || []).filter(p => p.parcel_id !== parcelId);
+  // 標記為 deleted（不直接移除），否則 _renderPclManageList 會從里程碑重新補回
+  proj.parcels = proj.parcels || [];
+  const pcl = proj.parcels.find(p => p.parcel_id === parcelId);
+  if (pcl) {
+    pcl.status = 'deleted';
+  } else {
+    // 若不在陣列裡（理論上不會），補一筆再標記
+    proj.parcels.push({ parcel_id: parcelId, name: parcelId, status: 'deleted', lots: [] });
+  }
   _renderPclManageList();
   ghWriteProjDirect();
   ghAppendEvent({ event: 'parcels_updated', project_id: _pclManageProjId, ts: new Date().toISOString() });
