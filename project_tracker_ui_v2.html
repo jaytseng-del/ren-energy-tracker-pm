@@ -29995,11 +29995,19 @@ async function importAndRebuildHtml() {
 }
 
 // 直接寫入（不受 pendingSync 鎖、永遠抓最新 SHA、失敗時拋出錯誤）
-// 用於 confirmAddProject / deleteProject / saveLots 等關鍵操作
+// 用於 confirmAddProject / deleteProject / saveLots / submitMilestone 等關鍵操作
 async function ghWriteProjDirect() {
-  const meta = await ghMeta(CONFIG.projFile);
-  const result = await ghWrite(CONFIG.projFile, STATE.data, meta.sha);
-  _cachedProjSha = result.content?.sha || null;
+  try {
+    const meta = await ghMeta(CONFIG.projFile);
+    const result = await ghWrite(CONFIG.projFile, STATE.data, meta.sha);
+    _cachedProjSha = result.content?.sha || null;
+    const t = new Date().toLocaleTimeString('zh-TW', {hour:'2-digit', minute:'2-digit', second:'2-digit'});
+    showEventSyncStatus(true, t);
+  } catch(e) {
+    console.error('ghWriteProjDirect failed:', e);
+    showEventSyncStatus(false, e.message || '寫入 projects.json 失敗');
+    throw e; // re-throw，讓呼叫端知道失敗
+  }
 }
 
 async function ghAppendLog(entry) {
@@ -30764,6 +30772,18 @@ async function loadData() {
       }
     } catch(evErr) {
       console.warn('Events load/replay failed (non-blocking):', evErr);
+    }
+
+    // 防禦性清除：移除 parcel 已被刪除的孤立 per_parcel 里程碑
+    // 不依賴 events.jsonl 中的 milestone_deleted 事件是否存在
+    for (const p of (data.projects || [])) {
+      const validParcelIds = new Set((p.parcels || []).map(pc => pc.parcel_id));
+      const before = (p.milestones || []).length;
+      p.milestones = (p.milestones || []).filter(m =>
+        m.application_scope !== 'per_parcel' || validParcelIds.has(m.parcel_id)
+      );
+      const removed = before - p.milestones.length;
+      if (removed > 0) console.log(`[cleanup] Removed ${removed} orphaned per_parcel milestone(s) from ${p.project_id}`);
     }
 
     return data;
@@ -32454,7 +32474,7 @@ function renderMsParcelChecklist(editMode, currentParcelId) {
 }
 
 // ── Submit (save) milestone modal ─────────────────────────────────────────────
-function submitMilestone() {
+async function submitMilestone() {
   const nameEl = document.getElementById('ms-name');
   const name = nameEl.value.trim();
   if (!name) { nameEl.classList.add('invalid'); return; }
@@ -32477,6 +32497,9 @@ function submitMilestone() {
   const stages   = _stageDraft.map(s => ({...s}));
   const now      = new Date().toISOString();
 
+  // Collect milestone IDs that are being deleted (need events to prevent ghost on reload)
+  const deletedMsIds = [];
+
   // ── EDIT MODE ──────────────────────────────────────────────────────────────
   if (_msModeEdit && msId) {
     const ms = proj.milestones.find(m => m.milestone_id === msId);
@@ -32495,21 +32518,19 @@ function submitMilestone() {
         m.name === origName && m.application_scope === 'per_parcel'
       );
 
-      // Remove unchecked instances
+      // Remove unchecked instances from STATE, collect their IDs for event append
       groupInstances.forEach(inst => {
         if (!checkedIds.has(inst.parcel_id)) {
+          deletedMsIds.push(inst.milestone_id);
           proj.milestones = proj.milestones.filter(m => m.milestone_id !== inst.milestone_id);
-          ghAppendEvent({ event: 'milestone_deleted', project_id: projId, milestone_id: inst.milestone_id, ts: now });
         }
       });
 
-      // Update still-checked existing instances
-      // IMPORTANT: preserve per-instance stage statuses — only sync structure (name/type/cc)
+      // Update still-checked existing instances — merge stages to preserve per-instance statuses
       const remaining = proj.milestones.filter(m =>
         m.name === origName && m.application_scope === 'per_parcel'
       );
       remaining.forEach(inst => {
-        // Merge stage template data with each instance's own stage statuses
         const mergedStages = stages.map(tplSt => {
           const existSt = (inst.stages || []).find(s => s.stage_id === tplSt.stage_id)
                        || (inst.stages || []).find(s => s.name === tplSt.name);
@@ -32521,10 +32542,10 @@ function submitMilestone() {
             cc:             tplSt.cc,
             estimated_days: tplSt.estimated_days,
             authority:      tplSt.authority || '',
-            status:         existSt ? (existSt.status || 'pending') : 'pending',
-            actual_end:     existSt ? (existSt.actual_end || null) : null,
-            tasks:          existSt ? (existSt.tasks   || [])  : [],
-            notes:          existSt ? (existSt.notes   || '')  : '',
+            status:         existSt ? (existSt.status    || 'pending') : 'pending',
+            actual_end:     existSt ? (existSt.actual_end || null)     : null,
+            tasks:          existSt ? (existSt.tasks      || [])       : [],
+            notes:          existSt ? (existSt.notes      || '')       : '',
           };
         });
         Object.assign(inst, { name, group, application_scope: 'per_parcel', status,
@@ -32532,19 +32553,15 @@ function submitMilestone() {
           forecast_start: fcStart, forecast_end: fcEnd,
           actual_start: acStart, actual_end: acEnd,
           notes, stages: mergedStages, updated_at: now });
-        // Do NOT include stages in event — stage statuses are tracked via stage_status_changed
-        // (including stages here would reset them on next reload via applyEvents)
-        ghAppendEvent({ event: 'milestone_edited', project_id: projId, milestone_id: inst.milestone_id,
-          changes: { name, group, status, baseline_start: blStart, baseline_end: blEnd,
-            forecast_start: fcStart, forecast_end: fcEnd, actual_start: acStart, actual_end: acEnd, notes },
-          ts: now });
+        // No per-instance milestone_edited events here — ghWriteProjDirect() is authoritative
+        // (firing N concurrent events to events.jsonl causes SHA conflicts / sync errors)
       });
 
       // Create new instances for newly checked parcels
       const existingParcelIds = new Set(remaining.map(m => m.parcel_id));
       const lastIdx = proj.milestones.reduce((acc, m, i) => m.name === origName ? i : acc, -1);
       let insertAt = lastIdx >= 0 ? lastIdx + 1 : proj.milestones.length;
-      Object.entries(checkedMap).forEach(([parcelId, parcelName]) => {
+      for (const [parcelId, parcelName] of Object.entries(checkedMap)) {
         if (!existingParcelIds.has(parcelId)) {
           const newMsId = `${projId}-MS-${Date.now()}-${Math.random().toString(36).slice(2,6)}`;
           const newMs = {
@@ -32558,9 +32575,9 @@ function submitMilestone() {
           };
           proj.milestones.splice(insertAt, 0, newMs);
           insertAt++;
-          ghAppendEvent({ event: 'milestone_created', project_id: projId, milestone: newMs, ts: now });
+          // milestone_created events are safe to fire after ghWriteProjDirect
         }
-      });
+      }
 
     } else {
       // whole_project (or converting from per_parcel to whole_project)
@@ -32569,8 +32586,8 @@ function submitMilestone() {
           m.name === origName && m.application_scope === 'per_parcel' && m.milestone_id !== msId
         );
         others.forEach(inst => {
+          deletedMsIds.push(inst.milestone_id);
           proj.milestones = proj.milestones.filter(m => m.milestone_id !== inst.milestone_id);
-          ghAppendEvent({ event: 'milestone_deleted', project_id: projId, milestone_id: inst.milestone_id, ts: now });
         });
       }
       Object.assign(ms, { name, group, application_scope: newScope,
@@ -32579,11 +32596,6 @@ function submitMilestone() {
         forecast_start: fcStart, forecast_end: fcEnd,
         actual_start: acStart, actual_end: acEnd,
         notes, stages: stages.map(s => ({...s})), updated_at: now });
-      ghAppendEvent({ event: 'milestone_edited', project_id: projId, milestone_id: msId,
-        changes: { name, group, application_scope: newScope, status,
-          baseline_start: blStart, baseline_end: blEnd,
-          forecast_start: fcStart, forecast_end: fcEnd,
-          actual_start: acStart, actual_end: acEnd, notes, stages: stages.map(s => ({...s})) }, ts: now });
     }
 
   // ── ADD MODE ────────────────────────────────────────────────────────────────
@@ -32605,7 +32617,6 @@ function submitMilestone() {
           status, notes, stages: stages.map(s => ({...s})), updated_at: now,
         };
         proj.milestones.push(newMs);
-        ghAppendEvent({ event: 'milestone_created', project_id: projId, milestone: newMs, ts: now });
       });
     } else {
       const newMsId = `${projId}-MS-${Date.now()}-${Math.random().toString(36).slice(2,6)}`;
@@ -32619,13 +32630,26 @@ function submitMilestone() {
         status, notes, stages: stages.map(s => ({...s})), updated_at: now,
       };
       proj.milestones.push(newMs);
-      ghAppendEvent({ event: 'milestone_created', project_id: projId, milestone: newMs, ts: now });
     }
   }
 
+  // ── Persist ────────────────────────────────────────────────────────────────
   closeMsModal();
   renderAll();
-  ghWriteProjDirect();  // writes complete authoritative state; events are supplementary
+
+  try {
+    // Step 1: append milestone_deleted events SEQUENTIALLY (prevents ghost on reload)
+    for (const delId of deletedMsIds) {
+      await ghAppendEvent({ event: 'milestone_deleted', project_id: projId, milestone_id: delId, ts: now });
+    }
+
+    // Step 2: write complete authoritative state (single write, no SHA conflicts)
+    // ghWriteProjDirect handles its own try-catch and showEventSyncStatus
+    await ghWriteProjDirect();
+  } catch(e) {
+    // ghWriteProjDirect already called showEventSyncStatus(false, ...) before re-throwing
+    console.error('submitMilestone sync failed:', e);
+  }
 }
 
 // ── Delete milestone ──────────────────────────────────────────────────────────
