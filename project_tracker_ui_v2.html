@@ -30099,12 +30099,29 @@ function showEventSyncStatus(ok, msg) {
 // 所有 ghAppendEvent 呼叫都排隊，確保一次只有一個在寫 events.jsonl
 // 避免連續快速操作（如連點多個 Stage）造成 SHA 衝突（409）
 let _eventQueue = Promise.resolve();
+let _eventQueueDepth = 0; // 目前排隊（尚未完成）的事件數
+
+function _updateQueueStatus() {
+  const el = document.getElementById('event-sync-status');
+  if (!el) return;
+  if (_eventQueueDepth > 0) {
+    el.textContent = `⏳ 同步中 ${_eventQueueDepth > 1 ? `（還有 ${_eventQueueDepth - 1} 筆排隊）` : ''}`;
+    el.style.color = '#ffd580';
+  }
+  // 當 depth 降到 0 時，由 showEventSyncStatus 顯示最終結果（✓ 或 ✗）
+}
 
 function ghAppendEvent(event) {
+  _eventQueueDepth++;
+  _updateQueueStatus();
   // 把這次寫入排到佇列尾端；前一個完成（無論成功或失敗）才執行這次
   const p = _eventQueue
     .catch(() => {}) // 前一個失敗不會中斷佇列
-    .then(() => _ghAppendEventDirect(event));
+    .then(() => _ghAppendEventDirect(event))
+    .finally(() => {
+      _eventQueueDepth = Math.max(0, _eventQueueDepth - 1);
+      if (_eventQueueDepth > 0) _updateQueueStatus(); // 還有排隊中的，繼續顯示
+    });
   _eventQueue = p;
   return p;
 }
@@ -30141,6 +30158,11 @@ async function _ghAppendEventDirect(event) {
       }
     }
   }
+}
+
+// Stage status 比較用的分數（越高越「完成」）
+function stageStatusScore(s) {
+  return { done: 4, completed: 4, in_progress: 3, blocked: 2, skipped: 1, pending: 0 }[s] ?? 0;
 }
 
 // Derive milestone status from its stages (shared logic used by setStageStatus & applyEvents)
@@ -30180,17 +30202,34 @@ function applyEvents(data, events) {
           if (!ms) break;
           const { stages: evStages, ...metaChanges } = ev.changes || {};
           Object.assign(ms, metaChanges);
-          // If event has stages, merge structure but preserve existing stage statuses
+          // If event has stages, merge structure preserving the richer data
           if (evStages && ms.application_scope === 'per_parcel') {
             ms.stages = evStages.map(tplSt => {
-              const existSt = (ms.stages || []).find(s => s.stage_id === tplSt.stage_id)
-                           || (ms.stages || []).find(s => s.name === tplSt.name);
+              const matchById   = (ms.stages || []).find(s => s.stage_id === tplSt.stage_id);
+              const matchByName = (ms.stages || []).find(s => s.name    === tplSt.name);
+              const existSt     = matchById || matchByName;
+              // stage_id: always use event's ID (event defines new canonical structure)
+              // status:   prefer the more "completed" of the two
+              // tasks:    prefer whichever side has more tasks (non-empty wins over empty)
+              const evScore = stageStatusScore(tplSt.status);
+              const exScore = existSt ? stageStatusScore(existSt.status) : -1;
+              const exTasks = existSt ? (existSt.tasks || []) : [];
+              const evTasks = tplSt.tasks || [];
+              // tasks: union merge — keep ALL existing tasks (only task_deleted can remove them)
+              //        add any tasks from the event that don't already exist (task_id dedup)
+              const mergedTasks = [...exTasks];
+              for (const evTask of evTasks) {
+                if (!mergedTasks.find(t => t.task_id === evTask.task_id)) {
+                  mergedTasks.push(evTask);
+                }
+              }
               return {
                 ...tplSt,
-                stage_id:   existSt ? existSt.stage_id : tplSt.stage_id,
-                status:     existSt ? (existSt.status   || 'pending') : 'pending',
-                actual_end: existSt ? (existSt.actual_end || null)    : null,
-                tasks:      existSt ? (existSt.tasks     || [])       : [],
+                stage_id:   tplSt.stage_id,
+                status:     evScore >= exScore ? (tplSt.status || 'pending') : (existSt.status || 'pending'),
+                actual_end: evScore >= exScore ? (tplSt.actual_end || null)  : (existSt.actual_end || null),
+                tasks:      mergedTasks,
+                notes:      existSt?.notes || tplSt.notes || '',
               };
             });
           } else if (evStages) {
