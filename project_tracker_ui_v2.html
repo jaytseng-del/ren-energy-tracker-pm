@@ -30095,7 +30095,21 @@ function showEventSyncStatus(ok, msg) {
   if (ok) setTimeout(() => { el.textContent = ''; }, 4000);
 }
 
-async function ghAppendEvent(event) {
+// ── Serial Event Queue ────────────────────────────────────────────────────────
+// 所有 ghAppendEvent 呼叫都排隊，確保一次只有一個在寫 events.jsonl
+// 避免連續快速操作（如連點多個 Stage）造成 SHA 衝突（409）
+let _eventQueue = Promise.resolve();
+
+function ghAppendEvent(event) {
+  // 把這次寫入排到佇列尾端；前一個完成（無論成功或失敗）才執行這次
+  const p = _eventQueue
+    .catch(() => {}) // 前一個失敗不會中斷佇列
+    .then(() => _ghAppendEventDirect(event));
+  _eventQueue = p;
+  return p;
+}
+
+async function _ghAppendEventDirect(event) {
   const MAX_RETRIES = 3;
   let attempt = 0;
   while (attempt < MAX_RETRIES) {
