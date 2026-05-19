@@ -4805,7 +4805,7 @@
       "start_date": "2024-05-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-14T04:00:00.000Z",
+      "updated_at": "2026-05-19T03:26:20.361Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段15地號",
@@ -4836,13 +4836,6 @@
           "notes": null
         },
         {
-          "lot_number": "台南市七股區台區段17地號",
-          "parcel_name": "新鑫漁業",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
           "lot_number": "台南市七股區台區段18地號",
           "parcel_name": "豐川漁業",
           "status": "在案",
@@ -4865,9 +4858,10 @@
           "name": "新鑫漁業",
           "status": "active",
           "lots": [
-            "台南市七股區台區段15-2地號",
-            "台南市七股區台區段17地號"
-          ]
+            "台南市七股區台區段15-2地號"
+          ],
+          "area_m2": null,
+          "capacity_kw": null
         },
         {
           "parcel_id": "PRJ-002-PCL-003",
@@ -4907,7 +4901,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-07T03:44:06.798Z",
+          "updated_at": "2026-05-19T03:26:20.361Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-001-ST01",
@@ -4955,7 +4949,7 @@
             {
               "stage_id": "PRJ-002-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "鄉公所-補正 #1",
               "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "skippable",
               "estimated_days": "30",
@@ -4970,7 +4964,7 @@
             {
               "stage_id": "PRJ-002-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "鄉公所-補正 #2",
               "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "skippable",
               "estimated_days": "30",
@@ -5000,7 +4994,7 @@
             {
               "stage_id": "PRJ-002-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "地方政府-補正 #1",
               "authority": "地方農業局",
               "type": "skippable",
               "estimated_days": "90",
@@ -5015,7 +5009,7 @@
             {
               "stage_id": "PRJ-002-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "地方政府-補正 #2",
               "authority": "地方農業局",
               "type": "skippable",
               "estimated_days": "90",
@@ -5058,7 +5052,9 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-002-MS-002",
@@ -5080,7 +5076,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-04T05:48:33.697Z",
+          "updated_at": "2026-05-19T03:26:15.715Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-002-ST01",
@@ -5115,7 +5111,7 @@
             {
               "stage_id": "PRJ-002-MS-002-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "鄉公所-補正 #1",
               "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "skippable",
               "estimated_days": "30",
@@ -5130,7 +5126,7 @@
             {
               "stage_id": "PRJ-002-MS-002-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "鄉公所-補正 #2",
               "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "skippable",
               "estimated_days": "30",
@@ -5160,7 +5156,7 @@
             {
               "stage_id": "PRJ-002-MS-002-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "地方政府-補正 #1",
               "authority": "地方農業局",
               "type": "skippable",
               "estimated_days": "90",
@@ -5175,7 +5171,7 @@
             {
               "stage_id": "PRJ-002-MS-002-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "地方政府-補正 #2",
               "authority": "地方農業局",
               "type": "skippable",
               "estimated_days": "90",
@@ -5218,7 +5214,9 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-002-MS-003",
@@ -5240,7 +5238,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-04T05:54:04.964Z",
+          "updated_at": "2026-05-19T03:26:09.855Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-003-ST01",
@@ -5275,7 +5273,7 @@
             {
               "stage_id": "PRJ-002-MS-003-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "鄉公所-補正 #1",
               "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "skippable",
               "estimated_days": "30",
@@ -5290,7 +5288,7 @@
             {
               "stage_id": "PRJ-002-MS-003-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "鄉公所-補正 #2",
               "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "skippable",
               "estimated_days": "30",
@@ -5320,7 +5318,7 @@
             {
               "stage_id": "PRJ-002-MS-003-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "地方政府-補正 #1",
               "authority": "地方農業局",
               "type": "skippable",
               "estimated_days": "90",
@@ -5335,7 +5333,7 @@
             {
               "stage_id": "PRJ-002-MS-003-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "地方政府-補正 #2",
               "authority": "地方農業局",
               "type": "skippable",
               "estimated_days": "90",
@@ -5378,7 +5376,9 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-002-MS-004",
@@ -5400,7 +5400,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-04T05:54:25.152Z",
+          "updated_at": "2026-05-19T03:26:03.354Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-004-ST01",
@@ -5435,7 +5435,7 @@
             {
               "stage_id": "PRJ-002-MS-004-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "鄉公所-補正 #1",
               "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "skippable",
               "estimated_days": "30",
@@ -5450,7 +5450,7 @@
             {
               "stage_id": "PRJ-002-MS-004-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "鄉公所-補正 #2",
               "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "skippable",
               "estimated_days": "30",
@@ -5480,7 +5480,7 @@
             {
               "stage_id": "PRJ-002-MS-004-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "地方政府-補正 #1",
               "authority": "地方農業局",
               "type": "skippable",
               "estimated_days": "90",
@@ -5495,7 +5495,7 @@
             {
               "stage_id": "PRJ-002-MS-004-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "地方政府-補正 #2",
               "authority": "地方農業局",
               "type": "skippable",
               "estimated_days": "90",
@@ -5538,7 +5538,9 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-002-MS-005",
