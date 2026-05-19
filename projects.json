@@ -4888,7 +4888,9 @@
           "status": "active",
           "lots": [
             "台南市七股區台區段18地號"
-          ]
+          ],
+          "area_m2": 36667.32,
+          "capacity_kw": 5462.1
         },
         {
           "parcel_id": "PRJ-002-PCL-1779169032958",
