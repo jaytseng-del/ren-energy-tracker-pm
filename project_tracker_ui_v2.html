@@ -32770,6 +32770,9 @@ function deletePcl(parcelId) {
   ghWriteProjDirect();
   ghAppendEvent({ event: 'parcels_updated', project_id: _pclManageProjId, ts: now });
 }
+
+// ── App Entry Point ────────────────────────────────────────────────────────
+init();
 </script>
 </body>
 </html>
