@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-19T06:57:13.768Z",
+      "updated_at": "2026-05-19T07:12:31.913Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -226,7 +226,7 @@
         {
           "parcel_id": "PRJ-001-PCL-1779171700501",
           "name": "test",
-          "status": "active",
+          "status": "deleted",
           "lots": [],
           "area_m2": null,
           "capacity_kw": null
@@ -253,7 +253,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-19T06:52:19.783Z",
+          "updated_at": "2026-05-19T07:12:31.913Z",
           "stages": [
             {
               "stage_id": "PRJ-001-MS-001-ST01",
@@ -4976,7 +4976,7 @@
       "start_date": "2024-05-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-19T05:48:34.327Z",
+      "updated_at": "2026-05-19T07:13:03.050Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段15地號",
@@ -5815,7 +5815,7 @@
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "blocked",
-              "actual_end": null,
+              "actual_end": "2026-05-19",
               "tasks": []
             },
             {
@@ -5846,7 +5846,7 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-19T05:48:34.327Z"
+          "updated_at": "2026-05-19T07:13:03.050Z"
         },
         {
           "milestone_id": "PRJ-002-MS-005",
