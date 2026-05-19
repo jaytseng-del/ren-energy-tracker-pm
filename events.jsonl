@@ -200,3 +200,4 @@
 {"event":"milestone_edited","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-004","changes":{"name":"農業容許","group":"農業","status":"pending","baseline_start":"2024-05-11","baseline_end":"2026-07-14","forecast_start":"2024-05-11","forecast_end":"2026-07-14","actual_start":"2024-05-11","actual_end":null,"notes":""},"ts":"2026-05-19T09:20:27.845Z"}
 {"event":"milestone_deleted","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-1779173833769-9649","ts":"2026-05-19T11:09:36.934Z"}
 {"event":"stage_status_changed","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","stage_id":"PRJ-001-MS-1779173833769-9649-ST02","old_status":"pending","new_status":"done","actual_end":"2026-05-19","ts":"2026-05-19T11:09:45.241Z"}
+{"event":"stage_status_changed","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-002","stage_id":"PRJ-001-MS-1779173833769-9649-ST01","old_status":"pending","new_status":"done","actual_end":"2026-05-19","ts":"2026-05-19T11:10:24.029Z"}
