@@ -4805,7 +4805,7 @@
       "start_date": "2024-05-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-19T05:42:28.736Z",
+      "updated_at": "2026-05-19T05:48:34.327Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段15地號",
@@ -4869,8 +4869,8 @@
           "lots": [
             "台南市七股區台區段15-2地號"
           ],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 26330.5,
+          "capacity_kw": 3848.46
         },
         {
           "parcel_id": "PRJ-002-PCL-003",
@@ -5586,7 +5586,7 @@
           "forecast_end": null,
           "actual_start": null,
           "actual_end": null,
-          "status": "in_progress",
+          "status": "blocked",
           "notes": "",
           "stages": [
             {
@@ -5639,7 +5639,7 @@
               "name": "地方政府-補正 #1",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "pending",
+              "status": "blocked",
               "actual_end": null,
               "tasks": []
             },
@@ -5671,7 +5671,7 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-19T05:41:57.283Z"
+          "updated_at": "2026-05-19T05:48:34.327Z"
         },
         {
           "milestone_id": "PRJ-002-MS-005",
