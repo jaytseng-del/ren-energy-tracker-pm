@@ -31080,13 +31080,19 @@ async function uploadScheduleTemplate(input) {
 
 // ── Tab 0: Tasks ─────────────────────────────────────────────────────────────
 function calcMsProgress(ms) {
+  if (!ms.stages || !ms.stages.length) return 0;
   let total = 0, done = 0;
   for (const st of ms.stages) {
     const cc = parseFloat(st.cc_percent ?? st.cc) || 0;
     total += cc;
     if (st.status === 'done' || st.status === 'completed' || st.status === 'skipped') done += cc;
   }
-  if (!total) return 0;
+  // If no cc weights defined, treat each stage as equal weight
+  if (!total) {
+    const allCount  = ms.stages.length;
+    const doneCount = ms.stages.filter(s => s.status === 'done' || s.status === 'completed' || s.status === 'skipped').length;
+    return Math.round(doneCount / allCount * 100);
+  }
   return Math.round(done / total * 100);
 }
 
@@ -32379,11 +32385,14 @@ function onMsScopeChange() {
   if (v === 'per_parcel') renderMsParcelChecklist(_msModeEdit);
 }
 
-// editMode=false → 新增（不預選）；editMode=true → 編輯（預選同群組所有現有地塊）
+// ── Parcel checklist for milestone modal ─────────────────────────────────────
 function renderMsParcelChecklist(editMode, currentParcelId) {
+  const listEl = document.getElementById('ms-parcel-checklist');
+  if (!listEl) return;
   const { projId, msId } = STATE.modalContext || {};
   const proj = projId ? STATE.data.projects.find(p => p.project_id === projId) : null;
-  // 從現有 per_parcel 里程碑自動補齊 proj.parcels（舊資料相容）
+
+  // Auto-populate proj.parcels from milestones (backward compatibility for older data)
   if (proj) {
     proj.parcels = proj.parcels || [];
     const knownIds = new Set(proj.parcels.map(p => p.parcel_id));
@@ -32394,60 +32403,230 @@ function renderMsParcelChecklist(editMode, currentParcelId) {
       }
     });
   }
-  const parcels = (proj && proj.parcels) ? proj.parcels.filter(p => p.status !== 'deleted') : [];
-  const listEl = document.getElementById('ms-parcel-checklist');
-  const hintEl = document.getElementById('ms-parcel-checklist-hint');
-  if (!listEl) return;
 
-  // 編輯模式：找出同名里程碑群組已有的所有地塊 id → 全部預選
+  const parcels = (proj && proj.parcels) ? proj.parcels.filter(p => p.status !== 'deleted') : [];
+
+  if (!parcels.length) {
+    listEl.innerHTML = '<div style="padding:10px;font-size:12px;color:var(--text3)">尚無地塊。請先點「管理地塊」新增。</div>';
+    return;
+  }
+
+  // In edit mode: pre-check ALL parcels in the same-name group
   let preCheckedIds = new Set();
   if (editMode && proj && msId) {
     const ms = proj.milestones.find(m => m.milestone_id === msId);
     if (ms) {
+      const msName = ms._origName || ms.name;
       proj.milestones
-        .filter(m => m.name === ms.name && m.application_scope === 'per_parcel' && m.parcel_id)
+        .filter(m => m.name === msName && m.application_scope === 'per_parcel' && m.parcel_id)
         .forEach(m => preCheckedIds.add(m.parcel_id));
     }
+  } else {
+    // New mode: check all by default
+    parcels.forEach(p => preCheckedIds.add(p.parcel_id));
   }
 
-  if (!parcels.length) {
-    listEl.innerHTML = '<div style="padding:10px;font-size:12px;color:var(--text3)">此專案尚無地塊，請先透過「⚙ 管理地塊」新增。</div>';
-    if (hintEl) hintEl.style.display = 'none';
-    return;
-  }
-  if (hintEl) {
-    hintEl.style.display = 'block';
-    hintEl.textContent = editMode
-      ? '取消勾選將移除該地塊的里程碑實例；新增勾選將建立新實例'
-      : '勾選的地塊將各建立一個里程碑實例';
-  }
   listEl.innerHTML = parcels.map(p => {
     const checked = preCheckedIds.has(p.parcel_id) ? 'checked' : '';
-    const meta = [p.area_m2 ? p.area_m2+'m²' : '', p.capacity_kw ? p.capacity_kw+'kW' : ''].filter(Boolean).join('，');
-    return `<div class="pcl-check-item" onclick="this.querySelector('input').click();event.stopPropagation()">
-      <input type="checkbox" id="pclck-${p.parcel_id}" value="${p.parcel_id}" ${checked} onclick="event.stopPropagation()">
-      <label for="pclck-${p.parcel_id}" onclick="event.stopPropagation()">${_esc(p.name)}</label>
-      ${meta ? `<span class="pcl-meta">${meta}</span>` : ''}
-    </div>`;
+    const safeName = (p.name || p.parcel_id).replace(/"/g, '&quot;');
+    return `<label class="pcl-check-item" style="display:flex;align-items:center;gap:8px;padding:6px 4px;cursor:pointer;font-size:13px">
+      <input type="checkbox" value="${p.parcel_id}" data-name="${safeName}" ${checked}>
+      <span>${p.name || p.parcel_id}</span>
+    </label>`;
   }).join('');
 }
 
-// ── 地塊管理 Modal ─────────────────────────────────────────────────────────────
-var _pclManageProjId = null;
-var _pclReturnToMs   = false;
+// ── Submit (save) milestone modal ─────────────────────────────────────────────
+function submitMilestone() {
+  const nameEl = document.getElementById('ms-name');
+  const name = nameEl.value.trim();
+  if (!name) { nameEl.classList.add('invalid'); return; }
+  nameEl.classList.remove('invalid');
 
-function openParcelManageModal(projId) {
-  _pclManageProjId = projId;
-  _pclReturnToMs   = false;
-  _renderPclManageList();
-  cancelPclEdit();
-  document.getElementById('parcel-manage-modal').classList.remove('hidden');
+  const { projId, msId } = STATE.modalContext || {};
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  if (!proj) return;
+
+  const group    = document.getElementById('ms-group').value;
+  const newScope = document.getElementById('ms-scope').value;
+  const status   = document.getElementById('ms-status').value;
+  const blStart  = document.getElementById('ms-bl-start').value  || null;
+  const blEnd    = document.getElementById('ms-bl-end').value    || null;
+  const fcStart  = document.getElementById('ms-forecast-start').value || null;
+  const fcEnd    = document.getElementById('ms-forecast').value  || null;
+  const acStart  = document.getElementById('ms-actual-start').value  || null;
+  const acEnd    = document.getElementById('ms-actual').value    || null;
+  const notes    = document.getElementById('ms-notes').value.trim();
+  const stages   = _stageDraft.map(s => ({...s}));
+  const now      = new Date().toISOString();
+
+  // ── EDIT MODE ──────────────────────────────────────────────────────────────
+  if (_msModeEdit && msId) {
+    const ms = proj.milestones.find(m => m.milestone_id === msId);
+    if (!ms) return;
+    const origName = ms._origName || ms.name;
+
+    if (newScope === 'per_parcel') {
+      const checkboxes = document.querySelectorAll('#ms-parcel-checklist input[type=checkbox]:checked');
+      if (!checkboxes.length) { alert('請至少勾選一個地塊'); return; }
+      const checkedMap = {};
+      checkboxes.forEach(cb => { checkedMap[cb.value] = cb.dataset.name || cb.value; });
+      const checkedIds = new Set(Object.keys(checkedMap));
+
+      // All current instances in the group
+      const groupInstances = proj.milestones.filter(m =>
+        m.name === origName && m.application_scope === 'per_parcel'
+      );
+
+      // Remove unchecked instances
+      groupInstances.forEach(inst => {
+        if (!checkedIds.has(inst.parcel_id)) {
+          proj.milestones = proj.milestones.filter(m => m.milestone_id !== inst.milestone_id);
+          ghAppendEvent({ event: 'milestone_deleted', project_id: projId, milestone_id: inst.milestone_id, ts: now });
+        }
+      });
+
+      // Update still-checked existing instances
+      const remaining = proj.milestones.filter(m =>
+        m.name === origName && m.application_scope === 'per_parcel'
+      );
+      remaining.forEach(inst => {
+        Object.assign(inst, { name, group, application_scope: 'per_parcel', status,
+          baseline_start: blStart, baseline_end: blEnd,
+          forecast_start: fcStart, forecast_end: fcEnd,
+          actual_start: acStart, actual_end: acEnd,
+          notes, stages: stages.map(s => ({...s})), updated_at: now });
+        ghAppendEvent({ event: 'milestone_edited', project_id: projId, milestone_id: inst.milestone_id,
+          changes: { name, group, status, baseline_start: blStart, baseline_end: blEnd,
+            forecast_start: fcStart, forecast_end: fcEnd, actual_start: acStart, actual_end: acEnd,
+            notes, stages: stages.map(s => ({...s})) }, ts: now });
+      });
+
+      // Create new instances for newly checked parcels
+      const existingParcelIds = new Set(remaining.map(m => m.parcel_id));
+      const lastIdx = proj.milestones.reduce((acc, m, i) => m.name === origName ? i : acc, -1);
+      let insertAt = lastIdx >= 0 ? lastIdx + 1 : proj.milestones.length;
+      Object.entries(checkedMap).forEach(([parcelId, parcelName]) => {
+        if (!existingParcelIds.has(parcelId)) {
+          const newMsId = `${projId}-MS-${Date.now()}-${Math.random().toString(36).slice(2,6)}`;
+          const newMs = {
+            milestone_id: newMsId, name, group, application_scope: 'per_parcel',
+            parcel_id: parcelId, parcel_name: parcelName,
+            dependency_type: ms.dependency_type || 'soft_concurrent', depends_on: ms.depends_on || [],
+            baseline_start: blStart, baseline_end: blEnd,
+            forecast_start: fcStart, forecast_end: fcEnd,
+            actual_start: acStart, actual_end: acEnd,
+            status, notes, stages: stages.map(s => ({...s})), updated_at: now,
+          };
+          proj.milestones.splice(insertAt, 0, newMs);
+          insertAt++;
+          ghAppendEvent({ event: 'milestone_created', project_id: projId, milestone: newMs, ts: now });
+        }
+      });
+
+    } else {
+      // whole_project (or converting from per_parcel to whole_project)
+      if (ms.application_scope === 'per_parcel') {
+        const others = proj.milestones.filter(m =>
+          m.name === origName && m.application_scope === 'per_parcel' && m.milestone_id !== msId
+        );
+        others.forEach(inst => {
+          proj.milestones = proj.milestones.filter(m => m.milestone_id !== inst.milestone_id);
+          ghAppendEvent({ event: 'milestone_deleted', project_id: projId, milestone_id: inst.milestone_id, ts: now });
+        });
+      }
+      Object.assign(ms, { name, group, application_scope: newScope,
+        parcel_id: null, parcel_name: null, status,
+        baseline_start: blStart, baseline_end: blEnd,
+        forecast_start: fcStart, forecast_end: fcEnd,
+        actual_start: acStart, actual_end: acEnd,
+        notes, stages: stages.map(s => ({...s})), updated_at: now });
+      ghAppendEvent({ event: 'milestone_edited', project_id: projId, milestone_id: msId,
+        changes: { name, group, application_scope: newScope, status,
+          baseline_start: blStart, baseline_end: blEnd,
+          forecast_start: fcStart, forecast_end: fcEnd,
+          actual_start: acStart, actual_end: acEnd, notes, stages: stages.map(s => ({...s})) }, ts: now });
+    }
+
+  // ── ADD MODE ────────────────────────────────────────────────────────────────
+  } else {
+    if (newScope === 'per_parcel') {
+      const checkboxes = document.querySelectorAll('#ms-parcel-checklist input[type=checkbox]:checked');
+      if (!checkboxes.length) { alert('請至少勾選一個地塊'); return; }
+      checkboxes.forEach(cb => {
+        const parcelId   = cb.value;
+        const parcelName = cb.dataset.name || cb.value;
+        const newMsId = `${projId}-MS-${Date.now()}-${Math.random().toString(36).slice(2,6)}`;
+        const newMs = {
+          milestone_id: newMsId, name, group, application_scope: 'per_parcel',
+          parcel_id: parcelId, parcel_name: parcelName,
+          dependency_type: 'soft_concurrent', depends_on: [],
+          baseline_start: blStart, baseline_end: blEnd,
+          forecast_start: fcStart, forecast_end: fcEnd,
+          actual_start: acStart, actual_end: acEnd,
+          status, notes, stages: stages.map(s => ({...s})), updated_at: now,
+        };
+        proj.milestones.push(newMs);
+        ghAppendEvent({ event: 'milestone_created', project_id: projId, milestone: newMs, ts: now });
+      });
+    } else {
+      const newMsId = `${projId}-MS-${Date.now()}-${Math.random().toString(36).slice(2,6)}`;
+      const newMs = {
+        milestone_id: newMsId, name, group, application_scope: 'whole_project',
+        parcel_id: null, parcel_name: null,
+        dependency_type: 'soft_concurrent', depends_on: [],
+        baseline_start: blStart, baseline_end: blEnd,
+        forecast_start: fcStart, forecast_end: fcEnd,
+        actual_start: acStart, actual_end: acEnd,
+        status, notes, stages: stages.map(s => ({...s})), updated_at: now,
+      };
+      proj.milestones.push(newMs);
+      ghAppendEvent({ event: 'milestone_created', project_id: projId, milestone: newMs, ts: now });
+    }
+  }
+
+  closeMsModal();
+  renderAll();
+  ghWriteProjDirect();
 }
 
-function openParcelManageFromMs() {
-  // 從 ms-modal 的「管理地塊」按鈕進入；關閉後回到 ms-modal
-  _pclReturnToMs = true;
-  const { projId } = STATE.modalContext || {};
+// ── Delete milestone ──────────────────────────────────────────────────────────
+function deleteMilestone() {
+  const { projId, msId } = STATE.modalContext || {};
+  if (!projId || !msId) return;
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  if (!proj) return;
+  const ms = proj.milestones.find(m => m.milestone_id === msId);
+  if (!ms) return;
+
+  const isGroup = ms.application_scope === 'per_parcel';
+  const msName  = ms._origName || ms.name;
+  const confirmMsg = isGroup
+    ? `確定要刪除「${msName}」整個地塊群組的所有里程碑實例嗎？`
+    : `確定要刪除里程碑「${msName}」嗎？`;
+  if (!confirm(confirmMsg)) return;
+
+  const now = new Date().toISOString();
+  if (isGroup) {
+    const group = proj.milestones.filter(m => m.name === msName && m.application_scope === 'per_parcel');
+    group.forEach(inst => {
+      ghAppendEvent({ event: 'milestone_deleted', project_id: projId, milestone_id: inst.milestone_id, ts: now });
+    });
+    proj.milestones = proj.milestones.filter(m => !(m.name === msName && m.application_scope === 'per_parcel'));
+  } else {
+    ghAppendEvent({ event: 'milestone_deleted', project_id: projId, milestone_id: msId, ts: now });
+    proj.milestones = proj.milestones.filter(m => m.milestone_id !== msId);
+  }
+
+  closeMsModal();
+  renderAll();
+  ghWriteProjDirect();
+}
+
+// ── Parcel Management Modal ───────────────────────────────────────────────────
+let _pclManageProjId = null;
+
+function openParcelManageModal(projId) {
   _pclManageProjId = projId;
   _renderPclManageList();
   cancelPclEdit();
@@ -32456,399 +32635,141 @@ function openParcelManageFromMs() {
 
 function closeParcelManageModal() {
   document.getElementById('parcel-manage-modal').classList.add('hidden');
-  if (_pclReturnToMs) {
-    // 回到 ms-modal 時重新整理地塊清單
-    const { projId, msId } = STATE.modalContext || {};
-    const proj = STATE.data.projects.find(p => p.project_id === projId);
-    const ms   = _msModeEdit && msId ? proj?.milestones.find(m => m.milestone_id === msId) : null;
-    renderMsParcelChecklist(_msModeEdit, ms ? ms.parcel_id : null);
-  }
+  _pclManageProjId = null;
+}
+
+function openParcelManageFromMs() {
+  const { projId } = STATE.modalContext || {};
+  if (!projId) { alert('請先選擇專案'); return; }
+  openParcelManageModal(projId);
 }
 
 function _renderPclManageList() {
+  const listEl = document.getElementById('pcl-manage-list');
+  if (!listEl || !_pclManageProjId) return;
   const proj = STATE.data.projects.find(p => p.project_id === _pclManageProjId);
   if (!proj) return;
-  // 從里程碑自動補齊地塊（舊資料相容）
+
+  // Auto-populate from milestones for backward compatibility
   proj.parcels = proj.parcels || [];
-  const knownIds2 = new Set(proj.parcels.map(p => p.parcel_id));
+  const knownIds = new Set(proj.parcels.map(p => p.parcel_id));
   (proj.milestones || []).forEach(m => {
-    if (m.application_scope === 'per_parcel' && m.parcel_id && !knownIds2.has(m.parcel_id)) {
+    if (m.application_scope === 'per_parcel' && m.parcel_id && !knownIds.has(m.parcel_id)) {
       proj.parcels.push({ parcel_id: m.parcel_id, name: m.parcel_name || m.parcel_id, status: 'active', lots: [], area_m2: null, capacity_kw: null });
-      knownIds2.add(m.parcel_id);
+      knownIds.add(m.parcel_id);
     }
   });
-  const parcels = (proj.parcels || []).filter(p => p.status !== 'deleted');
-  const el = document.getElementById('pcl-manage-list');
-  if (!parcels.length) {
-    el.innerHTML = '<div style="font-size:12px;color:var(--text3);padding:8px 0">尚無地塊，請在下方新增。</div>';
+
+  const active = proj.parcels.filter(p => p.status !== 'deleted');
+  if (!active.length) {
+    listEl.innerHTML = '<div style="font-size:12px;color:var(--text3);padding:8px 0">尚無地塊，請在下方新增。</div>';
     return;
   }
-  el.innerHTML = parcels.map(p => {
-    const meta = [p.area_m2 ? '面積 '+p.area_m2+'m²' : '', p.capacity_kw ? '容量 '+p.capacity_kw+'kW' : ''].filter(Boolean).join('　');
-    return `<div class="pcl-manage-row">
-      <span class="pcl-manage-name">${_esc(p.name)}</span>
-      <span class="pcl-manage-meta">${meta || '（無規格）'}</span>
-      <button class="pcl-manage-edit" onclick="editPclForm('${p.parcel_id}')">✎ 編輯</button>
-      <button class="pcl-manage-del" onclick="deletePcl('${p.parcel_id}')">✕</button>
-    </div>`;
-  }).join('');
+
+  listEl.innerHTML = active.map(p => `
+    <div style="display:flex;align-items:center;gap:8px;padding:6px 8px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;background:var(--surface)">
+      <span style="flex:1;font-size:13px;font-weight:500">${p.name || p.parcel_id}</span>
+      ${p.area_m2     ? `<span style="font-size:11px;color:var(--text3)">${p.area_m2}m²</span>` : ''}
+      ${p.capacity_kw ? `<span style="font-size:11px;color:var(--text3)">${p.capacity_kw}kW</span>`  : ''}
+      <button onclick="editPcl('${p.parcel_id}')"
+        style="font-size:11px;padding:2px 8px;border:1px solid var(--border);border-radius:4px;background:transparent;cursor:pointer;color:var(--text2)">編輯</button>
+      <button onclick="deletePcl('${p.parcel_id}')"
+        style="font-size:11px;padding:2px 8px;border:1px solid var(--danger);border-radius:4px;background:transparent;cursor:pointer;color:var(--danger)">刪除</button>
+    </div>`).join('');
 }
 
-function editPclForm(parcelId) {
+function editPcl(parcelId) {
   const proj = STATE.data.projects.find(p => p.project_id === _pclManageProjId);
-  const pcl  = proj && proj.parcels ? proj.parcels.find(p => p.parcel_id === parcelId) : null;
+  if (!proj) return;
+  const pcl = (proj.parcels || []).find(p => p.parcel_id === parcelId);
   if (!pcl) return;
-  document.getElementById('pcl-edit-id').value = parcelId;
-  document.getElementById('pcl-name').value    = pcl.name || '';
-  document.getElementById('pcl-area').value    = pcl.area_m2 || '';
-  document.getElementById('pcl-kw').value      = pcl.capacity_kw || '';
-  document.getElementById('pcl-form-title').textContent = '✎ 編輯地塊';
+  document.getElementById('pcl-edit-id').value  = parcelId;
+  document.getElementById('pcl-name').value      = pcl.name || '';
+  document.getElementById('pcl-area').value      = pcl.area_m2 || '';
+  document.getElementById('pcl-kw').value        = pcl.capacity_kw || '';
+  document.getElementById('pcl-form-title').textContent = '\u270E 編輯地塊';
 }
 
 function cancelPclEdit() {
-  document.getElementById('pcl-edit-id').value = '';
-  document.getElementById('pcl-name').value    = '';
-  document.getElementById('pcl-area').value    = '';
-  document.getElementById('pcl-kw').value      = '';
-  document.getElementById('pcl-form-title').textContent = '＋ 新增地塊';
+  document.getElementById('pcl-edit-id').value  = '';
+  document.getElementById('pcl-name').value      = '';
+  document.getElementById('pcl-area').value      = '';
+  document.getElementById('pcl-kw').value        = '';
+  document.getElementById('pcl-form-title').textContent = '\uff0b 新增地塊';
 }
 
 function savePclForm() {
-  const name = document.getElementById('pcl-name').value.trim();
-  if (!name) { document.getElementById('pcl-name').classList.add('invalid'); return; }
-  document.getElementById('pcl-name').classList.remove('invalid');
-  const proj = STATE.data.projects.find(p => p.project_id === _pclManageProjId);
-  if (!proj) return;
-  proj.parcels = proj.parcels || [];
+  const nameEl = document.getElementById('pcl-name');
+  const name   = nameEl.value.trim();
+  if (!name) { nameEl.classList.add('invalid'); return; }
+  nameEl.classList.remove('invalid');
+
   const editId = document.getElementById('pcl-edit-id').value;
   const area   = parseFloat(document.getElementById('pcl-area').value) || null;
-  const kw     = parseFloat(document.getElementById('pcl-kw').value) || null;
-  const now    = new Date().toISOString();
+  const kw     = parseFloat(document.getElementById('pcl-kw').value)   || null;
+  const proj   = STATE.data.projects.find(p => p.project_id === _pclManageProjId);
+  if (!proj) return;
+  proj.parcels = proj.parcels || [];
+
   if (editId) {
     const pcl = proj.parcels.find(p => p.parcel_id === editId);
-    if (pcl) { pcl.name = name; pcl.area_m2 = area; pcl.capacity_kw = kw; }
+    if (pcl) {
+      pcl.name = name;
+      pcl.area_m2 = area;
+      pcl.capacity_kw = kw;
+      // Sync parcel_name in milestone instances
+      (proj.milestones || []).forEach(m => {
+        if (m.parcel_id === editId) m.parcel_name = name;
+      });
+    }
   } else {
     const newId = `${_pclManageProjId}-PCL-${Date.now()}`;
-    proj.parcels.push({ parcel_id: newId, name, area_m2: area, capacity_kw: kw, status: 'active', lots: [] });
+    proj.parcels.push({ parcel_id: newId, name, status: 'active', lots: [], area_m2: area, capacity_kw: kw });
   }
-  proj.updated_at = now;
+
   cancelPclEdit();
   _renderPclManageList();
+  // Refresh checklist in ms-modal if open in per_parcel mode
+  if (!document.getElementById('ms-modal').classList.contains('hidden')) {
+    if (document.getElementById('ms-scope').value === 'per_parcel') {
+      renderMsParcelChecklist(_msModeEdit);
+    }
+  }
   ghWriteProjDirect();
-  ghAppendEvent({ event: 'parcels_updated', project_id: _pclManageProjId, ts: now });
+  ghAppendEvent({ event: 'parcels_updated', project_id: _pclManageProjId, ts: new Date().toISOString() });
 }
 
 function deletePcl(parcelId) {
   const proj = STATE.data.projects.find(p => p.project_id === _pclManageProjId);
   if (!proj) return;
-  const inUse = (proj.milestones || []).some(m => m.parcel_id === parcelId);
-  if (inUse && !confirm('此地塊已有關聯的里程碑，仍要刪除嗎？')) return;
-  // 標記為 deleted（不直接移除），否則 _renderPclManageList 會從里程碑重新補回
-  proj.parcels = proj.parcels || [];
+
+  const relatedMs = (proj.milestones || []).filter(m => m.parcel_id === parcelId);
+  const confirmMsg = relatedMs.length
+    ? `此地塊有 ${relatedMs.length} 個里程碑實例，刪除後將一併移除。確定繼續嗎？`
+    : '確定刪除此地塊嗎？';
+  if (!confirm(confirmMsg)) return;
+
+  const now = new Date().toISOString();
+
+  // Remove all milestone instances for this parcel (Issue 1 fix)
+  relatedMs.forEach(m => {
+    ghAppendEvent({ event: 'milestone_deleted', project_id: _pclManageProjId, milestone_id: m.milestone_id, ts: now });
+  });
+  proj.milestones = (proj.milestones || []).filter(m => m.parcel_id !== parcelId);
+
+  // Soft-delete parcel (prevents auto-repopulation from milestone scan)
   const pcl = proj.parcels.find(p => p.parcel_id === parcelId);
   if (pcl) {
     pcl.status = 'deleted';
   } else {
-    // 若不在陣列裡（理論上不會），補一筆再標記
     proj.parcels.push({ parcel_id: parcelId, name: parcelId, status: 'deleted', lots: [] });
   }
+
   _renderPclManageList();
+  renderAll();
   ghWriteProjDirect();
-  ghAppendEvent({ event: 'parcels_updated', project_id: _pclManageProjId, ts: new Date().toISOString() });
+  ghAppendEvent({ event: 'parcels_updated', project_id: _pclManageProjId, ts: now });
 }
-
-function submitMilestone() {
-  const name = document.getElementById('ms-name').value.trim();
-  if (!name) { document.getElementById('ms-name').classList.add('invalid'); return; }
-  document.getElementById('ms-name').classList.remove('invalid');
-
-  const { projId, msId } = STATE.modalContext;
-  const proj = STATE.data.projects.find(p => p.project_id === projId);
-  if (!proj) return;
-  const now = new Date().toISOString();
-
-  // Finalize stages from draft (assign real IDs)
-  const finalizeStages = (msIdPrefix) => _stageDraft.map((st, i) => ({
-    ...st,
-    stage_id: st.stage_id.startsWith('ST-DRAFT-') ? `${msIdPrefix}-ST${String(i+1).padStart(2,'0')}` : st.stage_id,
-    sequence: i + 1,
-  }));
-
-  if (_msModeEdit) {
-    const ms = proj.milestones.find(m => m.milestone_id === msId);
-    if (!ms) return;
-    ms.name           = name;
-    ms.group          = document.getElementById('ms-group').value;
-    ms.status         = document.getElementById('ms-status').value;
-    ms.baseline_start  = document.getElementById('ms-bl-start').value       || null;
-    ms.baseline_end    = document.getElementById('ms-bl-end').value         || null;
-    ms.forecast_start  = document.getElementById('ms-forecast-start').value || null;
-    ms.forecast_end    = document.getElementById('ms-forecast').value       || null;
-    ms.actual_start    = document.getElementById('ms-actual-start').value   || null;
-    ms.actual_end      = document.getElementById('ms-actual').value         || null;
-    ms.notes               = document.getElementById('ms-notes').value.trim() || null;
-    ms.stages              = finalizeStages(msId);
-    ms.updated_at          = now;
-    // 更新 scope（可能已被使用者切換）
-    const newScope = document.getElementById('ms-scope').value;
-    ms.application_scope   = newScope;
-    if (newScope === 'per_parcel') {
-      // 整組同步：勾選 = 保留/新增，取消 = 移除對應實例
-      const checked = Array.from(document.querySelectorAll('#ms-parcel-checklist input[type=checkbox]:checked'));
-      if (!checked.length) { alert('請至少勾選一個地塊'); return; }
-      const checkedIds = new Set(checked.map(cb => cb.value));
-      const msName = ms._origName || ms.name;  // 用原始名稱對應整個群組
-
-      // 取得目前群組所有實例
-      const groupInstances = proj.milestones.filter(
-        m => m.name === msName && m.application_scope === 'per_parcel'
-      );
-      const existingParcelIds = new Set(groupInstances.map(m => m.parcel_id));
-
-      // 移除取消勾選的實例
-      groupInstances.forEach(inst => {
-        if (!checkedIds.has(inst.parcel_id)) {
-          proj.milestones = proj.milestones.filter(m => m.milestone_id !== inst.milestone_id);
-          ghAppendEvent({ event: 'milestone_deleted', project_id: projId, milestone_id: inst.milestone_id, ts: now });
-        }
-      });
-
-      // 更新仍勾選的現有實例（name/group 同步）
-      proj.milestones.forEach(inst => {
-        if (inst.name === msName && inst.application_scope === 'per_parcel' && checkedIds.has(inst.parcel_id)) {
-          inst.name  = name;
-          inst.group = document.getElementById('ms-group').value;
-          inst.updated_at = now;
-        }
-      });
-
-      // 新增勾選但原本沒有實例的地塊
-      checked.forEach(cb => {
-        if (existingParcelIds.has(cb.value)) return; // 已有實例，略過
-        const pclX = (proj.parcels || []).find(p => p.parcel_id === cb.value);
-        if (!pclX) return;
-        const newMsId = `${projId}-MS-${Date.now()}-${Math.floor(Math.random()*9999)}`;
-        const newMs = {
-          ...ms, milestone_id: newMsId, name,
-          group: document.getElementById('ms-group').value,
-          parcel_id: pclX.parcel_id, parcel_name: pclX.name,
-          stages: (ms.stages || []).map((st, i) => ({
-            ...st,
-            stage_id: `${newMsId}-ST${String(i+1).padStart(2,'0')}`,
-            status: 'pending', actual_end: null, tasks: [],
-          })),
-          status: 'pending', updated_at: now,
-        };
-        proj.milestones.push(newMs);
-        ghAppendEvent({ event: 'milestone_created', project_id: projId, milestone: newMs, ts: now });
-      });
-
-      // 更新被編輯的那一個實例的其他欄位（日期、備註、stages）
-      // ms 物件已在上方 scope/name 更新邏輯中被修改
-      if (checkedIds.has(ms.parcel_id)) {
-        const pcl = (proj.parcels || []).find(p => p.parcel_id === ms.parcel_id);
-        ms.parcel_name = pcl ? pcl.name : ms.parcel_name;
-      }
-    } else {
-      // 切換為 whole_project，清除地塊
-      ms.parcel_id   = null;
-      ms.parcel_name = null;
-    }
-    // 若名稱有改，同步到所有同名的其他 per_parcel 實例
-    const origName = proj.milestones.find(m => m.milestone_id === msId)?._origName;
-    if (origName && origName !== name) {
-      proj.milestones.forEach(m => {
-        if (m.milestone_id !== msId && m.name === origName) m.name = name;
-      });
-    }
-  } else {
-    const scope = document.getElementById('ms-scope').value;
-    const commonFields = {
-      name,
-      group:                 document.getElementById('ms-group').value,
-      application_scope:     scope,
-      dependency_type:       'pm_discretion',
-      depends_on:            [],
-      condition_description: null,
-      payment_trigger:       false,
-      standard_days:         null,
-      baseline_start:        document.getElementById('ms-bl-start').value       || null,
-      baseline_end:          document.getElementById('ms-bl-end').value         || null,
-      forecast_start:        document.getElementById('ms-forecast-start').value || null,
-      forecast_end:          document.getElementById('ms-forecast').value       || null,
-      actual_start:          document.getElementById('ms-actual-start').value   || null,
-      actual_end:            document.getElementById('ms-actual').value         || null,
-      status:                'pending',
-      notes:                 document.getElementById('ms-notes').value.trim() || null,
-      updated_at:            now,
-      tasks:                 [],
-    };
-
-    if (scope === 'per_parcel') {
-      // 從勾選清單取得選中的地塊
-      const checked = Array.from(document.querySelectorAll('#ms-parcel-checklist input[type=checkbox]:checked'));
-      if (!checked.length) {
-        alert('請至少勾選一個地塊');
-        return;
-      }
-      proj.parcels = proj.parcels || [];
-      checked.forEach(cb => {
-        const parcelId = cb.value;
-        const pcl = proj.parcels.find(p => p.parcel_id === parcelId);
-        if (!pcl) return;
-        const newMsId = `${projId}-MS-${Date.now()}-${Math.floor(Math.random()*9999)}`;
-        const newMs = { ...commonFields, milestone_id: newMsId, parcel_id: parcelId, parcel_name: pcl.name, stages: finalizeStages(newMsId) };
-        proj.milestones.push(newMs);
-        ghAppendEvent({ event: 'milestone_created', project_id: projId, milestone: newMs, ts: now });
-      });
-    } else {
-      const newMsId = `${projId}-MS-${Date.now()}`;
-      const newMs = { ...commonFields, milestone_id: newMsId, parcel_id: null, parcel_name: null, stages: finalizeStages(newMsId) };
-      proj.milestones.push(newMs);
-      ghAppendEvent({ event: 'milestone_created', project_id: projId, milestone: newMs, ts: now });
-    }
-  }
-  proj.updated_at = now;
-  closeMsModal();
-  renderAll();
-
-  if (_msModeEdit) {
-    const ms = proj.milestones.find(m => m.milestone_id === msId);
-    if (ms) ghAppendEvent({
-      event: 'milestone_edited',
-      project_id: projId,
-      milestone_id: msId,
-      changes: {
-        name:           ms.name,
-        group:          ms.group,
-        status:         ms.status,
-        baseline_start: ms.baseline_start,
-        baseline_end:   ms.baseline_end,
-        forecast_start: ms.forecast_start,
-        forecast_end:   ms.forecast_end,
-        actual_start:   ms.actual_start,
-        actual_end:     ms.actual_end,
-        notes:          ms.notes,
-        stages:         ms.stages,
-      },
-      ts: now,
-    });
-  }
-}
-
-function deleteMilestone() {
-  const { projId, msId } = STATE.modalContext;
-  const proj = STATE.data.projects.find(p => p.project_id === projId);
-  const ms   = proj?.milestones.find(m => m.milestone_id === msId);
-  if (!ms) return;
-  const displayName = ms.name?.length > 30 ? ms.milestone_id : `「${ms.name}」${ms.parcel_name ? `（${ms.parcel_name}）` : ''}`;
-  if (!confirm(`確定要刪除里程碑 ${displayName}？\n此操作無法復原。`)) return;
-  proj.milestones = proj.milestones.filter(m => m.milestone_id !== msId);
-  const now = new Date().toISOString();
-  proj.updated_at = now;
-  closeMsModal();
-  renderAll();
-  ghAppendEvent({
-    event: 'milestone_deleted',
-    project_id: projId,
-    milestone_id: msId,
-    ts: now,
-  });
-}
-
-// ── Task Modal ────────────────────────────────────────────────────────────────
-function openTaskModal(projId, msId) {
-  STATE.modalContext = { projId, msId };
-  const proj = STATE.data.projects.find(p => p.project_id === projId);
-  const ms = proj?.milestones.find(m => m.milestone_id === msId);
-
-  document.getElementById('task-modal-context').textContent =
-    `${proj?.name || ''} › ${ms?.name || ''}${ms?.parcel_name ? ` (${ms.parcel_name})` : ''}`;
-
-  // Reset form
-  ['t-name','t-due','t-notes'].forEach(id => document.getElementById(id).value = '');
-  document.getElementById('t-type').value = '';
-  ['t-name','t-type'].forEach(id => document.getElementById(id).classList.remove('invalid'));
-
-  // Populate stage dropdown
-  const sel = document.getElementById('t-stage');
-  sel.innerHTML = '<option value="">— 不指定 Stage —</option>';
-  (ms?.stages || []).forEach(s => {
-    const opt = document.createElement('option');
-    opt.value = s.stage_id;
-    opt.textContent = s.name;
-    sel.appendChild(opt);
-  });
-
-  document.getElementById('task-modal').classList.remove('hidden');
-}
-
-function closeTaskModal() { document.getElementById('task-modal').classList.add('hidden'); }
-
-function submitTask() {
-  const name  = document.getElementById('t-name').value.trim();
-  const type  = document.getElementById('t-type').value;
-  const stageId = document.getElementById('t-stage').value;
-  const due   = document.getElementById('t-due').value;
-  const notes = document.getElementById('t-notes').value.trim();
-
-  let valid = true;
-  if (!name) { document.getElementById('t-name').classList.add('invalid'); valid = false; }
-  else document.getElementById('t-name').classList.remove('invalid');
-  if (!type) { document.getElementById('t-type').classList.add('invalid'); valid = false; }
-  else document.getElementById('t-type').classList.remove('invalid');
-  if (!valid) return;
-
-  const { projId, msId } = STATE.modalContext;
-  const proj = STATE.data.projects.find(p => p.project_id === projId);
-  const ms = proj?.milestones.find(m => m.milestone_id === msId);
-  if (!ms) return;
-
-  const task = {
-    task_id: 'TSK-' + Date.now(),
-    name,
-    task_type: type,
-    status: 'pending',
-    next_action_due: due || null,
-    next_action: null,
-    notes: notes || null,
-    updates: [],
-    created_at: new Date().toISOString(),
-  };
-
-  // Add to specified stage, or first stage, or create stage-less bucket
-  if (stageId) {
-    const st = ms.stages.find(s => s.stage_id === stageId);
-    if (st) { if (!st.tasks) st.tasks = []; st.tasks.push(task); }
-  } else {
-    // No stage selected → attach to first stage as fallback
-    if (ms.stages.length > 0) {
-      if (!ms.stages[0].tasks) ms.stages[0].tasks = [];
-      ms.stages[0].tasks.push(task);
-    } else {
-      if (!ms.tasks) ms.tasks = [];
-      ms.tasks.push(task);
-    }
-  }
-
-  ms.updated_at = task.created_at;
-  proj.updated_at = task.created_at;
-
-  closeTaskModal();
-  renderAll();
-
-  ghAppendEvent({
-    event: 'task_created',
-    project_id: projId,
-    milestone_id: msId,
-    stage_id: stageId || null,
-    task,
-    ts: task.created_at,
-  });
-}
-
-// ── Start ─────────────────────────────────────────────────────────────────────
-init();
 </script>
 </body>
 </html>
