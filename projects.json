@@ -4841,6 +4841,13 @@
           "status": "在案",
           "exit_reason": null,
           "notes": null
+        },
+        {
+          "lot_number": "台南市七股區台區段17地號",
+          "parcel_name": "新鑫漁業(17地號)",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
         }
       ],
       "parcels": [
@@ -4883,7 +4890,9 @@
           "parcel_id": "PRJ-002-PCL-1779169032958",
           "name": "新鑫漁業(17地號)",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "台南市七股區台區段17地號"
+          ],
           "area_m2": null,
           "capacity_kw": null
         }
