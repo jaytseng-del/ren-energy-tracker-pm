@@ -218,6 +218,22 @@
   .parcel-row .rm-btn { background: none; border: none; color: var(--danger); font-size: 18px; cursor: pointer; line-height: 1; padding: 0 4px; }
   .add-parcel-btn { background: none; border: 1px dashed var(--border); color: var(--text2); border-radius: 4px; padding: 6px 12px; font-size: 12px; cursor: pointer; width: 100%; margin-top: 4px; }
   .add-parcel-btn:hover { border-color: var(--primary); color: var(--primary); }
+  /* 地塊管理 Modal */
+  .pcl-manage-row { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .pcl-manage-row:last-child { border-bottom: none; }
+  .pcl-manage-name { flex: 1; font-size: 14px; font-weight: 500; }
+  .pcl-manage-meta { font-size: 12px; color: var(--text2); flex: 1.2; }
+  .pcl-manage-edit { background: none; border: 1px solid var(--border); border-radius: 4px; padding: 3px 8px; font-size: 11px; cursor: pointer; }
+  .pcl-manage-edit:hover { border-color: var(--primary); color: var(--primary); }
+  .pcl-manage-del { background: none; border: 1px solid var(--border); border-radius: 4px; padding: 3px 8px; font-size: 11px; cursor: pointer; color: var(--text2); }
+  .pcl-manage-del:hover { border-color: var(--danger); color: var(--danger); }
+  /* 里程碑 per_parcel 勾選清單 */
+  .pcl-check-list { border: 1px solid var(--border); border-radius: 6px; max-height: 180px; overflow-y: auto; background: #fafafa; }
+  .pcl-check-item { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-bottom: 1px solid var(--border); cursor: pointer; }
+  .pcl-check-item:last-child { border-bottom: none; }
+  .pcl-check-item:hover { background: #f0f4ff; }
+  .pcl-check-item label { flex: 1; font-size: 13px; cursor: pointer; }
+  .pcl-check-item .pcl-meta { font-size: 11px; color: var(--text3); }
   .preview-box { background: var(--bg); border-radius: 6px; padding: 14px 16px; font-size: 13px; }
   .preview-box .preview-row { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--border); }
   .preview-box .preview-row:last-child { border-bottom: none; }
@@ -651,8 +667,14 @@
         </select>
       </div>
       <div id="ms-parcel-group" class="form-group" style="display:none">
-        <label>地塊名稱 <span class="req">*</span></label>
-        <input id="ms-parcel" type="text" class="form-control" placeholder="例：A區、東北地塊">
+        <label style="display:flex;align-items:center;justify-content:space-between">
+          套用地塊 <span class="req">*</span>
+          <button type="button" style="font-size:11px;padding:2px 8px;border:1px solid var(--border);border-radius:4px;background:transparent;cursor:pointer;color:var(--text2)" onclick="openParcelManageFromMs()">⚙ 管理地塊</button>
+        </label>
+        <div id="ms-parcel-checklist" class="pcl-check-list">
+          <div style="padding:10px;font-size:12px;color:var(--text3)">請先選擇「各地塊分別申請」</div>
+        </div>
+        <div id="ms-parcel-checklist-hint" style="font-size:11px;color:var(--text3);margin-top:4px">新增：勾選的地塊將各建立一個里程碑實例</div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
         <div class="form-group">
@@ -740,6 +762,46 @@
         <button class="btn btn-secondary" onclick="closeMsModal()">取消</button>
         <button class="btn btn-primary" onclick="submitMilestone()">儲存</button>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- 地塊管理 Modal -->
+<div id="parcel-manage-modal" class="modal-overlay hidden">
+  <div class="modal" style="max-width:540px">
+    <div class="modal-header">
+      <h2>管理地塊</h2>
+      <button class="modal-close" onclick="closeParcelManageModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:12px;color:var(--text2);margin-bottom:12px">在此新增或編輯地塊資訊。新增里程碑時可從清單中勾選要套用的地塊。</p>
+      <div id="pcl-manage-list" style="margin-bottom:12px"></div>
+      <!-- 新增 / 編輯地塊表單 -->
+      <div id="pcl-form-wrap" style="border:1px dashed var(--border);border-radius:6px;padding:12px;background:#fafafa">
+        <div style="font-size:11px;font-weight:600;color:var(--text3);margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px" id="pcl-form-title">＋ 新增地塊</div>
+        <input type="hidden" id="pcl-edit-id">
+        <div class="form-group" style="margin-bottom:8px">
+          <label style="font-size:12px">地塊名稱 <span class="req">*</span></label>
+          <input id="pcl-name" type="text" class="form-control" placeholder="例：A區、東北地塊">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px">
+          <div class="form-group" style="margin-bottom:0">
+            <label style="font-size:12px">面積（m²）</label>
+            <input id="pcl-area" type="number" class="form-control" placeholder="0">
+          </div>
+          <div class="form-group" style="margin-bottom:0">
+            <label style="font-size:12px">容量（kW）</label>
+            <input id="pcl-kw" type="number" class="form-control" placeholder="0">
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;justify-content:flex-end">
+          <button class="btn btn-secondary" style="font-size:12px;padding:5px 12px" onclick="cancelPclEdit()">取消</button>
+          <button class="btn btn-primary" style="font-size:12px;padding:5px 12px" onclick="savePclForm()">儲存地塊</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeParcelManageModal()">關閉</button>
     </div>
   </div>
 </div>
@@ -31020,7 +31082,7 @@ async function uploadScheduleTemplate(input) {
 function calcMsProgress(ms) {
   let total = 0, done = 0;
   for (const st of ms.stages) {
-    const cc = parseFloat(st.cc) || 0;
+    const cc = parseFloat(st.cc_percent ?? st.cc) || 0;
     total += cc;
     if (st.status === 'done' || st.status === 'completed' || st.status === 'skipped') done += cc;
   }
@@ -31150,6 +31212,10 @@ function renderTab0() {
         </button>`).join('')}
     </div>
     <div style="display:flex;gap:6px;align-items:center">
+      <button onclick="openParcelManageModal('${proj.project_id}')"
+        style="font-size:12px;padding:4px 12px;border-radius:6px;cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--text2);display:flex;align-items:center;gap:4px">
+        ⚙ 管理地塊
+      </button>
       <button onclick="downloadScheduleTemplate()"
         style="font-size:12px;padding:4px 12px;border-radius:6px;cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--text2);display:flex;align-items:center;gap:4px">
         📥 下載時程模板
@@ -31204,6 +31270,7 @@ function renderTab0() {
         <h3>${msName}</h3>
         <span style="font-size:11px;color:var(--text3);margin-right:4px">${instances.length} 地塊</span>
         <span class="ms-status ${st}">${statusLabel[st]||'未開始'}</span>
+        <button class="ms-edit-btn" onclick="event.stopPropagation();openMsModal('${proj.project_id}','${instances[0].milestone_id}')">✎ 編輯</button>
         <button class="ms-edit-btn" title="上移" onclick="event.stopPropagation();moveMilestoneGroup('${proj.project_id}','${msName}',-1)">↑</button>
         <button class="ms-edit-btn" title="下移" onclick="event.stopPropagation();moveMilestoneGroup('${proj.project_id}','${msName}',1)">↓</button>
       </div>
@@ -32203,9 +32270,10 @@ function openAddParcelToMsModal(projId, msName) {
 
   const clonedStages = (template.stages || []).map((st, idx) => ({
     stage_id: `${newMsId}-ST${String(idx+1).padStart(2,'0')}`,
+    sequence: idx + 1,
     name: st.name,
-    stage_type: st.stage_type,
-    cc_percent: st.cc_percent,
+    type: st.type || st.stage_type || 'fixed',
+    cc: st.cc ?? st.cc_percent ?? '0',
     estimated_days: st.estimated_days,
     authority: st.authority || '',
     status: 'pending',
@@ -32263,7 +32331,7 @@ function openMsModal(projId, msId) {
   _msModeEdit = !!msId;
   document.getElementById('ms-modal-title').textContent = msId ? '編輯里程碑' : '新增里程碑';
   document.getElementById('ms-delete-btn').style.display = msId ? 'inline-flex' : 'none';
-  document.getElementById('ms-scope-group').style.display = msId ? 'none' : 'block';
+  document.getElementById('ms-scope-group').style.display = 'block';  // 新增/編輯都顯示
   document.getElementById('ms-parcel-group').style.display = 'none';
   document.getElementById('ms-name').classList.remove('invalid');
 
@@ -32271,8 +32339,10 @@ function openMsModal(projId, msId) {
     const proj = STATE.data.projects.find(p => p.project_id === projId);
     const ms   = proj?.milestones.find(m => m.milestone_id === msId);
     if (!ms) return;
+    ms._origName = ms.name;  // 記住原始名稱，供 submitMilestone 判斷是否需同步其他實例
     document.getElementById('ms-name').value     = ms.name || '';
     document.getElementById('ms-group').value    = ms.group || '農業';
+    document.getElementById('ms-scope').value    = ms.application_scope || 'whole_project';
     document.getElementById('ms-status').value   = ms.status || 'pending';
     document.getElementById('ms-bl-start').value      = ms.baseline_start  || '';
     document.getElementById('ms-bl-end').value        = ms.baseline_end    || '';
@@ -32282,8 +32352,13 @@ function openMsModal(projId, msId) {
     document.getElementById('ms-actual').value        = ms.actual_end      || '';
     document.getElementById('ms-notes').value    = ms.notes || '';
     _stageDraft = (ms.stages || []).map(s => ({...s}));
+    // 若是 per_parcel，顯示地塊 dropdown（編輯模式）
+    if (ms.application_scope === 'per_parcel') {
+      document.getElementById('ms-parcel-group').style.display = 'block';
+      renderMsParcelChecklist(true, ms.parcel_id, ms.parcel_name);
+    }
   } else {
-    ['ms-name','ms-parcel','ms-notes'].forEach(id => document.getElementById(id).value = '');
+    ['ms-name','ms-notes'].forEach(id => document.getElementById(id).value = '');
     document.getElementById('ms-group').value  = '農業';
     document.getElementById('ms-scope').value  = 'whole_project';
     document.getElementById('ms-status').value = 'pending';
@@ -32301,6 +32376,177 @@ function closeMsModal() { document.getElementById('ms-modal').classList.add('hid
 function onMsScopeChange() {
   const v = document.getElementById('ms-scope').value;
   document.getElementById('ms-parcel-group').style.display = v === 'per_parcel' ? 'block' : 'none';
+  if (v === 'per_parcel') renderMsParcelChecklist(_msModeEdit);
+}
+
+// editMode=false → 新增（不預選）；editMode=true → 編輯（預選同群組所有現有地塊）
+function renderMsParcelChecklist(editMode, currentParcelId) {
+  const { projId, msId } = STATE.modalContext || {};
+  const proj = projId ? STATE.data.projects.find(p => p.project_id === projId) : null;
+  // 從現有 per_parcel 里程碑自動補齊 proj.parcels（舊資料相容）
+  if (proj) {
+    proj.parcels = proj.parcels || [];
+    const knownIds = new Set(proj.parcels.map(p => p.parcel_id));
+    (proj.milestones || []).forEach(m => {
+      if (m.application_scope === 'per_parcel' && m.parcel_id && !knownIds.has(m.parcel_id)) {
+        proj.parcels.push({ parcel_id: m.parcel_id, name: m.parcel_name || m.parcel_id, status: 'active', lots: [], area_m2: null, capacity_kw: null });
+        knownIds.add(m.parcel_id);
+      }
+    });
+  }
+  const parcels = (proj && proj.parcels) ? proj.parcels.filter(p => p.status !== 'deleted') : [];
+  const listEl = document.getElementById('ms-parcel-checklist');
+  const hintEl = document.getElementById('ms-parcel-checklist-hint');
+  if (!listEl) return;
+
+  // 編輯模式：找出同名里程碑群組已有的所有地塊 id → 全部預選
+  let preCheckedIds = new Set();
+  if (editMode && proj && msId) {
+    const ms = proj.milestones.find(m => m.milestone_id === msId);
+    if (ms) {
+      proj.milestones
+        .filter(m => m.name === ms.name && m.application_scope === 'per_parcel' && m.parcel_id)
+        .forEach(m => preCheckedIds.add(m.parcel_id));
+    }
+  }
+
+  if (!parcels.length) {
+    listEl.innerHTML = '<div style="padding:10px;font-size:12px;color:var(--text3)">此專案尚無地塊，請先透過「⚙ 管理地塊」新增。</div>';
+    if (hintEl) hintEl.style.display = 'none';
+    return;
+  }
+  if (hintEl) {
+    hintEl.style.display = 'block';
+    hintEl.textContent = editMode
+      ? '取消勾選將移除該地塊的里程碑實例；新增勾選將建立新實例'
+      : '勾選的地塊將各建立一個里程碑實例';
+  }
+  listEl.innerHTML = parcels.map(p => {
+    const checked = preCheckedIds.has(p.parcel_id) ? 'checked' : '';
+    const meta = [p.area_m2 ? p.area_m2+'m²' : '', p.capacity_kw ? p.capacity_kw+'kW' : ''].filter(Boolean).join('，');
+    return `<div class="pcl-check-item" onclick="this.querySelector('input').click();event.stopPropagation()">
+      <input type="checkbox" id="pclck-${p.parcel_id}" value="${p.parcel_id}" ${checked} onclick="event.stopPropagation()">
+      <label for="pclck-${p.parcel_id}" onclick="event.stopPropagation()">${_esc(p.name)}</label>
+      ${meta ? `<span class="pcl-meta">${meta}</span>` : ''}
+    </div>`;
+  }).join('');
+}
+
+// ── 地塊管理 Modal ─────────────────────────────────────────────────────────────
+var _pclManageProjId = null;
+var _pclReturnToMs   = false;
+
+function openParcelManageModal(projId) {
+  _pclManageProjId = projId;
+  _pclReturnToMs   = false;
+  _renderPclManageList();
+  cancelPclEdit();
+  document.getElementById('parcel-manage-modal').classList.remove('hidden');
+}
+
+function openParcelManageFromMs() {
+  // 從 ms-modal 的「管理地塊」按鈕進入；關閉後回到 ms-modal
+  _pclReturnToMs = true;
+  const { projId } = STATE.modalContext || {};
+  _pclManageProjId = projId;
+  _renderPclManageList();
+  cancelPclEdit();
+  document.getElementById('parcel-manage-modal').classList.remove('hidden');
+}
+
+function closeParcelManageModal() {
+  document.getElementById('parcel-manage-modal').classList.add('hidden');
+  if (_pclReturnToMs) {
+    // 回到 ms-modal 時重新整理地塊清單
+    const { projId, msId } = STATE.modalContext || {};
+    const proj = STATE.data.projects.find(p => p.project_id === projId);
+    const ms   = _msModeEdit && msId ? proj?.milestones.find(m => m.milestone_id === msId) : null;
+    renderMsParcelChecklist(_msModeEdit, ms ? ms.parcel_id : null);
+  }
+}
+
+function _renderPclManageList() {
+  const proj = STATE.data.projects.find(p => p.project_id === _pclManageProjId);
+  if (!proj) return;
+  // 從里程碑自動補齊地塊（舊資料相容）
+  proj.parcels = proj.parcels || [];
+  const knownIds2 = new Set(proj.parcels.map(p => p.parcel_id));
+  (proj.milestones || []).forEach(m => {
+    if (m.application_scope === 'per_parcel' && m.parcel_id && !knownIds2.has(m.parcel_id)) {
+      proj.parcels.push({ parcel_id: m.parcel_id, name: m.parcel_name || m.parcel_id, status: 'active', lots: [], area_m2: null, capacity_kw: null });
+      knownIds2.add(m.parcel_id);
+    }
+  });
+  const parcels = (proj.parcels || []).filter(p => p.status !== 'deleted');
+  const el = document.getElementById('pcl-manage-list');
+  if (!parcels.length) {
+    el.innerHTML = '<div style="font-size:12px;color:var(--text3);padding:8px 0">尚無地塊，請在下方新增。</div>';
+    return;
+  }
+  el.innerHTML = parcels.map(p => {
+    const meta = [p.area_m2 ? '面積 '+p.area_m2+'m²' : '', p.capacity_kw ? '容量 '+p.capacity_kw+'kW' : ''].filter(Boolean).join('　');
+    return `<div class="pcl-manage-row">
+      <span class="pcl-manage-name">${_esc(p.name)}</span>
+      <span class="pcl-manage-meta">${meta || '（無規格）'}</span>
+      <button class="pcl-manage-edit" onclick="editPclForm('${p.parcel_id}')">✎ 編輯</button>
+      <button class="pcl-manage-del" onclick="deletePcl('${p.parcel_id}')">✕</button>
+    </div>`;
+  }).join('');
+}
+
+function editPclForm(parcelId) {
+  const proj = STATE.data.projects.find(p => p.project_id === _pclManageProjId);
+  const pcl  = proj && proj.parcels ? proj.parcels.find(p => p.parcel_id === parcelId) : null;
+  if (!pcl) return;
+  document.getElementById('pcl-edit-id').value = parcelId;
+  document.getElementById('pcl-name').value    = pcl.name || '';
+  document.getElementById('pcl-area').value    = pcl.area_m2 || '';
+  document.getElementById('pcl-kw').value      = pcl.capacity_kw || '';
+  document.getElementById('pcl-form-title').textContent = '✎ 編輯地塊';
+}
+
+function cancelPclEdit() {
+  document.getElementById('pcl-edit-id').value = '';
+  document.getElementById('pcl-name').value    = '';
+  document.getElementById('pcl-area').value    = '';
+  document.getElementById('pcl-kw').value      = '';
+  document.getElementById('pcl-form-title').textContent = '＋ 新增地塊';
+}
+
+function savePclForm() {
+  const name = document.getElementById('pcl-name').value.trim();
+  if (!name) { document.getElementById('pcl-name').classList.add('invalid'); return; }
+  document.getElementById('pcl-name').classList.remove('invalid');
+  const proj = STATE.data.projects.find(p => p.project_id === _pclManageProjId);
+  if (!proj) return;
+  proj.parcels = proj.parcels || [];
+  const editId = document.getElementById('pcl-edit-id').value;
+  const area   = parseFloat(document.getElementById('pcl-area').value) || null;
+  const kw     = parseFloat(document.getElementById('pcl-kw').value) || null;
+  const now    = new Date().toISOString();
+  if (editId) {
+    const pcl = proj.parcels.find(p => p.parcel_id === editId);
+    if (pcl) { pcl.name = name; pcl.area_m2 = area; pcl.capacity_kw = kw; }
+  } else {
+    const newId = `${_pclManageProjId}-PCL-${Date.now()}`;
+    proj.parcels.push({ parcel_id: newId, name, area_m2: area, capacity_kw: kw, status: 'active', lots: [] });
+  }
+  proj.updated_at = now;
+  cancelPclEdit();
+  _renderPclManageList();
+  ghWriteProjDirect();
+  ghAppendEvent({ event: 'parcels_updated', project_id: _pclManageProjId, ts: now });
+}
+
+function deletePcl(parcelId) {
+  const proj = STATE.data.projects.find(p => p.project_id === _pclManageProjId);
+  if (!proj) return;
+  const inUse = (proj.milestones || []).some(m => m.parcel_id === parcelId);
+  if (inUse && !confirm('此地塊已有關聯的里程碑，仍要刪除嗎？')) return;
+  proj.parcels = (proj.parcels || []).filter(p => p.parcel_id !== parcelId);
+  _renderPclManageList();
+  ghWriteProjDirect();
+  ghAppendEvent({ event: 'parcels_updated', project_id: _pclManageProjId, ts: new Date().toISOString() });
 }
 
 function submitMilestone() {
@@ -32332,21 +32578,87 @@ function submitMilestone() {
     ms.forecast_end    = document.getElementById('ms-forecast').value       || null;
     ms.actual_start    = document.getElementById('ms-actual-start').value   || null;
     ms.actual_end      = document.getElementById('ms-actual').value         || null;
-    ms.notes          = document.getElementById('ms-notes').value.trim() || null;
-    ms.stages         = finalizeStages(msId);
-    ms.updated_at     = now;
+    ms.notes               = document.getElementById('ms-notes').value.trim() || null;
+    ms.stages              = finalizeStages(msId);
+    ms.updated_at          = now;
+    // 更新 scope（可能已被使用者切換）
+    const newScope = document.getElementById('ms-scope').value;
+    ms.application_scope   = newScope;
+    if (newScope === 'per_parcel') {
+      // 整組同步：勾選 = 保留/新增，取消 = 移除對應實例
+      const checked = Array.from(document.querySelectorAll('#ms-parcel-checklist input[type=checkbox]:checked'));
+      if (!checked.length) { alert('請至少勾選一個地塊'); return; }
+      const checkedIds = new Set(checked.map(cb => cb.value));
+      const msName = ms._origName || ms.name;  // 用原始名稱對應整個群組
+
+      // 取得目前群組所有實例
+      const groupInstances = proj.milestones.filter(
+        m => m.name === msName && m.application_scope === 'per_parcel'
+      );
+      const existingParcelIds = new Set(groupInstances.map(m => m.parcel_id));
+
+      // 移除取消勾選的實例
+      groupInstances.forEach(inst => {
+        if (!checkedIds.has(inst.parcel_id)) {
+          proj.milestones = proj.milestones.filter(m => m.milestone_id !== inst.milestone_id);
+          ghAppendEvent({ event: 'milestone_deleted', project_id: projId, milestone_id: inst.milestone_id, ts: now });
+        }
+      });
+
+      // 更新仍勾選的現有實例（name/group 同步）
+      proj.milestones.forEach(inst => {
+        if (inst.name === msName && inst.application_scope === 'per_parcel' && checkedIds.has(inst.parcel_id)) {
+          inst.name  = name;
+          inst.group = document.getElementById('ms-group').value;
+          inst.updated_at = now;
+        }
+      });
+
+      // 新增勾選但原本沒有實例的地塊
+      checked.forEach(cb => {
+        if (existingParcelIds.has(cb.value)) return; // 已有實例，略過
+        const pclX = (proj.parcels || []).find(p => p.parcel_id === cb.value);
+        if (!pclX) return;
+        const newMsId = `${projId}-MS-${Date.now()}-${Math.floor(Math.random()*9999)}`;
+        const newMs = {
+          ...ms, milestone_id: newMsId, name,
+          group: document.getElementById('ms-group').value,
+          parcel_id: pclX.parcel_id, parcel_name: pclX.name,
+          stages: (ms.stages || []).map((st, i) => ({
+            ...st,
+            stage_id: `${newMsId}-ST${String(i+1).padStart(2,'0')}`,
+            status: 'pending', actual_end: null, tasks: [],
+          })),
+          status: 'pending', updated_at: now,
+        };
+        proj.milestones.push(newMs);
+        ghAppendEvent({ event: 'milestone_created', project_id: projId, milestone: newMs, ts: now });
+      });
+
+      // 更新被編輯的那一個實例的其他欄位（日期、備註、stages）
+      // ms 物件已在上方 scope/name 更新邏輯中被修改
+      if (checkedIds.has(ms.parcel_id)) {
+        const pcl = (proj.parcels || []).find(p => p.parcel_id === ms.parcel_id);
+        ms.parcel_name = pcl ? pcl.name : ms.parcel_name;
+      }
+    } else {
+      // 切換為 whole_project，清除地塊
+      ms.parcel_id   = null;
+      ms.parcel_name = null;
+    }
+    // 若名稱有改，同步到所有同名的其他 per_parcel 實例
+    const origName = proj.milestones.find(m => m.milestone_id === msId)?._origName;
+    if (origName && origName !== name) {
+      proj.milestones.forEach(m => {
+        if (m.milestone_id !== msId && m.name === origName) m.name = name;
+      });
+    }
   } else {
-    const scope      = document.getElementById('ms-scope').value;
-    const parcelName = document.getElementById('ms-parcel').value.trim();
-    const newMsId    = `${projId}-MS-${Date.now()}`;
-    const newPclId   = scope === 'per_parcel' ? `${projId}-PCL-${Date.now()}` : null;
-    proj.milestones.push({
-      milestone_id:          newMsId,
+    const scope = document.getElementById('ms-scope').value;
+    const commonFields = {
       name,
       group:                 document.getElementById('ms-group').value,
       application_scope:     scope,
-      parcel_id:             newPclId,
-      parcel_name:           scope === 'per_parcel' ? (parcelName || null) : null,
       dependency_type:       'pm_discretion',
       depends_on:            [],
       condition_description: null,
@@ -32361,20 +32673,31 @@ function submitMilestone() {
       status:                'pending',
       notes:                 document.getElementById('ms-notes').value.trim() || null,
       updated_at:            now,
-      stages:                finalizeStages(newMsId),
       tasks:                 [],
-    });
-    // 若是 per_parcel，同步新增地塊到 proj.parcels，否則 showLotModal 找不到
-    if (newPclId) {
+    };
+
+    if (scope === 'per_parcel') {
+      // 從勾選清單取得選中的地塊
+      const checked = Array.from(document.querySelectorAll('#ms-parcel-checklist input[type=checkbox]:checked'));
+      if (!checked.length) {
+        alert('請至少勾選一個地塊');
+        return;
+      }
       proj.parcels = proj.parcels || [];
-      proj.parcels.push({
-        parcel_id:   newPclId,
-        name:        parcelName || '新地塊',
-        status:      'active',
-        lots:        [],
-        area_m2:     null,
-        capacity_kw: null,
+      checked.forEach(cb => {
+        const parcelId = cb.value;
+        const pcl = proj.parcels.find(p => p.parcel_id === parcelId);
+        if (!pcl) return;
+        const newMsId = `${projId}-MS-${Date.now()}-${Math.floor(Math.random()*9999)}`;
+        const newMs = { ...commonFields, milestone_id: newMsId, parcel_id: parcelId, parcel_name: pcl.name, stages: finalizeStages(newMsId) };
+        proj.milestones.push(newMs);
+        ghAppendEvent({ event: 'milestone_created', project_id: projId, milestone: newMs, ts: now });
       });
+    } else {
+      const newMsId = `${projId}-MS-${Date.now()}`;
+      const newMs = { ...commonFields, milestone_id: newMsId, parcel_id: null, parcel_name: null, stages: finalizeStages(newMsId) };
+      proj.milestones.push(newMs);
+      ghAppendEvent({ event: 'milestone_created', project_id: projId, milestone: newMs, ts: now });
     }
   }
   proj.updated_at = now;
@@ -32383,7 +32706,7 @@ function submitMilestone() {
 
   if (_msModeEdit) {
     const ms = proj.milestones.find(m => m.milestone_id === msId);
-    ghAppendEvent({
+    if (ms) ghAppendEvent({
       event: 'milestone_edited',
       project_id: projId,
       milestone_id: msId,
@@ -32400,14 +32723,6 @@ function submitMilestone() {
         notes:          ms.notes,
         stages:         ms.stages,
       },
-      ts: now,
-    });
-  } else {
-    const newMs = proj.milestones[proj.milestones.length - 1];
-    ghAppendEvent({
-      event: 'milestone_created',
-      project_id: projId,
-      milestone: newMs,
       ts: now,
     });
   }
