@@ -184,7 +184,9 @@
           "status": "active",
           "lots": [
             "台南市七股區下山子寮段76-3地號"
-          ]
+          ],
+          "area_m2": 28378,
+          "capacity_kw": 3284.4
         },
         {
           "parcel_id": "PRJ-001-PCL-003",
