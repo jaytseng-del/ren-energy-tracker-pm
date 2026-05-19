@@ -172,3 +172,4 @@
 {"event":"stage_status_changed","project_id":"PRJ-002","milestone_id":"PRJ-002-MS-1779169032958","stage_id":"PRJ-002-MS-1779169032958-ST06","old_status":"pending","new_status":"blocked","actual_end":null,"ts":"2026-05-19T05:48:34.327Z"}
 {"event":"parcel_updated","project_id":"PRJ-002","parcel_id":"PRJ-002-PCL-002","area_m2":26330.5,"capacity_kw":3848.46,"ts":"2026-05-19T05:49:01.967Z"}
 {"event":"parcel_updated","project_id":"PRJ-002","parcel_id":"PRJ-002-PCL-003","area_m2":25688.29,"capacity_kw":3534.3,"ts":"2026-05-19T05:49:59.840Z"}
+{"event":"parcel_updated","project_id":"PRJ-002","parcel_id":"PRJ-002-PCL-004","area_m2":36667.32,"capacity_kw":5462.1,"ts":"2026-05-19T05:50:24.883Z"}
