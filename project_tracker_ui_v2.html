@@ -32199,7 +32199,7 @@ function openAddParcelToMsModal(projId, msName) {
   if (!template) return;
 
   const newMsId = `${projId}-MS-${Date.now()}`;
-  const newParcelId = `PCL-${Date.now()}`;
+  const newParcelId = `${projId}-PCL-${Date.now()}`;
 
   const clonedStages = (template.stages || []).map((st, idx) => ({
     stage_id: `${newMsId}-ST${String(idx+1).padStart(2,'0')}`,
@@ -32241,6 +32241,17 @@ function openAddParcelToMsModal(projId, msName) {
   } else {
     proj.milestones.push(newMs);
   }
+
+  // 同步新增地塊到 proj.parcels，否則 showLotModal 找不到
+  proj.parcels = proj.parcels || [];
+  proj.parcels.push({
+    parcel_id:   newParcelId,
+    name:        name,
+    status:      'active',
+    lots:        [],
+    area_m2:     null,
+    capacity_kw: null,
+  });
 
   renderAll();
   ghWriteProjDirect();
@@ -32328,12 +32339,13 @@ function submitMilestone() {
     const scope      = document.getElementById('ms-scope').value;
     const parcelName = document.getElementById('ms-parcel').value.trim();
     const newMsId    = `${projId}-MS-${Date.now()}`;
+    const newPclId   = scope === 'per_parcel' ? `${projId}-PCL-${Date.now()}` : null;
     proj.milestones.push({
       milestone_id:          newMsId,
       name,
       group:                 document.getElementById('ms-group').value,
       application_scope:     scope,
-      parcel_id:             scope === 'per_parcel' ? `${projId}-PCL-${Date.now()}` : null,
+      parcel_id:             newPclId,
       parcel_name:           scope === 'per_parcel' ? (parcelName || null) : null,
       dependency_type:       'pm_discretion',
       depends_on:            [],
@@ -32352,6 +32364,18 @@ function submitMilestone() {
       stages:                finalizeStages(newMsId),
       tasks:                 [],
     });
+    // 若是 per_parcel，同步新增地塊到 proj.parcels，否則 showLotModal 找不到
+    if (newPclId) {
+      proj.parcels = proj.parcels || [];
+      proj.parcels.push({
+        parcel_id:   newPclId,
+        name:        parcelName || '新地塊',
+        status:      'active',
+        lots:        [],
+        area_m2:     null,
+        capacity_kw: null,
+      });
+    }
   }
   proj.updated_at = now;
   closeMsModal();
