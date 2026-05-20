@@ -228,3 +228,4 @@
 {"event":"stage_status_changed","project_id":"PRJ-002","milestone_id":"PRJ-002-MS-1779189783291-mvw5","stage_id":"PRJ-002-MS-001-ST05","old_status":"pending","new_status":"done","actual_end":"2026-05-04","ts":"2026-05-19T11:23:21.464Z"}
 {"event":"stage_status_changed","project_id":"PRJ-002","milestone_id":"PRJ-002-MS-1779189783291-mvw5","stage_id":"PRJ-002-MS-001-ST06","old_status":"pending","new_status":"blocked","actual_end":null,"ts":"2026-05-19T11:23:22.871Z"}
 {"event":"task_deleted","project_id":"PRJ-002","milestone_id":"PRJ-002-MS-1779189783291-mvw5","stage_id":"PRJ-002-MS-001-ST01","task_id":"TSK-1778125446798","ts":"2026-05-19T11:46:03.821Z"}
+{"event":"update_added","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","task_id":"TSK-1778121645700","update":{"update_id":"UPD-1779257249316","created_at":"2026-05-21T04:00:00.000Z","content":"已將目前調查進度摘要發信出來","impact":"none","impact_days":null,"next_action":null},"ts":"2026-05-21T04:00:00.000Z"}
