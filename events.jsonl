@@ -239,3 +239,4 @@
 {"event":"task_next_action_cleared","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","stage_id":"PRJ-001-MS-1779173833769-9649-ST01","task_id":"TSK-1778122846399","ts":"2026-05-20T06:53:28.257Z"}
 {"event":"task_created","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","stage_id":"PRJ-001-MS-1779173833769-9649-ST01","task":{"task_id":"TSK-1779260028752","name":"test","type":"one-off","status":"open","due_date":null,"notes":"","updates":[],"created_at":"2026-05-20T06:53:48.752Z","updated_at":"2026-05-20T06:53:48.752Z"},"ts":"2026-05-20T06:53:48.752Z"}
 {"event":"task_deleted","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","stage_id":"PRJ-001-MS-1779173833769-9649-ST01","task_id":"TSK-1779260028752","ts":"2026-05-20T06:53:54.162Z"}
+{"event":"task_deleted","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","stage_id":"PRJ-001-MS-1779173833769-9649-ST01","task_id":"TSK-1779258377440","ts":"2026-05-20T06:53:56.964Z"}
