@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-20T06:26:17.440Z",
+      "updated_at": "2026-05-20T07:40:47.535Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -253,7 +253,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": "",
-          "updated_at": "2026-05-20T06:26:17.440Z",
+          "updated_at": "2026-05-20T06:53:48.752Z",
           "stages": [
             {
               "stage_id": "PRJ-001-MS-1779173833769-9649-ST01",
@@ -458,17 +458,6 @@
                   ],
                   "created_at": "2026-05-07T03:09:58.995Z",
                   "updated_at": "2026-05-15T05:44:43.787Z"
-                },
-                {
-                  "task_id": "TSK-1779258377440",
-                  "title": "76-1、76-3、77-1地主陳素持分法拍",
-                  "type": "one-off",
-                  "status": "open",
-                  "due_date": null,
-                  "notes": "",
-                  "updates": [],
-                  "created_at": "2026-05-20T06:26:17.440Z",
-                  "updated_at": "2026-05-20T06:26:17.440Z"
                 }
               ]
             },
@@ -564,14 +553,6 @@
                       "next_action": null
                     },
                     {
-                      "update_id": "UPD-1778132027376",
-                      "created_at": "2026-05-07T05:33:47.376Z",
-                      "content": "5/7電話連絡承辦不在",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": null
-                    },
-                    {
                       "update_id": "UPD-1778824163656",
                       "created_at": "2026-05-15T04:00:00.000Z",
                       "content": "5/14聯絡承辦,承辦告知目前是台南市府已經討論出一個結論,但沒有辦法透漏太多,僅說應該會朝向條件式進行，應該是有達成哪些條件之後農許會核發",
@@ -631,7 +612,20 @@
               "tasks": []
             }
           ],
-          "tasks": [],
+          "tasks": [
+            {
+              "task_id": "TSK-1779258345283",
+              "title": "76-1、76-3、77-1地主陳素土地持分法拍",
+              "type": "one-off",
+              "status": "open",
+              "due_date": null,
+              "notes": "",
+              "updates": [],
+              "created_at": "2026-05-20T06:25:45.283Z",
+              "updated_at": "2026-05-20T06:25:45.283Z",
+              "name": "76-1、76-3、77-1地主陳素土地持分法拍"
+            }
+          ],
           "forecast_start": "2024-05-11",
           "actual_start": "2024-05-11",
           "_origName": "農業容許"
@@ -4959,8 +4953,8 @@
           "name": "新鑫漁業(17地號)",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 25275.43,
+          "capacity_kw": 3694.95
         }
       ],
       "milestones": [
@@ -5783,7 +5777,8 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-19T11:23:22.871Z"
+          "updated_at": "2026-05-19T11:23:22.871Z",
+          "_origName": "農業容許"
         },
         {
           "milestone_id": "PRJ-002-MS-005",
