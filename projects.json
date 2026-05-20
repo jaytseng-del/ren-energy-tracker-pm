@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-20T07:40:47.535Z",
+      "updated_at": "2026-05-20T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -253,7 +253,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": "",
-          "updated_at": "2026-05-20T06:53:48.752Z",
+          "updated_at": "2026-05-20T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-001-MS-1779173833769-9649-ST01",
@@ -454,6 +454,14 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1779263947819",
+                      "created_at": "2026-05-19T04:00:00.000Z",
+                      "content": "follow Jason,MOU還在擬定當中",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
                     }
                   ],
                   "created_at": "2026-05-07T03:09:58.995Z",
@@ -620,7 +628,16 @@
               "status": "open",
               "due_date": null,
               "notes": "",
-              "updates": [],
+              "updates": [
+                {
+                  "update_id": "UPD-1779264044935",
+                  "created_at": "2026-05-20T04:00:00.000Z",
+                  "content": "follow法拍狀況,目前預計於5/28京城銀行會與法院現地會勘,先勘完畢之後會進入鑑價程序",
+                  "impact": "none",
+                  "impact_days": null,
+                  "next_action": null
+                }
+              ],
               "created_at": "2026-05-20T06:25:45.283Z",
               "updated_at": "2026-05-20T06:25:45.283Z",
               "name": "76-1、76-3、77-1地主陳素土地持分法拍"
@@ -4843,7 +4860,7 @@
       "start_date": "2024-05-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-19T11:46:03.821Z",
+      "updated_at": "2026-05-20T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段15地號",
@@ -5800,7 +5817,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-14T04:00:00.000Z",
+          "updated_at": "2026-05-20T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-005-ST01",
@@ -5837,6 +5854,14 @@
                       "update_id": "UPD-1778739293590",
                       "created_at": "2026-05-14T04:00:00.000Z",
                       "content": "5/14 技師告知星凱量測的新水位大概只會與他們目前送件的GL+0.7M差0.1-0.2M左右,星凱的水位是GL+0.2-0.6M,取最高點就是0.6M",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1779264595010",
+                      "created_at": "2026-05-20T04:00:00.000Z",
+                      "content": "5/20已告知星凱舊的地下水位與新的地下水位,出流管制技師判斷只差了0.1m,並請星凱以此結果提出土方平衡計畫",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -6517,7 +6542,8 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-20T07:44:07.168Z"
+          "updated_at": "2026-05-20T07:44:07.168Z",
+          "_origName": "建照"
         },
         {
           "milestone_id": "PRJ-002-MS-010",
@@ -9630,6 +9656,14 @@
           "lots": [
             "台南市七股區台區段38地號"
           ]
+        },
+        {
+          "parcel_id": "PRJ-003-PCL-1779265221194",
+          "name": "麗申資產",
+          "status": "active",
+          "lots": [],
+          "area_m2": 61994.78,
+          "capacity_kw": 9252.25
         }
       ],
       "milestones": [
