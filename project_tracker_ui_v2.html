@@ -31954,7 +31954,7 @@ function submitTask() {
   const taskId  = `TSK-${Date.now()}`;
 
   const task = {
-    task_id: taskId, title: name, type,
+    task_id: taskId, name, type,
     status: 'open', due_date: dueDate, notes,
     updates: [], created_at: now, updated_at: now,
   };
