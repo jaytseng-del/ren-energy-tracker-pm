@@ -30260,6 +30260,8 @@ function applyEvents(data, events) {
         case 'task_created': {
           const ms = proj.milestones?.find(m => m.milestone_id === ev.milestone_id);
           if (!ms) break;
+          // 相容舊 event：舊版用 title 欄位，新版用 name
+          if (ev.task && !ev.task.name && ev.task.title) ev.task.name = ev.task.title;
           // Avoid duplicate
           const allTasks = [...(ms.tasks || []), ...(ms.stages || []).flatMap(s => s.tasks || [])];
           if (allTasks.find(t => t.task_id === ev.task.task_id)) break;
@@ -31410,7 +31412,7 @@ function renderTaskRow(task, ms) {
   const proj = currentProject();
   const updates = task.updates || [];
   const showUpdates = STATE.expandedMs.has('updates-' + task.task_id);
-  const stId = task._stageId || null;
+  const stId = task._stageId || '';
 
   let dueClass = '';
   if (task.next_action_due) {
@@ -31435,7 +31437,7 @@ function renderTaskRow(task, ms) {
   <div class="task-row" style="${task.status==='done'?'opacity:.6':''}${task.status==='cancelled'?'opacity:.4;text-decoration:line-through':''}">
     <div class="task-body">
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-        <div class="task-name" style="flex:1">${task.name}</div>
+        <div class="task-name" style="flex:1">${task.name || task.title || '（未命名）'}</div>
         ${statusSelect}
       </div>
       <div class="task-meta">
@@ -31991,6 +31993,10 @@ function openUpdateModal(projId, msId, stageId, taskId) {
       const tk = st.tasks?.find(t => t.task_id === taskId);
       if (tk) { taskName = tk.name; break; }
     }
+    if (taskName === '（Stage 層級更新）') {
+      const tk = (ms?.tasks || []).find(t => t.task_id === taskId);
+      if (tk) taskName = tk.name;
+    }
   }
   document.getElementById('modal-context').textContent =
     `${ms?.name || ''}${ms?.parcel_name ? ` (${ms.parcel_name})` : ''} › ${taskName}`;
@@ -32015,6 +32021,10 @@ function openEditUpdateModal(projId, msId, taskId, updateId) {
   for (const st of (ms?.stages || [])) {
     const tk = st.tasks?.find(t => t.task_id === taskId);
     if (tk) { target = tk; taskName = tk.name; break; }
+  }
+  if (!target) {
+    const tk = (ms?.tasks || []).find(t => t.task_id === taskId);
+    if (tk) { target = tk; taskName = tk.name; }
   }
   if (!target) return;
   const upd = (target.updates || []).find(u => u.update_id === updateId);
@@ -32043,12 +32053,17 @@ function deleteUpdateItem() {
   if (!editUpdateId) return;
   const proj = STATE.data.projects.find(p => p.project_id === projId);
   const ms = proj?.milestones.find(m => m.milestone_id === msId);
+  let found = false;
   for (const st of (ms?.stages || [])) {
     const tk = st.tasks?.find(t => t.task_id === taskId);
     if (tk && tk.updates) {
       tk.updates = tk.updates.filter(u => u.update_id !== editUpdateId);
-      break;
+      found = true; break;
     }
+  }
+  if (!found) {
+    const tk = (ms?.tasks || []).find(t => t.task_id === taskId);
+    if (tk && tk.updates) tk.updates = tk.updates.filter(u => u.update_id !== editUpdateId);
   }
   closeModal();
   renderAll();
@@ -32058,12 +32073,17 @@ function deleteUpdateItem() {
 function quickDeleteUpdate(projId, msId, taskId, updateId) {
   const proj = STATE.data.projects.find(p => p.project_id === projId);
   const ms = proj?.milestones.find(m => m.milestone_id === msId);
+  let found = false;
   for (const st of (ms?.stages || [])) {
     const tk = st.tasks?.find(t => t.task_id === taskId);
     if (tk && tk.updates) {
       tk.updates = tk.updates.filter(u => u.update_id !== updateId);
-      break;
+      found = true; break;
     }
+  }
+  if (!found) {
+    const tk = (ms?.tasks || []).find(t => t.task_id === taskId);
+    if (tk && tk.updates) tk.updates = tk.updates.filter(u => u.update_id !== updateId);
   }
   renderAll();
   ghAppendEvent({ event: 'update_deleted', project_id: projId, milestone_id: msId, task_id: taskId, update_id: updateId, ts: new Date().toISOString() });
@@ -32121,10 +32141,11 @@ function submitUpdate() {
 
   let target = null;
   if (taskId) {
-    for (const st of ms.stages) {
+    for (const st of (ms.stages || [])) {
       const tk = st.tasks?.find(t => t.task_id === taskId);
       if (tk) { target = tk; break; }
     }
+    if (!target) target = (ms.tasks || []).find(t => t.task_id === taskId) || null;
   }
   if (!target) return;
 
