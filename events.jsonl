@@ -243,3 +243,4 @@
 {"event":"task_deleted","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","stage_id":"PRJ-001-MS-1779173833769-9649-ST01","task_id":"TSK-1779258377440","ts":"2026-05-20T07:13:23.689Z"}
 {"event":"task_deleted","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","stage_id":"null","task_id":"TSK-1778663575193","ts":"2026-05-20T07:19:46.136Z"}
 {"event":"task_deleted","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","stage_id":"null","task_id":"TSK-1779258345283","ts":"2026-05-20T07:19:53.448Z"}
+{"event":"task_status_changed","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","stage_id":"null","task_id":"TSK-1778663575193","new_status":"in_progress","ts":"2026-05-20T07:20:02.051Z"}
