@@ -248,3 +248,4 @@
 {"event":"task_deleted","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","stage_id":"null","task_id":"TSK-1778663575193","ts":"2026-05-20T07:20:18.488Z"}
 {"event":"task_deleted","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","stage_id":"null","task_id":"TSK-1779258345283","ts":"2026-05-20T07:21:02.335Z"}
 {"event":"task_deleted","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","stage_id":null,"task_id":"TSK-1778663575193","ts":"2026-05-20T07:40:47.535Z"}
+{"event":"parcel_updated","project_id":"PRJ-002","parcel_id":"PRJ-002-PCL-1779189770396","area_m2":25275.43,"capacity_kw":3694.95,"ts":"2026-05-20T07:43:05.745Z"}
