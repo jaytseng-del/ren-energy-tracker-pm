@@ -31898,6 +31898,88 @@ function renderTab2() {
   </div>`;
 }
 
+// ── Task Modal ────────────────────────────────────────────────────────────────
+function openTaskModal(projId, msId) {
+  STATE.modalContext = { projId, msId, stageId: null, taskId: null, editUpdateId: null };
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  const ms   = proj?.milestones.find(m => m.milestone_id === msId);
+  if (!ms) return;
+
+  // 顯示里程碑名稱作為 context
+  document.getElementById('task-modal-context').textContent =
+    `里程碑：${ms.name}${ms.parcel_name ? '（' + ms.parcel_name + '）' : ''}`;
+
+  // 填充 Stage 下拉選單
+  const stageEl = document.getElementById('t-stage');
+  stageEl.innerHTML = '<option value="">— 不指定 Stage —</option>';
+  (ms.stages || []).forEach(st => {
+    const opt = document.createElement('option');
+    opt.value = st.stage_id;
+    opt.textContent = st.name;
+    stageEl.appendChild(opt);
+  });
+
+  // 清空表單
+  ['t-name','t-due','t-notes'].forEach(id => { document.getElementById(id).value = ''; });
+  document.getElementById('t-type').value = '';
+  ['t-name','t-type'].forEach(id => document.getElementById(id).classList.remove('invalid'));
+
+  document.getElementById('task-modal').classList.remove('hidden');
+  setTimeout(() => document.getElementById('t-name').focus(), 50);
+}
+
+function closeTaskModal() {
+  document.getElementById('task-modal').classList.add('hidden');
+}
+
+function submitTask() {
+  const nameEl = document.getElementById('t-name');
+  const typeEl = document.getElementById('t-type');
+  const name   = nameEl.value.trim();
+  const type   = typeEl.value;
+  if (!name) { nameEl.classList.add('invalid'); nameEl.focus(); return; }
+  nameEl.classList.remove('invalid');
+  if (!type) { typeEl.classList.add('invalid'); return; }
+  typeEl.classList.remove('invalid');
+
+  const { projId, msId } = STATE.modalContext || {};
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  const ms   = proj?.milestones.find(m => m.milestone_id === msId);
+  if (!ms) return;
+
+  const stageId = document.getElementById('t-stage').value || null;
+  const dueDate = document.getElementById('t-due').value   || null;
+  const notes   = document.getElementById('t-notes').value.trim();
+  const now     = new Date().toISOString();
+  const taskId  = `TSK-${Date.now()}`;
+
+  const task = {
+    task_id: taskId, title: name, type,
+    status: 'open', due_date: dueDate, notes,
+    updates: [], created_at: now, updated_at: now,
+  };
+
+  // 更新 STATE
+  if (stageId) {
+    const st = (ms.stages || []).find(s => s.stage_id === stageId);
+    if (st) { if (!st.tasks) st.tasks = []; st.tasks.push(task); }
+  } else if (ms.stages?.length > 0) {
+    if (!ms.stages[0].tasks) ms.stages[0].tasks = [];
+    ms.stages[0].tasks.push(task);
+  } else {
+    if (!ms.tasks) ms.tasks = [];
+    ms.tasks.push(task);
+  }
+  ms.updated_at = now;
+  proj.updated_at = now;
+
+  closeTaskModal();
+  renderAll();
+
+  ghAppendEvent({ event: 'task_created', project_id: projId, milestone_id: msId, stage_id: stageId, task, ts: now });
+  ghWriteProjDirect();
+}
+
 // ── Update Modal ─────────────────────────────────────────────────────────────
 function openUpdateModal(projId, msId, stageId, taskId) {
   STATE.modalContext = { projId, msId, stageId, taskId, editUpdateId: null };
