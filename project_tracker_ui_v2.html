@@ -610,7 +610,7 @@
       <div class="form-group">
         <label>歸屬 Stage（選填）</label>
         <select id="t-stage" class="form-control">
-          <option value="">— 不指定 Stage —</option>
+          <option value="">其他</option>
         </select>
       </div>
       <div class="form-group">
@@ -30267,13 +30267,8 @@ function applyEvents(data, events) {
             const st = ms.stages?.find(s => s.stage_id === ev.stage_id);
             if (st) { if (!st.tasks) st.tasks = []; st.tasks.push(ev.task); }
           } else {
-            if (ms.stages?.length > 0) {
-              if (!ms.stages[0].tasks) ms.stages[0].tasks = [];
-              ms.stages[0].tasks.push(ev.task);
-            } else {
-              if (!ms.tasks) ms.tasks = [];
-              ms.tasks.push(ev.task);
-            }
+            if (!ms.tasks) ms.tasks = [];
+            ms.tasks.push(ev.task);
           }
           ms.updated_at = ev.ts;
           proj.updated_at = ev.ts;
@@ -31228,7 +31223,10 @@ function renderTab0() {
     const isOpen = STATE.expandedMs.has(ms.milestone_id);
     const st = statusMap[ms.status] || 'pending';
     const hasStages = ms.stages && ms.stages.length > 0;
-    const allTasksRaw = ms.stages.flatMap(s => (s.tasks || []).map(t => ({...t, stageName: s.name, _stageId: s.stage_id})));
+    const allTasksRaw = [
+      ...ms.stages.flatMap(s => (s.tasks || []).map(t => ({...t, stageName: s.name, _stageId: s.stage_id}))),
+      ...(ms.tasks || []).map(t => ({...t, stageName: '其他', _stageId: null}))
+    ];
     const allTasks = STATE.taskStatusFilter === 'all' ? allTasksRaw
       : allTasksRaw.filter(t => {
           const st = t.status || 'pending';
@@ -31909,15 +31907,20 @@ function openTaskModal(projId, msId) {
   document.getElementById('task-modal-context').textContent =
     `里程碑：${ms.name}${ms.parcel_name ? '（' + ms.parcel_name + '）' : ''}`;
 
-  // 填充 Stage 下拉選單
+  // 填充 Stage 下拉選單（「其他」固定在最後，且為預設）
   const stageEl = document.getElementById('t-stage');
-  stageEl.innerHTML = '<option value="">— 不指定 Stage —</option>';
+  stageEl.innerHTML = '';
   (ms.stages || []).forEach(st => {
     const opt = document.createElement('option');
     opt.value = st.stage_id;
     opt.textContent = st.name;
     stageEl.appendChild(opt);
   });
+  const otherOpt = document.createElement('option');
+  otherOpt.value = '';
+  otherOpt.textContent = '其他';
+  stageEl.appendChild(otherOpt);
+  stageEl.value = ''; // 預設選「其他」
 
   // 清空表單
   ['t-name','t-due','t-notes'].forEach(id => { document.getElementById(id).value = ''; });
@@ -31963,9 +31966,6 @@ function submitTask() {
   if (stageId) {
     const st = (ms.stages || []).find(s => s.stage_id === stageId);
     if (st) { if (!st.tasks) st.tasks = []; st.tasks.push(task); }
-  } else if (ms.stages?.length > 0) {
-    if (!ms.stages[0].tasks) ms.stages[0].tasks = [];
-    ms.stages[0].tasks.push(task);
   } else {
     if (!ms.tasks) ms.tasks = [];
     ms.tasks.push(task);
