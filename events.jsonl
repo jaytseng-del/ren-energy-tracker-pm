@@ -252,3 +252,4 @@
 {"event":"parcel_updated","project_id":"PRJ-002","parcel_id":"PRJ-002-PCL-1779189770396","area_m2":25275.43,"capacity_kw":3694.95,"ts":"2026-05-20T07:43:33.935Z"}
 {"event":"update_added","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","task_id":"TSK-1778123398995","update":{"update_id":"UPD-1779263947819","created_at":"2026-05-19T04:00:00.000Z","content":"follow Jason,MOU還在擬定當中","impact":"none","impact_days":null,"next_action":null},"ts":"2026-05-19T04:00:00.000Z"}
 {"event":"update_added","project_id":"PRJ-002","milestone_id":"PRJ-002-MS-005","task_id":"TSK-1778125098876","update":{"update_id":"UPD-1779264595010","created_at":"2026-05-20T04:00:00.000Z","content":"5/20已告知星凱舊的地下水位與新的地下水位,出流管制技師判斷只差了0.1m,並請星凱以此結果提出土方平衡計畫","impact":"none","impact_days":null,"next_action":null},"ts":"2026-05-20T04:00:00.000Z"}
+{"event":"parcels_updated","project_id":"PRJ-003","ts":"2026-05-20T08:20:21.194Z"}
