@@ -11713,7 +11713,7 @@
       "start_date": "2024-10-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-20T04:00:00.000Z",
+      "updated_at": "2026-05-20T08:25:04.991Z",
       "lots": [
         {
           "lot_number": "嘉義縣東石鄉鰲鼓段436地號",
@@ -11983,7 +11983,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-20T08:25:02.606Z",
+          "updated_at": "2026-05-20T08:25:04.991Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-002-ST01",
@@ -13050,7 +13050,7 @@
       "start_date": "2025-05-14 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:58:38.152Z",
+      "updated_at": "2026-05-20T08:30:35.713Z",
       "lots": [
         {
           "lot_number": "台中市龍井區忠和段1000地號",
@@ -13737,7 +13737,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T05:58:32.479Z",
+          "updated_at": "2026-05-20T08:30:35.713Z",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-1778751286224-ST01",
@@ -13761,7 +13761,16 @@
                   "next_action_due": null,
                   "next_action": null,
                   "notes": null,
-                  "updates": [],
+                  "updates": [
+                    {
+                      "update_id": "UPD-1779265702496",
+                      "created_at": "2026-05-20T04:00:00.000Z",
+                      "content": "5/19已用印完成,會與香印永續修約函文一起送出,預計會於5/22寄給台電",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    }
+                  ],
                   "created_at": "2026-05-15T05:58:32.479Z",
                   "updated_at": "2026-05-15T05:58:38.152Z"
                 }
@@ -13783,7 +13792,19 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [
+            {
+              "task_id": "TSK-1779265835713",
+              "name": "內部epc款項",
+              "type": "one-off",
+              "status": "open",
+              "due_date": null,
+              "notes": "",
+              "updates": [],
+              "created_at": "2026-05-20T08:30:35.713Z",
+              "updated_at": "2026-05-20T08:30:35.713Z"
+            }
+          ]
         }
       ]
     },
