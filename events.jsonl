@@ -250,3 +250,4 @@
 {"event":"task_deleted","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","stage_id":null,"task_id":"TSK-1778663575193","ts":"2026-05-20T07:40:47.535Z"}
 {"event":"parcel_updated","project_id":"PRJ-002","parcel_id":"PRJ-002-PCL-1779189770396","area_m2":25275.43,"capacity_kw":3694.95,"ts":"2026-05-20T07:43:05.745Z"}
 {"event":"parcel_updated","project_id":"PRJ-002","parcel_id":"PRJ-002-PCL-1779189770396","area_m2":25275.43,"capacity_kw":3694.95,"ts":"2026-05-20T07:43:33.935Z"}
+{"event":"update_added","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","task_id":"TSK-1778123398995","update":{"update_id":"UPD-1779263947819","created_at":"2026-05-19T04:00:00.000Z","content":"follow Jason,MOU還在擬定當中","impact":"none","impact_days":null,"next_action":null},"ts":"2026-05-19T04:00:00.000Z"}
