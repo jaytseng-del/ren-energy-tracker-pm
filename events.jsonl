@@ -256,3 +256,4 @@
 {"event":"parcels_updated","project_id":"PRJ-003","ts":"2026-05-20T08:20:28.118Z"}
 {"event":"parcels_updated","project_id":"PRJ-003","ts":"2026-05-20T08:20:47.593Z"}
 {"event":"update_added","project_id":"PRJ-003","milestone_id":"PRJ-003-MS-002","task_id":"TSK-1778125559454","update":{"update_id":"UPD-1779265416372","created_at":"2026-05-20T04:00:00.000Z","content":"5/20follow 出流技師,目前水利局還在簽核當中","impact":"none","impact_days":null,"next_action":null},"ts":"2026-05-20T04:00:00.000Z"}
+{"event":"update_added","project_id":"PRJ-004","milestone_id":"PRJ-004-MS-001","task_id":"TSK-1777966384059","update":{"update_id":"UPD-1779265441223","created_at":"2026-05-20T04:00:00.000Z","content":"5/20follow 審查進度,epc尚未回覆","impact":"none","impact_days":null,"next_action":null},"ts":"2026-05-20T04:00:00.000Z"}
