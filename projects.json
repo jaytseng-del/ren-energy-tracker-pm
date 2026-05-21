@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-20T04:00:00.000Z",
+      "updated_at": "2026-05-20T07:40:47.535Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -253,7 +253,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": "",
-          "updated_at": "2026-05-20T04:00:00.000Z",
+          "updated_at": "2026-05-20T06:53:48.752Z",
           "stages": [
             {
               "stage_id": "PRJ-001-MS-1779173833769-9649-ST01",
@@ -454,14 +454,6 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
-                    },
-                    {
-                      "update_id": "UPD-1779263947819",
-                      "created_at": "2026-05-19T04:00:00.000Z",
-                      "content": "follow Jason,MOU還在擬定當中",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": null
                     }
                   ],
                   "created_at": "2026-05-07T03:09:58.995Z",
@@ -628,16 +620,7 @@
               "status": "open",
               "due_date": null,
               "notes": "",
-              "updates": [
-                {
-                  "update_id": "UPD-1779264044935",
-                  "created_at": "2026-05-20T04:00:00.000Z",
-                  "content": "follow法拍狀況,目前預計於5/28京城銀行會與法院現地會勘,先勘完畢之後會進入鑑價程序",
-                  "impact": "none",
-                  "impact_days": null,
-                  "next_action": null
-                }
-              ],
+              "updates": [],
               "created_at": "2026-05-20T06:25:45.283Z",
               "updated_at": "2026-05-20T06:25:45.283Z",
               "name": "76-1、76-3、77-1地主陳素土地持分法拍"
@@ -1873,7 +1856,8 @@
             }
           ],
           "tasks": [],
-          "forecast_start": "2026-12-11"
+          "forecast_start": "2026-12-11",
+          "_origName": "室內養殖設施施工"
         },
         {
           "milestone_id": "PRJ-001-MS-011",
@@ -4860,7 +4844,7 @@
       "start_date": "2024-05-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-20T04:00:00.000Z",
+      "updated_at": "2026-05-19T11:46:03.821Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段15地號",
@@ -4970,8 +4954,8 @@
           "name": "新鑫漁業(17地號)",
           "status": "active",
           "lots": [],
-          "area_m2": 25275.43,
-          "capacity_kw": 3694.95
+          "area_m2": null,
+          "capacity_kw": null
         }
       ],
       "milestones": [
@@ -5817,7 +5801,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-20T04:00:00.000Z",
+          "updated_at": "2026-05-14T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-005-ST01",
@@ -5854,14 +5838,6 @@
                       "update_id": "UPD-1778739293590",
                       "created_at": "2026-05-14T04:00:00.000Z",
                       "content": "5/14 技師告知星凱量測的新水位大概只會與他們目前送件的GL+0.7M差0.1-0.2M左右,星凱的水位是GL+0.2-0.6M,取最高點就是0.6M",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": null
-                    },
-                    {
-                      "update_id": "UPD-1779264595010",
-                      "created_at": "2026-05-20T04:00:00.000Z",
-                      "content": "5/20已告知星凱舊的地下水位與新的地下水位,出流管制技師判斷只差了0.1m,並請星凱以此結果提出土方平衡計畫",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -6029,92 +6005,102 @@
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
-          "notes": "",
-          "updated_at": "2026-05-20T07:44:07.168Z",
+          "notes": null,
+          "updated_at": "2026-04-23T16:12:19+08:00",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-006-ST01",
               "sequence": 1,
               "name": "申請文件準備",
-              "type": "fixed",
-              "cc": "55",
-              "estimated_days": "30",
               "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "55",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-006-ST02",
               "sequence": 2,
               "name": "送件",
-              "type": "fixed",
-              "cc": "5",
-              "estimated_days": "1",
               "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-006-ST03",
               "sequence": 3,
               "name": "主管機關審核",
-              "type": "fixed",
-              "cc": "10",
-              "estimated_days": "90",
               "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "90",
+              "cc": "10",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-006-ST04",
               "sequence": 4,
               "name": "補正 #1",
-              "type": "skippable",
-              "cc": "5",
-              "estimated_days": "14",
               "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-006-ST05",
               "sequence": 5,
               "name": "補正 #2",
-              "type": "skippable",
-              "cc": "5",
-              "estimated_days": "14",
               "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-006-ST06",
               "sequence": 6,
               "name": "取得建造執照",
-              "type": "fixed",
-              "cc": "20",
-              "estimated_days": "7",
               "authority": "—",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "20",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             }
           ],
           "tasks": [],
-          "_origName": "建照",
-          "forecast_start": null,
-          "actual_start": null
+          "_origName": "建照"
         },
         {
           "milestone_id": "PRJ-002-MS-007",
@@ -6135,91 +6121,101 @@
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
-          "notes": "",
-          "updated_at": "2026-05-20T07:44:07.168Z",
+          "notes": null,
+          "updated_at": "2026-04-23T16:12:19+08:00",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-007-ST01",
               "sequence": 1,
               "name": "申請文件準備",
-              "type": "fixed",
-              "cc": "55",
-              "estimated_days": "30",
               "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "55",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-007-ST02",
               "sequence": 2,
               "name": "送件",
-              "type": "fixed",
-              "cc": "5",
-              "estimated_days": "1",
               "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-007-ST03",
               "sequence": 3,
               "name": "主管機關審核",
-              "type": "fixed",
-              "cc": "10",
-              "estimated_days": "90",
               "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "90",
+              "cc": "10",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-007-ST04",
               "sequence": 4,
               "name": "補正 #1",
-              "type": "skippable",
-              "cc": "5",
-              "estimated_days": "14",
               "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-007-ST05",
               "sequence": 5,
               "name": "補正 #2",
-              "type": "skippable",
-              "cc": "5",
-              "estimated_days": "14",
               "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-007-ST06",
               "sequence": 6,
               "name": "取得建造執照",
-              "type": "fixed",
-              "cc": "20",
-              "estimated_days": "7",
               "authority": "—",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "20",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             }
           ],
-          "tasks": [],
-          "forecast_start": null,
-          "actual_start": null
+          "tasks": []
         },
         {
           "milestone_id": "PRJ-002-MS-008",
@@ -6240,91 +6236,101 @@
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
-          "notes": "",
-          "updated_at": "2026-05-20T07:44:07.168Z",
+          "notes": null,
+          "updated_at": "2026-04-23T16:12:19+08:00",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-008-ST01",
               "sequence": 1,
               "name": "申請文件準備",
-              "type": "fixed",
-              "cc": "55",
-              "estimated_days": "30",
               "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "55",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-008-ST02",
               "sequence": 2,
               "name": "送件",
-              "type": "fixed",
-              "cc": "5",
-              "estimated_days": "1",
               "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-008-ST03",
               "sequence": 3,
               "name": "主管機關審核",
-              "type": "fixed",
-              "cc": "10",
-              "estimated_days": "90",
               "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "90",
+              "cc": "10",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-008-ST04",
               "sequence": 4,
               "name": "補正 #1",
-              "type": "skippable",
-              "cc": "5",
-              "estimated_days": "14",
               "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-008-ST05",
               "sequence": 5,
               "name": "補正 #2",
-              "type": "skippable",
-              "cc": "5",
-              "estimated_days": "14",
               "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-008-ST06",
               "sequence": 6,
               "name": "取得建造執照",
-              "type": "fixed",
-              "cc": "20",
-              "estimated_days": "7",
               "authority": "—",
+              "type": "fixed",
+              "estimated_days": "7",
+              "cc": "20",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             }
           ],
-          "tasks": [],
-          "forecast_start": null,
-          "actual_start": null
+          "tasks": []
         },
         {
           "milestone_id": "PRJ-002-MS-009",
@@ -6345,191 +6351,88 @@
           "forecast_end": null,
           "actual_end": null,
           "status": "pending",
-          "notes": "",
-          "updated_at": "2026-05-20T07:44:07.168Z",
+          "notes": null,
+          "updated_at": "2026-04-23T16:12:19+08:00",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-009-ST01",
               "sequence": 1,
               "name": "申請文件準備",
-              "type": "fixed",
-              "cc": "55",
-              "estimated_days": "30",
               "authority": "（內部）",
+              "type": "fixed",
+              "estimated_days": "30",
+              "cc": "55",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-009-ST02",
               "sequence": 2,
               "name": "送件",
-              "type": "fixed",
-              "cc": "5",
-              "estimated_days": "1",
               "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "1",
+              "cc": "5",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-009-ST03",
               "sequence": 3,
               "name": "主管機關審核",
-              "type": "fixed",
-              "cc": "10",
-              "estimated_days": "90",
               "authority": "建管處",
+              "type": "fixed",
+              "estimated_days": "90",
+              "cc": "10",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-009-ST04",
               "sequence": 4,
               "name": "補正 #1",
-              "type": "skippable",
-              "cc": "5",
-              "estimated_days": "14",
               "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-009-ST05",
               "sequence": 5,
               "name": "補正 #2",
-              "type": "skippable",
-              "cc": "5",
-              "estimated_days": "14",
               "authority": "建管處",
+              "type": "skippable",
+              "estimated_days": "14",
+              "cc": "5",
               "status": "pending",
+              "planned_start": null,
+              "planned_end": null,
               "actual_end": null,
-              "tasks": [],
-              "notes": ""
+              "notes": "",
+              "tasks": []
             },
             {
               "stage_id": "PRJ-002-MS-009-ST06",
               "sequence": 6,
               "name": "取得建造執照",
-              "type": "fixed",
-              "cc": "20",
-              "estimated_days": "7",
-              "authority": "—",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": [],
-              "notes": ""
-            }
-          ],
-          "tasks": [],
-          "forecast_start": null,
-          "actual_start": null
-        },
-        {
-          "milestone_id": "PRJ-002-MS-1779263047168-madm",
-          "name": "建照",
-          "group": "農業",
-          "application_scope": "per_parcel",
-          "parcel_id": "PRJ-002-PCL-1779189770396",
-          "parcel_name": "新鑫漁業(17地號)",
-          "dependency_type": "hard",
-          "depends_on": [
-            "農業容許"
-          ],
-          "baseline_start": null,
-          "baseline_end": null,
-          "forecast_start": null,
-          "forecast_end": null,
-          "actual_start": null,
-          "actual_end": null,
-          "status": "pending",
-          "notes": "",
-          "stages": [
-            {
-              "stage_id": "PRJ-002-MS-006-ST01",
-              "sequence": 1,
-              "name": "申請文件準備",
-              "authority": "（內部）",
-              "type": "fixed",
-              "estimated_days": "30",
-              "cc": "55",
-              "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": null,
-              "notes": "",
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-006-ST02",
-              "sequence": 2,
-              "name": "送件",
-              "authority": "建管處",
-              "type": "fixed",
-              "estimated_days": "1",
-              "cc": "5",
-              "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": null,
-              "notes": "",
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-006-ST03",
-              "sequence": 3,
-              "name": "主管機關審核",
-              "authority": "建管處",
-              "type": "fixed",
-              "estimated_days": "90",
-              "cc": "10",
-              "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": null,
-              "notes": "",
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-006-ST04",
-              "sequence": 4,
-              "name": "補正 #1",
-              "authority": "建管處",
-              "type": "skippable",
-              "estimated_days": "14",
-              "cc": "5",
-              "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": null,
-              "notes": "",
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-006-ST05",
-              "sequence": 5,
-              "name": "補正 #2",
-              "authority": "建管處",
-              "type": "skippable",
-              "estimated_days": "14",
-              "cc": "5",
-              "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": null,
-              "notes": "",
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-006-ST06",
-              "sequence": 6,
-              "name": "取得建造執照",
               "authority": "—",
               "type": "fixed",
               "estimated_days": "7",
@@ -6542,8 +6445,7 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-20T07:44:07.168Z",
-          "_origName": "建照"
+          "tasks": []
         },
         {
           "milestone_id": "PRJ-002-MS-010",
@@ -9638,7 +9540,7 @@
       "start_date": "2025-07-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-20T04:00:00.000Z",
+      "updated_at": "2026-05-19T05:55:44.902Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段38地號",
@@ -9655,17 +9557,7 @@
           "status": "active",
           "lots": [
             "台南市七股區台區段38地號"
-          ],
-          "area_m2": 61994.78,
-          "capacity_kw": 9252.25
-        },
-        {
-          "parcel_id": "PRJ-003-PCL-1779265221194",
-          "name": "麗申資產",
-          "status": "deleted",
-          "lots": [],
-          "area_m2": 61994.78,
-          "capacity_kw": 9252.25
+          ]
         }
       ],
       "milestones": [
@@ -9689,7 +9581,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-20T04:00:00.000Z",
+          "updated_at": "2026-05-19T05:55:44.902Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-001-ST01",
@@ -9734,14 +9626,6 @@
                       "update_id": "UPD-1778824462212",
                       "created_at": "2026-05-15T04:00:00.000Z",
                       "content": "5/15中午日力提供新版報價,目前還沒確認細節",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": null
-                    },
-                    {
-                      "update_id": "UPD-1779265385637",
-                      "created_at": "2026-05-20T04:00:00.000Z",
-                      "content": "5/15日力提供之epc報價包含敦親睦鄰,比原本多NT$1,000/KW,此價格董事及JASON副總暫不同意,目前JASON副總再與對方議價是否可以壓制比原本多NT$500/KW",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -9897,7 +9781,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-20T04:00:00.000Z",
+          "updated_at": "2026-05-07T03:46:40.162Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-002-ST01",
@@ -10031,14 +9915,6 @@
                       "update_id": "UPD-1778125600162",
                       "created_at": "2026-05-07T03:46:40.162Z",
                       "content": "4/29技師告知市府還在審核中",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": null
-                    },
-                    {
-                      "update_id": "UPD-1779265416372",
-                      "created_at": "2026-05-20T04:00:00.000Z",
-                      "content": "5/20follow 出流技師,目前水利局還在簽核當中",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -11713,7 +11589,7 @@
       "start_date": "2024-10-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-20T08:25:04.991Z",
+      "updated_at": "2026-05-19T05:56:17.989Z",
       "lots": [
         {
           "lot_number": "嘉義縣東石鄉鰲鼓段436地號",
@@ -11778,7 +11654,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-20T04:00:00.000Z",
+          "updated_at": "2026-05-19T05:56:17.989Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-001-ST01",
@@ -11898,14 +11774,6 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
-                    },
-                    {
-                      "update_id": "UPD-1779265441223",
-                      "created_at": "2026-05-20T04:00:00.000Z",
-                      "content": "5/20follow 審查進度,epc尚未回覆",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": null
                     }
                   ],
                   "created_at": "2026-05-05T07:33:04.059Z",
@@ -11982,8 +11850,8 @@
           "forecast_end": "2027-03-31",
           "actual_end": null,
           "status": "in_progress",
-          "notes": "",
-          "updated_at": "2026-05-20T08:25:04.991Z",
+          "notes": null,
+          "updated_at": "2026-05-07T08:20:16.958Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-002-ST01",
@@ -11992,7 +11860,7 @@
               "authority": "（內部）",
               "type": "fixed",
               "estimated_days": "60",
-              "cc": "25",
+              "cc": "50",
               "status": "done",
               "planned_start": null,
               "planned_end": null,
@@ -12023,43 +11891,13 @@
               ]
             },
             {
-              "stage_id": "ST-DRAFT-1779265477338-2",
-              "sequence": 2,
-              "name": "掛件",
-              "type": "fixed",
-              "cc": "25",
-              "estimated_days": "5",
-              "authority": "",
-              "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": null,
-              "notes": "",
-              "tasks": []
-            },
-            {
-              "stage_id": "ST-DRAFT-1779265487615-3",
-              "sequence": 3,
-              "name": "主管機關審查",
-              "type": "fixed",
-              "cc": "25",
-              "estimated_days": null,
-              "authority": "",
-              "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": null,
-              "notes": "",
-              "tasks": []
-            },
-            {
               "stage_id": "PRJ-004-MS-002-ST08",
-              "sequence": 4,
+              "sequence": 2,
               "name": "取得許可",
               "authority": "水利局",
               "type": "fixed",
               "estimated_days": "30",
-              "cc": "25",
+              "cc": "50",
               "status": "pending",
               "planned_start": null,
               "planned_end": null,
@@ -12070,8 +11908,7 @@
           ],
           "tasks": [],
           "forecast_start": "2024-10-31",
-          "actual_start": null,
-          "_origName": "可行性規劃"
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-004-MS-003",
@@ -13050,7 +12887,7 @@
       "start_date": "2025-05-14 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-20T08:30:35.713Z",
+      "updated_at": "2026-05-15T05:58:38.152Z",
       "lots": [
         {
           "lot_number": "台中市龍井區忠和段1000地號",
@@ -13737,7 +13574,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-20T08:30:35.713Z",
+          "updated_at": "2026-05-15T05:58:32.479Z",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-1778751286224-ST01",
@@ -13761,16 +13598,7 @@
                   "next_action_due": null,
                   "next_action": null,
                   "notes": null,
-                  "updates": [
-                    {
-                      "update_id": "UPD-1779265702496",
-                      "created_at": "2026-05-20T04:00:00.000Z",
-                      "content": "5/19已用印完成,會與香印永續修約函文一起送出,預計會於5/22寄給台電",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": null
-                    }
-                  ],
+                  "updates": [],
                   "created_at": "2026-05-15T05:58:32.479Z",
                   "updated_at": "2026-05-15T05:58:38.152Z"
                 }
@@ -13792,19 +13620,7 @@
               "tasks": []
             }
           ],
-          "tasks": [
-            {
-              "task_id": "TSK-1779265835713",
-              "name": "內部epc款項",
-              "type": "one-off",
-              "status": "open",
-              "due_date": null,
-              "notes": "",
-              "updates": [],
-              "created_at": "2026-05-20T08:30:35.713Z",
-              "updated_at": "2026-05-20T08:30:35.713Z"
-            }
-          ]
+          "tasks": []
         }
       ]
     },
@@ -29127,7 +28943,16 @@
       "created_at": "2026-04-23T16:12:19+08:00",
       "updated_at": "2026-04-23T16:12:19+08:00",
       "lots": [],
-      "parcels": [],
+      "parcels": [
+        {
+          "parcel_id": "PRJ-010-PCL-1779327985374",
+          "name": "光宜 (temp)",
+          "status": "active",
+          "lots": [],
+          "area_m2": null,
+          "capacity_kw": null
+        }
+      ],
       "milestones": [
         {
           "milestone_id": "PRJ-010-MS-001",
