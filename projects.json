@@ -14828,16 +14828,16 @@
           "name": "芳苑六_海尾段759,760,761",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 5230.94,
+          "capacity_kw": 776.82
         },
         {
           "parcel_id": "PRJ-006-PCL-1779429220206",
           "name": "芳苑六_海尾段1535",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 7642.39,
+          "capacity_kw": 1122.88
         }
       ],
       "milestones": [
