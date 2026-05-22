@@ -15324,8 +15324,8 @@
           "name": "芳漁三_北漢寶段725,732,733",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 9973.39,
+          "capacity_kw": 1504.03
         },
         {
           "parcel_id": "PRJ-006-PCL-1779443579474",
