@@ -14948,22 +14948,19 @@
           "forecast_end": null,
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-22T04:00:00.000Z",
+          "notes": "",
+          "updated_at": "2026-05-22T06:34:28.750Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-001-ST01",
               "sequence": 1,
               "name": "申請文件準備",
-              "authority": "（內部）",
               "type": "fixed",
-              "estimated_days": "30",
               "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "地主資料、切結書、養殖計劃書等",
               "tasks": [
                 {
                   "task_id": "TSK-1778225016163",
@@ -15010,126 +15007,110 @@
                   "created_at": "2026-05-08T07:23:36.163Z",
                   "updated_at": "2026-05-22T05:32:04.426Z"
                 }
-              ]
+              ],
+              "notes": "地主資料、切結書、養殖計劃書等"
             },
             {
               "stage_id": "PRJ-006-MS-001-ST02",
               "sequence": 2,
               "name": "送件",
-              "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "5",
+              "estimated_days": "1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #1",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "3",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #2",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "2",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-001-ST05",
               "sequence": 5,
               "name": "函轉地方政府",
-              "authority": "地方農業局",
               "type": "fixed",
-              "estimated_days": "7",
               "cc": "5",
+              "estimated_days": "7",
+              "authority": "地方農業局",
               "status": "in_progress",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
-              "authority": "地方農業局",
+              "name": "縣府補正 #1",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "8",
+              "estimated_days": "90",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
-              "authority": "地方農業局",
+              "name": "縣府補正 #2",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "4",
+              "estimated_days": "90",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-001-ST08",
               "sequence": 8,
               "name": "現勘",
-              "authority": "地方農業局",
               "type": "skippable",
-              "estimated_days": "14",
               "cc": "5",
+              "estimated_days": "14",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "視地方政府需求",
-              "tasks": []
+              "tasks": [],
+              "notes": "視地方政府需求"
             },
             {
               "stage_id": "PRJ-006-MS-001-ST09",
               "sequence": 9,
               "name": "取得農業容許",
-              "authority": "—",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "13",
+              "estimated_days": "1",
+              "authority": "—",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
               "tasks": [
                 {
                   "task_id": "TSK-1778221209789",
@@ -15168,11 +15149,14 @@
                   "created_at": "2026-05-08T06:20:09.789Z",
                   "updated_at": "2026-05-08T06:20:13.248Z"
                 }
-              ]
+              ],
+              "notes": ""
             }
           ],
           "tasks": [],
-          "_origName": "農業容許"
+          "_origName": "農業容許",
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-006-MS-002",
@@ -15193,146 +15177,130 @@
           "forecast_end": null,
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-22T03:47:20.589Z",
+          "notes": "",
+          "updated_at": "2026-05-22T06:34:28.750Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-002-ST01",
               "sequence": 1,
               "name": "申請文件準備",
-              "authority": "（內部）",
               "type": "fixed",
-              "estimated_days": "30",
               "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "地主資料、切結書、養殖計劃書等",
-              "tasks": []
+              "tasks": [],
+              "notes": "地主資料、切結書、養殖計劃書等"
             },
             {
               "stage_id": "PRJ-006-MS-002-ST02",
               "sequence": 2,
               "name": "送件",
-              "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "5",
+              "estimated_days": "1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-002-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #1",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "3",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-002-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #2",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "2",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-002-ST05",
               "sequence": 5,
               "name": "函轉地方政府",
-              "authority": "地方農業局",
               "type": "fixed",
-              "estimated_days": "7",
               "cc": "5",
+              "estimated_days": "7",
+              "authority": "地方農業局",
               "status": "in_progress",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-002-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
-              "authority": "地方農業局",
+              "name": "縣府補正 #1",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "8",
+              "estimated_days": "90",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-002-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
-              "authority": "地方農業局",
+              "name": "縣府補正 #2",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "4",
+              "estimated_days": "90",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-002-ST08",
               "sequence": 8,
               "name": "現勘",
-              "authority": "地方農業局",
               "type": "skippable",
-              "estimated_days": "14",
               "cc": "5",
+              "estimated_days": "14",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "視地方政府需求",
-              "tasks": []
+              "tasks": [],
+              "notes": "視地方政府需求"
             },
             {
               "stage_id": "PRJ-006-MS-002-ST09",
               "sequence": 9,
               "name": "取得農業容許",
-              "authority": "—",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "13",
+              "estimated_days": "1",
+              "authority": "—",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-006-MS-003",
@@ -15353,22 +15321,19 @@
           "forecast_end": null,
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-08T06:36:27.823Z",
+          "notes": "",
+          "updated_at": "2026-05-22T06:34:28.750Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-003-ST01",
               "sequence": 1,
               "name": "申請文件準備",
-              "authority": "（內部）",
               "type": "fixed",
-              "estimated_days": "30",
               "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "地主資料、切結書、養殖計劃書等",
               "tasks": [
                 {
                   "task_id": "TSK-1778222088930",
@@ -15394,131 +15359,118 @@
                   "created_at": "2026-05-08T06:36:27.823Z",
                   "updated_at": "2026-05-08T06:36:35.430Z"
                 }
-              ]
+              ],
+              "notes": "地主資料、切結書、養殖計劃書等"
             },
             {
               "stage_id": "PRJ-006-MS-003-ST02",
               "sequence": 2,
               "name": "送件",
-              "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "5",
+              "estimated_days": "1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-003-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #1",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "3",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-003-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #2",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "2",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-003-ST05",
               "sequence": 5,
               "name": "函轉地方政府",
-              "authority": "地方農業局",
               "type": "fixed",
-              "estimated_days": "7",
               "cc": "5",
+              "estimated_days": "7",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-003-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
-              "authority": "地方農業局",
+              "name": "縣府補正 #1",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "8",
+              "estimated_days": "90",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-003-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
-              "authority": "地方農業局",
+              "name": "縣府補正 #2",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "4",
+              "estimated_days": "90",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-003-ST08",
               "sequence": 8,
               "name": "現勘",
-              "authority": "地方農業局",
               "type": "skippable",
-              "estimated_days": "14",
               "cc": "5",
+              "estimated_days": "14",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "視地方政府需求",
-              "tasks": []
+              "tasks": [],
+              "notes": "視地方政府需求"
             },
             {
               "stage_id": "PRJ-006-MS-003-ST09",
               "sequence": 9,
               "name": "取得農業容許",
-              "authority": "—",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "13",
+              "estimated_days": "1",
+              "authority": "—",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
           "tasks": [],
-          "_origName": "農業容許"
+          "_origName": "農業容許",
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-006-MS-004",
@@ -15539,197 +15491,130 @@
           "forecast_end": null,
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-22T05:50:19.932Z",
+          "notes": "",
+          "updated_at": "2026-05-22T06:34:28.750Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-004-ST01",
               "sequence": 1,
               "name": "申請文件準備",
-              "authority": "（內部）",
               "type": "fixed",
-              "estimated_days": "30",
               "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "地主資料、切結書、養殖計劃書等",
-              "tasks": []
+              "tasks": [],
+              "notes": "地主資料、切結書、養殖計劃書等"
             },
             {
               "stage_id": "PRJ-006-MS-004-ST02",
               "sequence": 2,
               "name": "送件",
-              "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "5",
+              "estimated_days": "1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-004-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #1",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "3",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": [
-                {
-                  "task_id": "TSK-1778221393580",
-                  "name": "5/11農許補正(海尾段1531)",
-                  "task_type": "one-off",
-                  "status": "in_progress",
-                  "next_action_due": "2026-05-11",
-                  "next_action": null,
-                  "notes": "5/8完成用印，預計5/11掛件補正",
-                  "updates": [
-                    {
-                      "update_id": "UPD-1778221414780",
-                      "created_at": "2026-05-08T06:23:34.780Z",
-                      "content": "5/8完成用印，預計5/11掛件補正",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": null
-                    },
-                    {
-                      "update_id": "UPD-1778823419943",
-                      "created_at": "2026-05-14T04:00:00.000Z",
-                      "content": "5/14已補正完成",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": "追蹤現勘日期"
-                    }
-                  ],
-                  "created_at": "2026-05-08T06:23:13.580Z",
-                  "updated_at": "2026-05-08T06:23:17.821Z"
-                },
-                {
-                  "task_id": "TSK-1778823735776",
-                  "name": "5/13農許補正(北漢寶段571)",
-                  "task_type": "one-off",
-                  "status": "in_progress",
-                  "next_action_due": "2026-05-21",
-                  "next_action": null,
-                  "notes": null,
-                  "updates": [
-                    {
-                      "update_id": "UPD-1778823792090",
-                      "created_at": "2026-05-15T04:00:00.000Z",
-                      "content": "5/15用印寄出給光浴，預計下週掛件補正",
-                      "impact": "none",
-                      "impact_days": null,
-                      "next_action": null
-                    }
-                  ],
-                  "created_at": "2026-05-15T05:42:15.776Z",
-                  "updated_at": "2026-05-15T05:42:21.155Z"
-                }
-              ]
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-004-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #2",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "2",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-004-ST05",
               "sequence": 5,
               "name": "函轉地方政府",
-              "authority": "地方農業局",
               "type": "fixed",
-              "estimated_days": "7",
               "cc": "5",
+              "estimated_days": "7",
+              "authority": "地方農業局",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-004-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
-              "authority": "地方農業局",
+              "name": "縣府補正 #1",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "8",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "90",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-004-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
-              "authority": "地方農業局",
+              "name": "縣府補正 #2",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "4",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "90",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-004-ST08",
               "sequence": 8,
               "name": "現勘",
-              "authority": "地方農業局",
               "type": "skippable",
-              "estimated_days": "14",
               "cc": "5",
+              "estimated_days": "14",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "視地方政府需求",
-              "tasks": []
+              "tasks": [],
+              "notes": "視地方政府需求"
             },
             {
               "stage_id": "PRJ-006-MS-004-ST09",
               "sequence": 9,
               "name": "取得農業容許",
-              "authority": "—",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "13",
+              "estimated_days": "1",
+              "authority": "—",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-006-MS-005",
@@ -15750,22 +15635,19 @@
           "forecast_end": null,
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-22T06:00:45.131Z",
+          "notes": "",
+          "updated_at": "2026-05-22T06:34:28.750Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-005-ST01",
               "sequence": 1,
               "name": "申請文件準備",
-              "authority": "（內部）",
               "type": "fixed",
-              "estimated_days": "30",
               "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "地主資料、切結書、養殖計劃書等",
               "tasks": [
                 {
                   "task_id": "TSK-1778222037527",
@@ -15779,130 +15661,117 @@
                   "created_at": "2026-05-08T06:33:57.527Z",
                   "updated_at": "2026-05-08T06:36:52.017Z"
                 }
-              ]
+              ],
+              "notes": "地主資料、切結書、養殖計劃書等"
             },
             {
               "stage_id": "PRJ-006-MS-005-ST02",
               "sequence": 2,
               "name": "送件",
-              "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "5",
+              "estimated_days": "1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-005-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #1",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "3",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-005-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #2",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "2",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-005-ST05",
               "sequence": 5,
               "name": "函轉地方政府",
-              "authority": "地方農業局",
               "type": "fixed",
-              "estimated_days": "7",
               "cc": "5",
+              "estimated_days": "7",
+              "authority": "地方農業局",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-005-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
-              "authority": "地方農業局",
+              "name": "縣府補正 #1",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "8",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "90",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-005-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
-              "authority": "地方農業局",
+              "name": "縣府補正 #2",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "4",
+              "estimated_days": "90",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-005-ST08",
               "sequence": 8,
               "name": "現勘",
-              "authority": "地方農業局",
               "type": "skippable",
-              "estimated_days": "14",
               "cc": "5",
+              "estimated_days": "14",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "視地方政府需求",
-              "tasks": []
+              "tasks": [],
+              "notes": "視地方政府需求"
             },
             {
               "stage_id": "PRJ-006-MS-005-ST09",
               "sequence": 9,
               "name": "取得農業容許",
-              "authority": "—",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "13",
+              "estimated_days": "1",
+              "authority": "—",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-006-MS-006",
@@ -15923,146 +15792,130 @@
           "forecast_end": null,
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-08T06:17:22.461Z",
+          "notes": "",
+          "updated_at": "2026-05-22T06:34:28.750Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-006-ST01",
               "sequence": 1,
               "name": "申請文件準備",
-              "authority": "（內部）",
               "type": "fixed",
-              "estimated_days": "30",
               "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "地主資料、切結書、養殖計劃書等",
-              "tasks": []
+              "tasks": [],
+              "notes": "地主資料、切結書、養殖計劃書等"
             },
             {
               "stage_id": "PRJ-006-MS-006-ST02",
               "sequence": 2,
               "name": "送件",
-              "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "5",
+              "estimated_days": "1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-006-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #1",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "3",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-006-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #2",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "2",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-006-ST05",
               "sequence": 5,
               "name": "函轉地方政府",
-              "authority": "地方農業局",
               "type": "fixed",
-              "estimated_days": "7",
               "cc": "5",
+              "estimated_days": "7",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-006-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
-              "authority": "地方農業局",
+              "name": "縣府補正 #1",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "8",
+              "estimated_days": "90",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-006-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
-              "authority": "地方農業局",
+              "name": "縣府補正 #2",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "4",
+              "estimated_days": "90",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-006-ST08",
               "sequence": 8,
               "name": "現勘",
-              "authority": "地方農業局",
               "type": "skippable",
-              "estimated_days": "14",
               "cc": "5",
+              "estimated_days": "14",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "視地方政府需求",
-              "tasks": []
+              "tasks": [],
+              "notes": "視地方政府需求"
             },
             {
               "stage_id": "PRJ-006-MS-006-ST09",
               "sequence": 9,
               "name": "取得農業容許",
-              "authority": "—",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "13",
+              "estimated_days": "1",
+              "authority": "—",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-006-MS-007",
@@ -16083,22 +15936,19 @@
           "forecast_end": null,
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-22T06:12:53.683Z",
+          "notes": "",
+          "updated_at": "2026-05-22T06:34:28.750Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-007-ST01",
               "sequence": 1,
               "name": "申請文件準備",
-              "authority": "（內部）",
               "type": "fixed",
-              "estimated_days": "30",
               "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "地主資料、切結書、養殖計劃書等",
               "tasks": [
                 {
                   "task_id": "TSK-1778222150709",
@@ -16112,126 +15962,110 @@
                   "created_at": "2026-05-08T06:35:50.709Z",
                   "updated_at": "2026-05-08T06:36:57.797Z"
                 }
-              ]
+              ],
+              "notes": "地主資料、切結書、養殖計劃書等"
             },
             {
               "stage_id": "PRJ-006-MS-007-ST02",
               "sequence": 2,
               "name": "送件",
-              "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "5",
+              "estimated_days": "1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-007-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #1",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "3",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-007-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #2",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "2",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-007-ST05",
               "sequence": 5,
               "name": "函轉地方政府",
-              "authority": "地方農業局",
               "type": "fixed",
-              "estimated_days": "7",
               "cc": "5",
+              "estimated_days": "7",
+              "authority": "地方農業局",
               "status": "in_progress",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-007-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
-              "authority": "地方農業局",
+              "name": "縣府補正 #1",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "8",
+              "estimated_days": "90",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-007-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
-              "authority": "地方農業局",
+              "name": "縣府補正 #2",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "4",
+              "estimated_days": "90",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-007-ST08",
               "sequence": 8,
               "name": "現勘",
-              "authority": "地方農業局",
               "type": "skippable",
-              "estimated_days": "14",
               "cc": "5",
+              "estimated_days": "14",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "視地方政府需求",
-              "tasks": []
+              "tasks": [],
+              "notes": "視地方政府需求"
             },
             {
               "stage_id": "PRJ-006-MS-007-ST09",
               "sequence": 9,
               "name": "取得農業容許",
-              "authority": "—",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "13",
+              "estimated_days": "1",
+              "authority": "—",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
               "tasks": [
                 {
                   "task_id": "TSK-1779092957304",
@@ -16262,11 +16096,14 @@
                   "created_at": "2026-05-18T08:29:17.304Z",
                   "updated_at": "2026-05-18T08:29:33.589Z"
                 }
-              ]
+              ],
+              "notes": ""
             }
           ],
           "tasks": [],
-          "_origName": "農業容許"
+          "_origName": "農業容許",
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-006-MS-008",
@@ -16286,143 +16123,124 @@
           "baseline_end": null,
           "forecast_end": null,
           "actual_end": null,
-          "status": "done",
-          "notes": null,
-          "updated_at": "2026-01-06T04:00:00.000Z",
+          "status": "in_progress",
+          "notes": "",
+          "updated_at": "2026-05-22T06:34:28.750Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-008-ST01",
               "sequence": 1,
               "name": "申請文件準備",
-              "authority": "（內部）",
               "type": "fixed",
-              "estimated_days": "30",
               "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "地主資料、切結書、養殖計劃書等",
-              "tasks": []
+              "tasks": [],
+              "notes": "地主資料、切結書、養殖計劃書等"
             },
             {
               "stage_id": "PRJ-006-MS-008-ST02",
               "sequence": 2,
               "name": "送件",
-              "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "5",
+              "estimated_days": "1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-008-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #1",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "3",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-08",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-008-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #2",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "2",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-08",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-008-ST05",
               "sequence": 5,
               "name": "函轉地方政府",
-              "authority": "地方農業局",
               "type": "fixed",
-              "estimated_days": "7",
               "cc": "5",
+              "estimated_days": "7",
+              "authority": "地方農業局",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-008-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
-              "authority": "地方農業局",
+              "name": "縣府補正 #1",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "8",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-08",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "90",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-008-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
-              "authority": "地方農業局",
+              "name": "縣府補正 #2",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "4",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-08",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "90",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-008-ST08",
               "sequence": 8,
               "name": "現勘",
-              "authority": "地方農業局",
               "type": "skippable",
-              "estimated_days": "14",
               "cc": "5",
+              "estimated_days": "14",
+              "authority": "地方農業局",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "視地方政府需求",
-              "tasks": []
+              "tasks": [],
+              "notes": "視地方政府需求"
             },
             {
               "stage_id": "PRJ-006-MS-008-ST09",
               "sequence": 9,
               "name": "取得農業容許",
-              "authority": "—",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "13",
+              "estimated_days": "1",
+              "authority": "—",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "",
               "tasks": [
                 {
                   "task_id": "TSK-1779092608414",
@@ -16482,10 +16300,13 @@
                   "created_at": "2026-05-18T08:26:31.022Z",
                   "updated_at": "2026-05-18T08:26:34.240Z"
                 }
-              ]
+              ],
+              "notes": ""
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-006-MS-009",
@@ -16506,146 +16327,130 @@
           "forecast_end": null,
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-22T06:16:26.904Z",
+          "notes": "",
+          "updated_at": "2026-05-22T06:34:28.750Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-009-ST01",
               "sequence": 1,
               "name": "申請文件準備",
-              "authority": "（內部）",
               "type": "fixed",
-              "estimated_days": "30",
               "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "地主資料、切結書、養殖計劃書等",
-              "tasks": []
+              "tasks": [],
+              "notes": "地主資料、切結書、養殖計劃書等"
             },
             {
               "stage_id": "PRJ-006-MS-009-ST02",
               "sequence": 2,
               "name": "送件",
-              "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "5",
+              "estimated_days": "1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-009-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #1",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "3",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-009-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #2",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "2",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-009-ST05",
               "sequence": 5,
               "name": "函轉地方政府",
-              "authority": "地方農業局",
               "type": "fixed",
-              "estimated_days": "7",
               "cc": "5",
+              "estimated_days": "7",
+              "authority": "地方農業局",
               "status": "in_progress",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-009-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
-              "authority": "地方農業局",
+              "name": "縣府補正 #1",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "8",
+              "estimated_days": "90",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-009-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
-              "authority": "地方農業局",
+              "name": "縣府補正 #2",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "4",
+              "estimated_days": "90",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-009-ST08",
               "sequence": 8,
               "name": "現勘",
-              "authority": "地方農業局",
               "type": "skippable",
-              "estimated_days": "14",
               "cc": "5",
+              "estimated_days": "14",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "視地方政府需求",
-              "tasks": []
+              "tasks": [],
+              "notes": "視地方政府需求"
             },
             {
               "stage_id": "PRJ-006-MS-009-ST09",
               "sequence": 9,
               "name": "取得農業容許",
-              "authority": "—",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "13",
+              "estimated_days": "1",
+              "authority": "—",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-006-MS-010",
@@ -16666,146 +16471,130 @@
           "forecast_end": null,
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-22T06:16:29.816Z",
+          "notes": "",
+          "updated_at": "2026-05-22T06:34:28.750Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-010-ST01",
               "sequence": 1,
               "name": "申請文件準備",
-              "authority": "（內部）",
               "type": "fixed",
-              "estimated_days": "30",
               "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "地主資料、切結書、養殖計劃書等",
-              "tasks": []
+              "tasks": [],
+              "notes": "地主資料、切結書、養殖計劃書等"
             },
             {
               "stage_id": "PRJ-006-MS-010-ST02",
               "sequence": 2,
               "name": "送件",
-              "authority": "土地所屬鄉/鎮/市/區公所",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "5",
+              "estimated_days": "1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": "2026-05-08",
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-010-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #1",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "3",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-010-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
-              "authority": "土地所屬鄉/鎮/市/區公所",
+              "name": "區公所補正 #2",
               "type": "skippable",
-              "estimated_days": "30",
               "cc": "2",
-              "status": "done",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": "2026-05-22",
-              "notes": "",
-              "tasks": []
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-010-ST05",
               "sequence": 5,
               "name": "函轉地方政府",
-              "authority": "地方農業局",
               "type": "fixed",
-              "estimated_days": "7",
               "cc": "5",
+              "estimated_days": "7",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-010-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
-              "authority": "地方農業局",
+              "name": "縣府補正 #1",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "8",
+              "estimated_days": "90",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-010-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
-              "authority": "地方農業局",
+              "name": "縣府補正 #2",
               "type": "skippable",
-              "estimated_days": "90",
               "cc": "4",
+              "estimated_days": "90",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-010-ST08",
               "sequence": 8,
               "name": "現勘",
-              "authority": "地方農業局",
               "type": "skippable",
-              "estimated_days": "14",
               "cc": "5",
+              "estimated_days": "14",
+              "authority": "地方農業局",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "視地方政府需求",
-              "tasks": []
+              "tasks": [],
+              "notes": "視地方政府需求"
             },
             {
               "stage_id": "PRJ-006-MS-010-ST09",
               "sequence": 9,
               "name": "取得農業容許",
-              "authority": "—",
               "type": "fixed",
-              "estimated_days": "1",
               "cc": "13",
+              "estimated_days": "1",
+              "authority": "—",
               "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
               "actual_end": null,
-              "notes": "",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-006-MS-1779422536577",
@@ -16837,7 +16626,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422536577-ST02",
@@ -16849,31 +16639,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422536577-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422536577-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422536577-ST05",
@@ -16885,31 +16678,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422536577-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422536577-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422536577-ST08",
@@ -16921,7 +16717,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422536577-ST09",
@@ -16933,10 +16730,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T04:05:40.571Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779422826927",
@@ -16968,7 +16766,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422826927-ST02",
@@ -16980,31 +16779,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422826927-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422826927-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422826927-ST05",
@@ -17016,31 +16818,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422826927-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422826927-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422826927-ST08",
@@ -17052,7 +16857,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422826927-ST09",
@@ -17064,10 +16870,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T04:07:26.589Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779422835007",
@@ -17099,7 +16906,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422835007-ST02",
@@ -17111,31 +16919,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422835007-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422835007-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422835007-ST05",
@@ -17147,31 +16958,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422835007-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422835007-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422835007-ST08",
@@ -17183,7 +16997,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422835007-ST09",
@@ -17195,10 +17010,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T04:07:32.802Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779422839322",
@@ -17230,7 +17046,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422839322-ST02",
@@ -17242,31 +17059,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422839322-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422839322-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422839322-ST05",
@@ -17278,31 +17098,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422839322-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779422839322-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422839322-ST08",
@@ -17314,7 +17137,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779422839322-ST09",
@@ -17326,10 +17150,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T04:07:39.910Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428220457",
@@ -17361,7 +17186,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428220457-ST02",
@@ -17373,31 +17199,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428220457-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428220457-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428220457-ST05",
@@ -17409,31 +17238,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428220457-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428220457-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428220457-ST08",
@@ -17445,7 +17277,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428220457-ST09",
@@ -17457,10 +17290,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:37:19.259Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428298220",
@@ -17492,7 +17326,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428298220-ST02",
@@ -17504,31 +17339,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428298220-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428298220-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428298220-ST05",
@@ -17540,31 +17378,34 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428298220-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428298220-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428298220-ST08",
@@ -17576,7 +17417,8 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428298220-ST09",
@@ -17600,10 +17442,11 @@
                   "created_at": "2026-05-22T05:41:14.899Z",
                   "updated_at": "2026-05-22T05:41:14.899Z"
                 }
-              ]
+              ],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:38:29.186Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428336604",
@@ -17635,7 +17478,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428336604-ST02",
@@ -17647,31 +17491,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428336604-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428336604-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428336604-ST05",
@@ -17683,31 +17530,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428336604-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428336604-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428336604-ST08",
@@ -17719,7 +17569,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428336604-ST09",
@@ -17731,10 +17582,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:39:08.507Z",
+          "updated_at": "2026-05-22T06:34:28.750Z",
           "_origName": "農業容許"
         },
         {
@@ -17767,7 +17619,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428540539-ST02",
@@ -17779,31 +17632,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428540539-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428540539-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428540539-ST05",
@@ -17815,31 +17671,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428540539-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428540539-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428540539-ST08",
@@ -17851,7 +17710,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428540539-ST09",
@@ -17863,10 +17723,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:42:29.704Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428651125",
@@ -17898,7 +17759,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428651125-ST02",
@@ -17910,31 +17772,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428651125-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428651125-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428651125-ST05",
@@ -17946,31 +17811,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428651125-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428651125-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428651125-ST08",
@@ -17982,7 +17850,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428651125-ST09",
@@ -17994,10 +17863,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:44:21.120Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428713797",
@@ -18029,7 +17899,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428713797-ST02",
@@ -18041,31 +17912,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428713797-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428713797-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428713797-ST05",
@@ -18077,31 +17951,34 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428713797-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428713797-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428713797-ST08",
@@ -18113,7 +17990,8 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428713797-ST09",
@@ -18125,10 +18003,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:45:28.690Z",
+          "updated_at": "2026-05-22T06:34:28.750Z",
           "_origName": "農業容許"
         },
         {
@@ -18161,7 +18040,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428775386-ST02",
@@ -18173,31 +18053,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428775386-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428775386-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428775386-ST05",
@@ -18209,31 +18092,34 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428775386-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428775386-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428775386-ST08",
@@ -18245,7 +18131,8 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428775386-ST09",
@@ -18257,10 +18144,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:46:33.286Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428814037",
@@ -18292,7 +18180,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428814037-ST02",
@@ -18304,31 +18193,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428814037-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428814037-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428814037-ST05",
@@ -18340,31 +18232,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428814037-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779428814037-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428814037-ST08",
@@ -18376,7 +18271,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779428814037-ST09",
@@ -18388,10 +18284,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:47:02.397Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429071660",
@@ -18423,7 +18320,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429071660-ST02",
@@ -18435,31 +18333,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429071660-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429071660-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429071660-ST05",
@@ -18471,31 +18372,34 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429071660-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429071660-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429071660-ST08",
@@ -18507,7 +18411,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429071660-ST09",
@@ -18519,10 +18424,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:57:22.823Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429116205",
@@ -18554,7 +18460,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429116205-ST02",
@@ -18566,31 +18473,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429116205-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429116205-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429116205-ST05",
@@ -18602,31 +18512,34 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429116205-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429116205-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429116205-ST08",
@@ -18638,7 +18551,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429116205-ST09",
@@ -18650,10 +18564,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:57:38.723Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429139419",
@@ -18685,7 +18600,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429139419-ST02",
@@ -18697,31 +18613,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429139419-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429139419-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429139419-ST05",
@@ -18733,31 +18652,34 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429139419-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429139419-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429139419-ST08",
@@ -18769,7 +18691,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429139419-ST09",
@@ -18781,10 +18704,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:52:27.642Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429178675",
@@ -18816,7 +18740,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429178675-ST02",
@@ -18828,31 +18753,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429178675-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429178675-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429178675-ST05",
@@ -18864,31 +18792,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429178675-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429178675-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429178675-ST08",
@@ -18900,7 +18831,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429178675-ST09",
@@ -18912,10 +18844,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:53:09.436Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429220206",
@@ -18947,7 +18880,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429220206-ST02",
@@ -18959,31 +18893,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429220206-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429220206-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429220206-ST05",
@@ -18995,31 +18932,34 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429220206-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429220206-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429220206-ST08",
@@ -19031,7 +18971,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429220206-ST09",
@@ -19043,10 +18984,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:53:46.913Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429713775",
@@ -19078,7 +19020,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429713775-ST02",
@@ -19090,31 +19033,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429713775-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429713775-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429713775-ST05",
@@ -19126,31 +19072,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429713775-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429713775-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429713775-ST08",
@@ -19162,7 +19111,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429713775-ST09",
@@ -19174,10 +19124,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:02:05.392Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429812702",
@@ -19209,7 +19160,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429812702-ST02",
@@ -19221,31 +19173,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429812702-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429812702-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429812702-ST05",
@@ -19257,31 +19212,34 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429812702-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429812702-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429812702-ST08",
@@ -19293,7 +19251,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429812702-ST09",
@@ -19305,10 +19264,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:03:58.298Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429873348",
@@ -19340,7 +19300,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429873348-ST02",
@@ -19352,31 +19313,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429873348-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429873348-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429873348-ST05",
@@ -19388,31 +19352,34 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429873348-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429873348-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429873348-ST08",
@@ -19424,7 +19391,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429873348-ST09",
@@ -19436,10 +19404,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:04:50.652Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429907421",
@@ -19471,7 +19440,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429907421-ST02",
@@ -19483,31 +19453,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429907421-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429907421-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429907421-ST05",
@@ -19519,31 +19492,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429907421-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779429907421-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429907421-ST08",
@@ -19555,7 +19531,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779429907421-ST09",
@@ -19567,10 +19544,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:05:19.404Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430054378",
@@ -19602,7 +19580,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430054378-ST02",
@@ -19614,31 +19593,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430054378-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430054378-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430054378-ST05",
@@ -19650,31 +19632,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430054378-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430054378-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430054378-ST08",
@@ -19686,7 +19671,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430054378-ST09",
@@ -19698,10 +19684,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:07:51.353Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430109733",
@@ -19733,7 +19720,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430109733-ST02",
@@ -19745,31 +19733,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430109733-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430109733-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430109733-ST05",
@@ -19781,31 +19772,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430109733-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430109733-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430109733-ST08",
@@ -19817,7 +19811,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430109733-ST09",
@@ -19829,10 +19824,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:08:35.684Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430167735",
@@ -19864,7 +19860,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430167735-ST02",
@@ -19876,31 +19873,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430167735-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430167735-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430167735-ST05",
@@ -19912,31 +19912,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430167735-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430167735-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430167735-ST08",
@@ -19948,7 +19951,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430167735-ST09",
@@ -19960,10 +19964,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:09:36.237Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430198158",
@@ -19995,7 +20000,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430198158-ST02",
@@ -20007,31 +20013,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430198158-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430198158-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430198158-ST05",
@@ -20043,31 +20052,34 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430198158-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430198158-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430198158-ST08",
@@ -20079,7 +20091,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430198158-ST09",
@@ -20091,10 +20104,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:10:04.842Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430423574",
@@ -20126,7 +20140,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430423574-ST02",
@@ -20138,31 +20153,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430423574-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430423574-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430423574-ST05",
@@ -20174,31 +20192,34 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430423574-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430423574-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430423574-ST08",
@@ -20210,7 +20231,8 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430423574-ST09",
@@ -20222,10 +20244,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:14:02.137Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430469714",
@@ -20244,7 +20267,7 @@
           "forecast_end": null,
           "actual_start": null,
           "actual_end": null,
-          "status": "done",
+          "status": "in_progress",
           "notes": "",
           "stages": [
             {
@@ -20257,7 +20280,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430469714-ST02",
@@ -20269,31 +20293,34 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430469714-ST03",
+              "stage_id": "PRJ-006-MS-001-ST03",
               "sequence": 3,
-              "name": "補正 #1",
+              "name": "區公所補正 #1",
               "type": "skippable",
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430469714-ST04",
+              "stage_id": "PRJ-006-MS-001-ST04",
               "sequence": 4,
-              "name": "補正 #2",
+              "name": "區公所補正 #2",
               "type": "skippable",
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430469714-ST05",
@@ -20305,31 +20332,34 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430469714-ST06",
+              "stage_id": "PRJ-006-MS-001-ST06",
               "sequence": 6,
-              "name": "補正 #1",
+              "name": "縣府補正 #1",
               "type": "skippable",
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
-              "stage_id": "PRJ-006-MS-1779430469714-ST07",
+              "stage_id": "PRJ-006-MS-001-ST07",
               "sequence": 7,
-              "name": "補正 #2",
+              "name": "縣府補正 #2",
               "type": "skippable",
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "done",
-              "actual_end": "2026-05-22",
-              "tasks": []
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430469714-ST08",
@@ -20341,7 +20371,8 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779430469714-ST09",
@@ -20353,10 +20384,11 @@
               "authority": "—",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:14:40.084Z"
+          "updated_at": "2026-05-22T06:34:28.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-011",
