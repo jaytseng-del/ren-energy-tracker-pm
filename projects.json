@@ -4861,7 +4861,7 @@
       "start_date": "2024-05-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T02:02:07.650Z",
+      "updated_at": "2026-05-22T03:58:25.628Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段15地號",
@@ -6542,101 +6542,6 @@
           "forecast_start": "2026-09-14"
         },
         {
-          "milestone_id": "PRJ-002-MS-1779414331339",
-          "name": "建照",
-          "group": "農業",
-          "application_scope": "per_parcel",
-          "parcel_id": "PRJ-002-PCL-1779414331339",
-          "parcel_name": "新鑫漁業(17地號)",
-          "dependency_type": "hard",
-          "depends_on": [
-            "農業容許"
-          ],
-          "baseline_start": "2026-08-30",
-          "baseline_end": "2027-02-26",
-          "forecast_start": "2026-08-30",
-          "forecast_end": "2027-02-26",
-          "actual_start": null,
-          "actual_end": null,
-          "status": "pending",
-          "notes": null,
-          "stages": [
-            {
-              "stage_id": "PRJ-002-MS-1779414331339-ST01",
-              "sequence": 1,
-              "name": "申請文件準備",
-              "type": "fixed",
-              "cc": "55",
-              "estimated_days": "30",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414331339-ST02",
-              "sequence": 2,
-              "name": "送件",
-              "type": "fixed",
-              "cc": "5",
-              "estimated_days": "1",
-              "authority": "建管處",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414331339-ST03",
-              "sequence": 3,
-              "name": "主管機關審核",
-              "type": "fixed",
-              "cc": "10",
-              "estimated_days": "90",
-              "authority": "建管處",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414331339-ST04",
-              "sequence": 4,
-              "name": "補正 #1",
-              "type": "skippable",
-              "cc": "5",
-              "estimated_days": "14",
-              "authority": "建管處",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414331339-ST05",
-              "sequence": 5,
-              "name": "補正 #2",
-              "type": "skippable",
-              "cc": "5",
-              "estimated_days": "14",
-              "authority": "建管處",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414331339-ST06",
-              "sequence": 6,
-              "name": "取得建造執照",
-              "type": "fixed",
-              "cc": "20",
-              "estimated_days": "7",
-              "authority": "—",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            }
-          ],
-          "updated_at": "2026-05-22T02:35:59.967Z"
-        },
-        {
           "milestone_id": "PRJ-002-MS-010",
           "name": "室內養殖設施施工",
           "group": "農業",
@@ -7161,113 +7066,6 @@
           "forecast_start": "2027-02-11"
         },
         {
-          "milestone_id": "PRJ-002-MS-1779414336831",
-          "name": "室內養殖設施施工",
-          "group": "農業",
-          "application_scope": "per_parcel",
-          "parcel_id": "PRJ-002-PCL-1779414336831",
-          "parcel_name": "新鑫漁業(17地號)",
-          "dependency_type": "hard",
-          "depends_on": [
-            "建照"
-          ],
-          "baseline_start": "2027-01-27",
-          "baseline_end": "2028-02-06",
-          "forecast_start": "2027-01-27",
-          "forecast_end": "2028-02-06",
-          "actual_start": null,
-          "actual_end": null,
-          "status": "pending",
-          "notes": null,
-          "stages": [
-            {
-              "stage_id": "PRJ-002-MS-1779414336831-ST01",
-              "sequence": 1,
-              "name": "開工前整地+假設工程",
-              "type": "fixed",
-              "cc": "10",
-              "estimated_days": "30",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414336831-ST02",
-              "sequence": 2,
-              "name": "申請開工許可",
-              "type": "fixed",
-              "cc": "15",
-              "estimated_days": "180",
-              "authority": "建管處",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414336831-ST03",
-              "sequence": 3,
-              "name": "基樁工程",
-              "type": "fixed",
-              "cc": "20",
-              "estimated_days": "60",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414336831-ST04",
-              "sequence": 4,
-              "name": "鋼構工程",
-              "type": "fixed",
-              "cc": "18",
-              "estimated_days": "45",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414336831-ST05",
-              "sequence": 5,
-              "name": "模組鋪設工程",
-              "type": "fixed",
-              "cc": "15",
-              "estimated_days": "45",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414336831-ST06",
-              "sequence": 6,
-              "name": "魚塭工程",
-              "type": "fixed",
-              "cc": "12",
-              "estimated_days": "45",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414336831-ST07",
-              "sequence": 7,
-              "name": "竣工查驗",
-              "type": "fixed",
-              "cc": "10",
-              "estimated_days": "30",
-              "authority": "建管處",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            }
-          ],
-          "updated_at": "2026-05-22T02:35:59.967Z"
-        },
-        {
           "milestone_id": "PRJ-002-MS-014",
           "name": "使照",
           "group": "農業",
@@ -7730,101 +7528,6 @@
           ],
           "tasks": [],
           "forecast_start": "2028-02-21"
-        },
-        {
-          "milestone_id": "PRJ-002-MS-1779414341069",
-          "name": "使照",
-          "group": "農業",
-          "application_scope": "per_parcel",
-          "parcel_id": "PRJ-002-PCL-1779414341069",
-          "parcel_name": "新鑫漁業(17地號)",
-          "dependency_type": "hard",
-          "depends_on": [
-            "室內養殖設施施工"
-          ],
-          "baseline_start": "2028-02-06",
-          "baseline_end": "2028-05-06",
-          "forecast_start": "2028-02-06",
-          "forecast_end": "2028-05-06",
-          "actual_start": null,
-          "actual_end": null,
-          "status": "pending",
-          "notes": null,
-          "stages": [
-            {
-              "stage_id": "PRJ-002-MS-1779414341069-ST01",
-              "sequence": 1,
-              "name": "申請文件準備",
-              "type": "fixed",
-              "cc": "55",
-              "estimated_days": "30",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414341069-ST02",
-              "sequence": 2,
-              "name": "送件申請",
-              "type": "fixed",
-              "cc": "5",
-              "estimated_days": "1",
-              "authority": "建管處",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414341069-ST03",
-              "sequence": 3,
-              "name": "主管機關審核",
-              "type": "fixed",
-              "cc": "10",
-              "estimated_days": "90",
-              "authority": "建管處",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414341069-ST04",
-              "sequence": 4,
-              "name": "補正 #1",
-              "type": "skippable",
-              "cc": "5",
-              "estimated_days": "14",
-              "authority": "建管處",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414341069-ST05",
-              "sequence": 5,
-              "name": "補正 #2",
-              "type": "skippable",
-              "cc": "5",
-              "estimated_days": "14",
-              "authority": "建管處",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414341069-ST06",
-              "sequence": 6,
-              "name": "取得使照",
-              "type": "fixed",
-              "cc": "20",
-              "estimated_days": "7",
-              "authority": "建管處",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            }
-          ],
-          "updated_at": "2026-05-22T02:35:59.967Z"
         },
         {
           "milestone_id": "PRJ-002-MS-018",
@@ -8529,149 +8232,6 @@
           ],
           "tasks": [],
           "forecast_start": "2028-01-22"
-        },
-        {
-          "milestone_id": "PRJ-002-MS-1779414346523",
-          "name": "綠能容許",
-          "group": "農業",
-          "application_scope": "per_parcel",
-          "parcel_id": "PRJ-002-PCL-1779414346523",
-          "parcel_name": "新鑫漁業(17地號)",
-          "dependency_type": "condition",
-          "depends_on": [
-            "使照"
-          ],
-          "baseline_start": "2028-01-07",
-          "baseline_end": "2028-08-04",
-          "forecast_start": "2028-01-07",
-          "forecast_end": "2028-08-04",
-          "actual_start": null,
-          "actual_end": null,
-          "status": "pending",
-          "notes": null,
-          "stages": [
-            {
-              "stage_id": "PRJ-002-MS-1779414346523-ST01",
-              "sequence": 1,
-              "name": "放養",
-              "type": "fixed",
-              "cc": "50",
-              "estimated_days": "180",
-              "authority": "—",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414346523-ST02",
-              "sequence": 2,
-              "name": "申請文件準備",
-              "type": "fixed",
-              "cc": "30",
-              "estimated_days": "30",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414346523-ST03",
-              "sequence": 3,
-              "name": "送件",
-              "type": "fixed",
-              "cc": "20",
-              "estimated_days": "30",
-              "authority": "農業局",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414346523-ST04",
-              "sequence": 4,
-              "name": "補正 #1",
-              "type": "skippable",
-              "cc": "3",
-              "estimated_days": "30",
-              "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414346523-ST05",
-              "sequence": 5,
-              "name": "補正 #2",
-              "type": "skippable",
-              "cc": "2",
-              "estimated_days": "30",
-              "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414346523-ST06",
-              "sequence": 6,
-              "name": "函轉地方政府",
-              "type": "fixed",
-              "cc": "5",
-              "estimated_days": "7",
-              "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414346523-ST07",
-              "sequence": 7,
-              "name": "補正 #1",
-              "type": "skippable",
-              "cc": "8",
-              "estimated_days": "90",
-              "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414346523-ST08",
-              "sequence": 8,
-              "name": "補正 #2",
-              "type": "skippable",
-              "cc": "4",
-              "estimated_days": "90",
-              "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414346523-ST09",
-              "sequence": 9,
-              "name": "現勘",
-              "type": "skippable",
-              "cc": "5",
-              "estimated_days": "14",
-              "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414346523-ST10",
-              "sequence": 10,
-              "name": "取得農業容許",
-              "type": "fixed",
-              "cc": "13",
-              "estimated_days": "1",
-              "authority": "—",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            }
-          ],
-          "updated_at": "2026-05-22T02:35:59.967Z"
         },
         {
           "milestone_id": "PRJ-002-MS-022",
@@ -9864,89 +9424,6 @@
           ],
           "tasks": [],
           "forecast_start": "2027-11-22"
-        },
-        {
-          "milestone_id": "PRJ-002-MS-1779414362024",
-          "name": "光電設備施工",
-          "group": "電業",
-          "application_scope": "per_parcel",
-          "parcel_id": "PRJ-002-PCL-1779414362024",
-          "parcel_name": "新鑫漁業(17地號)",
-          "dependency_type": "hard",
-          "depends_on": [
-            "光電施工許可"
-          ],
-          "baseline_start": "2027-11-07",
-          "baseline_end": "2028-09-18",
-          "forecast_start": "2027-11-07",
-          "forecast_end": "2028-09-18",
-          "actual_start": null,
-          "actual_end": null,
-          "status": "pending",
-          "notes": null,
-          "stages": [
-            {
-              "stage_id": "PRJ-002-MS-1779414362024-ST01",
-              "sequence": 1,
-              "name": "配電設施訂購",
-              "type": "fixed",
-              "cc": "25",
-              "estimated_days": "60",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414362024-ST02",
-              "sequence": 2,
-              "name": "配電設施進場",
-              "type": "fixed",
-              "cc": "10",
-              "estimated_days": "15",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414362024-ST03",
-              "sequence": 3,
-              "name": "配電設施工程",
-              "type": "fixed",
-              "cc": "35",
-              "estimated_days": "100",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414362024-ST04",
-              "sequence": 4,
-              "name": "機電測試",
-              "type": "fixed",
-              "cc": "20",
-              "estimated_days": "45",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414362024-ST05",
-              "sequence": 5,
-              "name": "驗收",
-              "type": "fixed",
-              "cc": "10",
-              "estimated_days": "30",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            }
-          ],
-          "updated_at": "2026-05-22T02:35:59.967Z"
         },
         {
           "milestone_id": "PRJ-002-MS-031",
@@ -15022,8 +14499,8 @@
             "芳苑鄉漢寶村北漢寶段324地號",
             "芳苑鄉漢寶村北漢寶段325地號"
           ],
-          "area_m2": 7055.06,
-          "capacity_kw": 1033.34
+          "area_m2": 48500,
+          "capacity_kw": 7146.26
         },
         {
           "parcel_id": "PRJ-006-PCL-002",
@@ -15217,6 +14694,14 @@
           "lots": [],
           "area_m2": 6193,
           "capacity_kw": 798.6
+        },
+        {
+          "parcel_id": "PRJ-006-PCL-1779422536577",
+          "name": "芳苑一_北漢寶段573,574,574-1",
+          "status": "active",
+          "lots": [],
+          "area_m2": null,
+          "capacity_kw": null
         }
       ],
       "milestones": [
@@ -17092,6 +16577,137 @@
             }
           ],
           "tasks": []
+        },
+        {
+          "milestone_id": "PRJ-006-MS-1779422536577",
+          "name": "農業容許",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "parcel_id": "PRJ-006-PCL-1779422536577",
+          "parcel_name": "芳苑一_北漢寶段573,574,574-1",
+          "dependency_type": "soft_concurrent",
+          "depends_on": [
+            "出流管制"
+          ],
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_start": null,
+          "forecast_end": null,
+          "actual_start": null,
+          "actual_end": null,
+          "status": "pending",
+          "notes": "",
+          "stages": [
+            {
+              "stage_id": "PRJ-006-MS-1779422536577-ST01",
+              "sequence": 1,
+              "name": "申請文件準備",
+              "type": "fixed",
+              "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779422536577-ST02",
+              "sequence": 2,
+              "name": "送件",
+              "type": "fixed",
+              "cc": "5",
+              "estimated_days": "1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779422536577-ST03",
+              "sequence": 3,
+              "name": "補正 #1",
+              "type": "skippable",
+              "cc": "3",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779422536577-ST04",
+              "sequence": 4,
+              "name": "補正 #2",
+              "type": "skippable",
+              "cc": "2",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779422536577-ST05",
+              "sequence": 5,
+              "name": "函轉地方政府",
+              "type": "fixed",
+              "cc": "5",
+              "estimated_days": "7",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779422536577-ST06",
+              "sequence": 6,
+              "name": "補正 #1",
+              "type": "skippable",
+              "cc": "8",
+              "estimated_days": "90",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779422536577-ST07",
+              "sequence": 7,
+              "name": "補正 #2",
+              "type": "skippable",
+              "cc": "4",
+              "estimated_days": "90",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779422536577-ST08",
+              "sequence": 8,
+              "name": "現勘",
+              "type": "skippable",
+              "cc": "5",
+              "estimated_days": "14",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779422536577-ST09",
+              "sequence": 9,
+              "name": "取得農業容許",
+              "type": "fixed",
+              "cc": "13",
+              "estimated_days": "1",
+              "authority": "—",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            }
+          ],
+          "updated_at": "2026-05-22T04:02:16.578Z"
         },
         {
           "milestone_id": "PRJ-006-MS-011",
