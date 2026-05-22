@@ -318,3 +318,4 @@
 {"event":"parcels_updated","project_id":"PRJ-006","ts":"2026-05-22T04:04:50.304Z"}
 {"event":"parcels_updated","project_id":"PRJ-006","ts":"2026-05-22T04:05:10.652Z"}
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779422536577","stage_id":"PRJ-006-MS-1779422536577-ST01","old_status":"pending","new_status":"done","actual_end":"2026-05-22","ts":"2026-05-22T04:05:36.128Z"}
+{"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779422536577","stage_id":"PRJ-006-MS-1779422536577-ST02","old_status":"pending","new_status":"done","actual_end":"2026-05-22","ts":"2026-05-22T04:05:37.164Z"}
