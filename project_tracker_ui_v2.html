@@ -30209,7 +30209,7 @@ function applyEvents(data, events) {
   for (const ev of events) {
     try {
       const proj = data.projects?.find(p => p.project_id === ev.project_id);
-      if (!proj && ev.event !== 'milestone_created') continue; // milestone_created also needs proj
+      if (!proj && ev.event !== 'milestone_created' && ev.event !== 'project_created') continue; // milestone_created also needs proj
 
       switch (ev.event) {
 
@@ -30456,6 +30456,14 @@ function applyEvents(data, events) {
         }
 
         // 舊版空標記 event，無資料，忽略即可
+        case 'project_created': {
+          if (!data.projects) data.projects = [];
+          if (ev.project && !data.projects.find(p => p.project_id === ev.project_id)) {
+            data.projects.push(ev.project);
+          }
+          break;
+        }
+
         case 'parcels_updated':
           break;
 
@@ -30759,7 +30767,9 @@ async function confirmAddProject() {
       milestones,
     };
 
-    // append to STATE and sync
+    // 先寫 project_created event（安全網：ghWriteProjDirect 失敗時，下次載入可從 event 重建）
+    await ghAppendEvent({ event: 'project_created', project_id: pid, project: newProj, ts: now });
+    // 再更新 STATE 並覆寫 projects.json
     STATE.data.projects.push(newProj);
     await ghWriteProjDirect();
 
@@ -32976,137 +32986,131 @@ function _renderPclManageList() {
   const knownIds = new Set(proj.parcels.map(p => p.parcel_id));
   (proj.milestones || []).forEach(m => {
     if (m.application_scope === 'per_parcel' && m.parcel_id && !knownIds.has(m.parcel_id)) {
-      proj.parcels.push({ parcel_id: m.parcel_id, name: m.parcel_name || m.parcel_id, status: 'active', lots: [], area_m2: null, capacity_kw: null });
+      proj.parcels.push({ parcel_id: m.parcel_id, name: m.parcel_name || m.parcel_id,
+        area_m2: null, capacity_kw: null, status: 'active' });
       knownIds.add(m.parcel_id);
     }
   });
 
-  const active = proj.parcels.filter(p => p.status !== 'deleted');
-  if (!active.length) {
-    listEl.innerHTML = '<div style="font-size:12px;color:var(--text3);padding:8px 0">尚無地塊，請在下方新增。</div>';
+  const activeParcels = proj.parcels.filter(p => p.status !== 'deleted');
+
+  if (!activeParcels.length) {
+    listEl.innerHTML = '<p style="font-size:12px;color:var(--text2);text-align:center;padding:12px 0">尚無地塊，請在下方新增</p>';
     return;
   }
 
-  listEl.innerHTML = active.map(p => `
-    <div style="display:flex;align-items:center;gap:8px;padding:6px 8px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;background:var(--surface)">
-      <span style="flex:1;font-size:13px;font-weight:500">${p.name || p.parcel_id}</span>
-      ${p.area_m2     ? `<span style="font-size:11px;color:var(--text3)">${p.area_m2}m²</span>` : ''}
-      ${p.capacity_kw ? `<span style="font-size:11px;color:var(--text3)">${p.capacity_kw}kW</span>`  : ''}
-      <button onclick="editPcl('${p.parcel_id}')"
-        style="font-size:11px;padding:2px 8px;border:1px solid var(--border);border-radius:4px;background:transparent;cursor:pointer;color:var(--text2)">編輯</button>
-      <button onclick="deletePcl('${p.parcel_id}')"
-        style="font-size:11px;padding:2px 8px;border:1px solid var(--danger);border-radius:4px;background:transparent;cursor:pointer;color:var(--danger)">刪除</button>
-    </div>`).join('');
-}
-
-function editPcl(parcelId) {
-  const proj = STATE.data.projects.find(p => p.project_id === _pclManageProjId);
-  if (!proj) return;
-  const pcl = (proj.parcels || []).find(p => p.parcel_id === parcelId);
-  if (!pcl) return;
-  document.getElementById('pcl-edit-id').value  = parcelId;
-  document.getElementById('pcl-name').value      = pcl.name || '';
-  document.getElementById('pcl-area').value      = pcl.area_m2 || '';
-  document.getElementById('pcl-kw').value        = pcl.capacity_kw || '';
-  document.getElementById('pcl-form-title').textContent = '\u270E 編輯地塊';
+  listEl.innerHTML = activeParcels.map(p => {
+    const meta = [
+      p.area_m2     != null ? p.area_m2.toLocaleString() + ' m²' : null,
+      p.capacity_kw != null ? p.capacity_kw.toLocaleString() + ' kW'  : null,
+    ].filter(Boolean).join('　');
+    return `<div class="pcl-manage-row">
+      <span class="pcl-manage-name">${p.name}</span>
+      <span class="pcl-manage-meta">${meta}</span>
+      <button class="pcl-manage-edit" onclick="editPcl('${p.parcel_id}')">✎ 編輯</button>
+      <button class="pcl-manage-del"  onclick="deletePcl('${p.parcel_id}')">✕ 刪除</button>
+    </div>`;
+  }).join('');
 }
 
 function cancelPclEdit() {
-  document.getElementById('pcl-edit-id').value  = '';
-  document.getElementById('pcl-name').value      = '';
-  document.getElementById('pcl-area').value      = '';
-  document.getElementById('pcl-kw').value        = '';
-  document.getElementById('pcl-form-title').textContent = '\uff0b 新增地塊';
+  document.getElementById('pcl-edit-id').value = '';
+  document.getElementById('pcl-name').value    = '';
+  document.getElementById('pcl-area').value    = '';
+  document.getElementById('pcl-kw').value      = '';
+  document.getElementById('pcl-form-title').textContent = '＋ 新增地塊';
 }
 
 async function savePclForm() {
-  const nameEl = document.getElementById('pcl-name');
-  const name   = nameEl.value.trim();
-  if (!name) { nameEl.classList.add('invalid'); return; }
-  nameEl.classList.remove('invalid');
+  const projId = _pclManageProjId;
+  if (!projId) return;
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  if (!proj) return;
 
-  const editId = document.getElementById('pcl-edit-id').value;
+  const name   = (document.getElementById('pcl-name').value || '').trim();
+  if (!name) { alert('請輸入地塊名稱'); return; }
   const area   = parseFloat(document.getElementById('pcl-area').value) || null;
   const kw     = parseFloat(document.getElementById('pcl-kw').value)   || null;
-  const proj   = STATE.data.projects.find(p => p.project_id === _pclManageProjId);
-  if (!proj) return;
-  proj.parcels = proj.parcels || [];
-
-  let eventToAppend = null;
-  const now = new Date().toISOString();
+  const editId = document.getElementById('pcl-edit-id').value;
+  const now    = new Date().toISOString();
 
   if (editId) {
-    const pcl = proj.parcels.find(p => p.parcel_id === editId);
-    if (pcl) {
-      pcl.name = name;
-      pcl.area_m2 = area;
-      pcl.capacity_kw = kw;
-      // Sync parcel_name in milestone instances
-      (proj.milestones || []).forEach(m => {
-        if (m.parcel_id === editId) m.parcel_name = name;
-      });
-      eventToAppend = { event: 'parcel_edited', project_id: _pclManageProjId,
-        parcel_id: editId, name, area_m2: area, capacity_kw: kw, ts: now };
-    }
+    // 編輯現有地塊
+    const parcel = (proj.parcels || []).find(p => p.parcel_id === editId);
+    if (!parcel) return;
+    parcel.name        = name;
+    parcel.area_m2     = area;
+    parcel.capacity_kw = kw;
+    // 同步里程碑實例的 parcel_name
+    (proj.milestones || []).forEach(m => {
+      if (m.parcel_id === editId) m.parcel_name = name;
+    });
+    ghAppendEvent({ event: 'parcel_edited', project_id: projId, parcel_id: editId,
+      name, area_m2: area, capacity_kw: kw, ts: now });
   } else {
-    const newId = `${_pclManageProjId}-PCL-${Date.now()}`;
-    const newParcel = { parcel_id: newId, name, status: 'active', lots: [], area_m2: area, capacity_kw: kw };
+    // 新增地塊
+    proj.parcels = proj.parcels || [];
+    const newId = `${projId}-PCL-${Date.now()}`;
+    const newParcel = { parcel_id: newId, name, area_m2: area, capacity_kw: kw,
+      status: 'active', lots: [] };
     proj.parcels.push(newParcel);
-    eventToAppend = { event: 'parcel_added', project_id: _pclManageProjId,
-      parcel: newParcel, ts: now };
+    ghAppendEvent({ event: 'parcel_added', project_id: projId, parcel: newParcel, ts: now });
   }
 
-  cancelPclEdit();
-  _renderPclManageList();
-  // Refresh checklist in ms-modal if open in per_parcel mode
-  if (!document.getElementById('ms-modal').classList.contains('hidden')) {
-    if (document.getElementById('ms-scope').value === 'per_parcel') {
-      renderMsParcelChecklist(_msModeEdit);
-    }
-  }
   try {
     await ghWriteProjDirect();
-    if (eventToAppend) ghAppendEvent(eventToAppend);
+    cancelPclEdit();
+    _renderPclManageList();
+    renderAll();
   } catch(e) {
     console.error('savePclForm sync failed:', e);
   }
 }
 
-async function deletePcl(parcelId) {
-  const proj = STATE.data.projects.find(p => p.project_id === _pclManageProjId);
+function editPcl(parcelId) {
+  const proj = _pclManageProjId
+    ? STATE.data.projects.find(p => p.project_id === _pclManageProjId)
+    : null;
   if (!proj) return;
+  const parcel = (proj.parcels || []).find(p => p.parcel_id === parcelId);
+  if (!parcel) return;
 
-  const relatedMs = (proj.milestones || []).filter(m => m.parcel_id === parcelId);
-  const confirmMsg = relatedMs.length
-    ? `此地塊有 ${relatedMs.length} 個里程碑實例，刪除後將一併移除。確定繼續嗎？`
-    : '確定刪除此地塊嗎？';
-  if (!confirm(confirmMsg)) return;
-
-  const now = new Date().toISOString();
-
-  // Update STATE immediately so UI is responsive
-  proj.milestones = (proj.milestones || []).filter(m => m.parcel_id !== parcelId);
-  const pcl = proj.parcels.find(p => p.parcel_id === parcelId);
-  if (pcl) {
-    pcl.status = 'deleted';
-  } else {
-    proj.parcels.push({ parcel_id: parcelId, name: parcelId, status: 'deleted', lots: [] });
-  }
-
-  _renderPclManageList();
-  renderAll();
-
-  // Persist: append milestone_deleted events FIRST (sequential, not concurrent)
-  // so that if ghWriteProjDirect is slow, events.jsonl already has the deletes
-  for (const m of relatedMs) {
-    await ghAppendEvent({ event: 'milestone_deleted', project_id: _pclManageProjId, milestone_id: m.milestone_id, ts: now });
-  }
-  // Then overwrite projects.json with clean state (no deleted milestone, no deleted parcel)
-  await ghWriteProjDirect();
-  ghAppendEvent({ event: 'parcel_deleted', project_id: _pclManageProjId, parcel_id: parcelId, ts: now });
+  document.getElementById('pcl-edit-id').value = parcelId;
+  document.getElementById('pcl-name').value    = parcel.name || '';
+  document.getElementById('pcl-area').value    = parcel.area_m2     != null ? parcel.area_m2     : '';
+  document.getElementById('pcl-kw').value      = parcel.capacity_kw != null ? parcel.capacity_kw : '';
+  document.getElementById('pcl-form-title').textContent = '✎ 編輯地塊';
 }
 
-// ── App Entry Point ────────────────────────────────────────────────────────
+async function deletePcl(parcelId) {
+  const proj = _pclManageProjId
+    ? STATE.data.projects.find(p => p.project_id === _pclManageProjId)
+    : null;
+  if (!proj) return;
+  const parcel = (proj.parcels || []).find(p => p.parcel_id === parcelId);
+  if (!parcel) return;
+
+  if (!confirm(`確定要刪除地塊「${parcel.name}」嗎？\n相關里程碑也會一併移除。`)) return;
+
+  const now = new Date().toISOString();
+  // 標記 deleted
+  parcel.status = 'deleted';
+  // 移除關聯的 per_parcel 里程碑
+  proj.milestones = (proj.milestones || []).filter(m => m.parcel_id !== parcelId);
+
+  ghAppendEvent({ event: 'parcel_deleted', project_id: proj.project_id,
+    parcel_id: parcelId, ts: now });
+
+  try {
+    await ghWriteProjDirect();
+    cancelPclEdit();
+    _renderPclManageList();
+    renderAll();
+  } catch(e) {
+    console.error('deletePcl sync failed:', e);
+  }
+}
+
 init();
 </script>
 </body>
