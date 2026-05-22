@@ -14700,16 +14700,16 @@
           "name": "芳苑一_北漢寶段573,574,574-1",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 10199.56,
+          "capacity_kw": 1524.6
         },
         {
           "parcel_id": "PRJ-006-PCL-1779422630716",
-          "name": "芳苑二 北漢寶段342",
+          "name": "芳苑二_北漢寶段342",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 9415.02,
+          "capacity_kw": 1406.625
         }
       ],
       "milestones": [
@@ -16723,7 +16723,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779422630716",
-          "parcel_name": "芳苑二 北漢寶段342",
+          "parcel_name": "芳苑二_北漢寶段342",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
