@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>專案進度報表</title>
+<style>
+  :root{--green:#16a34a;--green-bg:#dcfce7;--orange:#ea580c;--orange-bg:#ffedd5;--blue:#2563eb;--blue-bg:#dbeafe;--grey:#64748b;--grey-bg:#f1f5f9;--red:#dc2626;--red-bg:#fee2e2;--border:#e2e8f0;--text:#1e293b;--text2:#475569;--text3:#94a3b8}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Helvetica Neue',Arial,'PingFang TC','Microsoft JhengHei',sans-serif;font-size:15px;color:var(--text);background:#f8fafc;line-height:1.6}
+  .report-header{background:#1e3a5f;color:#fff;padding:20px 32px;display:flex;align-items:center;justify-content:space-between}
+  .report-header h1{font-size:22px;font-weight:700}
+  .report-meta{font-size:13px;color:rgba(255,255,255,.65);margin-top:4px}
+  .header-btns{display:flex;gap:8px;align-items:center}
+  .print-btn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:7px 18px;border-radius:6px;cursor:pointer;font-size:14px}
+  .print-btn:hover{background:rgba(255,255,255,.25)}
+  .pat-btn{background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.5);padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px}
+  .pat-btn:hover{background:rgba(255,255,255,.1);color:#fff}
+  .pat-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;z-index:999}
+  .pat-modal-overlay.hidden{display:none}
+  .pat-modal{background:#fff;border-radius:10px;padding:24px 26px;width:380px;box-shadow:0 8px 30px rgba(0,0,0,.2)}
+  .pat-modal h3{font-size:16px;margin-bottom:12px}
+  .pat-modal p{font-size:13px;color:var(--text2);margin-bottom:14px;line-height:1.6}
+  .pat-modal input{width:100%;border:1px solid var(--border);border-radius:6px;padding:8px 10px;font-size:14px;margin-bottom:14px}
+  .pat-modal-btns{display:flex;gap:8px;justify-content:flex-end}
+  .pat-modal-btns button{padding:8px 18px;border-radius:6px;border:none;cursor:pointer;font-size:14px}
+  .btn-cancel{background:var(--grey-bg);color:var(--text2)}
+  .btn-save{background:#1e3a5f;color:#fff}
+  .content{max-width:1200px;margin:0 auto;padding:28px 24px}
+  .section-title{font-size:16px;font-weight:700;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--border)}
+  #loading{text-align:center;padding:60px;color:var(--text2);font-size:16px}
+  #error-msg{background:var(--red-bg);color:var(--red);border:1px solid #fca5a5;border-radius:8px;padding:14px 18px;margin-bottom:20px;font-size:14px}
+  .matrix-wrap{overflow-x:auto;margin-bottom:36px}
+  .matrix-table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+  .matrix-table th{background:#1e3a5f;color:#fff;padding:13px 16px;font-size:13px;font-weight:600;text-align:center;white-space:nowrap}
+  .matrix-table th.left{text-align:left}
+  .matrix-table td{padding:12px 16px;border-bottom:1px solid var(--border);vertical-align:top}
+  .matrix-table tr:last-child td{border-bottom:none}
+  .matrix-table tr:hover td{background:#f8fafc}
+  .proj-name{font-weight:600;font-size:15px}
+  .proj-sub{font-size:13px;color:var(--text2);margin-top:3px}
+  .ms-cell{min-width:160px;text-align:center}
+  .chip{display:inline-flex;align-items:center;border-radius:4px;padding:4px 10px;font-size:12px;font-weight:600;white-space:nowrap}
+  .chip-done{background:var(--green-bg);color:var(--green)}
+  .chip-this-q{background:var(--orange-bg);color:var(--orange)}
+  .chip-future{background:var(--grey-bg);color:var(--grey)}
+  .chip-none{color:var(--text3);font-size:13px}
+  .kw-line{font-size:13px;color:var(--text);margin-top:4px}
+  .kw-line .kw-done{font-weight:700;color:var(--green)}
+  .kw-line .kw-done-full{font-weight:700;color:var(--text)}
+  .kw-line .kw-total{color:var(--text2)}
+  .forecast-line{font-size:12px;color:var(--text2);margin-top:2px}
+  .cards-grid{display:flex;flex-direction:column;gap:24px}
+  .proj-card{background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,.08);overflow:hidden}
+  .card-header{background:#1e3a5f;color:#fff;padding:14px 20px;display:flex;align-items:center;gap:12px;cursor:pointer}
+  .card-header h2{font-size:15px;font-weight:700;flex:1}
+  .card-badge{background:rgba(255,255,255,.18);border-radius:4px;padding:3px 10px;font-size:13px;white-space:nowrap}
+  .card-toggle{font-size:13px;color:rgba(255,255,255,.6)}
+  .card-body{display:none;padding:20px}
+  .card-body.open{display:block}
+  .ms-section{margin-bottom:20px}
+  .ms-section-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text3);margin-bottom:12px}
+  .ms-row{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+  .ms-row:last-child{border-bottom:none}
+  .ms-name{font-weight:600;font-size:14px;min-width:130px;padding-top:2px}
+  .ms-status-area{flex:1}
+  .stage-label{display:inline-block;background:var(--blue-bg);color:var(--blue);border-radius:3px;padding:2px 8px;font-size:12px;margin-right:4px}
+  .stage-frontier{margin-top:6px;display:flex;flex-direction:column;gap:4px}
+  .sf-line{display:flex;align-items:center;gap:8px;font-size:13px;flex-wrap:wrap}
+  .sf-pair{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .sf-name{color:var(--text);font-weight:600}
+  .sf-stat{font-size:12px;font-weight:600;border-radius:3px;padding:2px 8px;white-space:nowrap}
+  .sf-done{background:var(--green-bg);color:var(--green)}
+  .sf-prog{background:var(--blue-bg);color:var(--blue)}
+  .sf-pending{background:var(--grey-bg);color:var(--grey)}
+  .sf-blocked{background:var(--red-bg);color:var(--red)}
+  .parcel-list{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+  .parcel-row{display:flex;align-items:center;gap:10px;font-size:14px}
+  .parcel-status{width:16px;height:16px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px}
+  .p-done{background:var(--green-bg);color:var(--green)}
+  .p-active{background:var(--blue-bg);color:var(--blue)}
+  .p-blocked{background:var(--red-bg);color:var(--red)}
+  .p-pending{background:var(--grey-bg);color:var(--grey)}
+  .parcel-name{font-weight:600;min-width:90px}
+  .parcel-stage{color:var(--text2);flex:1}
+  .parcel-kw{color:var(--text2);font-size:13px;white-space:nowrap}
+  .updates-section{margin-top:20px}
+  .update-item{padding:10px 0;border-bottom:1px solid var(--border)}
+  .update-item:last-child{border-bottom:none}
+  .task-update-group{margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+  .task-update-group:last-child{border-bottom:none;margin-bottom:0}
+  .update-task-head{display:flex;gap:8px;align-items:center;margin-bottom:4px;flex-wrap:wrap}
+  .update-task-head .update-task-name{font-size:14px;font-weight:700;color:var(--text)}
+  .task-update-group .update-item{border-bottom:none;padding:4px 0 4px 12px;margin-left:4px;border-left:2px solid var(--border)}
+  .update-meta{display:flex;gap:8px;align-items:center;margin-bottom:6px;flex-wrap:wrap}
+  .update-date{font-size:13px;color:var(--text3)}
+  .update-ms-tag{background:var(--grey-bg);color:var(--text2);border-radius:3px;padding:2px 8px;font-size:12px}
+  .update-task-name{font-size:13px;font-weight:600;color:var(--text2)}
+  .update-content{font-size:14px;line-height:1.6}
+  .update-impact{display:inline-block;font-size:12px;border-radius:3px;padding:2px 8px;margin-top:4px}
+  .impact-delay{background:var(--red-bg);color:var(--red)}
+  .impact-early{background:var(--green-bg);color:var(--green)}
+  .impact-possible{background:var(--orange-bg);color:var(--orange)}
+  .action-flag{display:inline-block;background:#fef3c7;color:#92400e;border-radius:3px;padding:2px 8px;font-size:12px;font-weight:600;margin-left:4px}
+  @media print{
+    body{background:#fff;font-size:12px}
+    .report-header,.card-header,.matrix-table th{background:#1e3a5f!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .print-btn,.pat-btn,.card-toggle{display:none!important}
+    .card-body{display:block!important}
+    .content{padding:12px;max-width:100%}
+    /* flex 容器列印時會被瀏覽器當成不可切割整塊，改回 block 讓正常分頁生效（根本修正） */
+    .cards-grid{display:block}
+    .ms-row{display:block}
+    .ms-name{min-width:0;margin-bottom:6px}
+    .ms-status-area{flex:none}
+    /* 每個專案各自從新頁開始，不同案件不再擠在一起亂斷 */
+    .proj-card{box-shadow:none;border:1px solid var(--border);margin-bottom:0}
+    .cards-section-title{page-break-before:always}
+    .cards-grid>.proj-card+.proj-card{page-break-before:always}
+    /* 標題不與其內容分離（避免標題落單在頁尾） */
+    .section-title,.ms-section-title,.card-header{page-break-after:avoid}
+    /* 大型專案跨頁時，下列單元維持完整、不被頁緣切斷 */
+    .ms-section{page-break-inside:auto}
+    .update-item{page-break-inside:avoid}
+    .task-update-group{page-break-inside:avoid}
+    table{page-break-inside:auto}
+    thead{display:table-header-group}
+    tr{page-break-inside:avoid}
+    .matrix-wrap{overflow:visible}
+  }
+</style>
+</head>
+<body>
+
+<div class="report-header">
+  <div>
+    <h1>再生能源專案進度報表</h1>
+    <div class="report-meta" id="report-meta">載入中…</div>
+  </div>
+  <div class="header-btns">
+    <button class="pat-btn" onclick="openPatModal()">&#128273; PAT</button>
+    <button class="print-btn" onclick="window.print()">&#128424; 列印 / 匯出 PDF</button>
+  </div>
+</div>
+
+<div id="pat-modal-overlay" class="pat-modal-overlay hidden">
+  <div class="pat-modal">
+    <h3>&#128273; GitHub PAT 設定</h3>
+    <p>若 repo 為私有需填入 PAT。公開 repo 可留空。<br>與主 App 共用同一 localStorage。</p>
+    <input id="cfg-pat-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxx（選填）">
+    <div class="pat-modal-btns">
+      <button class="btn-cancel" onclick="closePatModal()">取消</button>
+      <button class="btn-save" onclick="savePat()">儲存並重新載入</button>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div id="loading">&#9203; 載入專案資料中…</div>
+  <div id="error-msg" style="display:none"></div>
+  <div id="report-body" style="display:none">
+    <div class="section-title">&#128202; 關鍵里程碑進度矩陣</div>
+    <div class="matrix-wrap">
+      <table class="matrix-table">
+        <thead><tr>
+          <th class="left">專案</th>
+          <th>農業容許</th>
+          <th>電業籌設許可</th>
+          <th>同意備案</th>
+          <th>併聯試運轉函</th>
+        </tr></thead>
+        <tbody id="matrix-body"></tbody>
+      </table>
+    </div>
+    <div class="section-title cards-section-title">&#128203; 各案細部進度</div>
+    <div class="cards-grid" id="cards-grid"></div>
+  </div>
+</div>
+<script>
+'use strict';
+var CONFIG={owner:'jaytseng-del',repo:'ren-energy-tracker-pm',branch:'main',projFile:'projects.json',eventsFile:'events.jsonl'};
+var KEY_MS=[{name:'農業容許',scope:'per_parcel'},{name:'電業籌設許可',scope:'whole_project'},{name:'同意備案',scope:'whole_project'},{name:'併聯試運轉函',scope:'whole_project'}];
+var MS_LABEL={pending:'未開始',in_progress:'進行中',done:'已取得',blocked:'受阻',skipped:'跳過'};
+
+function getPat(){return localStorage.getItem('gh_pat')||'';}
+function openPatModal(){document.getElementById('cfg-pat-input').value=getPat();document.getElementById('pat-modal-overlay').classList.remove('hidden');}
+function closePatModal(){document.getElementById('pat-modal-overlay').classList.add('hidden');}
+function savePat(){var v=document.getElementById('cfg-pat-input').value.trim();if(v)localStorage.setItem('gh_pat',v);else localStorage.removeItem('gh_pat');closePatModal();loadData();}
+
+function getCQ(){var n=new Date(),y=n.getFullYear(),q=Math.floor(n.getMonth()/3)+1;return{y:y,q:q,start:new Date(y,(q-1)*3,1),end:new Date(y,q*3,0,23,59,59)};}
+function isThisQ(d){if(!d)return false;var dt=new Date(d),cq=getCQ();return dt>=cq.start&&dt<=cq.end;}
+function qLabel(d){if(!d)return null;var dt=new Date(d);return dt.getFullYear()+'/Q'+(Math.floor(dt.getMonth()/3)+1);}
+function fmtD(d){return d?String(d).substring(0,7):null;}
+function commas(n){var s=String(Math.round(Math.abs(n)));var r='';for(var i=0;i<s.length;i++){if(i>0&&(s.length-i)%3===0)r+=',';r+=s[i];}return(n<0?'-':'')+r;}
+function fmtKw(kw){var n=parseFloat(kw);if(isNaN(n)||kw==null)return null;var dec=n%1===0?'':'.'+n.toFixed(1).split('.')[1];return commas(n)+dec+' kW';}
+function fmtTs(ts){return ts?String(ts).substring(0,10):'';}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+async function ghFetch(f){
+  // 使用 raw+json Accept header，直接拿原始文字，無 1MB 大小限制
+  // （舊版用 v3+json 走 Contents API base64，檔案 > 1MB 時 content 欄位為空，導致 JSON 解析失敗）
+  var pat=getPat(),h={Accept:'application/vnd.github.raw+json'};
+  if(pat)h.Authorization='token '+pat;
+  var res=await fetch('https://api.github.com/repos/'+CONFIG.owner+'/'+CONFIG.repo+'/contents/'+f+'?ref='+CONFIG.branch+'&_t='+Date.now(),{headers:h,cache:'no-store'});
+  if(!res.ok)throw new Error('HTTP '+res.status+' ('+f+')');
+  return res.text();
+}
+
+function applyEvents(data,events){
+  for(var ei=0;ei<events.length;ei++){
+    try{
+      var ev=events[ei];
+      var proj=null;
+      for(var pi=0;pi<(data.projects||[]).length;pi++){if(data.projects[pi].project_id===ev.project_id){proj=data.projects[pi];break;}}
+      if(!proj)continue;
+      function findMs(mid){for(var i=0;i<(proj.milestones||[]).length;i++)if(proj.milestones[i].milestone_id===mid)return proj.milestones[i];return null;}
+      function findSt(ms,sid){for(var i=0;i<(ms&&ms.stages||[]).length;i++)if(ms.stages[i].stage_id===sid)return ms.stages[i];return null;}
+      function findTk(ms,st,tid){var t=st&&st.tasks?st.tasks.find(function(x){return x.task_id===tid;}):null;if(!t&&ms&&ms.tasks)t=ms.tasks.find(function(x){return x.task_id===tid;});return t;}
+      if(ev.event==='stage_status_changed'){var ms=findMs(ev.milestone_id),st=findSt(ms,ev.stage_id);if(st){st.status=ev.new_status;if(ev.actual_end)st.actual_end=ev.actual_end;}}
+      else if(ev.event==='milestone_edited'){var ms=findMs(ev.milestone_id);if(ms&&ev.fields)Object.assign(ms,ev.fields);}
+      else if(ev.event==='milestone_created'){if(ev.milestone){proj.milestones=proj.milestones||[];if(!proj.milestones.find(function(m){return m.milestone_id===ev.milestone.milestone_id;}))proj.milestones.push(ev.milestone);}}
+      else if(ev.event==='milestone_deleted'){proj.milestones=(proj.milestones||[]).filter(function(m){return m.milestone_id!==ev.milestone_id;});}
+      else if(ev.event==='task_created'){var ms=findMs(ev.milestone_id);if(ms&&ev.task){var tid=ev.task.task_id;var ex=(ms.tasks||[]).some(function(t){return t.task_id===tid;})||(ms.stages||[]).some(function(s){return (s.tasks||[]).some(function(t){return t.task_id===tid;});});if(!ex){var st=ev.stage_id?findSt(ms,ev.stage_id):null;if(st){st.tasks=st.tasks||[];st.tasks.push(ev.task);}else{ms.tasks=ms.tasks||[];ms.tasks.push(ev.task);}}}}
+      else if(ev.event==='task_status_changed'){var ms=findMs(ev.milestone_id),st=ev.stage_id?findSt(ms,ev.stage_id):null,tk=findTk(ms,st,ev.task_id);if(tk)tk.status=ev.new_status;}
+      else if(ev.event==='task_deleted'){var ms=findMs(ev.milestone_id),st=ev.stage_id?findSt(ms,ev.stage_id):null;if(st)st.tasks=(st.tasks||[]).filter(function(t){return t.task_id!==ev.task_id;});else if(ms)ms.tasks=(ms.tasks||[]).filter(function(t){return t.task_id!==ev.task_id;});}
+      else if(ev.event==='update_added'){var ms=findMs(ev.milestone_id),st=ev.stage_id?findSt(ms,ev.stage_id):null,tk=findTk(ms,st,ev.task_id);if(tk&&ev.update){tk.updates=tk.updates||[];tk.updates.push(ev.update);}}
+      else if(ev.event==='task_next_action_cleared'){var ms=findMs(ev.milestone_id),st=ev.stage_id?findSt(ms,ev.stage_id):null,tk=findTk(ms,st,ev.task_id);if(tk)tk.next_action=null;}
+      else if(ev.event==='parcel_updated'){var parcel=null;for(var i=0;i<(proj.parcels||[]).length;i++)if(proj.parcels[i].parcel_id===ev.parcel_id){parcel=proj.parcels[i];break;}if(parcel){if(ev.area_m2!==undefined)parcel.area_m2=ev.area_m2;if(ev.capacity_kw!==undefined)parcel.capacity_kw=ev.capacity_kw;}}
+      else if(ev.event==='parcel_added'){if(!proj.parcels)proj.parcels=[];if(ev.parcel&&!proj.parcels.find(function(p){return p.parcel_id===ev.parcel.parcel_id;}))proj.parcels.push(ev.parcel);}
+      else if(ev.event==='parcel_edited'){var p2=null;for(var i=0;i<(proj.parcels||[]).length;i++)if(proj.parcels[i].parcel_id===ev.parcel_id){p2=proj.parcels[i];break;}if(p2){if(ev.name!==undefined){p2.name=ev.name;for(var i=0;i<(proj.milestones||[]).length;i++)if(proj.milestones[i].parcel_id===ev.parcel_id)proj.milestones[i].parcel_name=ev.name;}if(ev.area_m2!==undefined)p2.area_m2=ev.area_m2;if(ev.capacity_kw!==undefined)p2.capacity_kw=ev.capacity_kw;}}
+      else if(ev.event==='parcel_deleted'){for(var i=0;i<(proj.parcels||[]).length;i++)if(proj.parcels[i].parcel_id===ev.parcel_id){proj.parcels[i].status='deleted';break;}proj.milestones=(proj.milestones||[]).filter(function(m){return m.parcel_id!==ev.parcel_id;});}
+      else if(ev.event==='parcels_updated'){/* legacy empty marker, ignore */}
+    }catch(e){}
+  }
+  return data;
+}
+
+var DATA=null;
+async function loadData(){
+  document.getElementById('loading').style.display='';
+  document.getElementById('report-body').style.display='none';
+  document.getElementById('error-msg').style.display='none';
+  try{
+    var projText=await ghFetch(CONFIG.projFile);
+    var data=JSON.parse(projText);
+    try{var evText=await ghFetch(CONFIG.eventsFile);var evs=evText.trim().split('\n').filter(Boolean).map(function(l){return JSON.parse(l);});var cutoff=snapshotCutoff(data);evs=evs.filter(function(e){return (e.ts||'')>cutoff;});data=applyEvents(data,evs);}catch(e){console.warn('events.jsonl:',e.message);}
+    DATA=data;renderReport();
+  }catch(e){
+    document.getElementById('loading').style.display='none';
+    var el=document.getElementById('error-msg');el.style.display='';
+    var isAuth=e.message.indexOf('401')>=0||e.message.indexOf('403')>=0||e.message.indexOf('404')>=0;
+    var bs='margin-left:8px;padding:4px 12px;border:1px solid #dc2626;background:transparent;color:#dc2626;border-radius:4px;cursor:pointer;font-size:13px';
+    el.innerHTML='&#10060; 載入失敗：'+esc(e.message)+(isAuth?'&nbsp;<button onclick="openPatModal()" style="'+bs+'">設定 PAT</button>':'&nbsp;<button onclick="loadData()" style="'+bs+'">重試</button>');
+  }
+}
+
+// 快照已是主 App 持續覆寫的近期完整狀態，events.jsonl 是完整歷史。
+// 只重放比快照「最新活動時間戳」更新的事件，避免舊的 task_deleted/milestone_created
+// 砍掉或重複快照裡正確的資料（例：PRJ-001 土地法拍 task 被舊刪除事件砍掉）。
+function snapshotCutoff(data){
+  // 優先用主 App 同步時蓋的 snapshot_at；舊檔無此欄位才退回掃描
+  if(data&&typeof data.snapshot_at==='string'&&data.snapshot_at)return data.snapshot_at;
+  var mx='';
+  (function scan(o){
+    if(o&&typeof o==='object'){
+      if(Array.isArray(o)){for(var i=0;i<o.length;i++)scan(o[i]);}
+      else{for(var k in o){var v=o[k];if(typeof v==='string'&&/_at$/.test(k)&&v.indexOf('T')>=0){if(v>mx)mx=v;}else scan(v);}}
+    }
+  })(data);
+  return mx;
+}
+function allTasks(proj){
+  var out=[];
+  (proj.milestones||[]).forEach(function(ms){
+    (ms.stages||[]).forEach(function(st){(st.tasks||[]).forEach(function(tk){out.push({ms:ms,st:st,tk:tk});});});
+    (ms.tasks||[]).forEach(function(tk){out.push({ms:ms,st:null,tk:tk});});
+  });
+  return out;
+}
+function recentUpdates(proj,perTask){
+  // 依任務分組：每個任務取最新 perTask 筆（預設 2），只收進行中/受阻里程碑底下的 task
+  var n=perTask||2,groups=[];
+  allTasks(proj).forEach(function(x){
+    if(x.ms.status!=='in_progress'&&x.ms.status!=='blocked')return;
+    var ups=(x.tk.updates||[]).slice().sort(function(a,b){return(b.created_at||'').localeCompare(a.created_at||'');});
+    if(!ups.length)return;
+    groups.push({ms:x.ms,st:x.st,tk:x.tk,ups:ups.slice(0,n)});
+  });
+  // 任務之間：以各任務最新一筆 update 的時間倒序
+  groups.sort(function(a,b){return(b.ups[0].created_at||'').localeCompare(a.ups[0].created_at||'');});
+  return groups;
+}
+function currentStage(ms){
+  var stages=ms.stages||[];
+  for(var i=0;i<stages.length;i++)if(stages[i].status==='in_progress'||stages[i].status==='blocked')return{name:stages[i].name,status:stages[i].status,blocked:stages[i].status==='blocked',idx:i};
+  for(var i=0;i<stages.length;i++)if(stages[i].status==='pending')return{name:stages[i].name,status:'pending',blocked:false,idx:i};
+  return null;
+}
+// 前緣兩關：目前進行/下一關 + 最近完成的前一關，由後往前排，附文字 status
+function frontierStages(ms){
+  var stages=ms.stages||[],k=-1;
+  for(var i=0;i<stages.length;i++){var s=stages[i].status;if(s!=='done'&&s!=='skipped'){k=i;break;}}
+  var out=[];
+  if(k===-1){if(stages.length){var last=stages[stages.length-1];out.push({name:last.name,label:'完成',cls:'sf-done'});}return out;}
+  var cur=stages[k],cm={in_progress:['進行中','sf-prog'],blocked:['受阻','sf-blocked'],pending:['尚未開始','sf-pending']}[cur.status]||['尚未開始','sf-pending'];
+  out.push({name:cur.name,label:cm[0],cls:cm[1]});
+  if(k>0){var prev=stages[k-1];if(prev.status==='done'||prev.status==='skipped')out.push({name:prev.name,label:prev.status==='skipped'?'略過':'完成',cls:'sf-done'});}
+  return out;
+}
+function findParcel(proj,pid){for(var i=0;i<(proj.parcels||[]).length;i++)if(proj.parcels[i].parcel_id===pid)return proj.parcels[i];return null;}
+
+// Format "X kW / Y kW" — used for both whole and per_parcel cells
+function kwRatio(doneKw, totalKw){
+  var doneStr = fmtKw(doneKw)||'0';
+  var totalStr = fmtKw(totalKw)||'—';
+  var doneCls = doneKw>0&&doneKw>=totalKw ? 'kw-done-full' : doneKw>0 ? 'kw-done' : '';
+  var pct = totalKw>0 ? ' ('+(doneKw/totalKw*100).toFixed(1)+'%)' : '';
+  return '<span class="kw-line"><span class="'+(doneCls||'kw-total')+'">'+doneStr+'</span><span class="kw-total"> / '+totalStr+pct+'</span></span>';
+}
+
+// Matrix cell: whole_project
+function cellWhole(proj,msName){
+  var ms=null;
+  for(var i=0;i<(proj.milestones||[]).length;i++)if(proj.milestones[i].name===msName&&!proj.milestones[i].parcel_id){ms=proj.milestones[i];break;}
+  var totalKw=parseFloat(proj.capacity_kw)||0;
+  if(!ms)return '<span class="chip-none">&mdash;</span>';
+  if(ms.status==='pending'){var pfl=ms.forecast_end?'<div style="font-size:12px;color:#94a3b8;margin-top:3px">預計於'+qLabel(ms.forecast_end)+'取得</div>':'';return '<span class="chip-none" style="font-size:13px;color:#94a3b8">尚未開始</span>'+pfl;}
+  var isDone=ms.status==='done';
+  var doneKw=isDone?totalKw:0;
+  var st=currentStage(ms);
+  var stHtml=st&&!isDone?'<div class="forecast-line">'+esc(st.name)+'</div>':'';
+  var statusChip='';
+  if(isDone){
+    statusChip='<span class="chip chip-done">&#10003; 已取得</span>';
+  } else if(ms.forecast_end&&isThisQ(ms.forecast_end)){
+    statusChip='<span class="chip chip-this-q">預計本季取得</span>';
+  } else if(ms.forecast_end){
+    statusChip='<span class="chip chip-future">'+qLabel(ms.forecast_end)+'</span>';
+  } else if(ms.status==='in_progress'||ms.status==='blocked'){
+    statusChip='<span class="chip chip-future"'+(ms.status==='blocked'?' style="background:#fee2e2;color:#dc2626"':'')+'>'+MS_LABEL[ms.status]+'</span>';
+  } else {
+    statusChip='<span class="chip-none">&mdash; 未排程</span>';
+  }
+  return statusChip+'<br>'+kwRatio(doneKw,totalKw)+stHtml;
+}
+
+// Matrix cell: per_parcel — capacity-based if available, else count-based
+function cellParcel(proj,msName){
+  var instances=[];
+  for(var i=0;i<(proj.milestones||[]).length;i++)if(proj.milestones[i].name===msName&&proj.milestones[i].parcel_id)instances.push(proj.milestones[i]);
+  if(!instances.length)return '<span class="chip-none">&mdash;</span>';
+  var anyStarted=instances.some(function(m){return m.status!=='pending';});
+  if(!anyStarted){var ef=instances.reduce(function(m,x){return x.forecast_end&&(!m||x.forecast_end<m)?x.forecast_end:m;},null);var pfl2=ef?'<div style="font-size:12px;color:#94a3b8;margin-top:3px">預計於'+qLabel(ef)+'取得</div>':'';return '<span class="chip-none" style="font-size:13px;color:#94a3b8">尚未開始</span>'+pfl2;}
+  var totalProjKw=parseFloat(proj.capacity_kw)||0;
+  var hasKw=false,totalKw=0,doneKw=0,thisQKw=0;
+  for(var i=0;i<instances.length;i++){
+    var p=findParcel(proj,instances[i].parcel_id),kw=parseFloat(p&&p.capacity_kw);
+    if(!isNaN(kw)&&kw>0){hasKw=true;totalKw+=kw;if(instances[i].status==='done')doneKw+=kw;else if(isThisQ(instances[i].forecast_end))thisQKw+=kw;}
+  }
+  // status chip: show "預計本季取得" chip if any instance has thisQ forecast
+  var hasThisQ=instances.some(function(m){return m.status!=='done'&&isThisQ(m.forecast_end);});
+  var allDone=instances.every(function(m){return m.status==='done';});
+  var statusChip='';
+  if(allDone) statusChip='<span class="chip chip-done">&#10003; 已取得</span>';
+  else if(hasThisQ) statusChip='<span class="chip chip-this-q">預計本季取得</span>';
+  else statusChip='<span class="chip chip-future">進行中</span>';
+  if(hasKw&&totalKw>0){
+    var ref=totalProjKw>0?totalProjKw:totalKw;
+    return statusChip+'<br>'+kwRatio(doneKw,ref);
+  }
+  // fallback: 地塊無容量時，用專案總容量按比例估算
+  var doneCount=instances.filter(function(m){return m.status==='done';}).length,n=instances.length;
+  if(totalProjKw>0){
+    var estDone=doneCount===n?totalProjKw:Math.round(totalProjKw/n*doneCount*10)/10;
+    return statusChip+'<br>'+kwRatio(estDone,totalProjKw);
+  }
+  return statusChip+'<br><span class="kw-line"><span class="'+(doneCount>0?'kw-done':'kw-total')+'">'+doneCount+' 地塊</span><span class="kw-total"> / '+n+' 地塊</span></span><br><span style="font-size:11px;color:#94a3b8">（容量未填）</span>';
+}
+
+// Card: per_parcel milestone detail — grouped by Stage, table layout
+function cardParcelMs(proj,msName){
+  var instances=[];
+  for(var i=0;i<(proj.milestones||[]).length;i++)if(proj.milestones[i].name===msName&&proj.milestones[i].parcel_id)instances.push(proj.milestones[i]);
+  if(!instances.length)return '';
+  var totalKw=0,doneKw=0;
+  for(var i=0;i<instances.length;i++){var kw=parseFloat((findParcel(proj,instances[i].parcel_id)||{}).capacity_kw)||0;totalKw+=kw;if(instances[i].status==='done')doneKw+=kw;}
+  var capS=totalKw>0?' '+kwRatio(doneKw,totalKw):'';
+  // Group by current stage; done separate
+  var stageOrder=[],stageMap={},doneGroup={kw:0,parcels:[],rep:null};
+  for(var i=0;i<instances.length;i++){
+    var ms2=instances[i],p2=findParcel(proj,ms2.parcel_id),kw2=parseFloat((p2||{}).capacity_kw)||0;
+    if(ms2.status==='done'){
+      if(!doneGroup.rep)doneGroup.rep=ms2;
+      doneGroup.kw+=kw2;
+      doneGroup.parcels.push({name:ms2.parcel_name||'',kw:kw2,actual:ms2.actual_end});
+    } else {
+      var st2=currentStage(ms2),sn=st2?st2.name:'未啟動';
+      var gkey=st2?(st2.name+'###'+st2.status):'未啟動';
+      if(!stageMap[gkey]){stageMap[gkey]={name:sn,kw:0,parcels:[],blocked:false,idx:st2?st2.idx:-1,status:st2?st2.status:'pending',rep:ms2};stageOrder.push(gkey);}
+      if(st2&&st2.blocked)stageMap[gkey].blocked=true;
+      stageMap[gkey].kw+=kw2;
+      stageMap[gkey].parcels.push({name:ms2.parcel_name||'',kw:kw2,forecast:ms2.forecast_end});
+    }
+  }
+  // 由後往前排：較後段 stage 先顯示；同 stage 進行中排在尚未開始之前
+  stageOrder.sort(function(a,b){var A=stageMap[a],B=stageMap[b];if(B.idx!==A.idx)return B.idx-A.idx;var rk={blocked:0,in_progress:0,pending:1};return (rk[A.status]||1)-(rk[B.status]||1);});
+  var thS='padding:6px 10px;font-size:12px;color:#64748b;font-weight:600;border-bottom:2px solid #e2e8f0;background:#f8fafc;';
+  var tdS='padding:6px 10px;font-size:13px;border-bottom:1px solid #f1f5f9;';
+  // 已完成地塊組：排最上面，標頭顯示 stage 最後一關 + 完成
+  var doneBody='';
+  if(doneGroup.parcels.length){
+    var dfr=frontierStages(doneGroup.rep);
+    var drows=doneGroup.parcels.map(function(pr){
+      return '<tr>'
+        +'<td style="'+tdS+'">'+esc(pr.name)+'</td>'
+        +'<td style="'+tdS+'text-align:right">'+(pr.kw>0?fmtKw(pr.kw):'—')+'</td>'
+        +'<td style="'+tdS+'text-align:right;color:#16a34a">'+(pr.actual?fmtD(pr.actual):'已取得')+'</td>'
+        +'</tr>';
+    }).join('');
+    doneBody+='<div style="margin-bottom:14px">'
+      +'<div style="display:flex;align-items:center;gap:8px;padding:4px 0 6px;flex-wrap:wrap">'
+      +dfr.map(function(s){return '<span class="sf-pair"><span class="sf-name">'+esc(s.name)+'</span><span class="sf-stat '+s.cls+'">'+s.label+'</span></span>';}).join('<span style="color:#cbd5e1;margin:0 2px">·</span>')
+      +(doneGroup.kw>0?'<span style="font-size:13px;color:#475569;margin-left:4px">'+fmtKw(doneGroup.kw)+'</span>':'')
+      +'</div>'
+      +'<table style="width:100%;border-collapse:collapse"><thead><tr>'
+      +'<th style="'+thS+'text-align:left">地塊</th>'
+      +'<th style="'+thS+'text-align:right">容量</th>'
+      +'<th style="'+thS+'text-align:right">取得日期</th>'
+      +'</tr></thead><tbody>'+drows+'</tbody></table>'
+      +'</div>';
+  }
+  var body='';
+  for(var si=0;si<stageOrder.length;si++){
+    var sname=stageOrder[si],grp=stageMap[sname],frline=frontierStages(grp.rep);
+    var trows=grp.parcels.map(function(pr){
+      var fc=pr.forecast?(isThisQ(pr.forecast)?'<span style="color:#ea580c;font-weight:600">本季 '+fmtD(pr.forecast)+'</span>':fmtD(pr.forecast)):'—';
+      return '<tr>'
+        +'<td style="'+tdS+'">'+esc(pr.name)+'</td>'
+        +'<td style="'+tdS+'text-align:right">'+(pr.kw>0?fmtKw(pr.kw):'—')+'</td>'
+        +'<td style="'+tdS+'text-align:right">'+fc+'</td>'
+        +'</tr>';
+    }).join('');
+    body+='<div style="margin-bottom:14px">'
+      +'<div style="display:flex;align-items:center;gap:8px;padding:4px 0 6px;flex-wrap:wrap">'
+      +frline.map(function(s){return '<span class="sf-pair"><span class="sf-name">'+esc(s.name)+'</span><span class="sf-stat '+s.cls+'">'+s.label+'</span></span>';}).join('<span style="color:#cbd5e1;margin:0 2px">·</span>')
+      +(grp.kw>0?'<span style="font-size:13px;color:#475569;margin-left:4px">'+fmtKw(grp.kw)+'</span>':'')
+      +'</div>'
+      +'<table style="width:100%;border-collapse:collapse"><thead><tr>'
+      +'<th style="'+thS+'text-align:left">地塊</th>'
+      +'<th style="'+thS+'text-align:right">容量</th>'
+      +'<th style="'+thS+'text-align:right">預計取得時間</th>'
+      +'</tr></thead><tbody>'+trows+'</tbody></table>'
+      +'</div>';
+  }
+  return '<div class="ms-row"><div class="ms-name">'+esc(msName)+'<br><span style="font-size:12px;color:#94a3b8;font-weight:400">per parcel</span></div>'
+    +'<div class="ms-status-area">'+capS+'<div style="margin-top:8px">'+(doneBody+body)+'</div></div></div>';
+}
+
+// Card: whole_project milestone detail
+function cardWholeMs(proj,msName){
+  var ms=null;
+  for(var i=0;i<(proj.milestones||[]).length;i++)if(proj.milestones[i].name===msName&&!proj.milestones[i].parcel_id){ms=proj.milestones[i];break;}
+  if(!ms)return '';
+  var totalKw=parseFloat(proj.capacity_kw)||0;
+  var isDone=ms.status==='done';
+  var doneKw=isDone?totalKw:0;
+  var fr=frontierStages(ms);
+  var chipCls=isDone?'chip chip-done':ms.status==='blocked'?'chip':'chip chip-future';
+  var chipSty=ms.status==='blocked'?' style="background:#fee2e2;color:#dc2626"':'';
+  var fcast=!isDone?(ms.forecast_end?(isThisQ(ms.forecast_end)?'<span style="color:#ea580c;font-weight:600">本季 '+fmtD(ms.forecast_end)+'</span>':qLabel(ms.forecast_end)):'未排程'):'';
+  return '<div class="ms-row"><div class="ms-name">'+esc(msName)+'</div><div class="ms-status-area">'
+    +'<span class="'+chipCls+'"'+chipSty+'>'+MS_LABEL[ms.status]+'</span>'
+    +(totalKw>0?' '+kwRatio(doneKw,totalKw):'')
+    +(!isDone&&fcast?'<div class="forecast-line">'+fcast+'</div>':'')
+    +(fr.length?'<div class="stage-frontier">'+fr.map(function(s){return '<div class="sf-line"><span class="sf-name">'+esc(s.name)+'</span><span class="sf-stat '+s.cls+'">'+s.label+'</span></div>';}).join('')+'</div>':'')
+    +'</div></div>';
+}
+
+function impactHtml(impact,days){
+  if(!impact||impact==='none')return '';
+  var map={confirmed_delay:['delay','確認延遲 '+(days||'?')+'天'],possible_delay:['possible','可能延遲 '+(days||'?')+'天'],confirmed_early:['early','確認提早 '+(days||'?')+'天'],possible_early:['possible','可能提早 '+(days||'?')+'天']};
+  var r=map[impact]||['possible',impact];
+  return '<span class="update-impact impact-'+r[0]+'">'+r[1]+'</span>';
+}
+
+function renderReport(){
+  document.getElementById('loading').style.display='none';
+  document.getElementById('report-body').style.display='';
+  var cq=getCQ();
+  document.getElementById('report-meta').textContent=new Date().toLocaleDateString('zh-TW')+' 產出  '+cq.y+' 年 Q'+cq.q+' 報表  共 '+DATA.projects.length+' 個專案';
+  renderMatrix();renderCards();
+}
+
+function renderMatrix(){
+  var html='';
+  for(var i=0;i<DATA.projects.length;i++){
+    var p=DATA.projects[i],cap=parseFloat(p.capacity_kw);
+    html+='<tr><td><div class="proj-name">'+esc(p.name)+'</div><div class="proj-sub">'+(cap?fmtKw(cap):'')+' &middot; '+esc(p.pic||'')+'</div></td>'
+      +'<td class="ms-cell">'+cellParcel(p,'農業容許')+'</td>'
+      +'<td class="ms-cell">'+cellWhole(p,'電業籌設許可')+'</td>'
+      +'<td class="ms-cell">'+cellWhole(p,'同意備案')+'</td>'
+      +'<td class="ms-cell">'+cellWhole(p,'併聯試運轉函')+'</td></tr>';
+  }
+  document.getElementById('matrix-body').innerHTML=html;
+}
+
+function renderCards(){
+  var html='';
+  for(var i=0;i<DATA.projects.length;i++){
+    var proj=DATA.projects[i],cap=parseFloat(proj.capacity_kw);
+    var activeNames=[],seen={};
+    (proj.milestones||[]).forEach(function(ms){if((ms.status==='in_progress'||ms.status==='blocked')&&!seen[ms.name]){activeNames.push(ms.name);seen[ms.name]=1;}});
+    if(!activeNames.length){for(var k=0;k<KEY_MS.length&&activeNames.length<2;k++){var kd=KEY_MS[k];var hasA=(proj.milestones||[]).some(function(m){return m.name===kd.name&&m.status!=='done';});if(hasA&&!seen[kd.name]){activeNames.push(kd.name);seen[kd.name]=1;}}}
+    var msSec='';
+    for(var k=0;k<activeNames.length;k++){var nm=activeNames[k],isPerP=(proj.milestones||[]).some(function(m){return m.name===nm&&m.parcel_id;});msSec+=isPerP?cardParcelMs(proj,nm):cardWholeMs(proj,nm);}
+    if(!msSec)msSec='<div style="font-size:14px;color:#94a3b8">無進行中里程碑</div>';
+    var updates=recentUpdates(proj,2);
+    var updHtml=updates.length?updates.map(function(g){var head='<div class="update-task-head"><span class="update-ms-tag">'+esc(g.ms.name)+'</span><span class="update-task-name">'+esc(g.tk.name)+'</span></div>';var ups=g.ups.map(function(up){return '<div class="update-item"><div class="update-meta"><span class="update-date">'+fmtTs(up.created_at)+'</span>'+(up.action_required?'<span class="action-flag">&#9873; 待決策</span>':'')+'</div><div class="update-content">'+esc(up.content||'')+'</div>'+impactHtml(up.impact,up.impact_days)+(up.action_content?'<div style="font-size:13px;color:#475569;margin-top:4px">&#8594; '+esc(up.action_content)+'</div>':'')+'</div>';}).join('');return '<div class="task-update-group">'+head+ups+'</div>';}).join(''):'<div style="font-size:14px;color:#94a3b8;padding:8px 0">尚無更新記錄</div>';
+    html+='<div class="proj-card"><div class="card-header" onclick="toggleCard('+i+')"><h2>'+esc(proj.name)+'</h2>'+(cap?'<span class="card-badge">'+fmtKw(cap)+'</span>':'')+'<span class="card-badge">'+esc(proj.pic||'')+'</span><span class="card-badge">'+esc(proj.location||'')+'</span><span class="card-toggle" id="ctog-'+i+'">&#9660;</span></div><div class="card-body'+(i===0?' open':'')+' " id="cbody-'+i+'"><div class="ms-section"><div class="ms-section-title">進行中里程碑</div>'+msSec+'</div><div class="updates-section"><div class="ms-section-title">最近更新（每個任務最新 2 筆）</div>'+updHtml+'</div></div></div>';
+  }
+  document.getElementById('cards-grid').innerHTML=html;
+}
+
+function toggleCard(i){var b=document.getElementById('cbody-'+i),t=document.getElementById('ctog-'+i);if(b.classList.toggle('open'))t.innerHTML='&#9650;';else t.innerHTML='&#9660;';}
+
+loadData();
+</script>
+</body>
+</html>
