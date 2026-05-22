@@ -13825,7 +13825,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T05:53:46.913Z",
+      "updated_at": "2026-05-22T05:57:38.723Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -14558,7 +14558,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-005",
-          "name": "芳苑七",
+          "name": "芳苑七_北漢寶段600",
           "status": "active",
           "lots": [
             "芳苑鄉漢寶村北漢寶段600",
@@ -14570,8 +14570,8 @@
             "芳苑鄉漢寶村海尾段1513",
             "芳苑鄉漢寶村漢寶段61"
           ],
-          "area_m2": 49000,
-          "capacity_kw": 7189.82
+          "area_m2": 4782.07,
+          "capacity_kw": 707.85
         },
         {
           "parcel_id": "PRJ-006-PCL-006",
@@ -15649,7 +15649,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-005",
-          "parcel_name": "芳苑七",
+          "parcel_name": "芳苑七_北漢寶段600",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -18392,7 +18392,7 @@
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "done",
+              "status": "pending",
               "actual_end": "2026-05-22",
               "tasks": []
             },
@@ -18433,7 +18433,7 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-22T05:51:25.562Z"
+          "updated_at": "2026-05-22T05:57:22.823Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429116205",
@@ -18523,7 +18523,7 @@
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "done",
+              "status": "pending",
               "actual_end": "2026-05-22",
               "tasks": []
             },
@@ -18564,7 +18564,7 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-22T05:52:03.345Z"
+          "updated_at": "2026-05-22T05:57:38.723Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429139419",
@@ -19596,7 +19596,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-005",
-          "parcel_name": "芳苑七",
+          "parcel_name": "芳苑七_北漢寶段600",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -20806,7 +20806,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-005",
-          "parcel_name": "芳苑七",
+          "parcel_name": "芳苑七_北漢寶段600",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -22046,7 +22046,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-005",
-          "parcel_name": "芳苑七",
+          "parcel_name": "芳苑七_北漢寶段600",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -23436,7 +23436,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-005",
-          "parcel_name": "芳苑七",
+          "parcel_name": "芳苑七_北漢寶段600",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -25763,7 +25763,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-005",
-          "parcel_name": "芳苑七",
+          "parcel_name": "芳苑七_北漢寶段600",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
