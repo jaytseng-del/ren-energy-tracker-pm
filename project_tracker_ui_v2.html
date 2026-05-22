@@ -29929,6 +29929,8 @@ async function syncToGitHub() {
       const meta = await ghMeta(CONFIG.projFile);
       _cachedProjSha = meta.sha;
     }
+    // 蓋上快照同步時間戳：報表與重新載入只重放比此時間新的事件，避免舊事件重複套用或砍掉資料
+    STATE.data.snapshot_at = new Date().toISOString();
     const result = await ghWrite(CONFIG.projFile, STATE.data, _cachedProjSha);
     // 寫入成功後更新 SHA 快取
     _cachedProjSha = result.content?.sha || null;
@@ -30918,6 +30920,21 @@ async function saveLots() {
 }
 
 // ── Data loading ─────────────────────────────────────────────────────────────
+// 快照 cutoff：projects.json 是 syncToGitHub 持續覆寫的近期完整狀態，events.jsonl 是完整歷史。
+// 優先用 snapshot_at（同步時蓋的時間戳）；舊檔無此欄位則退回掃描內部 *_at 活動時間戳取最大值
+//（排除 forecast_/baseline_ 等未來規劃日期，只看含 'T' 的活動時間）。
+// loadData 只重放比 cutoff 新的事件，避免舊的 task_deleted / milestone_created 砍掉或重複正確資料。
+function snapshotCutoff(data) {
+  if (data && typeof data.snapshot_at === 'string' && data.snapshot_at) return data.snapshot_at;
+  let mx = '';
+  (function scan(o) {
+    if (o && typeof o === 'object') {
+      if (Array.isArray(o)) { for (const v of o) scan(v); }
+      else { for (const k in o) { const v = o[k]; if (typeof v === 'string' && /_at$/.test(k) && v.indexOf('T') >= 0) { if (v > mx) mx = v; } else scan(v); } }
+    }
+  })(data);
+  return mx;
+}
 async function loadData() {
   // 1. 從 GitHub 讀取（Public repo，不需授權）
   try {
@@ -30929,8 +30946,10 @@ async function loadData() {
       const eventsText = await ghReadText(CONFIG.eventsFile);
       if (eventsText && eventsText.trim()) {
         const events = eventsText.trim().split('\n').filter(Boolean).map(l => JSON.parse(l));
-        applyEvents(data, events);
-        console.log(`Replayed ${events.length} events from events.jsonl`);
+        const cutoff = snapshotCutoff(data);
+        const fresh = events.filter(e => (e.ts || '') > cutoff);
+        applyEvents(data, fresh);
+        console.log(`Replayed ${fresh.length}/${events.length} events (cutoff=${cutoff || 'none'})`);
       }
     } catch(evErr) {
       console.warn('Events load/replay failed (non-blocking):', evErr);
