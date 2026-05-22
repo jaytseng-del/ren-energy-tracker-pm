@@ -582,3 +582,4 @@
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-003","name":"芳苑五_北漢寶\t481","area_m2":44100,"capacity_kw":1524.6,"ts":"2026-05-22T08:51:38.722Z"}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-003","name":"芳苑五_北漢寶\t481","area_m2":10088.07,"capacity_kw":1524.6,"ts":"2026-05-22T08:51:48.518Z"}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-001","name":"芳苑一_海尾段\t839,840,841","area_m2":7055.06,"capacity_kw":1033.34,"ts":"2026-05-22T08:52:26.777Z"}
+{"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-002","name":"芳苑二_北漢寶段623,624","area_m2":11010.68,"capacity_kw":1645.6,"ts":"2026-05-22T08:52:48.476Z"}
