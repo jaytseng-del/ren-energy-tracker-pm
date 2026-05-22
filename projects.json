@@ -14531,8 +14531,8 @@
             "芳苑鄉漢寶村北漢寶段582地號",
             "芳苑鄉漢寶村北漢寶段643地號"
           ],
-          "area_m2": 44100,
-          "capacity_kw": 6586.03
+          "area_m2": 10088.07,
+          "capacity_kw": 1524.6
         },
         {
           "parcel_id": "PRJ-006-PCL-004",
@@ -14764,24 +14764,24 @@
           "name": "芳苑二_北漢寶段\t321",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 6988.8,
+          "capacity_kw": 1026.08
         },
         {
           "parcel_id": "PRJ-006-PCL-1779428651125",
           "name": "芳苑五_北漢寶段576",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 7875.7,
+          "capacity_kw": 1162.205
         },
         {
           "parcel_id": "PRJ-006-PCL-1779428713797",
           "name": "芳苑五_北漢寶段669,670",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 9698.56,
+          "capacity_kw": 1455.025
         },
         {
           "parcel_id": "PRJ-006-PCL-1779428775386",
