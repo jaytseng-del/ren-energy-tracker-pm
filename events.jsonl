@@ -330,3 +330,4 @@
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779422826927","stage_id":"PRJ-006-MS-1779422826927-ST02","old_status":"pending","new_status":"done","actual_end":"2026-05-22","ts":"2026-05-22T04:07:23.812Z"}
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779422826927","stage_id":"PRJ-006-MS-1779422826927-ST03","old_status":"pending","new_status":"done","actual_end":"2026-05-22","ts":"2026-05-22T04:07:24.738Z"}
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779422826927","stage_id":"PRJ-006-MS-1779422826927-ST04","old_status":"pending","new_status":"done","actual_end":"2026-05-22","ts":"2026-05-22T04:07:25.736Z"}
+{"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779422826927","stage_id":"PRJ-006-MS-1779422826927-ST05","old_status":"pending","new_status":"in_progress","actual_end":null,"ts":"2026-05-22T04:07:26.589Z"}
