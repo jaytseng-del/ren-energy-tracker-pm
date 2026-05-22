@@ -14748,16 +14748,16 @@
           "name": "芳苑二_海尾段1746",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 9901.07,
+          "capacity_kw": 1474.99
         },
         {
           "parcel_id": "PRJ-006-PCL-1779428336604",
           "name": "芳苑二_北漢寶段667,668",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 9699.69,
+          "capacity_kw": 1459.26
         },
         {
           "parcel_id": "PRJ-006-PCL-1779428540539",
