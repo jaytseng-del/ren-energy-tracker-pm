@@ -14217,7 +14217,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T10:01:24.942Z",
+      "updated_at": "2026-05-22T10:04:43.354Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -15364,8 +15364,8 @@
           "name": "光浴_王功段1508-1",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 2800,
+          "capacity_kw": 402.03
         }
       ],
       "milestones": [
@@ -21635,7 +21635,7 @@
           "forecast_end": null,
           "actual_start": null,
           "actual_end": null,
-          "status": "pending",
+          "status": "done",
           "notes": "",
           "stages": [
             {
@@ -21646,8 +21646,8 @@
               "cc": "55",
               "estimated_days": "30",
               "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -21658,8 +21658,8 @@
               "cc": "5",
               "estimated_days": "1",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -21670,8 +21670,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -21682,8 +21682,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -21694,8 +21694,8 @@
               "cc": "5",
               "estimated_days": "7",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -21706,8 +21706,8 @@
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -21718,8 +21718,8 @@
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -21730,8 +21730,8 @@
               "cc": "5",
               "estimated_days": "14",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -21742,12 +21742,12 @@
               "cc": "13",
               "estimated_days": "1",
               "authority": "—",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-22T10:04:31.653Z"
+          "updated_at": "2026-05-22T10:04:43.354Z"
         },
         {
           "milestone_id": "PRJ-006-MS-011",
