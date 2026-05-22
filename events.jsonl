@@ -297,3 +297,4 @@
 {"event":"parcel_updated","project_id":"PRJ-002","parcel_id":"PRJ-002-PCL-1779189770396","area_m2":25275.43,"capacity_kw":3694.95,"ts":"2026-05-22T03:57:05.681Z"}
 {"event":"parcels_updated","project_id":"PRJ-006","ts":"2026-05-22T03:57:13.774Z"}
 {"event":"parcels_updated","project_id":"PRJ-006","ts":"2026-05-22T03:57:32.637Z"}
+{"event":"milestone_deleted","project_id":"PRJ-002","milestone_id":"PRJ-002-MS-1779414331339","ts":"2026-05-22T03:57:54.060Z"}
