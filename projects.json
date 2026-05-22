@@ -10058,7 +10058,9 @@
           "status": "active",
           "lots": [
             "台南市七股區台區段38地號"
-          ]
+          ],
+          "area_m2": 61997,
+          "capacity_kw": 9200
         }
       ],
       "milestones": [
