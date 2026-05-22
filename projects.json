@@ -14788,16 +14788,16 @@
           "name": "芳苑五_北漢寶段581,582",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 9842.34,
+          "capacity_kw": 1478.62
         },
         {
           "parcel_id": "PRJ-006-PCL-1779428814037",
           "name": "芳苑五_北漢寶段643",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 6621.28,
+          "capacity_kw": 965.58
         }
       ],
       "milestones": [
