@@ -786,3 +786,4 @@
 {"event":"parcel_added","project_id":"PRJ-006","parcel":{"parcel_id":"PRJ-006-PCL-1779458660979-44","name":"芳苑七_北漢寶段602","area_m2":4577.03,"capacity_kw":620.73,"status":"active","lots":["芳苑鄉漢寶村北漢寶段602"]},"ts":"2026-05-22T14:04:20.978Z"}
 {"event": "parcel_edited", "project_id": "PRJ-006", "parcel_id": "PRJ-006-PCL-1779444271653", "name": "光宜_王功段1508-1", "area_m2": 2800.0, "capacity_kw": 402.03, "lots": ["芳苑鄉新寶村王功段1508-1"], "ts": "2026-05-22T14:17:11.117Z"}
 {"event":"parcel_edited","project_id":"PRJ-004","parcel_id":"PRJ-004-PCL-001","name":"蓁荳國際","area_m2":null,"capacity_kw":1999,"ts":"2026-05-22T14:37:38.285Z"}
+{"event":"parcel_edited","project_id":"PRJ-004","parcel_id":"PRJ-004-PCL-001","name":"蓁荳國際","area_m2":null,"capacity_kw":1999,"ts":"2026-05-22T14:37:57.768Z"}
