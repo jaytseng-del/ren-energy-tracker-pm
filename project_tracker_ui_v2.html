@@ -30461,6 +30461,34 @@ function applyEvents(data, events) {
           break;
         }
 
+        // 批次地塊更新（一筆 event 帶整批 edits/added/deleted，避免大量上傳時多次 commit 被 GitHub 限流）
+        case 'parcels_bulk_updated': {
+          if (!proj.parcels) proj.parcels = [];
+          for (const ed of (ev.edits || [])) {
+            const parcel = proj.parcels.find(p => p.parcel_id === ed.parcel_id);
+            if (!parcel) continue;
+            if (ed.name !== undefined) {
+              parcel.name = ed.name;
+              (proj.milestones || []).forEach(m => { if (m.parcel_id === ed.parcel_id) m.parcel_name = ed.name; });
+            }
+            if (ed.area_m2     !== undefined) parcel.area_m2     = ed.area_m2;
+            if (ed.capacity_kw !== undefined) parcel.capacity_kw = ed.capacity_kw;
+            if (ed.lots        !== undefined) parcel.lots        = ed.lots;
+          }
+          for (const np of (ev.added || [])) {
+            if (np && np.parcel_id && !proj.parcels.find(p => p.parcel_id === np.parcel_id)) {
+              proj.parcels.push(np);
+            }
+          }
+          for (const pid of (ev.deleted || [])) {
+            const parcel = proj.parcels.find(p => p.parcel_id === pid);
+            if (parcel) parcel.status = 'deleted';
+            proj.milestones = (proj.milestones || []).filter(m => m.parcel_id !== pid);
+          }
+          proj.updated_at = ev.ts;
+          break;
+        }
+
         // 舊版空標記 event，無資料，忽略即可
         case 'project_created': {
           if (!data.projects) data.projects = [];
@@ -31312,8 +31340,9 @@ async function uploadParcelTemplate(input) {
     proj.parcels = proj.parcels || [];
     const now = new Date().toISOString();
     let addCnt = 0, updCnt = 0;
-    const events = [];
-    const toDelete = [];
+    const bulkEdits = [];   // [{parcel_id, name?, area_m2?, capacity_kw?, lots?}]
+    const bulkAdded = [];   // [完整 parcel 物件]
+    const toDelete  = [];
 
     rows.forEach((row, i) => {
       const pid  = str(cell(row, kId));
@@ -31337,7 +31366,7 @@ async function uploadParcelTemplate(input) {
         const newParcel = { parcel_id: newId, name, area_m2: area, capacity_kw: kw,
           status: 'active', lots };
         proj.parcels.push(newParcel);
-        events.push({ event: 'parcel_added', project_id: proj.project_id, parcel: newParcel, ts: now });
+        bulkAdded.push(newParcel);
         addCnt++;
         return;
       }
@@ -31345,24 +31374,25 @@ async function uploadParcelTemplate(input) {
       // 更新現有地塊（空白欄位 = 保留原值）
       const parcel = proj.parcels.find(p => p.parcel_id === pid && p.status !== 'deleted');
       if (!parcel) return;
-      const ev = { event: 'parcel_edited', project_id: proj.project_id, parcel_id: pid, ts: now };
+      const ed = { parcel_id: pid };
       if (name) {
         parcel.name = name;
         (proj.milestones || []).forEach(m => { if (m.parcel_id === pid) m.parcel_name = name; });
-        ev.name = name;
+        ed.name = name;
       }
-      if (hasVal(areaRaw)) { parcel.area_m2     = parseFloat(areaRaw) || null; ev.area_m2     = parcel.area_m2; }
-      if (hasVal(kwRaw))   { parcel.capacity_kw = parseFloat(kwRaw)   || null; ev.capacity_kw = parcel.capacity_kw; }
+      if (hasVal(areaRaw)) { parcel.area_m2     = parseFloat(areaRaw) || null; ed.area_m2     = parcel.area_m2; }
+      if (hasVal(kwRaw))   { parcel.capacity_kw = parseFloat(kwRaw)   || null; ed.capacity_kw = parcel.capacity_kw; }
       if (hasVal(lotRaw)) {
         parcel.lots = str(lotRaw).split(/[;；,，\n]/).map(s => s.trim()).filter(Boolean);
-        ev.lots = parcel.lots;
+        ed.lots = parcel.lots;
       }
-      events.push(ev);
+      bulkEdits.push(ed);
       updCnt++;
     });
 
     // 刪除需二次確認
     let delCnt = 0;
+    const bulkDeleted = [];
     if (toDelete.length) {
       const names = toDelete.map(id => {
         const p = proj.parcels.find(x => x.parcel_id === id);
@@ -31374,7 +31404,7 @@ async function uploadParcelTemplate(input) {
           if (!parcel) continue;
           parcel.status = 'deleted';
           proj.milestones = (proj.milestones || []).filter(m => m.parcel_id !== pid);
-          events.push({ event: 'parcel_deleted', project_id: proj.project_id, parcel_id: pid, ts: now });
+          bulkDeleted.push(pid);
           delCnt++;
         }
       }
@@ -31389,8 +31419,12 @@ async function uploadParcelTemplate(input) {
     syncProjLots(proj);
     proj.updated_at = now;
 
-    // 先把 delta 排進 event queue（可重建），再一次寫完整狀態到 projects.json
-    for (const ev of events) ghAppendEvent(ev);
+    // 整批變更只發「一筆」event（避免大量 commit 觸發 GitHub 限流），再寫完整狀態到 projects.json。
+    // 兩步驟共 2 次 commit；即使 ghWriteProjDirect 失敗，這筆 batch event 重播也能還原完整變更。
+    await ghAppendEvent({
+      event: 'parcels_bulk_updated', project_id: proj.project_id, ts: now,
+      edits: bulkEdits, added: bulkAdded, deleted: bulkDeleted,
+    });
     await ghWriteProjDirect();
     renderAll();
     alert(`✓ 已套用變更並同步至 GitHub：\n新增 ${addCnt}　更新 ${updCnt}　刪除 ${delCnt}`);
