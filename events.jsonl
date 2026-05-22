@@ -299,3 +299,4 @@
 {"event":"parcels_updated","project_id":"PRJ-006","ts":"2026-05-22T03:57:32.637Z"}
 {"event":"milestone_deleted","project_id":"PRJ-002","milestone_id":"PRJ-002-MS-1779414331339","ts":"2026-05-22T03:57:54.060Z"}
 {"event":"milestone_deleted","project_id":"PRJ-002","milestone_id":"PRJ-002-MS-1779414336831","ts":"2026-05-22T03:57:56.452Z"}
+{"event":"milestone_deleted","project_id":"PRJ-002","milestone_id":"PRJ-002-MS-1779414341069","ts":"2026-05-22T03:57:58.442Z"}
