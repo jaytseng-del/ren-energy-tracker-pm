@@ -14220,652 +14220,652 @@
       "updated_at": "2026-05-22T10:05:09.561Z",
       "lots": [
         {
-          "lot_number": "芳苑鄉漢寶村海尾段839地號",
-          "parcel_name": "芳苑一",
+          "lot_number": "芳苑鄉漢寶村海尾段839",
+          "parcel_name": "芳苑一_海尾段839,840,841",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
-          "lot_number": "芳苑鄉漢寶村海尾段840地號",
-          "parcel_name": "芳苑一",
+          "lot_number": "芳苑鄉漢寶村海尾段840",
+          "parcel_name": "芳苑一_海尾段839,840,841",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
-          "lot_number": "芳苑鄉漢寶村海尾段841地號",
-          "parcel_name": "芳苑一",
+          "lot_number": "芳苑鄉漢寶村海尾段841",
+          "parcel_name": "芳苑一_海尾段839,840,841",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
-          "lot_number": "芳苑鄉漢寶村北漢寶段573地號",
-          "parcel_name": "芳苑一",
+          "lot_number": "芳苑鄉漢寶村北漢寶段623",
+          "parcel_name": "芳苑二_北漢寶段623,624",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
-          "lot_number": "芳苑鄉漢寶村北漢寶段574地號",
-          "parcel_name": "芳苑一",
+          "lot_number": "芳苑鄉漢寶村北漢寶段624",
+          "parcel_name": "芳苑二_北漢寶段623,624",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
-          "lot_number": "芳苑鄉漢寶村北漢寶段574-1地號",
-          "parcel_name": "芳苑一",
+          "lot_number": "芳苑鄉漢寶村北漢寶段481",
+          "parcel_name": "芳苑五_北漢寶段481",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
-          "lot_number": "芳苑鄉漢寶村北漢寶段637地號",
-          "parcel_name": "芳苑一",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段638地號",
-          "parcel_name": "芳苑一",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段639地號",
-          "parcel_name": "芳苑一",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村漢興段177地號",
-          "parcel_name": "芳苑一",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村漢興段178地號",
-          "parcel_name": "芳苑一",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段324地號",
-          "parcel_name": "芳苑一",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段325地號",
-          "parcel_name": "芳苑一",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段342地號",
-          "parcel_name": "芳苑二",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段1746地號",
-          "parcel_name": "芳苑二",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段667地號",
-          "parcel_name": "芳苑二",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段668地號",
-          "parcel_name": "芳苑二",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段623地號",
-          "parcel_name": "芳苑二",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段624地號",
-          "parcel_name": "芳苑二",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段321地號",
-          "parcel_name": "芳苑二",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段481地號",
-          "parcel_name": "芳苑五",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段576地號",
-          "parcel_name": "芳苑五",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段669地號",
-          "parcel_name": "芳苑五",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段670地號",
-          "parcel_name": "芳苑五",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段581地號",
-          "parcel_name": "芳苑五",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段582地號",
-          "parcel_name": "芳苑五",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段643地號",
-          "parcel_name": "芳苑五",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段571地號",
-          "parcel_name": "芳苑六",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段676地號",
-          "parcel_name": "芳苑六",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段677地號",
-          "parcel_name": "芳苑六",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段678地號",
-          "parcel_name": "芳苑六",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段679地號",
-          "parcel_name": "芳苑六",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段625地號",
-          "parcel_name": "芳苑六",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段626地號",
-          "parcel_name": "芳苑六",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段627地號",
-          "parcel_name": "芳苑六",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段1531地號",
-          "parcel_name": "芳苑六",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段759地號",
-          "parcel_name": "芳苑六",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段760地號",
-          "parcel_name": "芳苑六",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段761地號",
-          "parcel_name": "芳苑六",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段1535地號",
-          "parcel_name": "芳苑六",
+          "lot_number": "芳苑鄉漢寶村北漢寶段571",
+          "parcel_name": "芳苑六_北漢寶段571",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
           "lot_number": "芳苑鄉漢寶村北漢寶段600",
-          "parcel_name": "芳苑七",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段602",
-          "parcel_name": "芳苑七",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段799",
-          "parcel_name": "芳苑七",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段800",
-          "parcel_name": "芳苑七",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段724",
-          "parcel_name": "芳苑七",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段729",
-          "parcel_name": "芳苑七",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段1513",
-          "parcel_name": "芳苑七",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村漢寶段61",
-          "parcel_name": "芳苑七",
+          "parcel_name": "芳苑七_北漢寶段600",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
           "lot_number": "芳苑鄉漢寶村北漢寶段286",
-          "parcel_name": "芳苑八",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段289",
-          "parcel_name": "芳苑八",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段293",
-          "parcel_name": "芳苑八",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段294",
-          "parcel_name": "芳苑八",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段297",
-          "parcel_name": "芳苑八",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段298",
-          "parcel_name": "芳苑八",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村漢興段237",
-          "parcel_name": "芳苑八",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村漢興段238",
-          "parcel_name": "芳苑八",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段707",
-          "parcel_name": "芳苑八",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段708",
-          "parcel_name": "芳苑八",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段709",
-          "parcel_name": "芳苑八",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村漢寶段66",
-          "parcel_name": "芳苑八",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村漢寶段67",
-          "parcel_name": "芳苑八",
+          "parcel_name": "芳苑八_北漢寶段286",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
           "lot_number": "芳苑鄉漢寶村漢興段356",
-          "parcel_name": "光宜",
+          "parcel_name": "光宜_漢興段356,357",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
           "lot_number": "芳苑鄉漢寶村漢興段357",
-          "parcel_name": "光宜",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉王功村王功段1766",
-          "parcel_name": "光宜",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉王功村王功段1766-1",
-          "parcel_name": "光宜",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉王功村王功段1786",
-          "parcel_name": "光宜",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉王功村王功段1787",
-          "parcel_name": "光宜",
+          "parcel_name": "光宜_漢興段356,357",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
           "lot_number": "芳苑鄉新寶村王功段1503-1",
-          "parcel_name": "光浴",
+          "parcel_name": "光宜_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
           "lot_number": "芳苑鄉新寶村王功段1504-1",
-          "parcel_name": "光浴",
+          "parcel_name": "光宜_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
           "lot_number": "芳苑鄉新寶村王功段1505-1",
-          "parcel_name": "光浴",
+          "parcel_name": "光宜_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
           "lot_number": "芳苑鄉新寶村王功段1506-1",
-          "parcel_name": "光浴",
+          "parcel_name": "光宜_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
           "lot_number": "芳苑鄉新寶村王功段1507-1",
-          "parcel_name": "光浴",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉新寶村王功段1508-1",
-          "parcel_name": "光浴",
+          "parcel_name": "光宜_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
           "lot_number": "芳苑鄉新寶村王功段1390",
-          "parcel_name": "芳漁三",
+          "parcel_name": "芳苑三_王功段1390,1390-1,1391",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
           "lot_number": "芳苑鄉新寶村王功段1390-1",
-          "parcel_name": "芳漁三",
+          "parcel_name": "芳苑三_王功段1390,1390-1,1391",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
           "lot_number": "芳苑鄉新寶村王功段1391",
-          "parcel_name": "芳漁三",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段532",
-          "parcel_name": "芳漁三",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段725",
-          "parcel_name": "芳漁三",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段732",
-          "parcel_name": "芳漁三",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段733",
-          "parcel_name": "芳漁三",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "漢寶村漢興段219",
-          "parcel_name": "芳漁三",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "漢寶村漢興段220",
-          "parcel_name": "芳漁三",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "漢寶村漢興段221",
-          "parcel_name": "芳漁三",
+          "parcel_name": "芳苑三_王功段1390,1390-1,1391",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
           "lot_number": "芳苑鄉漢寶村海尾段1590",
-          "parcel_name": "芳苑九",
+          "parcel_name": "芳苑九_海尾段1590",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段573",
+          "parcel_name": "芳苑一_北漢寶段573,574,574-1",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段574",
+          "parcel_name": "芳苑一_北漢寶段573,574,574-1",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段574-1",
+          "parcel_name": "芳苑一_北漢寶段573,574,574-1",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段637",
+          "parcel_name": "芳苑一_北漢寶段637,638,639",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段638",
+          "parcel_name": "芳苑一_北漢寶段637,638,639",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段639",
+          "parcel_name": "芳苑一_北漢寶段637,638,639",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村漢興段177",
+          "parcel_name": "芳苑一_漢興段177,178",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村漢興段178",
+          "parcel_name": "芳苑一_漢興段177,178",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段324",
+          "parcel_name": "芳苑一_北漢寶段324,325",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段325",
+          "parcel_name": "芳苑一_北漢寶段324,325",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段342",
+          "parcel_name": "芳苑二_北漢寶段342",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段1746",
+          "parcel_name": "芳苑二_海尾段1746",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段667",
+          "parcel_name": "芳苑二_北漢寶段667,668",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段668",
+          "parcel_name": "芳苑二_北漢寶段667,668",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段321",
+          "parcel_name": "芳苑二_北漢寶段321",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段576",
+          "parcel_name": "芳苑五_北漢寶段576",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段669",
+          "parcel_name": "芳苑五_北漢寶段669,670",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段670",
+          "parcel_name": "芳苑五_北漢寶段669,670",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段581",
+          "parcel_name": "芳苑五_北漢寶段581,582",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段582",
+          "parcel_name": "芳苑五_北漢寶段581,582",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段643",
+          "parcel_name": "芳苑五_北漢寶段643",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段676",
+          "parcel_name": "芳苑六_海尾段676,677,678,679",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段677",
+          "parcel_name": "芳苑六_海尾段676,677,678,679",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段678",
+          "parcel_name": "芳苑六_海尾段676,677,678,679",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段679",
+          "parcel_name": "芳苑六_海尾段676,677,678,679",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段625",
+          "parcel_name": "芳苑六_北漢寶段625,626,627",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段626",
+          "parcel_name": "芳苑六_北漢寶段625,626,627",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段627",
+          "parcel_name": "芳苑六_北漢寶段625,626,627",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段1531",
+          "parcel_name": "芳苑六_海尾段1531",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段759",
+          "parcel_name": "芳苑六_海尾段759,760,761",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段760",
+          "parcel_name": "芳苑六_海尾段759,760,761",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段761",
+          "parcel_name": "芳苑六_海尾段759,760,761",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段1535",
+          "parcel_name": "芳苑六_海尾段1535",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段799",
+          "parcel_name": "芳苑七_海尾段799,800",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段800",
+          "parcel_name": "芳苑七_海尾段799,800",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段724",
+          "parcel_name": "芳苑七_海尾段724,729",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段729",
+          "parcel_name": "芳苑七_海尾段724,729",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段1513",
+          "parcel_name": "芳苑七_海尾段1513",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村漢寶段61",
+          "parcel_name": "芳苑七_漢寶段61",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段289",
+          "parcel_name": "芳苑八_北漢寶段289,293,294,297,298",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段293",
+          "parcel_name": "芳苑八_北漢寶段289,293,294,297,298",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段294",
+          "parcel_name": "芳苑八_北漢寶段289,293,294,297,298",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段297",
+          "parcel_name": "芳苑八_北漢寶段289,293,294,297,298",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段298",
+          "parcel_name": "芳苑八_北漢寶段289,293,294,297,298",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村漢興段237",
+          "parcel_name": "芳苑八_漢興段237,238",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村漢興段238",
+          "parcel_name": "芳苑八_漢興段237,238",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段707",
+          "parcel_name": "芳苑八_海尾段707,708,709",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段708",
+          "parcel_name": "芳苑八_海尾段707,708,709",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段709",
+          "parcel_name": "芳苑八_海尾段707,708,709",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村漢寶段66",
+          "parcel_name": "芳苑八_漢寶段66,67",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村漢寶段67",
+          "parcel_name": "芳苑八_漢寶段66,67",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉王功村王功段1766",
+          "parcel_name": "光宜_王功段1766,1766-1",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉王功村王功段1766-1",
+          "parcel_name": "光宜_王功段1766,1766-1",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉王功村王功段1786",
+          "parcel_name": "光宜_王功段1786,1787",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉王功村王功段1787",
+          "parcel_name": "光宜_王功段1786,1787",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段532",
+          "parcel_name": "芳苑三_海尾段532",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段725",
+          "parcel_name": "芳苑三_北漢寶段725,732,733",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段732",
+          "parcel_name": "芳苑三_北漢寶段725,732,733",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段733",
+          "parcel_name": "芳苑三_北漢寶段725,732,733",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村漢興段219",
+          "parcel_name": "芳苑三_漢興段219,220,221",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村漢興段220",
+          "parcel_name": "芳苑三_漢興段219,220,221",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村漢興段221",
+          "parcel_name": "芳苑三_漢興段219,220,221",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
           "lot_number": "芳苑鄉王功村王功段1820",
-          "parcel_name": "芳苑九",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉王功村王功段1821",
-          "parcel_name": "芳苑九",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉王功村王功段1822",
-          "parcel_name": "芳苑九",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村北漢寶段492",
-          "parcel_name": "芳苑九",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段538",
-          "parcel_name": "芳苑九",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段539",
-          "parcel_name": "芳苑九",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段540",
-          "parcel_name": "芳苑九",
-          "status": "在案",
-          "exit_reason": null,
-          "notes": null
-        },
-        {
-          "lot_number": "芳苑鄉漢寶村海尾段541",
-          "parcel_name": "芳苑九",
+          "parcel_name": "芳苑九_王功段1820,1820-2,1821,1822",
           "status": "在案",
           "exit_reason": null,
           "notes": null
         },
         {
           "lot_number": "芳苑鄉王功村王功段1820-2",
-          "parcel_name": "芳苑九",
+          "parcel_name": "芳苑九_王功段1820,1820-2,1821,1822",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉王功村王功段1821",
+          "parcel_name": "芳苑九_王功段1820,1820-2,1821,1822",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉王功村王功段1822",
+          "parcel_name": "芳苑九_王功段1820,1820-2,1821,1822",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段492",
+          "parcel_name": "芳苑九_北漢寶段492",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段538",
+          "parcel_name": "芳苑九_海尾段538,539,540,541",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段539",
+          "parcel_name": "芳苑九_海尾段538,539,540,541",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段540",
+          "parcel_name": "芳苑九_海尾段538,539,540,541",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村海尾段541",
+          "parcel_name": "芳苑九_海尾段538,539,540,541",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉新寶村王功段1508-1",
+          "parcel_name": "光宜_王功段1508-1",
+          "status": "在案",
+          "exit_reason": null,
+          "notes": null
+        },
+        {
+          "lot_number": "芳苑鄉漢寶村北漢寶段602",
+          "parcel_name": "芳苑七_北漢寶段602",
           "status": "在案",
           "exit_reason": null,
           "notes": null
@@ -14874,22 +14874,12 @@
       "parcels": [
         {
           "parcel_id": "PRJ-006-PCL-001",
-          "name": "芳苑一_海尾段\t839,840,841",
+          "name": "芳苑一_海尾段839,840,841",
           "status": "active",
           "lots": [
-            "芳苑鄉漢寶村海尾段839地號",
-            "芳苑鄉漢寶村海尾段840地號",
-            "芳苑鄉漢寶村海尾段841地號",
-            "芳苑鄉漢寶村北漢寶段573地號",
-            "芳苑鄉漢寶村北漢寶段574地號",
-            "芳苑鄉漢寶村北漢寶段574-1地號",
-            "芳苑鄉漢寶村北漢寶段637地號",
-            "芳苑鄉漢寶村北漢寶段638地號",
-            "芳苑鄉漢寶村北漢寶段639地號",
-            "芳苑鄉漢寶村漢興段177地號",
-            "芳苑鄉漢寶村漢興段178地號",
-            "芳苑鄉漢寶村北漢寶段324地號",
-            "芳苑鄉漢寶村北漢寶段325地號"
+            "芳苑鄉漢寶村海尾段839",
+            "芳苑鄉漢寶村海尾段840",
+            "芳苑鄉漢寶村海尾段841"
           ],
           "area_m2": 7055.06,
           "capacity_kw": 1033.34
@@ -14899,29 +14889,18 @@
           "name": "芳苑二_北漢寶段623,624",
           "status": "active",
           "lots": [
-            "芳苑鄉漢寶村北漢寶段342地號",
-            "芳苑鄉漢寶村海尾段1746地號",
-            "芳苑鄉漢寶村北漢寶段667地號",
-            "芳苑鄉漢寶村北漢寶段668地號",
-            "芳苑鄉漢寶村北漢寶段623地號",
-            "芳苑鄉漢寶村北漢寶段624地號",
-            "芳苑鄉漢寶村北漢寶段321地號"
+            "芳苑鄉漢寶村北漢寶段623",
+            "芳苑鄉漢寶村北漢寶段624"
           ],
           "area_m2": 11010.68,
           "capacity_kw": 1645.6
         },
         {
           "parcel_id": "PRJ-006-PCL-003",
-          "name": "芳苑五_北漢寶\t481",
+          "name": "芳苑五_北漢寶段481",
           "status": "active",
           "lots": [
-            "芳苑鄉漢寶村北漢寶段481地號",
-            "芳苑鄉漢寶村北漢寶段576地號",
-            "芳苑鄉漢寶村北漢寶段669地號",
-            "芳苑鄉漢寶村北漢寶段670地號",
-            "芳苑鄉漢寶村北漢寶段581地號",
-            "芳苑鄉漢寶村北漢寶段582地號",
-            "芳苑鄉漢寶村北漢寶段643地號"
+            "芳苑鄉漢寶村北漢寶段481"
           ],
           "area_m2": 10088.07,
           "capacity_kw": 1524.6
@@ -14931,19 +14910,7 @@
           "name": "芳苑六_北漢寶段571",
           "status": "active",
           "lots": [
-            "芳苑鄉漢寶村北漢寶段571地號",
-            "芳苑鄉漢寶村海尾段676地號",
-            "芳苑鄉漢寶村海尾段677地號",
-            "芳苑鄉漢寶村海尾段678地號",
-            "芳苑鄉漢寶村海尾段679地號",
-            "芳苑鄉漢寶村北漢寶段625地號",
-            "芳苑鄉漢寶村北漢寶段626地號",
-            "芳苑鄉漢寶村北漢寶段627地號",
-            "芳苑鄉漢寶村海尾段1531地號",
-            "芳苑鄉漢寶村海尾段759地號",
-            "芳苑鄉漢寶村海尾段760地號",
-            "芳苑鄉漢寶村海尾段761地號",
-            "芳苑鄉漢寶村海尾段1535地號"
+            "芳苑鄉漢寶村北漢寶段571"
           ],
           "area_m2": 8956.17,
           "capacity_kw": 1321.32
@@ -14953,14 +14920,7 @@
           "name": "芳苑七_北漢寶段600",
           "status": "active",
           "lots": [
-            "芳苑鄉漢寶村北漢寶段600",
-            "芳苑鄉漢寶村北漢寶段602",
-            "芳苑鄉漢寶村海尾段799",
-            "芳苑鄉漢寶村海尾段800",
-            "芳苑鄉漢寶村海尾段724",
-            "芳苑鄉漢寶村海尾段729",
-            "芳苑鄉漢寶村海尾段1513",
-            "芳苑鄉漢寶村漢寶段61"
+            "芳苑鄉漢寶村北漢寶段600"
           ],
           "area_m2": 4782.07,
           "capacity_kw": 707.85
@@ -14970,19 +14930,7 @@
           "name": "芳苑八_北漢寶段286",
           "status": "active",
           "lots": [
-            "芳苑鄉漢寶村北漢寶段286",
-            "芳苑鄉漢寶村北漢寶段289",
-            "芳苑鄉漢寶村北漢寶段293",
-            "芳苑鄉漢寶村北漢寶段294",
-            "芳苑鄉漢寶村北漢寶段297",
-            "芳苑鄉漢寶村北漢寶段298",
-            "芳苑鄉漢寶村漢興段237",
-            "芳苑鄉漢寶村漢興段238",
-            "芳苑鄉漢寶村海尾段707",
-            "芳苑鄉漢寶村海尾段708",
-            "芳苑鄉漢寶村海尾段709",
-            "芳苑鄉漢寶村漢寶段66",
-            "芳苑鄉漢寶村漢寶段67"
+            "芳苑鄉漢寶村北漢寶段286"
           ],
           "area_m2": 4712.36,
           "capacity_kw": 634.04
@@ -14993,67 +14941,46 @@
           "status": "active",
           "lots": [
             "芳苑鄉漢寶村漢興段356",
-            "芳苑鄉漢寶村漢興段357",
-            "芳苑鄉王功村王功段1766",
-            "芳苑鄉王功村王功段1766-1",
-            "芳苑鄉王功村王功段1786",
-            "芳苑鄉王功村王功段1787"
+            "芳苑鄉漢寶村漢興段357"
           ],
-          "area_m2": 9663,
+          "area_m2": 9663.0,
           "capacity_kw": 1443.53
         },
         {
           "parcel_id": "PRJ-006-PCL-008",
-          "name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
+          "name": "光宜_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "status": "active",
           "lots": [
             "芳苑鄉新寶村王功段1503-1",
             "芳苑鄉新寶村王功段1504-1",
             "芳苑鄉新寶村王功段1505-1",
             "芳苑鄉新寶村王功段1506-1",
-            "芳苑鄉新寶村王功段1507-1",
-            "芳苑鄉新寶村王功段1508-1"
+            "芳苑鄉新寶村王功段1507-1"
           ],
-          "area_m2": 12500,
+          "area_m2": 12500.0,
           "capacity_kw": 1752.597
         },
         {
           "parcel_id": "PRJ-006-PCL-009",
-          "name": "芳漁三_王功段1390,1390-1,1391",
+          "name": "芳苑三_王功段1390,1390-1,1391",
           "status": "active",
           "lots": [
             "芳苑鄉新寶村王功段1390",
             "芳苑鄉新寶村王功段1390-1",
-            "芳苑鄉新寶村王功段1391",
-            "芳苑鄉漢寶村海尾段532",
-            "芳苑鄉漢寶村北漢寶段725",
-            "芳苑鄉漢寶村北漢寶段732",
-            "芳苑鄉漢寶村北漢寶段733",
-            "漢寶村漢興段219",
-            "漢寶村漢興段220",
-            "漢寶村漢興段221"
+            "芳苑鄉新寶村王功段1391"
           ],
-          "area_m2": 35300,
-          "capacity_kw": 5290.725
+          "area_m2": 9970.0,
+          "capacity_kw": 1490.72
         },
         {
           "parcel_id": "PRJ-006-PCL-010",
-          "name": "芳苑九_海尾段\t1590",
+          "name": "芳苑九_海尾段1590",
           "status": "active",
           "lots": [
-            "芳苑鄉漢寶村海尾段1590",
-            "芳苑鄉王功村王功段1820",
-            "芳苑鄉王功村王功段1821",
-            "芳苑鄉王功村王功段1822",
-            "芳苑鄉漢寶村北漢寶段492",
-            "芳苑鄉漢寶村海尾段538",
-            "芳苑鄉漢寶村海尾段539",
-            "芳苑鄉漢寶村海尾段540",
-            "芳苑鄉漢寶村海尾段541",
-            "芳苑鄉王功村王功段1820-2"
+            "芳苑鄉漢寶村海尾段1590"
           ],
-          "area_m2": 37100,
-          "capacity_kw": 5570.84
+          "area_m2": 9854.02,
+          "capacity_kw": 1471.36
         },
         {
           "parcel_id": "PRJ-006-PCL-1779422294510",
@@ -15091,7 +15018,11 @@
           "parcel_id": "PRJ-006-PCL-1779422536577",
           "name": "芳苑一_北漢寶段573,574,574-1",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村北漢寶段573",
+            "芳苑鄉漢寶村北漢寶段574",
+            "芳苑鄉漢寶村北漢寶段574-1"
+          ],
           "area_m2": 10199.56,
           "capacity_kw": 1524.6
         },
@@ -15107,7 +15038,11 @@
           "parcel_id": "PRJ-006-PCL-1779422826927",
           "name": "芳苑一_北漢寶段637,638,639",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村北漢寶段637",
+            "芳苑鄉漢寶村北漢寶段638",
+            "芳苑鄉漢寶村北漢寶段639"
+          ],
           "area_m2": 10491.46,
           "capacity_kw": 1579.05
         },
@@ -15115,23 +15050,31 @@
           "parcel_id": "PRJ-006-PCL-1779422835007",
           "name": "芳苑一_漢興段177,178",
           "status": "active",
-          "lots": [],
-          "area_m2": 14600,
+          "lots": [
+            "芳苑鄉漢寶村漢興段177",
+            "芳苑鄉漢寶村漢興段178"
+          ],
+          "area_m2": 14600.0,
           "capacity_kw": 2210.67
         },
         {
           "parcel_id": "PRJ-006-PCL-1779422839322",
           "name": "芳苑一_北漢寶段324,325",
           "status": "active",
-          "lots": [],
-          "area_m2": 6193,
+          "lots": [
+            "芳苑鄉漢寶村北漢寶段324",
+            "芳苑鄉漢寶村北漢寶段325"
+          ],
+          "area_m2": 6193.0,
           "capacity_kw": 798.6
         },
         {
           "parcel_id": "PRJ-006-PCL-1779428220457",
           "name": "芳苑二_北漢寶段342",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村北漢寶段342"
+          ],
           "area_m2": 9415.02,
           "capacity_kw": 1406.625
         },
@@ -15139,7 +15082,9 @@
           "parcel_id": "PRJ-006-PCL-1779428298220",
           "name": "芳苑二_海尾段1746",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村海尾段1746"
+          ],
           "area_m2": 9901.07,
           "capacity_kw": 1474.99
         },
@@ -15147,15 +15092,20 @@
           "parcel_id": "PRJ-006-PCL-1779428336604",
           "name": "芳苑二_北漢寶段667,668",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村北漢寶段667",
+            "芳苑鄉漢寶村北漢寶段668"
+          ],
           "area_m2": 9699.69,
           "capacity_kw": 1459.26
         },
         {
           "parcel_id": "PRJ-006-PCL-1779428540539",
-          "name": "芳苑二_北漢寶段\t321",
+          "name": "芳苑二_北漢寶段321",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村北漢寶段321"
+          ],
           "area_m2": 6988.8,
           "capacity_kw": 1026.08
         },
@@ -15163,7 +15113,9 @@
           "parcel_id": "PRJ-006-PCL-1779428651125",
           "name": "芳苑五_北漢寶段576",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村北漢寶段576"
+          ],
           "area_m2": 7875.7,
           "capacity_kw": 1162.205
         },
@@ -15171,7 +15123,10 @@
           "parcel_id": "PRJ-006-PCL-1779428713797",
           "name": "芳苑五_北漢寶段669,670",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村北漢寶段669",
+            "芳苑鄉漢寶村北漢寶段670"
+          ],
           "area_m2": 9698.56,
           "capacity_kw": 1455.025
         },
@@ -15179,7 +15134,10 @@
           "parcel_id": "PRJ-006-PCL-1779428775386",
           "name": "芳苑五_北漢寶段581,582",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村北漢寶段581",
+            "芳苑鄉漢寶村北漢寶段582"
+          ],
           "area_m2": 9842.34,
           "capacity_kw": 1478.62
         },
@@ -15187,7 +15145,9 @@
           "parcel_id": "PRJ-006-PCL-1779428814037",
           "name": "芳苑五_北漢寶段643",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村北漢寶段643"
+          ],
           "area_m2": 6621.28,
           "capacity_kw": 965.58
         },
@@ -15195,15 +15155,24 @@
           "parcel_id": "PRJ-006-PCL-1779429071660",
           "name": "芳苑六_海尾段676,677,678,679",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村海尾段676",
+            "芳苑鄉漢寶村海尾段677",
+            "芳苑鄉漢寶村海尾段678",
+            "芳苑鄉漢寶村海尾段679"
+          ],
           "area_m2": 12011.25,
-          "capacity_kw": 1815
+          "capacity_kw": 1815.0
         },
         {
           "parcel_id": "PRJ-006-PCL-1779429116205",
           "name": "芳苑六_北漢寶段625,626,627",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村北漢寶段625",
+            "芳苑鄉漢寶村北漢寶段626",
+            "芳苑鄉漢寶村北漢寶段627"
+          ],
           "area_m2": 6143.03,
           "capacity_kw": 866.36
         },
@@ -15211,7 +15180,9 @@
           "parcel_id": "PRJ-006-PCL-1779429139419",
           "name": "芳苑六_海尾段1531",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村海尾段1531"
+          ],
           "area_m2": 7705.31,
           "capacity_kw": 1141.635
         },
@@ -15219,7 +15190,11 @@
           "parcel_id": "PRJ-006-PCL-1779429178675",
           "name": "芳苑六_海尾段759,760,761",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村海尾段759",
+            "芳苑鄉漢寶村海尾段760",
+            "芳苑鄉漢寶村海尾段761"
+          ],
           "area_m2": 5230.94,
           "capacity_kw": 776.82
         },
@@ -15227,7 +15202,9 @@
           "parcel_id": "PRJ-006-PCL-1779429220206",
           "name": "芳苑六_海尾段1535",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村海尾段1535"
+          ],
           "area_m2": 7642.39,
           "capacity_kw": 1122.88
         },
@@ -15235,7 +15212,10 @@
           "parcel_id": "PRJ-006-PCL-1779429713775",
           "name": "芳苑七_海尾段799,800",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村海尾段799",
+            "芳苑鄉漢寶村海尾段800"
+          ],
           "area_m2": 6095.87,
           "capacity_kw": 889.35
         },
@@ -15243,7 +15223,10 @@
           "parcel_id": "PRJ-006-PCL-1779429812702",
           "name": "芳苑七_海尾段724,729",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村海尾段724",
+            "芳苑鄉漢寶村海尾段729"
+          ],
           "area_m2": 8172.04,
           "capacity_kw": 1143.45
         },
@@ -15251,7 +15234,9 @@
           "parcel_id": "PRJ-006-PCL-1779429873348",
           "name": "芳苑七_海尾段1513",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村海尾段1513"
+          ],
           "area_m2": 17904.15,
           "capacity_kw": 2722.5
         },
@@ -15259,15 +15244,23 @@
           "parcel_id": "PRJ-006-PCL-1779429907421",
           "name": "芳苑七_漢寶段61",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村漢寶段61"
+          ],
           "area_m2": 7445.4,
           "capacity_kw": 1105.94
         },
         {
           "parcel_id": "PRJ-006-PCL-1779430054378",
-          "name": "芳苑八_北漢寶段286,293,294,297,298",
+          "name": "芳苑八_北漢寶段289,293,294,297,298",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村北漢寶段289",
+            "芳苑鄉漢寶村北漢寶段293",
+            "芳苑鄉漢寶村北漢寶段294",
+            "芳苑鄉漢寶村北漢寶段297",
+            "芳苑鄉漢寶村北漢寶段298"
+          ],
           "area_m2": 4916.04,
           "capacity_kw": 643.72
         },
@@ -15275,15 +15268,22 @@
           "parcel_id": "PRJ-006-PCL-1779430109733",
           "name": "芳苑八_漢興段237,238",
           "status": "active",
-          "lots": [],
-          "area_m2": 13216,
+          "lots": [
+            "芳苑鄉漢寶村漢興段237",
+            "芳苑鄉漢寶村漢興段238"
+          ],
+          "area_m2": 13216.0,
           "capacity_kw": 1988.03
         },
         {
           "parcel_id": "PRJ-006-PCL-1779430167735",
           "name": "芳苑八_海尾段707,708,709",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村海尾段707",
+            "芳苑鄉漢寶村海尾段708",
+            "芳苑鄉漢寶村海尾段709"
+          ],
           "area_m2": 15036.54,
           "capacity_kw": 2274.8
         },
@@ -15291,7 +15291,10 @@
           "parcel_id": "PRJ-006-PCL-1779430198158",
           "name": "芳苑八_漢寶段66,67",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村漢寶段66",
+            "芳苑鄉漢寶村漢寶段67"
+          ],
           "area_m2": 10516.66,
           "capacity_kw": 1580.865
         },
@@ -15299,55 +15302,78 @@
           "parcel_id": "PRJ-006-PCL-1779430423574",
           "name": "光宜_王功段1766,1766-1",
           "status": "active",
-          "lots": [],
-          "area_m2": 15000,
+          "lots": [
+            "芳苑鄉王功村王功段1766",
+            "芳苑鄉王功村王功段1766-1"
+          ],
+          "area_m2": 15000.0,
           "capacity_kw": 2265.12
         },
         {
           "parcel_id": "PRJ-006-PCL-1779430469714",
           "name": "光宜_王功段1786,1787",
           "status": "active",
-          "lots": [],
-          "area_m2": 10090,
+          "lots": [
+            "芳苑鄉王功村王功段1786",
+            "芳苑鄉王功村王功段1787"
+          ],
+          "area_m2": 10090.0,
           "capacity_kw": 1524.6
         },
         {
           "parcel_id": "PRJ-006-PCL-1779443509874",
-          "name": "芳漁三_海尾段532",
+          "name": "芳苑三_海尾段532",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村海尾段532"
+          ],
           "area_m2": 3685.17,
           "capacity_kw": 542.685
         },
         {
           "parcel_id": "PRJ-006-PCL-1779443557753",
-          "name": "芳漁三_北漢寶段725,732,733",
+          "name": "芳苑三_北漢寶段725,732,733",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村北漢寶段725",
+            "芳苑鄉漢寶村北漢寶段732",
+            "芳苑鄉漢寶村北漢寶段733"
+          ],
           "area_m2": 9973.39,
           "capacity_kw": 1504.03
         },
         {
           "parcel_id": "PRJ-006-PCL-1779443579474",
-          "name": "芳漁三_漢興段219,220,221",
+          "name": "芳苑三_漢興段219,220,221",
           "status": "active",
-          "lots": [],
-          "area_m2": 11697,
+          "lots": [
+            "芳苑鄉漢寶村漢興段219",
+            "芳苑鄉漢寶村漢興段220",
+            "芳苑鄉漢寶村漢興段221"
+          ],
+          "area_m2": 11697.0,
           "capacity_kw": 1753.29
         },
         {
           "parcel_id": "PRJ-006-PCL-1779443803940",
           "name": "芳苑九_王功段1820,1820-2,1821,1822",
           "status": "active",
-          "lots": [],
-          "area_m2": 10500,
-          "capacity_kw": 1573
+          "lots": [
+            "芳苑鄉王功村王功段1820",
+            "芳苑鄉王功村王功段1820-2",
+            "芳苑鄉王功村王功段1821",
+            "芳苑鄉王功村王功段1822"
+          ],
+          "area_m2": 10500.0,
+          "capacity_kw": 1573.0
         },
         {
           "parcel_id": "PRJ-006-PCL-1779443832340",
           "name": "芳苑九_北漢寶段492",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村北漢寶段492"
+          ],
           "area_m2": 10000.05,
           "capacity_kw": 1524.6
         },
@@ -15355,17 +15381,34 @@
           "parcel_id": "PRJ-006-PCL-1779443888944",
           "name": "芳苑九_海尾段538,539,540,541",
           "status": "active",
-          "lots": [],
+          "lots": [
+            "芳苑鄉漢寶村海尾段538",
+            "芳苑鄉漢寶村海尾段539",
+            "芳苑鄉漢寶村海尾段540",
+            "芳苑鄉漢寶村海尾段541"
+          ],
           "area_m2": 6778.35,
           "capacity_kw": 1001.88
         },
         {
           "parcel_id": "PRJ-006-PCL-1779444271653",
-          "name": "光浴_王功段1508-1",
+          "name": "光宜_王功段1508-1",
           "status": "active",
-          "lots": [],
-          "area_m2": 2800,
+          "lots": [
+            "芳苑鄉新寶村王功段1508-1"
+          ],
+          "area_m2": 2800.0,
           "capacity_kw": 402.03
+        },
+        {
+          "parcel_id": "PRJ-006-PCL-1779458660979-44",
+          "name": "芳苑七_北漢寶段602",
+          "area_m2": 4577.03,
+          "capacity_kw": 620.73,
+          "status": "active",
+          "lots": [
+            "芳苑鄉漢寶村北漢寶段602"
+          ]
         }
       ],
       "milestones": [
@@ -15375,7 +15418,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-001",
-          "parcel_name": "芳苑一_海尾段\t839,840,841",
+          "parcel_name": "芳苑一_海尾段839,840,841",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -15748,7 +15791,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-003",
-          "parcel_name": "芳苑五_北漢寶\t481",
+          "parcel_name": "芳苑五_北漢寶段481",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -16551,7 +16594,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
+          "parcel_name": "光宜_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -16754,7 +16797,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
+          "parcel_name": "芳苑三_王功段1390,1390-1,1391",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -16899,7 +16942,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九_海尾段\t1590",
+          "parcel_name": "芳苑九_海尾段1590",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -18036,7 +18079,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779428540539",
-          "parcel_name": "芳苑二_北漢寶段\t321",
+          "parcel_name": "芳苑二_北漢寶段321",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -19997,7 +20040,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779430054378",
-          "parcel_name": "芳苑八_北漢寶段286,293,294,297,298",
+          "parcel_name": "芳苑八_北漢寶段289,293,294,297,298",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -20837,7 +20880,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779443509874",
-          "parcel_name": "芳漁三_海尾段532",
+          "parcel_name": "芳苑三_海尾段532",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -20968,7 +21011,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779443557753",
-          "parcel_name": "芳漁三_北漢寶段725,732,733",
+          "parcel_name": "芳苑三_北漢寶段725,732,733",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -21099,7 +21142,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779443579474",
-          "parcel_name": "芳漁三_漢興段219,220,221",
+          "parcel_name": "芳苑三_漢興段219,220,221",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -21624,7 +21667,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779444271653",
-          "parcel_name": "光浴_王功段1508-1",
+          "parcel_name": "光宜_王功段1508-1",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -21926,7 +21969,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-001",
-          "parcel_name": "芳苑一_海尾段\t839,840,841",
+          "parcel_name": "芳苑一_海尾段839,840,841",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -22159,7 +22202,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-003",
-          "parcel_name": "芳苑五_北漢寶\t481",
+          "parcel_name": "芳苑五_北漢寶段481",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -22739,7 +22782,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
+          "parcel_name": "光宜_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -22855,7 +22898,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
+          "parcel_name": "芳苑三_王功段1390,1390-1,1391",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -22971,7 +23014,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九_海尾段\t1590",
+          "parcel_name": "芳苑九_海尾段1590",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -23087,7 +23130,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-001",
-          "parcel_name": "芳苑一_海尾段\t839,840,841",
+          "parcel_name": "芳苑一_海尾段839,840,841",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -23349,7 +23392,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-003",
-          "parcel_name": "芳苑五_北漢寶\t481",
+          "parcel_name": "芳苑五_北漢寶段481",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -24004,7 +24047,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
+          "parcel_name": "光宜_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -24135,7 +24178,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
+          "parcel_name": "芳苑三_王功段1390,1390-1,1391",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -24266,7 +24309,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九_海尾段\t1590",
+          "parcel_name": "芳苑九_海尾段1590",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -24397,7 +24440,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-001",
-          "parcel_name": "芳苑一_海尾段\t839,840,841",
+          "parcel_name": "芳苑一_海尾段839,840,841",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -24629,7 +24672,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-003",
-          "parcel_name": "芳苑五_北漢寶\t481",
+          "parcel_name": "芳苑五_北漢寶段481",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -25209,7 +25252,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
+          "parcel_name": "光宜_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -25325,7 +25368,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
+          "parcel_name": "芳苑三_王功段1390,1390-1,1391",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -25441,7 +25484,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九_海尾段\t1590",
+          "parcel_name": "芳苑九_海尾段1590",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -25557,7 +25600,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-001",
-          "parcel_name": "芳苑一_海尾段\t839,840,841",
+          "parcel_name": "芳苑一_海尾段839,840,841",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -25909,7 +25952,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-003",
-          "parcel_name": "芳苑五_北漢寶\t481",
+          "parcel_name": "芳苑五_北漢寶段481",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -26789,7 +26832,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
+          "parcel_name": "光宜_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -26965,7 +27008,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
+          "parcel_name": "芳苑三_王功段1390,1390-1,1391",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -27141,7 +27184,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九_海尾段\t1590",
+          "parcel_name": "芳苑九_海尾段1590",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -28201,7 +28244,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-001",
-          "parcel_name": "芳苑一_海尾段\t839,840,841",
+          "parcel_name": "芳苑一_海尾段839,840,841",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
@@ -28403,7 +28446,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-003",
-          "parcel_name": "芳苑五_北漢寶\t481",
+          "parcel_name": "芳苑五_北漢寶段481",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
@@ -28908,7 +28951,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
+          "parcel_name": "光宜_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
@@ -29009,7 +29052,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
+          "parcel_name": "芳苑三_王功段1390,1390-1,1391",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
@@ -29110,7 +29153,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九_海尾段\t1590",
+          "parcel_name": "芳苑九_海尾段1590",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
