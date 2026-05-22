@@ -5038,9 +5038,9 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "435",
-          "baseline_start": "2025-03-21",
-          "baseline_end": "2026-07-14",
-          "forecast_end": "2026-07-14",
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_end": null,
           "actual_end": null,
           "status": "blocked",
           "notes": null,
@@ -5217,8 +5217,8 @@
               "updated_at": "2026-05-20T08:43:47.949Z"
             }
           ],
-          "forecast_start": "2025-03-21",
-          "actual_start": "2025-03-21",
+          "forecast_start": null,
+          "actual_start": null,
           "_origName": "農業容許"
         },
         {
@@ -5235,9 +5235,9 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "435",
-          "baseline_start": "2025-03-21",
-          "baseline_end": "2026-07-30",
-          "forecast_end": "2026-07-30",
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_end": null,
           "actual_end": null,
           "status": "blocked",
           "notes": null,
@@ -5380,8 +5380,8 @@
             }
           ],
           "tasks": [],
-          "forecast_start": "2025-03-21",
-          "actual_start": "2025-03-21",
+          "forecast_start": null,
+          "actual_start": null,
           "_origName": "農業容許"
         },
         {
@@ -5398,9 +5398,9 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "435",
-          "baseline_start": "2025-03-21",
-          "baseline_end": "2026-08-14",
-          "forecast_end": "2026-08-14",
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_end": null,
           "actual_end": null,
           "status": "blocked",
           "notes": null,
@@ -5543,8 +5543,8 @@
             }
           ],
           "tasks": [],
-          "forecast_start": "2025-03-21",
-          "actual_start": "2025-03-21"
+          "forecast_start": null,
+          "actual_start": null
         },
         {
           "milestone_id": "PRJ-002-MS-004",
@@ -5560,9 +5560,9 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "435",
-          "baseline_start": "2025-03-21",
-          "baseline_end": "2026-09-14",
-          "forecast_end": "2026-09-14",
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_end": null,
           "actual_end": null,
           "status": "blocked",
           "notes": null,
@@ -5705,8 +5705,8 @@
             }
           ],
           "tasks": [],
-          "forecast_start": "2025-03-21",
-          "actual_start": "2025-03-21",
+          "forecast_start": null,
+          "actual_start": null,
           "_origName": "農業容許"
         },
         {
@@ -6103,7 +6103,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-006-ST01",
@@ -6209,7 +6209,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-007-ST01",
@@ -6314,7 +6314,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-008-ST01",
@@ -6419,7 +6419,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-009-ST01",
@@ -6515,14 +6515,14 @@
           "depends_on": [
             "農業容許"
           ],
-          "baseline_start": "2026-08-30",
-          "baseline_end": "2027-02-26",
-          "forecast_start": "2026-08-30",
-          "forecast_end": "2027-02-26",
+          "baseline_start": "2026-07-14",
+          "baseline_end": "2027-01-10",
+          "forecast_start": "2026-07-14",
+          "forecast_end": "2027-01-10",
           "actual_start": "2026-07-14",
           "actual_end": null,
           "status": "pending",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-006-ST01",
@@ -6615,7 +6615,7 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-22T09:30:48.418Z"
+          "updated_at": "2026-05-22T08:30:31.253Z"
         },
         {
           "milestone_id": "PRJ-002-MS-010",
@@ -6637,7 +6637,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-010-ST01",
@@ -6756,7 +6756,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-011-ST01",
@@ -6874,7 +6874,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-012-ST01",
@@ -6992,7 +6992,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-013-ST01",
@@ -7101,14 +7101,14 @@
           "depends_on": [
             "建照"
           ],
-          "baseline_start": "2027-01-27",
-          "baseline_end": "2028-02-06",
-          "forecast_start": "2027-01-27",
-          "forecast_end": "2028-02-06",
+          "baseline_start": "2026-12-11",
+          "baseline_end": "2027-12-21",
+          "forecast_start": "2026-12-11",
+          "forecast_end": "2027-12-21",
           "actual_start": null,
           "actual_end": null,
           "status": "pending",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-010-ST01",
@@ -7216,7 +7216,7 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-22T09:30:48.418Z"
+          "updated_at": "2026-05-22T08:32:23.898Z"
         },
         {
           "milestone_id": "PRJ-002-MS-014",
@@ -7238,7 +7238,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-014-ST01",
@@ -7344,7 +7344,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-015-ST01",
@@ -7449,7 +7449,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-016-ST01",
@@ -7554,7 +7554,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-017-ST01",
@@ -7650,14 +7650,14 @@
           "depends_on": [
             "室內養殖設施施工"
           ],
-          "baseline_start": "2028-02-06",
-          "baseline_end": "2028-05-06",
-          "forecast_start": "2028-02-06",
-          "forecast_end": "2028-05-06",
+          "baseline_start": "2027-12-21",
+          "baseline_end": "2028-03-20",
+          "forecast_start": "2027-12-21",
+          "forecast_end": "2028-03-20",
           "actual_start": null,
           "actual_end": null,
           "status": "pending",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-014-ST01",
@@ -7750,7 +7750,7 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-22T09:30:48.418Z"
+          "updated_at": "2026-05-22T08:32:33.129Z"
         },
         {
           "milestone_id": "PRJ-002-MS-018",
@@ -7772,7 +7772,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-018-ST01",
@@ -7930,7 +7930,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-019-ST01",
@@ -8087,7 +8087,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-020-ST01",
@@ -8244,7 +8244,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-021-ST01",
@@ -8392,14 +8392,14 @@
           "depends_on": [
             "使照"
           ],
-          "baseline_start": "2028-01-07",
-          "baseline_end": "2028-08-04",
-          "forecast_start": "2028-01-07",
-          "forecast_end": "2028-08-04",
+          "baseline_start": "2027-11-21",
+          "baseline_end": "2028-06-18",
+          "forecast_start": "2027-11-21",
+          "forecast_end": "2028-06-18",
           "actual_start": null,
           "actual_end": null,
           "status": "pending",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-018-ST01",
@@ -8552,7 +8552,7 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-22T09:30:48.418Z"
+          "updated_at": "2026-05-22T08:32:48.727Z"
         },
         {
           "milestone_id": "PRJ-002-MS-022",
@@ -8574,7 +8574,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-022-ST01",
@@ -8705,7 +8705,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-023-ST01",
@@ -8939,7 +8939,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-024-ST01",
@@ -9115,7 +9115,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-025-ST01",
@@ -9231,7 +9231,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-026-ST01",
@@ -9362,7 +9362,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-027-ST01",
@@ -9455,7 +9455,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-028-ST01",
@@ -9547,7 +9547,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-029-ST01",
@@ -9639,7 +9639,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-030-ST01",
@@ -9722,14 +9722,14 @@
           "depends_on": [
             "光電施工許可"
           ],
-          "baseline_start": "2027-11-07",
-          "baseline_end": "2028-09-18",
-          "forecast_start": "2027-11-07",
-          "forecast_end": "2028-09-18",
+          "baseline_start": "2027-09-21",
+          "baseline_end": "2028-08-02",
+          "forecast_start": "2027-09-21",
+          "forecast_end": "2028-08-02",
           "actual_start": null,
           "actual_end": null,
           "status": "pending",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-027-ST01",
@@ -9807,7 +9807,7 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-22T09:30:48.418Z"
+          "updated_at": "2026-05-22T08:33:04.889Z"
         },
         {
           "milestone_id": "PRJ-002-MS-031",
@@ -9830,7 +9830,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [],
           "tasks": [],
           "forecast_start": "2028-08-02"
@@ -9855,7 +9855,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:47:35.627Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-032-ST01",
@@ -10041,7 +10041,7 @@
       "start_date": "2025-07-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T09:48:58.960Z",
+      "updated_at": "2026-05-20T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段38地號",
@@ -10082,7 +10082,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-22T09:48:58.960Z",
+          "updated_at": "2026-05-20T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-001-ST01",
@@ -10134,7 +10134,7 @@
                     {
                       "update_id": "UPD-1779415464706",
                       "created_at": "2026-05-20T04:00:00.000Z",
-                      "content": "目前報價為NT$42,400/KW(未稅)比第一版報價多出1000元,主要是將敦親睦鄰加入報價當中,董事長已與jason副總說明希望能跟對方談價,下周三會與副總確認",
+                      "content": "目前報價為NT$42,400/KW(未稅)比第一版報價多出1000元,主要是將敦親睦鄰加入報價當中,董事長已與jason副總說明希望能跟對方談價,目前在談價中",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -12106,7 +12106,7 @@
       "start_date": "2024-10-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T09:54:05.979Z",
+      "updated_at": "2026-05-22T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "嘉義縣東石鄉鰲鼓段436地號",
@@ -12376,7 +12376,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T09:54:05.979Z",
+          "updated_at": "2026-05-22T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-002-ST01",
@@ -12412,7 +12412,7 @@
                     {
                       "update_id": "UPD-1779430842777",
                       "created_at": "2026-05-22T04:00:00.000Z",
-                      "content": "目前Peter已經直接打電話給建照承辦及同備承辦,確認流程如下\n1.申請建照承辦告知之前也在海管區的案子送件時並沒有看可歸\n2.同意備案承辦認為中央已做好可規,他應該不需要再審查什麼\n以上面結果推斷流程如下\n取得農許>申請建照>取得建照>申請併聯審查意見書且同步申請施工許可>在申請同備同時也還是把可歸備好資料送進去給承辦",
+                      "content": "更新調查進度",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -14217,7 +14217,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T09:18:55.522Z",
+      "updated_at": "2026-05-22T09:53:09.123Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -15019,7 +15019,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-009",
-          "name": "芳漁三",
+          "name": "芳漁三_王功段1390,1390-1,1391",
           "status": "active",
           "lots": [
             "芳苑鄉新寶村王功段1390",
@@ -15033,8 +15033,8 @@
             "漢寶村漢興段220",
             "漢寶村漢興段221"
           ],
-          "area_m2": 35300,
-          "capacity_kw": 5290.725
+          "area_m2": 9970,
+          "capacity_kw": 1490.72
         },
         {
           "parcel_id": "PRJ-006-PCL-010",
@@ -15310,6 +15310,30 @@
           "lots": [],
           "area_m2": 10090,
           "capacity_kw": 1524.6
+        },
+        {
+          "parcel_id": "PRJ-006-PCL-1779443509874",
+          "name": "芳漁三_海尾段532",
+          "status": "active",
+          "lots": [],
+          "area_m2": 3685.17,
+          "capacity_kw": 542.685
+        },
+        {
+          "parcel_id": "PRJ-006-PCL-1779443557753",
+          "name": "芳漁三_北漢寶段725,732,733",
+          "status": "active",
+          "lots": [],
+          "area_m2": 9973.39,
+          "capacity_kw": 1504.03
+        },
+        {
+          "parcel_id": "PRJ-006-PCL-1779443579474",
+          "name": "芳漁三_漢興段219,220,221",
+          "status": "active",
+          "lots": [],
+          "area_m2": 11697,
+          "capacity_kw": 1753.29
         }
       ],
       "milestones": [
@@ -16698,7 +16722,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三",
+          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -16712,7 +16736,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T08:55:07.890Z",
+          "updated_at": "2026-05-22T09:50:48.285Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-009-ST01",
@@ -16748,8 +16772,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -16834,7 +16858,8 @@
           ],
           "tasks": [],
           "forecast_start": null,
-          "actual_start": null
+          "actual_start": null,
+          "_origName": "農業容許"
         },
         {
           "milestone_id": "PRJ-006-MS-010",
@@ -20775,6 +20800,400 @@
           "updated_at": "2026-05-22T09:18:55.522Z"
         },
         {
+          "milestone_id": "PRJ-006-MS-1779443509874",
+          "name": "農業容許",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "parcel_id": "PRJ-006-PCL-1779443509874",
+          "parcel_name": "芳漁三_海尾段532",
+          "dependency_type": "soft_concurrent",
+          "depends_on": [
+            "出流管制"
+          ],
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_start": null,
+          "forecast_end": null,
+          "actual_start": null,
+          "actual_end": null,
+          "status": "in_progress",
+          "notes": "",
+          "stages": [
+            {
+              "stage_id": "PRJ-006-MS-1779443509874-ST01",
+              "sequence": 1,
+              "name": "申請文件準備",
+              "type": "fixed",
+              "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
+              "status": "done",
+              "actual_end": "2026-05-22",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443509874-ST02",
+              "sequence": 2,
+              "name": "送件",
+              "type": "fixed",
+              "cc": "5",
+              "estimated_days": "1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "done",
+              "actual_end": "2026-05-22",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443509874-ST03",
+              "sequence": 3,
+              "name": "區公所補正 #1",
+              "type": "skippable",
+              "cc": "3",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "done",
+              "actual_end": "2026-05-22",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443509874-ST04",
+              "sequence": 4,
+              "name": "區公所補正 #2",
+              "type": "skippable",
+              "cc": "2",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "done",
+              "actual_end": "2026-05-22",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443509874-ST05",
+              "sequence": 5,
+              "name": "函轉地方政府",
+              "type": "fixed",
+              "cc": "5",
+              "estimated_days": "7",
+              "authority": "地方農業局",
+              "status": "in_progress",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443509874-ST06",
+              "sequence": 6,
+              "name": "縣府補正 #1",
+              "type": "skippable",
+              "cc": "8",
+              "estimated_days": "90",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443509874-ST07",
+              "sequence": 7,
+              "name": "縣府補正 #2",
+              "type": "skippable",
+              "cc": "4",
+              "estimated_days": "90",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443509874-ST08",
+              "sequence": 8,
+              "name": "現勘",
+              "type": "skippable",
+              "cc": "5",
+              "estimated_days": "14",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443509874-ST09",
+              "sequence": 9,
+              "name": "取得農業容許",
+              "type": "fixed",
+              "cc": "13",
+              "estimated_days": "1",
+              "authority": "—",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            }
+          ],
+          "updated_at": "2026-05-22T09:51:56.916Z"
+        },
+        {
+          "milestone_id": "PRJ-006-MS-1779443557753",
+          "name": "農業容許",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "parcel_id": "PRJ-006-PCL-1779443557753",
+          "parcel_name": "芳漁三_北漢寶段725,732,733",
+          "dependency_type": "soft_concurrent",
+          "depends_on": [
+            "出流管制"
+          ],
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_start": null,
+          "forecast_end": null,
+          "actual_start": null,
+          "actual_end": null,
+          "status": "in_progress",
+          "notes": "",
+          "stages": [
+            {
+              "stage_id": "PRJ-006-MS-1779443557753-ST01",
+              "sequence": 1,
+              "name": "申請文件準備",
+              "type": "fixed",
+              "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
+              "status": "done",
+              "actual_end": "2026-05-22",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443557753-ST02",
+              "sequence": 2,
+              "name": "送件",
+              "type": "fixed",
+              "cc": "5",
+              "estimated_days": "1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "done",
+              "actual_end": "2026-05-22",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443557753-ST03",
+              "sequence": 3,
+              "name": "區公所補正 #1",
+              "type": "skippable",
+              "cc": "3",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "done",
+              "actual_end": "2026-05-22",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443557753-ST04",
+              "sequence": 4,
+              "name": "區公所補正 #2",
+              "type": "skippable",
+              "cc": "2",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "done",
+              "actual_end": "2026-05-22",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443557753-ST05",
+              "sequence": 5,
+              "name": "函轉地方政府",
+              "type": "fixed",
+              "cc": "5",
+              "estimated_days": "7",
+              "authority": "地方農業局",
+              "status": "in_progress",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443557753-ST06",
+              "sequence": 6,
+              "name": "縣府補正 #1",
+              "type": "skippable",
+              "cc": "8",
+              "estimated_days": "90",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443557753-ST07",
+              "sequence": 7,
+              "name": "縣府補正 #2",
+              "type": "skippable",
+              "cc": "4",
+              "estimated_days": "90",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443557753-ST08",
+              "sequence": 8,
+              "name": "現勘",
+              "type": "skippable",
+              "cc": "5",
+              "estimated_days": "14",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443557753-ST09",
+              "sequence": 9,
+              "name": "取得農業容許",
+              "type": "fixed",
+              "cc": "13",
+              "estimated_days": "1",
+              "authority": "—",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            }
+          ],
+          "updated_at": "2026-05-22T09:52:44.380Z"
+        },
+        {
+          "milestone_id": "PRJ-006-MS-1779443579474",
+          "name": "農業容許",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "parcel_id": "PRJ-006-PCL-1779443579474",
+          "parcel_name": "芳漁三_漢興段219,220,221",
+          "dependency_type": "soft_concurrent",
+          "depends_on": [
+            "出流管制"
+          ],
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_start": null,
+          "forecast_end": null,
+          "actual_start": null,
+          "actual_end": null,
+          "status": "in_progress",
+          "notes": "",
+          "stages": [
+            {
+              "stage_id": "PRJ-006-MS-1779443579474-ST01",
+              "sequence": 1,
+              "name": "申請文件準備",
+              "type": "fixed",
+              "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
+              "status": "done",
+              "actual_end": "2026-05-22",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443579474-ST02",
+              "sequence": 2,
+              "name": "送件",
+              "type": "fixed",
+              "cc": "5",
+              "estimated_days": "1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "done",
+              "actual_end": "2026-05-22",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443579474-ST03",
+              "sequence": 3,
+              "name": "區公所補正 #1",
+              "type": "skippable",
+              "cc": "3",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "done",
+              "actual_end": "2026-05-22",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443579474-ST04",
+              "sequence": 4,
+              "name": "區公所補正 #2",
+              "type": "skippable",
+              "cc": "2",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "done",
+              "actual_end": "2026-05-22",
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443579474-ST05",
+              "sequence": 5,
+              "name": "函轉地方政府",
+              "type": "fixed",
+              "cc": "5",
+              "estimated_days": "7",
+              "authority": "地方農業局",
+              "status": "in_progress",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443579474-ST06",
+              "sequence": 6,
+              "name": "縣府補正 #1",
+              "type": "skippable",
+              "cc": "8",
+              "estimated_days": "90",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443579474-ST07",
+              "sequence": 7,
+              "name": "縣府補正 #2",
+              "type": "skippable",
+              "cc": "4",
+              "estimated_days": "90",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443579474-ST08",
+              "sequence": 8,
+              "name": "現勘",
+              "type": "skippable",
+              "cc": "5",
+              "estimated_days": "14",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779443579474-ST09",
+              "sequence": 9,
+              "name": "取得農業容許",
+              "type": "fixed",
+              "cc": "13",
+              "estimated_days": "1",
+              "authority": "—",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            }
+          ],
+          "updated_at": "2026-05-22T09:53:09.123Z",
+          "_origName": "農業容許"
+        },
+        {
           "milestone_id": "PRJ-006-MS-011",
           "name": "出流管制",
           "group": "農業",
@@ -21871,7 +22290,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三",
+          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -23141,7 +23560,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三",
+          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -24321,7 +24740,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三",
+          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -25951,7 +26370,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三",
+          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -26752,7 +27171,8 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [],
+          "_origName": "電業籌設許可"
         },
         {
           "milestone_id": "PRJ-006-MS-054",
@@ -27978,7 +28398,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三",
+          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
