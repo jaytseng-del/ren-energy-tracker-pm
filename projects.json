@@ -10041,7 +10041,7 @@
       "start_date": "2025-07-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-20T04:00:00.000Z",
+      "updated_at": "2026-05-22T09:48:58.964Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段38地號",
@@ -10134,7 +10134,7 @@
                     {
                       "update_id": "UPD-1779415464706",
                       "created_at": "2026-05-20T04:00:00.000Z",
-                      "content": "目前報價為NT$42,400/KW(未稅)比第一版報價多出1000元,主要是將敦親睦鄰加入報價當中,董事長已與jason副總說明希望能跟對方談價,目前在談價中",
+                      "content": "目前報價為NT$42,400/KW(未稅)比第一版報價多出1000元,主要是將敦親睦鄰加入報價當中,董事長已與jason副總說明希望能跟對方談價,下周三會與副總確認",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -12106,7 +12106,7 @@
       "start_date": "2024-10-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T04:00:00.000Z",
+      "updated_at": "2026-05-22T09:54:51.115Z",
       "lots": [
         {
           "lot_number": "嘉義縣東石鄉鰲鼓段436地號",
@@ -12412,7 +12412,7 @@
                     {
                       "update_id": "UPD-1779430842777",
                       "created_at": "2026-05-22T04:00:00.000Z",
-                      "content": "更新調查進度",
+                      "content": "目前Peter已經直接打電話給建照承辦及同備承辦,確認流程如下 1.申請建照承辦告知之前也在海管區的案子送件時並沒有看可歸 2.同意備案承辦認為中央已做好可規,他應該不需要再審查什麼 以上面結果推斷流程如下 取得農許>申請建照>取得建照>申請併聯審查意見書且同步申請施工許可>在申請同備同時也還是把可歸備好資料送進去給承辦",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -14217,7 +14217,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T09:58:17.694Z",
+      "updated_at": "2026-05-22T10:01:24.942Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -15004,7 +15004,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-008",
-          "name": "光浴",
+          "name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "status": "active",
           "lots": [
             "芳苑鄉新寶村王功段1503-1",
@@ -15014,8 +15014,8 @@
             "芳苑鄉新寶村王功段1507-1",
             "芳苑鄉新寶村王功段1508-1"
           ],
-          "area_m2": 15300,
-          "capacity_kw": 2154.627
+          "area_m2": 12500,
+          "capacity_kw": 1752.597
         },
         {
           "parcel_id": "PRJ-006-PCL-009",
@@ -15033,8 +15033,8 @@
             "漢寶村漢興段220",
             "漢寶村漢興段221"
           ],
-          "area_m2": 9970,
-          "capacity_kw": 1490.72
+          "area_m2": 35300,
+          "capacity_kw": 5290.725
         },
         {
           "parcel_id": "PRJ-006-PCL-010",
@@ -15052,8 +15052,8 @@
             "芳苑鄉漢寶村海尾段541",
             "芳苑鄉王功村王功段1820-2"
           ],
-          "area_m2": 9854.02,
-          "capacity_kw": 1471.36
+          "area_m2": 37100,
+          "capacity_kw": 5570.84
         },
         {
           "parcel_id": "PRJ-006-PCL-1779422294510",
@@ -16068,7 +16068,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T08:54:48.530Z",
+          "updated_at": "2026-05-22T10:00:59.938Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-005-ST01",
@@ -16117,8 +16117,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -16225,7 +16225,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T08:54:55.375Z",
+          "updated_at": "2026-05-22T10:01:05.356Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-006-ST01",
@@ -16287,7 +16287,7 @@
               "cc": "5",
               "estimated_days": "7",
               "authority": "地方農業局",
-              "status": "pending",
+              "status": "in_progress",
               "actual_end": null,
               "tasks": [],
               "notes": ""
@@ -16543,7 +16543,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴",
+          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -16905,7 +16905,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T08:55:13.945Z",
+          "updated_at": "2026-05-22T10:01:24.942Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-010-ST01",
@@ -16941,8 +16941,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "in_progress",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -22592,7 +22592,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴",
+          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -23847,7 +23847,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴",
+          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -25042,7 +25042,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴",
+          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -26612,7 +26612,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴",
+          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -28715,7 +28715,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴",
+          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
