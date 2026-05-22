@@ -698,3 +698,4 @@
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779443557753","name":"芳漁三_北漢寶段725,732,733","area_m2":9973.39,"capacity_kw":1504.03,"ts":"2026-05-22T09:54:00.143Z"}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779443557753","name":"芳漁三_北漢寶段725,732,733","area_m2":9973.39,"capacity_kw":1504.03,"ts":"2026-05-22T09:54:01.723Z"}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779443509874","name":"芳漁三_海尾段532","area_m2":3685.17,"capacity_kw":542.685,"ts":"2026-05-22T09:54:15.572Z"}
+{"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779443509874","name":"芳漁三_海尾段532","area_m2":3685.17,"capacity_kw":542.685,"ts":"2026-05-22T09:54:23.792Z"}
