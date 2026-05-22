@@ -14682,7 +14682,7 @@
         {
           "parcel_id": "PRJ-006-PCL-1779422385603",
           "name": "芳苑一_漢興段177,178",
-          "status": "active",
+          "status": "deleted",
           "lots": [],
           "area_m2": 14600,
           "capacity_kw": 2210.67
@@ -14690,7 +14690,7 @@
         {
           "parcel_id": "PRJ-006-PCL-1779422416882",
           "name": "芳苑一_北漢寶段324,325",
-          "status": "active",
+          "status": "deleted",
           "lots": [],
           "area_m2": 6193,
           "capacity_kw": 798.6
