@@ -752,3 +752,4 @@
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-010","ts":"2026-05-22T14:04:20.978Z","name":"芳苑九_海尾段1590","area_m2":9854.02,"capacity_kw":1471.36,"lots":["芳苑鄉漢寶村海尾段1590"]}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779422536577","ts":"2026-05-22T14:04:20.978Z","name":"芳苑一_北漢寶段573,574,574-1","area_m2":10199.56,"capacity_kw":1524.6,"lots":["芳苑鄉漢寶村北漢寶段573","芳苑鄉漢寶村北漢寶段574","芳苑鄉漢寶村北漢寶段574-1"]}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779422826927","ts":"2026-05-22T14:04:20.978Z","name":"芳苑一_北漢寶段637,638,639","area_m2":10491.46,"capacity_kw":1579.05,"lots":["芳苑鄉漢寶村北漢寶段637","芳苑鄉漢寶村北漢寶段638","芳苑鄉漢寶村北漢寶段639"]}
+{"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779422835007","ts":"2026-05-22T14:04:20.978Z","name":"芳苑一_漢興段177,178","area_m2":14600,"capacity_kw":2210.67,"lots":["芳苑鄉漢寶村漢興段177","芳苑鄉漢寶村漢興段178"]}
