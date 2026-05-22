@@ -569,3 +569,4 @@
 {"event":"parcels_updated","project_id":"PRJ-006","ts":"2026-05-22T06:24:40.889Z"}
 {"event":"update_edited","project_id":"PRJ-007","milestone_id":"PRJ-007-MS-1779420839089-c0h8","task_id":"TSK-1779420894022","update":{"update_id":"UPD-1779430660388","created_at":"2026-05-22T04:00:00.000Z","content":"等擋水板工程完成後，向承辦確認","impact":"none","impact_days":null,"next_action":null},"ts":"2026-05-22T06:46:23.156Z"}
 {"event":"stage_status_changed","project_id":"PRJ-009","milestone_id":"PRJ-009-MS-001","stage_id":"PRJ-009-MS-001-ST01","old_status":"done","new_status":"in_progress","actual_end":null,"ts":"2026-05-22T06:50:40.077Z"}
+{"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-008","stage_id":"PRJ-006-MS-001-ST03","old_status":"pending","new_status":"done","actual_end":"2026-05-22","ts":"2026-05-22T07:26:36.195Z"}
