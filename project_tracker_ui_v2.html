@@ -29877,12 +29877,25 @@ async function ghReadText(filename) {
   return resp.ok ? resp.text() : '';
 }
 
+// 安全的 UTF-8 → Base64 轉換（取代已廢棄的 btoa(unescape(encodeURIComponent())) 寫法）
+// 使用 TextEncoder 確保 UTF-8 編碼完整性，避免大檔案或特殊字元導致截斷
+function utf8ToBase64(str) {
+  const bytes = new TextEncoder().encode(str);
+  let binary = '';
+  const chunkSize = 8192; // 分批處理，避免堆疊溢位
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    const chunk = bytes.subarray(i, i + chunkSize);
+    binary += String.fromCharCode(...chunk);
+  }
+  return btoa(binary);
+}
+
 // 寫入檔案（需要 PAT）
 async function ghWrite(filename, content, sha) {
   const pat = getGhPat();
   if (!pat) { showPatModal(); throw new Error('No PAT'); }
   const strContent = typeof content === 'string' ? content : JSON.stringify(content, null, 2);
-  const encoded = btoa(unescape(encodeURIComponent(strContent)));
+  const encoded = utf8ToBase64(strContent);
   const body = {
     message: `[App] ${filename} ${new Date().toISOString().substring(0,16)}`,
     content: encoded,
@@ -29997,16 +30010,30 @@ async function importAndRebuildHtml() {
 // 直接寫入（不受 pendingSync 鎖、永遠抓最新 SHA、失敗時拋出錯誤）
 // 用於 confirmAddProject / deleteProject / saveLots / submitMilestone 等關鍵操作
 async function ghWriteProjDirect() {
-  try {
-    const meta = await ghMeta(CONFIG.projFile);
-    const result = await ghWrite(CONFIG.projFile, STATE.data, meta.sha);
-    _cachedProjSha = result.content?.sha || null;
-    const t = new Date().toLocaleTimeString('zh-TW', {hour:'2-digit', minute:'2-digit', second:'2-digit'});
-    showEventSyncStatus(true, t);
-  } catch(e) {
-    console.error('ghWriteProjDirect failed:', e);
-    showEventSyncStatus(false, e.message || '寫入 projects.json 失敗');
-    throw e; // re-throw，讓呼叫端知道失敗
+  const MAX_RETRIES = 4;
+  let attempt = 0;
+  while (attempt < MAX_RETRIES) {
+    try {
+      // 每次都重新抓最新 SHA，避免用到過期版本
+      const meta = await ghMeta(CONFIG.projFile);
+      const result = await ghWrite(CONFIG.projFile, STATE.data, meta.sha);
+      _cachedProjSha = result.content?.sha || null;
+      const t = new Date().toLocaleTimeString('zh-TW', {hour:'2-digit', minute:'2-digit', second:'2-digit'});
+      showEventSyncStatus(true, t);
+      return;
+    } catch(e) {
+      const isConflict = e.message?.includes('409') || e.message?.includes('conflict') || e.message?.includes('sha');
+      if (isConflict && attempt < MAX_RETRIES - 1) {
+        attempt++;
+        console.warn(`projects.json 寫入衝突（409），重試第 ${attempt} 次...`);
+        // random jitter 避免兩個 client 同時重試再度衝突
+        await new Promise(r => setTimeout(r, 400 * attempt + Math.random() * 300));
+      } else {
+        console.error('ghWriteProjDirect failed:', e);
+        showEventSyncStatus(false, e.message || '寫入 projects.json 失敗');
+        throw e;
+      }
+    }
   }
 }
 
@@ -30150,7 +30177,8 @@ async function _ghAppendEventDirect(event) {
       if (isConflict && attempt < MAX_RETRIES - 1) {
         attempt++;
         console.warn(`Event append 409 conflict，重試第 ${attempt} 次...`);
-        await new Promise(r => setTimeout(r, 300 * attempt)); // 間隔遞增：300ms / 600ms
+        // random jitter 避免兩個 client 同時重試再度衝突
+        await new Promise(r => setTimeout(r, 300 * attempt + Math.random() * 300));
       } else {
         console.warn('Event append failed:', e);
         showEventSyncStatus(false, e.message || '請確認 PAT 已設定');
@@ -30390,6 +30418,46 @@ function applyEvents(data, events) {
           }
           break;
         }
+
+        case 'parcel_added': {
+          if (!proj.parcels) proj.parcels = [];
+          // 避免重複（projects.json 寫入成功時已有此地塊）
+          if (!proj.parcels.find(p => p.parcel_id === ev.parcel.parcel_id)) {
+            proj.parcels.push(ev.parcel);
+          }
+          proj.updated_at = ev.ts;
+          break;
+        }
+
+        case 'parcel_edited': {
+          const parcel = proj.parcels?.find(p => p.parcel_id === ev.parcel_id);
+          if (parcel) {
+            if (ev.name        !== undefined) {
+              parcel.name = ev.name;
+              // 同步里程碑實例的 parcel_name
+              (proj.milestones || []).forEach(m => {
+                if (m.parcel_id === ev.parcel_id) m.parcel_name = ev.name;
+              });
+            }
+            if (ev.area_m2     !== undefined) parcel.area_m2     = ev.area_m2;
+            if (ev.capacity_kw !== undefined) parcel.capacity_kw = ev.capacity_kw;
+          }
+          proj.updated_at = ev.ts;
+          break;
+        }
+
+        case 'parcel_deleted': {
+          const parcel = proj.parcels?.find(p => p.parcel_id === ev.parcel_id);
+          if (parcel) parcel.status = 'deleted';
+          // 移除關聯的 per_parcel 里程碑（與 loadData 防禦性清除邏輯一致）
+          proj.milestones = (proj.milestones || []).filter(m => m.parcel_id !== ev.parcel_id);
+          proj.updated_at = ev.ts;
+          break;
+        }
+
+        // 舊版空標記 event，無資料，忽略即可
+        case 'parcels_updated':
+          break;
 
         default:
           console.warn('Unknown event type:', ev.event);
@@ -32916,7 +32984,7 @@ function cancelPclEdit() {
   document.getElementById('pcl-form-title').textContent = '\uff0b 新增地塊';
 }
 
-function savePclForm() {
+async function savePclForm() {
   const nameEl = document.getElementById('pcl-name');
   const name   = nameEl.value.trim();
   if (!name) { nameEl.classList.add('invalid'); return; }
@@ -32929,6 +32997,9 @@ function savePclForm() {
   if (!proj) return;
   proj.parcels = proj.parcels || [];
 
+  let eventToAppend = null;
+  const now = new Date().toISOString();
+
   if (editId) {
     const pcl = proj.parcels.find(p => p.parcel_id === editId);
     if (pcl) {
@@ -32939,10 +33010,15 @@ function savePclForm() {
       (proj.milestones || []).forEach(m => {
         if (m.parcel_id === editId) m.parcel_name = name;
       });
+      eventToAppend = { event: 'parcel_edited', project_id: _pclManageProjId,
+        parcel_id: editId, name, area_m2: area, capacity_kw: kw, ts: now };
     }
   } else {
     const newId = `${_pclManageProjId}-PCL-${Date.now()}`;
-    proj.parcels.push({ parcel_id: newId, name, status: 'active', lots: [], area_m2: area, capacity_kw: kw });
+    const newParcel = { parcel_id: newId, name, status: 'active', lots: [], area_m2: area, capacity_kw: kw };
+    proj.parcels.push(newParcel);
+    eventToAppend = { event: 'parcel_added', project_id: _pclManageProjId,
+      parcel: newParcel, ts: now };
   }
 
   cancelPclEdit();
@@ -32953,8 +33029,12 @@ function savePclForm() {
       renderMsParcelChecklist(_msModeEdit);
     }
   }
-  ghWriteProjDirect();
-  ghAppendEvent({ event: 'parcels_updated', project_id: _pclManageProjId, ts: new Date().toISOString() });
+  try {
+    await ghWriteProjDirect();
+    if (eventToAppend) ghAppendEvent(eventToAppend);
+  } catch(e) {
+    console.error('savePclForm sync failed:', e);
+  }
 }
 
 async function deletePcl(parcelId) {
@@ -32988,7 +33068,7 @@ async function deletePcl(parcelId) {
   }
   // Then overwrite projects.json with clean state (no deleted milestone, no deleted parcel)
   await ghWriteProjDirect();
-  ghAppendEvent({ event: 'parcels_updated', project_id: _pclManageProjId, ts: now });
+  ghAppendEvent({ event: 'parcel_deleted', project_id: _pclManageProjId, parcel_id: parcelId, ts: now });
 }
 
 // ── App Entry Point ────────────────────────────────────────────────────────
