@@ -26373,32 +26373,6 @@
           "actual_start": "2026-03-04"
         },
         {
-          "milestone_id": "PRJ-007-MS-011",
-          "name": "併聯試運轉函",
-          "group": "電業",
-          "application_scope": "whole_project",
-          "parcel_id": null,
-          "parcel_name": null,
-          "dependency_type": "hard",
-          "depends_on": [
-            "光電設備施工",
-            "綠能容許"
-          ],
-          "condition_description": null,
-          "payment_trigger": true,
-          "standard_days": "50",
-          "baseline_start": "2027-02-04",
-          "baseline_end": "2027-03-11",
-          "forecast_end": "2026-09-18",
-          "actual_end": null,
-          "status": "pending",
-          "notes": null,
-          "updated_at": "2026-05-08T04:57:32.562Z",
-          "stages": [],
-          "tasks": [],
-          "forecast_start": "2026-07-20"
-        },
-        {
           "milestone_id": "PRJ-007-MS-1779420839089-c0h8",
           "name": "變更農業容許",
           "group": "農業",
@@ -26509,6 +26483,32 @@
           ],
           "updated_at": "2026-05-22T03:34:06.540Z",
           "_origName": "變更農業容許"
+        },
+        {
+          "milestone_id": "PRJ-007-MS-011",
+          "name": "併聯試運轉函",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "parcel_id": null,
+          "parcel_name": null,
+          "dependency_type": "hard",
+          "depends_on": [
+            "光電設備施工",
+            "綠能容許"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "50",
+          "baseline_start": "2027-02-04",
+          "baseline_end": "2027-03-11",
+          "forecast_end": "2026-09-18",
+          "actual_end": null,
+          "status": "pending",
+          "notes": null,
+          "updated_at": "2026-05-08T04:57:32.562Z",
+          "stages": [],
+          "tasks": [],
+          "forecast_start": "2026-07-20"
         },
         {
           "milestone_id": "PRJ-007-MS-012",
