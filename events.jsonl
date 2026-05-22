@@ -554,3 +554,4 @@
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779430469714","stage_id":"PRJ-006-MS-1779430469714-ST08","old_status":"pending","new_status":"done","actual_end":"2026-05-22","ts":"2026-05-22T06:14:39.015Z"}
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779430469714","stage_id":"PRJ-006-MS-1779430469714-ST09","old_status":"pending","new_status":"done","actual_end":"2026-05-22","ts":"2026-05-22T06:14:40.084Z"}
 {"event":"parcels_updated","project_id":"PRJ-006","ts":"2026-05-22T06:15:28.161Z"}
+{"event":"update_edited","project_id":"PRJ-002","milestone_id":"PRJ-002-MS-005","task_id":"TSK-1778125050896","update":{"update_id":"UPD-1778739353492","created_at":"2026-05-14T04:00:00.000Z","content":"5/14 5/21日為審委員現勘日,目前委員有提到現在會希望現勘的時候義務人也要派人出席,所以若未來有案子要做出流管制,我們也需要出席現勘","impact":"none","impact_days":null,"next_action":null},"ts":"2026-05-22T06:15:56.493Z"}
