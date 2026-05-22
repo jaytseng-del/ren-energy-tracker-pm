@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T02:00:03.533Z",
+      "updated_at": "2026-05-22T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -564,6 +564,14 @@
                       "update_id": "UPD-1778824163656",
                       "created_at": "2026-05-15T04:00:00.000Z",
                       "content": "5/14聯絡承辦,承辦告知目前是台南市府已經討論出一個結論,但沒有辦法透漏太多,僅說應該會朝向條件式進行，應該是有達成哪些條件之後農許會核發",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1779430341800",
+                      "created_at": "2026-05-22T04:00:00.000Z",
+                      "content": "5/22本週無進度,預計過兩週在聯繫,以免承辦覺得煩",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -4861,7 +4869,7 @@
       "start_date": "2024-05-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T05:42:06.609Z",
+      "updated_at": "2026-05-22T06:15:56.493Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段15地號",
@@ -5984,7 +5992,7 @@
                     {
                       "update_id": "UPD-1778739353492",
                       "created_at": "2026-05-14T04:00:00.000Z",
-                      "content": "5/14 5/21日為審委員現勘日",
+                      "content": "5/14 5/21日為審委員現勘日,目前委員有提到現在會希望現勘的時候義務人也要派人出席,所以若未來有案子要做出流管制,我們也需要出席現勘",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -13825,7 +13833,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T06:14:40.084Z",
+      "updated_at": "2026-05-22T06:16:29.816Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -14592,8 +14600,8 @@
             "芳苑鄉漢寶村漢寶段66",
             "芳苑鄉漢寶村漢寶段67"
           ],
-          "area_m2": 4712.36,
-          "capacity_kw": 634.04
+          "area_m2": 48400,
+          "capacity_kw": 7121.455
         },
         {
           "parcel_id": "PRJ-006-PCL-007",
@@ -14607,8 +14615,8 @@
             "芳苑鄉王功村王功段1786",
             "芳苑鄉王功村王功段1787"
           ],
-          "area_m2": 9663,
-          "capacity_kw": 1443.53
+          "area_m2": 34753,
+          "capacity_kw": 5233.25
         },
         {
           "parcel_id": "PRJ-006-PCL-008",
@@ -14916,8 +14924,8 @@
           "name": "光宜_王功段1786,1787",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 10090,
+          "capacity_kw": 1524.6
         }
       ],
       "milestones": [
@@ -16499,7 +16507,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-08T06:17:42.451Z",
+          "updated_at": "2026-05-22T06:16:26.904Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-009-ST01",
@@ -16539,10 +16547,10 @@
               "type": "skippable",
               "estimated_days": "30",
               "cc": "3",
-              "status": "pending",
+              "status": "done",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": null,
+              "actual_end": "2026-05-22",
               "notes": "",
               "tasks": []
             },
@@ -16554,10 +16562,10 @@
               "type": "skippable",
               "estimated_days": "30",
               "cc": "2",
-              "status": "pending",
+              "status": "done",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": null,
+              "actual_end": "2026-05-22",
               "notes": "",
               "tasks": []
             },
@@ -16569,7 +16577,7 @@
               "type": "fixed",
               "estimated_days": "7",
               "cc": "5",
-              "status": "pending",
+              "status": "in_progress",
               "planned_start": null,
               "planned_end": null,
               "actual_end": null,
@@ -16659,7 +16667,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-08T06:17:46.719Z",
+          "updated_at": "2026-05-22T06:16:29.816Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-010-ST01",
@@ -16699,10 +16707,10 @@
               "type": "skippable",
               "estimated_days": "30",
               "cc": "3",
-              "status": "pending",
+              "status": "done",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": null,
+              "actual_end": "2026-05-22",
               "notes": "",
               "tasks": []
             },
@@ -16714,10 +16722,10 @@
               "type": "skippable",
               "estimated_days": "30",
               "cc": "2",
-              "status": "pending",
+              "status": "done",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": null,
+              "actual_end": "2026-05-22",
               "notes": "",
               "tasks": []
             },
@@ -28115,7 +28123,7 @@
       "start_date": "2023-09-26 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T03:34:06.540Z",
+      "updated_at": "2026-05-22T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "桃園市新屋區後庄段976",
@@ -29002,7 +29010,16 @@
                   "status": "open",
                   "due_date": "2026-05-27",
                   "notes": "",
-                  "updates": [],
+                  "updates": [
+                    {
+                      "update_id": "UPD-1779430660388",
+                      "created_at": "2026-05-22T04:00:00.000Z",
+                      "content": "預計5/27確認完成",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    }
+                  ],
                   "created_at": "2026-05-22T03:34:54.022Z",
                   "updated_at": "2026-05-22T03:34:54.022Z"
                 }
@@ -29084,7 +29101,7 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-22T03:34:06.540Z",
+          "updated_at": "2026-05-22T04:00:00.000Z",
           "_origName": "變更農業容許"
         },
         {
@@ -29870,7 +29887,7 @@
       "start_date": "2024-01-03 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T03:43:10.583Z",
+      "updated_at": "2026-05-22T06:18:15.632Z",
       "lots": [
         {
           "lot_number": "屏東縣高樹鄉南華段652",
@@ -31305,7 +31322,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-22T04:00:00.000Z",
+          "updated_at": "2026-05-22T06:18:15.632Z",
           "stages": [
             {
               "stage_id": "PRJ-008-MS-1778730569875-ST01",
@@ -31327,7 +31344,7 @@
                   "task_type": "one-off",
                   "status": "in_progress",
                   "next_action_due": "2026-05-29",
-                  "next_action": "1.尚未確認取代建物移轉之細部方案 2.整理相關說明向董事長報告",
+                  "next_action": "1.尚未確認取代建物移轉之細部方案 2.整理相關說明5/27前向董事長報告",
                   "notes": null,
                   "updates": [
                     {
@@ -31344,7 +31361,7 @@
                       "content": "漢企家和已提供審查文字說明，\n113年11月：啟動綠能容許（綠許）規劃與書件撰寫\n113年12月：正式遞件申請綠能容許。\n114年2月底：主管機關進行現場會勘。\n114年3月：收到主管機關駁回函文，要求農業設施容許（農許）與綠能容許內容須一致，方可續辦。\n114年4月：農業設施容許（農許）審查通過。\n114年4月：配合農許核定內容，重新提送綠能容許變更/重核申請。\n114年5月：配合審查意見，進行書件修改與圖冊抽換。\n114年6月：再次接獲修正駁回通知，立即依意見修改並完成重新送件\n114年7月：依審查要求補正相關委託書件。\n114年7月19日：主管機關正式發文，順利取得綠能容許許可函。\n114年10月27日：完成電表掛表\n114年11月：辦理免辦雜項執照（免雜）申請作業\n114年12月：取得免辦雜項執照核准公文。\n115年1月6日：送交竣工審查（期間適逢農曆春節假期，審件進度受過年影響有所延宕）。\n115年3月底：正式遞件申請設備登記\n115年5月6日：主管機關正式核發設備登記公文（專案經由綠許、施工至此順利結案）。",
                       "impact": "possible_delay",
                       "impact_days": 30,
-                      "next_action": "1.尚未確認取代建物移轉之細部方案 2.整理相關說明向董事長報告"
+                      "next_action": "1.尚未確認取代建物移轉之細部方案 2.整理相關說明5/27前向董事長報告"
                     }
                   ],
                   "created_at": "2026-05-15T03:37:42.099Z",
@@ -31445,7 +31462,7 @@
       "start_date": "2024-02-05 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T04:00:00.000Z",
+      "updated_at": "2026-05-22T06:18:33.439Z",
       "lots": [
         {
           "lot_number": "六龜區埔仔厝段363",
@@ -31702,7 +31719,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T04:00:00.000Z",
+          "updated_at": "2026-05-22T06:18:33.439Z",
           "stages": [
             {
               "stage_id": "PRJ-009-MS-001-ST01",
@@ -31754,7 +31771,7 @@
                     {
                       "update_id": "UPD-1779421498890",
                       "created_at": "2026-05-22T04:00:00.000Z",
-                      "content": "5/19與農技開會，已請農技協助釐清相關問題，將每周追蹤農技進度，1.建物設計確認： 預計 6 月完成。2.申請農業容許： 預計 6 月提出申請。",
+                      "content": "5/19與農技開會，已請農技協助釐清相關問題，將每周追蹤農技進度，1.建物設計確認： 預計 6 月完成。2.申請農業容許： 預計6月提出申請。",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": "每周追蹤農技進度及推進建物設計確認,申請農業容許時程"
