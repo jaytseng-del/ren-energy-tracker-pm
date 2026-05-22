@@ -5011,7 +5011,7 @@
         {
           "parcel_id": "PRJ-002-PCL-1779414362024",
           "name": "新鑫漁業(17地號)",
-          "status": "active",
+          "status": "deleted",
           "lots": [],
           "area_m2": null,
           "capacity_kw": null
@@ -9426,89 +9426,6 @@
           ],
           "tasks": [],
           "forecast_start": "2027-11-22"
-        },
-        {
-          "milestone_id": "PRJ-002-MS-1779414362024",
-          "name": "光電設備施工",
-          "group": "電業",
-          "application_scope": "per_parcel",
-          "parcel_id": "PRJ-002-PCL-1779414362024",
-          "parcel_name": "新鑫漁業(17地號)",
-          "dependency_type": "hard",
-          "depends_on": [
-            "光電施工許可"
-          ],
-          "baseline_start": "2027-11-07",
-          "baseline_end": "2028-09-18",
-          "forecast_start": "2027-11-07",
-          "forecast_end": "2028-09-18",
-          "actual_start": null,
-          "actual_end": null,
-          "status": "pending",
-          "notes": null,
-          "stages": [
-            {
-              "stage_id": "PRJ-002-MS-1779414362024-ST01",
-              "sequence": 1,
-              "name": "配電設施訂購",
-              "type": "fixed",
-              "cc": "25",
-              "estimated_days": "60",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414362024-ST02",
-              "sequence": 2,
-              "name": "配電設施進場",
-              "type": "fixed",
-              "cc": "10",
-              "estimated_days": "15",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414362024-ST03",
-              "sequence": 3,
-              "name": "配電設施工程",
-              "type": "fixed",
-              "cc": "35",
-              "estimated_days": "100",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414362024-ST04",
-              "sequence": 4,
-              "name": "機電測試",
-              "type": "fixed",
-              "cc": "20",
-              "estimated_days": "45",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            },
-            {
-              "stage_id": "PRJ-002-MS-1779414362024-ST05",
-              "sequence": 5,
-              "name": "驗收",
-              "type": "fixed",
-              "cc": "10",
-              "estimated_days": "30",
-              "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
-              "tasks": []
-            }
-          ],
-          "updated_at": "2026-05-22T02:35:59.967Z"
         },
         {
           "milestone_id": "PRJ-002-MS-031",
