@@ -13825,7 +13825,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T05:41:14.899Z",
+      "updated_at": "2026-05-22T05:41:26.948Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -15041,20 +15041,7 @@
               "planned_end": null,
               "actual_end": "2026-05-08",
               "notes": "地主資料、切結書、養殖計劃書等",
-              "tasks": [
-                {
-                  "task_id": "TSK-1778221977628",
-                  "name": "4/16農許(海尾段1746)完成現勘，預計5月取得同意",
-                  "task_type": "one-off",
-                  "status": "in_progress",
-                  "next_action_due": "2026-05-31",
-                  "next_action": null,
-                  "notes": null,
-                  "updates": [],
-                  "created_at": "2026-05-08T06:32:57.628Z",
-                  "updated_at": "2026-05-08T06:32:59.625Z"
-                }
-              ]
+              "tasks": []
             },
             {
               "stage_id": "PRJ-006-MS-002-ST02",
