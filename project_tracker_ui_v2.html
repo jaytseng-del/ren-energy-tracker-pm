@@ -31452,6 +31452,8 @@ function renderTab0() {
               <span class="ms-status ${statusMap[ms.status]||'pending'}" style="font-size:11px">${statusLabel[statusMap[ms.status]||'pending']||'未開始'}</span>
               <button class="ms-edit-btn" onclick="event.stopPropagation();openMsModal('${proj.project_id}','${ms.milestone_id}')">✎ 編輯</button>
               <button class="ms-edit-btn" style="color:var(--text2)" onclick="event.stopPropagation();showLotModal('${proj.project_id}','${ms.parcel_id}')">📍 地號</button>
+              <button class="ms-edit-btn" title="上移" onclick="event.stopPropagation();moveParcelInGroup('${proj.project_id}','${msName}','${ms.parcel_id}',-1)">↑</button>
+              <button class="ms-edit-btn" title="下移" onclick="event.stopPropagation();moveParcelInGroup('${proj.project_id}','${msName}','${ms.parcel_id}',1)">↓</button>
             </div>
             ${renderSingleMs(ms, true)}
           </div>`).join('')}
@@ -32513,6 +32515,39 @@ function moveMilestoneGroup(projId, msName, dir) {
     const nextFirst = nextIdxs[0];
     const nextBlock = milestones.splice(nextFirst, nextIdxs.length);
     milestones.splice(firstOwn, 0, ...nextBlock);
+  }
+
+  renderAll();
+  ghWriteProjDirect();
+}
+
+// ── 地塊順序調整（在同一 per_parcel 里程碑群組內） ──────────────────────────────
+function moveParcelInGroup(projId, msName, parcelId, dir) {
+  const proj = STATE.data.projects.find(p => p.project_id === projId);
+  if (!proj) return;
+
+  const milestones = proj.milestones;
+
+  // 取得此群組（同名里程碑）在 milestones 陣列中的所有 index
+  const groupIdxs = milestones.map((m, i) => m.name === msName ? i : -1).filter(i => i >= 0);
+  if (groupIdxs.length <= 1) return; // 只有一個地塊，無需排序
+
+  // 找目標地塊在群組中的位置
+  const posInGroup = groupIdxs.findIndex(i => milestones[i].parcel_id === parcelId);
+  if (posInGroup < 0) return;
+
+  if (dir === -1) {
+    // 往上：與前一個地塊交換
+    if (posInGroup === 0) return; // 已在最頂
+    const idxA = groupIdxs[posInGroup - 1];
+    const idxB = groupIdxs[posInGroup];
+    [milestones[idxA], milestones[idxB]] = [milestones[idxB], milestones[idxA]];
+  } else {
+    // 往下：與後一個地塊交換
+    if (posInGroup === groupIdxs.length - 1) return; // 已在最底
+    const idxA = groupIdxs[posInGroup];
+    const idxB = groupIdxs[posInGroup + 1];
+    [milestones[idxA], milestones[idxB]] = [milestones[idxB], milestones[idxA]];
   }
 
   renderAll();
