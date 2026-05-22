@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-20T07:40:47.535Z",
+      "updated_at": "2026-05-22T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -253,7 +253,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": "",
-          "updated_at": "2026-05-20T06:53:48.752Z",
+          "updated_at": "2026-05-22T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-001-MS-1779173833769-9649-ST01",
@@ -454,6 +454,14 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1779263947819",
+                      "created_at": "2026-05-19T04:00:00.000Z",
+                      "content": "follow Jason,MOU還在擬定當中",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
                     }
                   ],
                   "created_at": "2026-05-07T03:09:58.995Z",
@@ -620,7 +628,16 @@
               "status": "open",
               "due_date": null,
               "notes": "",
-              "updates": [],
+              "updates": [
+                {
+                  "update_id": "UPD-1779413667499",
+                  "created_at": "2026-05-22T04:00:00.000Z",
+                  "content": "5/28京城銀行人員會與法院去現勘,現勘完後會鑑價\n後續程序是:現勘>鑑價>通知其他持分人(因其他持分有優先購買權)>競拍",
+                  "impact": "none",
+                  "impact_days": null,
+                  "next_action": null
+                }
+              ],
               "created_at": "2026-05-20T06:25:45.283Z",
               "updated_at": "2026-05-20T06:25:45.283Z",
               "name": "76-1、76-3、77-1地主陳素土地持分法拍"
@@ -4844,7 +4861,7 @@
       "start_date": "2024-05-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-19T11:46:03.821Z",
+      "updated_at": "2026-05-22T01:23:23.326Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段15地號",
@@ -4954,6 +4971,14 @@
           "name": "新鑫漁業(17地號)",
           "status": "active",
           "lots": [],
+          "area_m2": 25275.43,
+          "capacity_kw": 3694.95
+        },
+        {
+          "parcel_id": "PRJ-002-PCL-1779414331339",
+          "name": "新鑫漁業(17地號)",
+          "status": "active",
+          "lots": [],
           "area_m2": null,
           "capacity_kw": null
         }
@@ -4979,7 +5004,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-19T03:26:20.361Z",
+          "updated_at": "2026-05-20T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-001-ST01",
@@ -5130,7 +5155,28 @@
               "tasks": []
             }
           ],
-          "tasks": [],
+          "tasks": [
+            {
+              "task_id": "TSK-1779266627949",
+              "name": "地主租約狀況follow",
+              "type": "one-off",
+              "status": "open",
+              "due_date": null,
+              "notes": "",
+              "updates": [
+                {
+                  "update_id": "UPD-1779266679847",
+                  "created_at": "2026-05-20T04:00:00.000Z",
+                  "content": "follow 業務部,因地主租約已到期,什麼時候會再跟地主簽增補,目前業務部已將增補合約提供給投資人HEXA,正在審約當中",
+                  "impact": "none",
+                  "impact_days": null,
+                  "next_action": null
+                }
+              ],
+              "created_at": "2026-05-20T08:43:47.949Z",
+              "updated_at": "2026-05-20T08:43:47.949Z"
+            }
+          ],
           "forecast_start": null,
           "actual_start": null,
           "_origName": "農業容許"
@@ -5295,7 +5341,8 @@
           ],
           "tasks": [],
           "forecast_start": null,
-          "actual_start": null
+          "actual_start": null,
+          "_origName": "農業容許"
         },
         {
           "milestone_id": "PRJ-002-MS-003",
@@ -5801,7 +5848,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-14T04:00:00.000Z",
+          "updated_at": "2026-05-22T01:23:23.326Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-005-ST01",
@@ -5838,6 +5885,14 @@
                       "update_id": "UPD-1778739293590",
                       "created_at": "2026-05-14T04:00:00.000Z",
                       "content": "5/14 技師告知星凱量測的新水位大概只會與他們目前送件的GL+0.7M差0.1-0.2M左右,星凱的水位是GL+0.2-0.6M,取最高點就是0.6M",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1779264595010",
+                      "created_at": "2026-05-20T04:00:00.000Z",
+                      "content": "5/20已告知星凱舊的地下水位與新的地下水位,出流管制技師判斷只差了0.1m,並請星凱以此結果提出土方平衡計畫",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -5916,10 +5971,10 @@
               "type": "fixed",
               "estimated_days": "7",
               "cc": "5",
-              "status": "in_progress",
+              "status": "done",
               "planned_start": null,
               "planned_end": null,
-              "actual_end": null,
+              "actual_end": "2026-05-22",
               "notes": "",
               "tasks": []
             },
@@ -5931,7 +5986,7 @@
               "type": "skippable",
               "estimated_days": "20",
               "cc": "8",
-              "status": "pending",
+              "status": "in_progress",
               "planned_start": null,
               "planned_end": null,
               "actual_end": null,
@@ -6446,6 +6501,101 @@
             }
           ],
           "tasks": []
+        },
+        {
+          "milestone_id": "PRJ-002-MS-1779414331339",
+          "name": "建照",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "parcel_id": "PRJ-002-PCL-1779414331339",
+          "parcel_name": "新鑫漁業(17地號)",
+          "dependency_type": "hard",
+          "depends_on": [
+            "農業容許"
+          ],
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_start": null,
+          "forecast_end": null,
+          "actual_start": null,
+          "actual_end": null,
+          "status": "pending",
+          "notes": "",
+          "stages": [
+            {
+              "stage_id": "PRJ-002-MS-1779414331339-ST01",
+              "sequence": 1,
+              "name": "申請文件準備",
+              "type": "fixed",
+              "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-002-MS-1779414331339-ST02",
+              "sequence": 2,
+              "name": "送件",
+              "type": "fixed",
+              "cc": "5",
+              "estimated_days": "1",
+              "authority": "建管處",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-002-MS-1779414331339-ST03",
+              "sequence": 3,
+              "name": "主管機關審核",
+              "type": "fixed",
+              "cc": "10",
+              "estimated_days": "90",
+              "authority": "建管處",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-002-MS-1779414331339-ST04",
+              "sequence": 4,
+              "name": "補正 #1",
+              "type": "skippable",
+              "cc": "5",
+              "estimated_days": "14",
+              "authority": "建管處",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-002-MS-1779414331339-ST05",
+              "sequence": 5,
+              "name": "補正 #2",
+              "type": "skippable",
+              "cc": "5",
+              "estimated_days": "14",
+              "authority": "建管處",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-002-MS-1779414331339-ST06",
+              "sequence": 6,
+              "name": "取得建造執照",
+              "type": "fixed",
+              "cc": "20",
+              "estimated_days": "7",
+              "authority": "—",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            }
+          ],
+          "updated_at": "2026-05-22T01:45:31.339Z"
         },
         {
           "milestone_id": "PRJ-002-MS-010",
@@ -9540,7 +9690,7 @@
       "start_date": "2025-07-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-19T05:55:44.902Z",
+      "updated_at": "2026-05-20T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段38地號",
@@ -9781,7 +9931,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-07T03:46:40.162Z",
+          "updated_at": "2026-05-20T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-003-MS-002-ST01",
@@ -9915,6 +10065,14 @@
                       "update_id": "UPD-1778125600162",
                       "created_at": "2026-05-07T03:46:40.162Z",
                       "content": "4/29技師告知市府還在審核中",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1779265416372",
+                      "created_at": "2026-05-20T04:00:00.000Z",
+                      "content": "5/20follow 出流技師,目前水利局還在簽核當中",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -11589,7 +11747,7 @@
       "start_date": "2024-10-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-19T05:56:17.989Z",
+      "updated_at": "2026-05-20T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "嘉義縣東石鄉鰲鼓段436地號",
@@ -11654,7 +11812,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-19T05:56:17.989Z",
+          "updated_at": "2026-05-20T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-001-ST01",
@@ -11771,6 +11929,14 @@
                       "update_id": "UPD-1777966399579",
                       "created_at": "2026-05-05T07:33:19.579Z",
                       "content": "5/5已掛件",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1779265441223",
+                      "created_at": "2026-05-20T04:00:00.000Z",
+                      "content": "5/20follow 審查進度,epc尚未回覆",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -12887,7 +13053,7 @@
       "start_date": "2025-05-14 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:58:38.152Z",
+      "updated_at": "2026-05-21T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "台中市龍井區忠和段1000地號",
@@ -13515,7 +13681,7 @@
                   "task_id": "TSK-1778131896543",
                   "name": "follow 進度",
                   "task_type": "recurring",
-                  "status": "in_progress",
+                  "status": "done",
                   "next_action_due": null,
                   "next_action": null,
                   "notes": null,
@@ -13530,7 +13696,7 @@
                     }
                   ],
                   "created_at": "2026-05-07T05:31:36.543Z",
-                  "updated_at": "2026-05-07T05:33:04.049Z"
+                  "updated_at": "2026-05-20T08:31:49.291Z"
                 }
               ]
             },
@@ -13574,7 +13740,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T05:58:32.479Z",
+          "updated_at": "2026-05-21T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-005-MS-1778751286224-ST01",
@@ -13598,7 +13764,16 @@
                   "next_action_due": null,
                   "next_action": null,
                   "notes": null,
-                  "updates": [],
+                  "updates": [
+                    {
+                      "update_id": "UPD-1779333376260",
+                      "created_at": "2026-05-21T04:00:00.000Z",
+                      "content": "用印已完成,預計周五會與香印的修約函文一起送出掛件,以減少台電需要等香印送出函文才會正式轉供的時間",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    }
+                  ],
                   "created_at": "2026-05-15T05:58:32.479Z",
                   "updated_at": "2026-05-15T05:58:38.152Z"
                 }
@@ -13620,7 +13795,28 @@
               "tasks": []
             }
           ],
-          "tasks": []
+          "tasks": [
+            {
+              "task_id": "TSK-1779265835713",
+              "name": "內部epc款項",
+              "type": "one-off",
+              "status": "open",
+              "due_date": null,
+              "notes": "",
+              "updates": [
+                {
+                  "update_id": "UPD-1779333306063",
+                  "created_at": "2026-05-21T04:00:00.000Z",
+                  "content": "目前內部epc款項已與財務部婷婷溝通過,會在取得台電躉售函後一次付清4-7期款項",
+                  "impact": "none",
+                  "impact_days": null,
+                  "next_action": null
+                }
+              ],
+              "created_at": "2026-05-20T08:30:35.713Z",
+              "updated_at": "2026-05-20T08:30:35.713Z"
+            }
+          ]
         }
       ]
     },
