@@ -14536,7 +14536,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-004",
-          "name": "芳苑六",
+          "name": "芳苑六_北漢寶段571",
           "status": "active",
           "lots": [
             "芳苑鄉漢寶村北漢寶段571地號",
@@ -14553,8 +14553,8 @@
             "芳苑鄉漢寶村海尾段761地號",
             "芳苑鄉漢寶村海尾段1535地號"
           ],
-          "area_m2": 47700,
-          "capacity_kw": 7044.015
+          "area_m2": 8956.17,
+          "capacity_kw": 1321.32
         },
         {
           "parcel_id": "PRJ-006-PCL-005",
@@ -15398,7 +15398,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-004",
-          "parcel_name": "芳苑六",
+          "parcel_name": "芳苑六_北漢寶段571",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -18786,7 +18786,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-004",
-          "parcel_name": "芳苑六",
+          "parcel_name": "芳苑六_北漢寶段571",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -19981,7 +19981,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-004",
-          "parcel_name": "芳苑六",
+          "parcel_name": "芳苑六_北漢寶段571",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -21236,7 +21236,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-004",
-          "parcel_name": "芳苑六",
+          "parcel_name": "芳苑六_北漢寶段571",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -22566,7 +22566,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-004",
-          "parcel_name": "芳苑六",
+          "parcel_name": "芳苑六_北漢寶段571",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -24968,7 +24968,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-004",
-          "parcel_name": "芳苑六",
+          "parcel_name": "芳苑六_北漢寶段571",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
