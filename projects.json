@@ -4989,6 +4989,14 @@
           "lots": [],
           "area_m2": null,
           "capacity_kw": null
+        },
+        {
+          "parcel_id": "PRJ-002-PCL-1779414341069",
+          "name": "新鑫漁業(17地號)",
+          "status": "active",
+          "lots": [],
+          "area_m2": null,
+          "capacity_kw": null
         }
       ],
       "milestones": [
@@ -7691,6 +7699,101 @@
             }
           ],
           "tasks": []
+        },
+        {
+          "milestone_id": "PRJ-002-MS-1779414341069",
+          "name": "使照",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "parcel_id": "PRJ-002-PCL-1779414341069",
+          "parcel_name": "新鑫漁業(17地號)",
+          "dependency_type": "hard",
+          "depends_on": [
+            "室內養殖設施施工"
+          ],
+          "baseline_start": null,
+          "baseline_end": null,
+          "forecast_start": null,
+          "forecast_end": null,
+          "actual_start": null,
+          "actual_end": null,
+          "status": "pending",
+          "notes": "",
+          "stages": [
+            {
+              "stage_id": "PRJ-002-MS-1779414341069-ST01",
+              "sequence": 1,
+              "name": "申請文件準備",
+              "type": "fixed",
+              "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-002-MS-1779414341069-ST02",
+              "sequence": 2,
+              "name": "送件申請",
+              "type": "fixed",
+              "cc": "5",
+              "estimated_days": "1",
+              "authority": "建管處",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-002-MS-1779414341069-ST03",
+              "sequence": 3,
+              "name": "主管機關審核",
+              "type": "fixed",
+              "cc": "10",
+              "estimated_days": "90",
+              "authority": "建管處",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-002-MS-1779414341069-ST04",
+              "sequence": 4,
+              "name": "補正 #1",
+              "type": "skippable",
+              "cc": "5",
+              "estimated_days": "14",
+              "authority": "建管處",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-002-MS-1779414341069-ST05",
+              "sequence": 5,
+              "name": "補正 #2",
+              "type": "skippable",
+              "cc": "5",
+              "estimated_days": "14",
+              "authority": "建管處",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            },
+            {
+              "stage_id": "PRJ-002-MS-1779414341069-ST06",
+              "sequence": 6,
+              "name": "取得使照",
+              "type": "fixed",
+              "cc": "20",
+              "estimated_days": "7",
+              "authority": "建管處",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": []
+            }
+          ],
+          "updated_at": "2026-05-22T01:45:41.069Z"
         },
         {
           "milestone_id": "PRJ-002-MS-018",
