@@ -13825,7 +13825,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T04:07:39.910Z",
+      "updated_at": "2026-05-22T05:33:25.131Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -14757,7 +14757,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-22T03:46:59.810Z",
+          "updated_at": "2026-05-22T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-001-ST01",
@@ -14777,7 +14777,7 @@
                   "task_id": "TSK-1778225016163",
                   "name": "租約增補公證(北漢寶576,680)",
                   "task_type": "one-off",
-                  "status": "in_progress",
+                  "status": "done",
                   "next_action_due": "2026-05-21",
                   "next_action": null,
                   "notes": null,
@@ -14805,10 +14805,18 @@
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1779427922008",
+                      "created_at": "2026-05-22T04:00:00.000Z",
+                      "content": "5/21增補租約公證完成",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
                     }
                   ],
                   "created_at": "2026-05-08T07:23:36.163Z",
-                  "updated_at": "2026-05-08T07:23:39.784Z"
+                  "updated_at": "2026-05-22T05:32:04.426Z"
                 }
               ]
             },
@@ -14952,6 +14960,14 @@
                       "update_id": "UPD-1778816660628",
                       "created_at": "2026-05-15T04:00:00.000Z",
                       "content": "5/15(本週無進度) •已取得：3.56MW/2.54公頃 •縣府審查：16.30MW/10.99公頃 •公所審查：40.37MW/27.2公頃 •待申請：0MW/0公頃",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1779427891847",
+                      "created_at": "2026-05-22T04:00:00.000Z",
+                      "content": "5/21(本週無進度) •已取得：3.56MW/2.54公頃 •縣府審查：16.30MW/10.99公頃 •公所審查：40.37MW/27.2公頃 •待申請：0MW/0公頃",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -22834,7 +22850,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T05:47:37.254Z",
+          "updated_at": "2026-05-22T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-053-ST01",
@@ -22935,9 +22951,18 @@
                   "task_type": "one-off",
                   "status": "in_progress",
                   "next_action_due": "2026-05-21",
-                  "next_action": null,
+                  "next_action": "5/22持續追蹤",
                   "notes": null,
-                  "updates": [],
+                  "updates": [
+                    {
+                      "update_id": "UPD-1779427978760",
+                      "created_at": "2026-05-22T04:00:00.000Z",
+                      "content": "5/21光浴尚未確認",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": "5/22持續追蹤"
+                    }
+                  ],
                   "created_at": "2026-05-15T05:46:54.660Z",
                   "updated_at": "2026-05-15T05:46:57.934Z"
                 }
@@ -24749,7 +24774,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T11:16:40.280Z",
+          "updated_at": "2026-05-22T05:33:25.131Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1778816898105-ST01",
@@ -24785,6 +24810,17 @@
                   ],
                   "created_at": "2026-05-15T03:48:51.881Z",
                   "updated_at": "2026-05-15T03:48:54.770Z"
+                },
+                {
+                  "task_id": "TSK-1779428005131",
+                  "name": "確認併接點",
+                  "type": "one-off",
+                  "status": "open",
+                  "due_date": "2026-05-21",
+                  "notes": "",
+                  "updates": [],
+                  "created_at": "2026-05-22T05:33:25.131Z",
+                  "updated_at": "2026-05-22T05:33:25.131Z"
                 }
               ]
             },
