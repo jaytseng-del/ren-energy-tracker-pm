@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T04:00:00.000Z",
+      "updated_at": "2026-05-22T08:37:44.087Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -355,7 +355,7 @@
                     {
                       "update_id": "UPD-1779257259378",
                       "created_at": "2026-05-21T04:00:00.000Z",
-                      "content": "已將目前調查進度摘要發信出來",
+                      "content": "已將目前調查進度摘要發信出來,下周二會電話詢問sgs之後訪談的進程,之前會議提到社會報告會大概在6月底可以有結果,也會順便問看看有沒有可能再提早",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -4869,7 +4869,7 @@
       "start_date": "2024-05-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T06:15:56.493Z",
+      "updated_at": "2026-05-22T06:21:25.404Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段15地號",
@@ -5932,7 +5932,7 @@
                     {
                       "update_id": "UPD-1779264595010",
                       "created_at": "2026-05-20T04:00:00.000Z",
-                      "content": "5/20已告知星凱舊的地下水位與新的地下水位,出流管制技師判斷只差了0.1m,並請星凱以此結果提出土方平衡計畫,下周會在follow進度",
+                      "content": "5/20已告知星凱舊的地下水位與新的地下水位,出流管制技師判斷只差了0.1m,並請星凱以此結果提出土方平衡計畫,下周一電話聯繫星凱確認狀況",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -11730,7 +11730,7 @@
       "start_date": "2024-10-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-20T04:00:00.000Z",
+      "updated_at": "2026-05-22T04:00:00.000Z",
       "lots": [
         {
           "lot_number": "嘉義縣東石鄉鰲鼓段436地號",
@@ -11919,7 +11919,7 @@
                     {
                       "update_id": "UPD-1779265441223",
                       "created_at": "2026-05-20T04:00:00.000Z",
-                      "content": "5/20follow 審查進度,epc尚未回覆",
+                      "content": "5/20follow 審查進度,epc尚未回覆,下周二會在電話聯繫",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -12000,7 +12000,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T02:09:57.610Z",
+          "updated_at": "2026-05-22T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-002-ST01",
@@ -12029,6 +12029,14 @@
                       "update_id": "UPD-1778142016958",
                       "created_at": "2026-05-07T08:20:16.958Z",
                       "content": "5/7 賈斯汀告知現有資料只有審核表及工程計畫書,沒有可規計畫,但可規計畫不再他們服務範圍內,目前請他先確認可規及建照是否可以在取得農許後同步送,後續怎麼合作再討論",
+                      "impact": "none",
+                      "impact_days": null,
+                      "next_action": null
+                    },
+                    {
+                      "update_id": "UPD-1779430842777",
+                      "created_at": "2026-05-22T04:00:00.000Z",
+                      "content": "更新調查進度",
                       "impact": "none",
                       "impact_days": null,
                       "next_action": null
@@ -13833,7 +13841,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T06:16:29.816Z",
+      "updated_at": "2026-05-22T07:26:40.773Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -14508,7 +14516,7 @@
             "芳苑鄉漢寶村北漢寶段325地號"
           ],
           "area_m2": 48500,
-          "capacity_kw": 7146.26
+          "capacity_kw": 1033.34
         },
         {
           "parcel_id": "PRJ-006-PCL-002",
@@ -14949,7 +14957,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T06:34:28.750Z",
+          "updated_at": "2026-05-22T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-001-ST01",
@@ -15178,7 +15186,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T06:34:28.750Z",
+          "updated_at": "2026-05-22T03:47:20.589Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-002-ST01",
@@ -15492,7 +15500,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T06:34:28.750Z",
+          "updated_at": "2026-05-22T05:50:12.702Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-004-ST01",
@@ -15636,7 +15644,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T06:34:28.750Z",
+          "updated_at": "2026-05-22T06:00:44.071Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-005-ST01",
@@ -15937,7 +15945,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T06:34:28.750Z",
+          "updated_at": "2026-05-22T06:12:53.683Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-007-ST01",
@@ -16123,9 +16131,9 @@
           "baseline_end": null,
           "forecast_end": null,
           "actual_end": null,
-          "status": "in_progress",
+          "status": "done",
           "notes": "",
-          "updated_at": "2026-05-22T06:34:28.750Z",
+          "updated_at": "2026-05-22T07:26:40.773Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-008-ST01",
@@ -16161,8 +16169,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -16174,8 +16182,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -16200,8 +16208,8 @@
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -16213,8 +16221,8 @@
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -16328,7 +16336,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T06:34:28.750Z",
+          "updated_at": "2026-05-22T06:16:26.904Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-009-ST01",
@@ -16734,7 +16742,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T04:05:40.571Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779422826927",
@@ -16874,7 +16882,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T04:07:26.589Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779422835007",
@@ -17014,7 +17022,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T04:07:32.802Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779422839322",
@@ -17154,7 +17162,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T04:07:39.910Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428220457",
@@ -17294,7 +17302,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T05:37:19.259Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428298220",
@@ -17446,7 +17454,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T05:38:29.186Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428336604",
@@ -17586,7 +17594,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z",
+          "updated_at": "2026-05-22T05:39:08.507Z",
           "_origName": "農業容許"
         },
         {
@@ -17727,7 +17735,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T05:42:29.704Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428651125",
@@ -17867,7 +17875,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T05:44:21.120Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428713797",
@@ -18007,7 +18015,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z",
+          "updated_at": "2026-05-22T05:45:28.690Z",
           "_origName": "農業容許"
         },
         {
@@ -18148,7 +18156,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T05:46:33.286Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428814037",
@@ -18288,7 +18296,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T05:47:02.397Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429071660",
@@ -18428,7 +18436,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T05:51:24.374Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429116205",
@@ -18568,7 +18576,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T05:52:02.412Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429139419",
@@ -18708,7 +18716,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T05:52:26.319Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429178675",
@@ -18848,7 +18856,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T05:53:09.436Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429220206",
@@ -18988,7 +18996,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T05:53:45.989Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429713775",
@@ -19128,7 +19136,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T06:02:05.392Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429812702",
@@ -19268,7 +19276,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T06:03:58.298Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429873348",
@@ -19408,7 +19416,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T06:04:50.652Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429907421",
@@ -19548,7 +19556,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T06:05:19.404Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430054378",
@@ -19688,7 +19696,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T06:07:51.353Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430109733",
@@ -19828,7 +19836,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T06:08:35.684Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430167735",
@@ -19968,7 +19976,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T06:09:36.237Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430198158",
@@ -20108,7 +20116,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T06:10:04.842Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430423574",
@@ -20248,7 +20256,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T06:14:02.137Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430469714",
@@ -20388,7 +20396,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:34:28.750Z"
+          "updated_at": "2026-05-22T06:14:40.084Z"
         },
         {
           "milestone_id": "PRJ-006-MS-011",
@@ -28155,7 +28163,7 @@
       "start_date": "2023-09-26 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T06:46:23.152Z",
+      "updated_at": "2026-05-22T06:46:23.156Z",
       "lots": [
         {
           "lot_number": "桃園市新屋區後庄段976",
@@ -29133,7 +29141,7 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-22T06:46:23.152Z",
+          "updated_at": "2026-05-22T04:00:00.000Z",
           "_origName": "變更農業容許"
         },
         {
@@ -29919,7 +29927,7 @@
       "start_date": "2024-01-03 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T05:57:31.911Z",
+      "updated_at": "2026-05-22T06:18:15.635Z",
       "lots": [
         {
           "lot_number": "屏東縣高樹鄉南華段652",
@@ -31354,7 +31362,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T05:57:31.911Z",
+          "updated_at": "2026-05-22T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-008-MS-1778730569875-ST01",
@@ -31376,7 +31384,7 @@
                   "task_type": "one-off",
                   "status": "in_progress",
                   "next_action_due": "2026-05-29",
-                  "next_action": "1.持續追蹤請漢企提出\n2.尚未確認取代建物移轉之細部方案\n3.下週向董事長說明",
+                  "next_action": "1.尚未確認取代建物移轉之細部方案 2.整理相關說明向董事長報告",
                   "notes": null,
                   "updates": [
                     {
@@ -31386,6 +31394,14 @@
                       "impact": "possible_delay",
                       "impact_days": 20,
                       "next_action": "1.持續追蹤請漢企提出\n2.尚未確認取代建物移轉之細部方案\n3.下週向董事長說明"
+                    },
+                    {
+                      "update_id": "UPD-1779421376180",
+                      "created_at": "2026-05-22T04:00:00.000Z",
+                      "content": "漢企家和已提供審查文字說明，\n113年11月：啟動綠能容許（綠許）規劃與書件撰寫\n113年12月：正式遞件申請綠能容許。\n114年2月底：主管機關進行現場會勘。\n114年3月：收到主管機關駁回函文，要求農業設施容許（農許）與綠能容許內容須一致，方可續辦。\n114年4月：農業設施容許（農許）審查通過。\n114年4月：配合農許核定內容，重新提送綠能容許變更/重核申請。\n114年5月：配合審查意見，進行書件修改與圖冊抽換。\n114年6月：再次接獲修正駁回通知，立即依意見修改並完成重新送件\n114年7月：依審查要求補正相關委託書件。\n114年7月19日：主管機關正式發文，順利取得綠能容許許可函。\n114年10月27日：完成電表掛表\n114年11月：辦理免辦雜項執照（免雜）申請作業\n114年12月：取得免辦雜項執照核准公文。\n115年1月6日：送交竣工審查（期間適逢農曆春節假期，審件進度受過年影響有所延宕）。\n115年3月底：正式遞件申請設備登記\n115年5月6日：主管機關正式核發設備登記公文（專案經由綠許、施工至此順利結案）。",
+                      "impact": "possible_delay",
+                      "impact_days": 30,
+                      "next_action": "1.尚未確認取代建物移轉之細部方案 2.整理相關說明5/27前向董事長報告"
                     }
                   ],
                   "created_at": "2026-05-15T03:37:42.099Z",
@@ -31486,7 +31502,7 @@
       "start_date": "2024-02-05 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-15T04:00:00.000Z",
+      "updated_at": "2026-05-22T06:50:40.077Z",
       "lots": [
         {
           "lot_number": "六龜區埔仔厝段363",
@@ -31743,7 +31759,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-15T04:00:00.000Z",
+          "updated_at": "2026-05-22T06:50:40.077Z",
           "stages": [
             {
               "stage_id": "PRJ-009-MS-001-ST01",
@@ -31753,7 +31769,7 @@
               "type": "fixed",
               "estimated_days": "30",
               "cc": "55",
-              "status": "done",
+              "status": "in_progress",
               "planned_start": null,
               "planned_end": null,
               "actual_end": "2026-05-15",
