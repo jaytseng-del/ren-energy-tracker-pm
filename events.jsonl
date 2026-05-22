@@ -776,3 +776,4 @@
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779430167735","ts":"2026-05-22T14:04:20.978Z","name":"芳苑八_海尾段707,708,709","area_m2":15036.54,"capacity_kw":2274.8,"lots":["芳苑鄉漢寶村海尾段707","芳苑鄉漢寶村海尾段708","芳苑鄉漢寶村海尾段709"]}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779430198158","ts":"2026-05-22T14:04:20.978Z","name":"芳苑八_漢寶段66,67","area_m2":10516.66,"capacity_kw":1580.865,"lots":["芳苑鄉漢寶村漢寶段66","芳苑鄉漢寶村漢寶段67"]}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779430423574","ts":"2026-05-22T14:04:20.978Z","name":"光宜_王功段1766,1766-1","area_m2":15000,"capacity_kw":2265.12,"lots":["芳苑鄉王功村王功段1766","芳苑鄉王功村王功段1766-1"]}
+{"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779430469714","ts":"2026-05-22T14:04:20.978Z","name":"光宜_王功段1786,1787","area_m2":10090,"capacity_kw":1524.6,"lots":["芳苑鄉王功村王功段1786","芳苑鄉王功村王功段1787"]}
