@@ -24807,7 +24807,7 @@
       "start_date": "2023-09-26 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T03:31:20.994Z",
+      "updated_at": "2026-05-22T03:34:06.540Z",
       "lots": [
         {
           "lot_number": "桃園市新屋區後庄段976",
@@ -26399,31 +26399,6 @@
           "forecast_start": "2026-07-20"
         },
         {
-          "milestone_id": "PRJ-007-MS-012",
-          "name": "設備登記",
-          "group": "電業",
-          "application_scope": "whole_project",
-          "parcel_id": null,
-          "parcel_name": null,
-          "dependency_type": "hard",
-          "depends_on": [
-            "併聯試運轉函"
-          ],
-          "condition_description": null,
-          "payment_trigger": true,
-          "standard_days": "180",
-          "baseline_start": "2027-03-25",
-          "baseline_end": "2027-04-24",
-          "forecast_end": "2027-04-09",
-          "actual_end": null,
-          "status": "pending",
-          "notes": null,
-          "updated_at": "2026-05-08T04:57:32.562Z",
-          "stages": [],
-          "tasks": [],
-          "forecast_start": "2027-03-10"
-        },
-        {
           "milestone_id": "PRJ-007-MS-1779420839089-c0h8",
           "name": "變更農業容許",
           "group": "農業",
@@ -26438,7 +26413,7 @@
           "forecast_end": "2026-06-30",
           "actual_start": null,
           "actual_end": null,
-          "status": "pending",
+          "status": "in_progress",
           "notes": "",
           "stages": [
             {
@@ -26449,7 +26424,7 @@
               "cc": "45",
               "estimated_days": null,
               "authority": "（內部）",
-              "status": "pending",
+              "status": "in_progress",
               "planned_start": null,
               "planned_end": null,
               "actual_end": null,
@@ -26532,7 +26507,33 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-22T03:33:59.089Z"
+          "updated_at": "2026-05-22T03:34:06.540Z",
+          "_origName": "變更農業容許"
+        },
+        {
+          "milestone_id": "PRJ-007-MS-012",
+          "name": "設備登記",
+          "group": "電業",
+          "application_scope": "whole_project",
+          "parcel_id": null,
+          "parcel_name": null,
+          "dependency_type": "hard",
+          "depends_on": [
+            "併聯試運轉函"
+          ],
+          "condition_description": null,
+          "payment_trigger": true,
+          "standard_days": "180",
+          "baseline_start": "2027-03-25",
+          "baseline_end": "2027-04-24",
+          "forecast_end": "2027-04-09",
+          "actual_end": null,
+          "status": "pending",
+          "notes": null,
+          "updated_at": "2026-05-08T04:57:32.562Z",
+          "stages": [],
+          "tasks": [],
+          "forecast_start": "2027-03-10"
         }
       ]
     },
