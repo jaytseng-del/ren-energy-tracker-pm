@@ -350,3 +350,4 @@
 {"event":"task_deleted","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1778816898105","stage_id":"PRJ-006-MS-1778816898105-ST01","task_id":"TSK-1779428005131","ts":"2026-05-22T05:33:30.371Z"}
 {"event":"update_added","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-053","task_id":"TSK-1778221499396","update":{"update_id":"UPD-1779428115268","created_at":"2026-05-22T04:00:00.000Z","content":"用印同意已取得，光浴預計5/29用印","impact":"possible_delay","impact_days":15,"next_action":"持續追蹤"},"ts":"2026-05-22T04:00:00.000Z"}
 {"event":"parcels_updated","project_id":"PRJ-006","ts":"2026-05-22T05:36:26.205Z"}
+{"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779428220457","stage_id":"PRJ-006-MS-1779428220457-ST01","old_status":"pending","new_status":"done","actual_end":"2026-05-22","ts":"2026-05-22T05:37:03.696Z"}
