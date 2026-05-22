@@ -15,7 +15,7 @@
       "start_date": "2023-09-08 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T09:10:27.880Z",
+      "updated_at": "2026-05-22T09:10:27.886Z",
       "lots": [
         {
           "lot_number": "台南市七股區下山子寮段76-1地號",
@@ -253,7 +253,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": "",
-          "updated_at": "2026-05-22T09:10:27.880Z",
+          "updated_at": "2026-05-22T04:00:00.000Z",
           "stages": [
             {
               "stage_id": "PRJ-001-MS-1779173833769-9649-ST01",
@@ -391,7 +391,7 @@
                   "task_type": "one-off",
                   "status": "in_progress",
                   "next_action_due": null,
-                  "next_action": "2026Q2租金未付",
+                  "next_action": null,
                   "notes": null,
                   "updates": [
                     {
@@ -4869,7 +4869,7 @@
       "start_date": "2024-05-01 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T09:15:32.752Z",
+      "updated_at": "2026-05-22T09:17:13.012Z",
       "lots": [
         {
           "lot_number": "台南市七股區台區段15地號",
@@ -5044,7 +5044,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-001-ST01",
@@ -5241,7 +5241,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-002-ST01",
@@ -5404,7 +5404,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-003-ST01",
@@ -5566,7 +5566,7 @@
           "actual_end": null,
           "status": "blocked",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-004-ST01",
@@ -5865,7 +5865,7 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "_origName": "農業容許"
         },
         {
@@ -5888,7 +5888,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-005-ST01",
@@ -6103,7 +6103,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-006-ST01",
@@ -6209,7 +6209,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-007-ST01",
@@ -6314,7 +6314,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-008-ST01",
@@ -6419,7 +6419,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-009-ST01",
@@ -6637,7 +6637,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-010-ST01",
@@ -6756,7 +6756,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-011-ST01",
@@ -6874,7 +6874,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-012-ST01",
@@ -6992,7 +6992,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-013-ST01",
@@ -7238,7 +7238,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-014-ST01",
@@ -7344,7 +7344,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-015-ST01",
@@ -7449,7 +7449,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-016-ST01",
@@ -7554,7 +7554,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-017-ST01",
@@ -7772,7 +7772,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-018-ST01",
@@ -7930,7 +7930,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-019-ST01",
@@ -8087,7 +8087,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-020-ST01",
@@ -8244,7 +8244,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-021-ST01",
@@ -8574,7 +8574,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-022-ST01",
@@ -8705,7 +8705,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-023-ST01",
@@ -8939,7 +8939,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-024-ST01",
@@ -9115,7 +9115,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-025-ST01",
@@ -9231,7 +9231,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-026-ST01",
@@ -9362,7 +9362,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-027-ST01",
@@ -9455,7 +9455,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-028-ST01",
@@ -9547,7 +9547,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-029-ST01",
@@ -9639,7 +9639,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-030-ST01",
@@ -9830,7 +9830,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [],
           "tasks": [],
           "forecast_start": "2028-08-02"
@@ -9855,7 +9855,7 @@
           "actual_end": null,
           "status": "pending",
           "notes": null,
-          "updated_at": "2026-05-22T09:15:32.752Z",
+          "updated_at": "2026-05-22T09:17:13.012Z",
           "stages": [
             {
               "stage_id": "PRJ-002-MS-032-ST01",
@@ -14217,7 +14217,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T07:26:40.773Z",
+      "updated_at": "2026-05-22T08:57:00.146Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -14891,8 +14891,8 @@
             "芳苑鄉漢寶村北漢寶段324地號",
             "芳苑鄉漢寶村北漢寶段325地號"
           ],
-          "area_m2": 48500,
-          "capacity_kw": 7146.26
+          "area_m2": 7055.06,
+          "capacity_kw": 1033.34
         },
         {
           "parcel_id": "PRJ-006-PCL-002",
@@ -14907,8 +14907,8 @@
             "芳苑鄉漢寶村北漢寶段624地號",
             "芳苑鄉漢寶村北漢寶段321地號"
           ],
-          "area_m2": 47000,
-          "capacity_kw": 7012.555
+          "area_m2": 11010.68,
+          "capacity_kw": 1645.6
         },
         {
           "parcel_id": "PRJ-006-PCL-003",
@@ -14923,8 +14923,8 @@
             "芳苑鄉漢寶村北漢寶段582地號",
             "芳苑鄉漢寶村北漢寶段643地號"
           ],
-          "area_m2": 44100,
-          "capacity_kw": 6586.03
+          "area_m2": 10088.07,
+          "capacity_kw": 1524.6
         },
         {
           "parcel_id": "PRJ-006-PCL-004",
@@ -14945,8 +14945,8 @@
             "芳苑鄉漢寶村海尾段761地號",
             "芳苑鄉漢寶村海尾段1535地號"
           ],
-          "area_m2": 47700,
-          "capacity_kw": 7044.015
+          "area_m2": 8956.17,
+          "capacity_kw": 1321.32
         },
         {
           "parcel_id": "PRJ-006-PCL-005",
@@ -14962,8 +14962,8 @@
             "芳苑鄉漢寶村海尾段1513",
             "芳苑鄉漢寶村漢寶段61"
           ],
-          "area_m2": 49000,
-          "capacity_kw": 7189.82
+          "area_m2": 4782.07,
+          "capacity_kw": 707.85
         },
         {
           "parcel_id": "PRJ-006-PCL-006",
@@ -14984,8 +14984,8 @@
             "芳苑鄉漢寶村漢寶段66",
             "芳苑鄉漢寶村漢寶段67"
           ],
-          "area_m2": 48400,
-          "capacity_kw": 7121.455
+          "area_m2": 4712.36,
+          "capacity_kw": 634.04
         },
         {
           "parcel_id": "PRJ-006-PCL-007",
@@ -14999,8 +14999,8 @@
             "芳苑鄉王功村王功段1786",
             "芳苑鄉王功村王功段1787"
           ],
-          "area_m2": 34753,
-          "capacity_kw": 5233.25
+          "area_m2": 9663,
+          "capacity_kw": 1443.53
         },
         {
           "parcel_id": "PRJ-006-PCL-008",
@@ -15562,7 +15562,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T03:47:20.589Z",
+          "updated_at": "2026-05-22T08:54:32.257Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-002-ST01",
@@ -15598,8 +15598,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -15611,8 +15611,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -15706,7 +15706,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T06:34:28.750Z",
+          "updated_at": "2026-05-22T08:54:40.122Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-003-ST01",
@@ -15767,8 +15767,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -15780,8 +15780,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -15793,7 +15793,7 @@
               "cc": "5",
               "estimated_days": "7",
               "authority": "地方農業局",
-              "status": "pending",
+              "status": "in_progress",
               "actual_end": null,
               "tasks": [],
               "notes": ""
@@ -15876,7 +15876,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T05:50:12.702Z",
+          "updated_at": "2026-05-22T08:54:44.653Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-004-ST01",
@@ -15912,8 +15912,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -15925,8 +15925,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -16020,7 +16020,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T06:00:44.071Z",
+          "updated_at": "2026-05-22T08:54:48.530Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-005-ST01",
@@ -16082,8 +16082,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -16177,7 +16177,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T06:34:28.750Z",
+          "updated_at": "2026-05-22T08:54:55.375Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-006-ST01",
@@ -16213,8 +16213,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -16226,8 +16226,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -16321,7 +16321,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T06:12:53.683Z",
+          "updated_at": "2026-05-22T08:55:01.173Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-007-ST01",
@@ -16370,8 +16370,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -16383,8 +16383,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -16712,7 +16712,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T06:16:26.904Z",
+          "updated_at": "2026-05-22T08:55:07.890Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-009-ST01",
@@ -16761,8 +16761,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -16856,7 +16856,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T06:34:28.750Z",
+          "updated_at": "2026-05-22T08:55:13.945Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-010-ST01",
@@ -16892,7 +16892,7 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
+              "status": "in_progress",
               "actual_end": null,
               "tasks": [],
               "notes": ""
@@ -16905,8 +16905,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -16918,7 +16918,7 @@
               "cc": "5",
               "estimated_days": "7",
               "authority": "地方農業局",
-              "status": "pending",
+              "status": "in_progress",
               "actual_end": null,
               "tasks": [],
               "notes": ""
@@ -17034,8 +17034,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17047,8 +17047,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17118,7 +17118,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T04:05:40.571Z"
+          "updated_at": "2026-05-22T08:55:17.629Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779422826927",
@@ -17174,8 +17174,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17187,8 +17187,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17258,7 +17258,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T04:07:26.589Z"
+          "updated_at": "2026-05-22T08:55:21.027Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779422835007",
@@ -17314,8 +17314,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17327,8 +17327,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17398,7 +17398,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T04:07:32.802Z"
+          "updated_at": "2026-05-22T08:55:24.394Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779422839322",
@@ -17454,8 +17454,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17467,8 +17467,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17538,7 +17538,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T04:07:39.910Z"
+          "updated_at": "2026-05-22T08:55:27.735Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428220457",
@@ -17594,8 +17594,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17607,8 +17607,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17678,7 +17678,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:37:19.259Z"
+          "updated_at": "2026-05-22T08:55:31.150Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428298220",
@@ -17734,8 +17734,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17747,8 +17747,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17773,8 +17773,8 @@
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17786,8 +17786,8 @@
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17830,7 +17830,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:38:29.186Z"
+          "updated_at": "2026-05-22T08:55:37.252Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428336604",
@@ -17886,8 +17886,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17899,8 +17899,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -17970,7 +17970,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:39:08.507Z",
+          "updated_at": "2026-05-22T08:55:40.506Z",
           "_origName": "農業容許"
         },
         {
@@ -18027,8 +18027,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18040,8 +18040,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18111,7 +18111,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:42:29.704Z"
+          "updated_at": "2026-05-22T08:55:45.148Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428651125",
@@ -18167,8 +18167,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18180,8 +18180,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18251,7 +18251,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:44:21.120Z"
+          "updated_at": "2026-05-22T08:55:48.594Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428713797",
@@ -18307,8 +18307,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18320,8 +18320,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18346,8 +18346,8 @@
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18359,8 +18359,8 @@
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18391,7 +18391,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:45:28.690Z",
+          "updated_at": "2026-05-22T08:55:53.444Z",
           "_origName": "農業容許"
         },
         {
@@ -18448,8 +18448,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18461,8 +18461,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18487,8 +18487,8 @@
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18500,8 +18500,8 @@
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18532,7 +18532,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:46:33.286Z"
+          "updated_at": "2026-05-22T08:55:58.700Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428814037",
@@ -18588,8 +18588,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18601,8 +18601,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18672,7 +18672,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:47:02.397Z"
+          "updated_at": "2026-05-22T08:56:01.995Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429071660",
@@ -18728,8 +18728,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18741,8 +18741,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18812,7 +18812,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:51:24.374Z"
+          "updated_at": "2026-05-22T08:56:05.416Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429116205",
@@ -18868,8 +18868,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18881,8 +18881,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -18952,7 +18952,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:52:02.412Z"
+          "updated_at": "2026-05-22T08:56:08.798Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429139419",
@@ -19008,8 +19008,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -19021,8 +19021,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -19092,7 +19092,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:52:26.319Z"
+          "updated_at": "2026-05-22T08:56:11.973Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429178675",
@@ -19148,8 +19148,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -19161,8 +19161,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -19232,7 +19232,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:53:09.436Z"
+          "updated_at": "2026-05-22T08:56:16.551Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429220206",
@@ -19288,8 +19288,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -19301,8 +19301,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -19372,7 +19372,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T05:53:45.989Z"
+          "updated_at": "2026-05-22T08:56:19.758Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429713775",
@@ -19428,8 +19428,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -19441,8 +19441,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -19512,7 +19512,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:02:05.392Z"
+          "updated_at": "2026-05-22T08:56:24.488Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429812702",
@@ -19568,8 +19568,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -19581,8 +19581,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -19652,7 +19652,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:03:58.298Z"
+          "updated_at": "2026-05-22T08:56:27.670Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429873348",
@@ -19708,8 +19708,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -19721,8 +19721,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -19792,7 +19792,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:04:50.652Z"
+          "updated_at": "2026-05-22T08:56:31.212Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429907421",
@@ -19848,8 +19848,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -19861,8 +19861,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -19932,7 +19932,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:05:19.404Z"
+          "updated_at": "2026-05-22T08:56:34.882Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430054378",
@@ -19988,8 +19988,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -20001,8 +20001,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -20072,7 +20072,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:07:51.353Z"
+          "updated_at": "2026-05-22T08:56:38.266Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430109733",
@@ -20128,8 +20128,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -20141,8 +20141,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -20212,7 +20212,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:08:35.684Z"
+          "updated_at": "2026-05-22T08:56:41.750Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430167735",
@@ -20268,8 +20268,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -20281,8 +20281,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -20352,7 +20352,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:09:36.237Z"
+          "updated_at": "2026-05-22T08:56:45.116Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430198158",
@@ -20408,8 +20408,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -20421,8 +20421,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -20492,7 +20492,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:10:04.842Z"
+          "updated_at": "2026-05-22T08:56:52.170Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430423574",
@@ -20548,8 +20548,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -20561,8 +20561,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -20632,7 +20632,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:14:02.137Z"
+          "updated_at": "2026-05-22T08:56:56.773Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430469714",
@@ -20688,8 +20688,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -20701,8 +20701,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": [],
               "notes": ""
             },
@@ -20772,7 +20772,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-22T06:14:40.084Z"
+          "updated_at": "2026-05-22T08:57:00.146Z"
         },
         {
           "milestone_id": "PRJ-006-MS-011",
