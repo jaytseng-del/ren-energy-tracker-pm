@@ -732,3 +732,4 @@
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779444271653","stage_id":"PRJ-006-MS-1779444271653-ST09","old_status":"pending","new_status":"done","actual_end":"2026-05-22","ts":"2026-05-22T10:04:43.354Z"}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779444271653","name":"光浴_王功段1508-1","area_m2":2800,"capacity_kw":402.03,"ts":"2026-05-22T10:05:00.530Z"}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779444271653","name":"光浴_王功段1508-1","area_m2":2800,"capacity_kw":402.03,"ts":"2026-05-22T10:05:06.673Z"}
+{"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779444271653","name":"光浴_王功段1508-1","area_m2":2800,"capacity_kw":402.03,"ts":"2026-05-22T10:05:08.141Z"}
