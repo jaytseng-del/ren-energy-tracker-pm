@@ -12485,7 +12485,7 @@
           "actual_end": null,
           "status": "in_progress",
           "notes": "",
-          "updated_at": "2026-05-22T02:06:57.103Z",
+          "updated_at": "2026-05-22T02:09:57.610Z",
           "stages": [
             {
               "stage_id": "PRJ-004-MS-002-ST01",
@@ -12494,7 +12494,7 @@
               "authority": "（內部）",
               "type": "fixed",
               "estimated_days": "60",
-              "cc": "25",
+              "cc": "50",
               "status": "done",
               "planned_start": null,
               "planned_end": null,
@@ -12540,23 +12540,8 @@
               "tasks": []
             },
             {
-              "stage_id": "ST-DRAFT-1779415613896-3",
-              "sequence": 3,
-              "name": "市府審查",
-              "type": "fixed",
-              "cc": "25",
-              "estimated_days": null,
-              "authority": "",
-              "status": "pending",
-              "planned_start": null,
-              "planned_end": null,
-              "actual_end": null,
-              "notes": "",
-              "tasks": []
-            },
-            {
               "stage_id": "PRJ-004-MS-002-ST08",
-              "sequence": 4,
+              "sequence": 3,
               "name": "取得許可",
               "authority": "水利局",
               "type": "fixed",
