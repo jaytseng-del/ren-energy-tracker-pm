@@ -694,3 +694,4 @@
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779443579474","stage_id":"PRJ-006-MS-1779443579474-ST03","old_status":"pending","new_status":"done","actual_end":"2026-05-22","ts":"2026-05-22T09:53:05.583Z"}
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779443579474","stage_id":"PRJ-006-MS-1779443579474-ST04","old_status":"pending","new_status":"done","actual_end":"2026-05-22","ts":"2026-05-22T09:53:06.906Z"}
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779443579474","stage_id":"PRJ-006-MS-1779443579474-ST05","old_status":"pending","new_status":"in_progress","actual_end":null,"ts":"2026-05-22T09:53:09.123Z"}
+{"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779443557753","name":"芳漁三_北漢寶段725,732,733","area_m2":9973.39,"capacity_kw":1504.03,"ts":"2026-05-22T09:53:58.500Z"}
