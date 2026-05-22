@@ -5001,7 +5001,7 @@
         {
           "parcel_id": "PRJ-002-PCL-1779414341069",
           "name": "新鑫漁業(17地號)",
-          "status": "active",
+          "status": "deleted",
           "lots": [],
           "area_m2": null,
           "capacity_kw": null
@@ -5009,7 +5009,7 @@
         {
           "parcel_id": "PRJ-002-PCL-1779414346523",
           "name": "新鑫漁業(17地號)",
-          "status": "active",
+          "status": "deleted",
           "lots": [],
           "area_m2": null,
           "capacity_kw": null
