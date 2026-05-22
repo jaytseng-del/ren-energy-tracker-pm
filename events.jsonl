@@ -268,3 +268,4 @@
 {"event":"stage_status_changed","project_id":"PRJ-002","milestone_id":"PRJ-002-MS-005","stage_id":"PRJ-002-MS-005-ST04","old_status":"in_progress","new_status":"done","actual_end":"2026-05-22","ts":"2026-05-22T01:23:21.559Z"}
 {"event":"stage_status_changed","project_id":"PRJ-002","milestone_id":"PRJ-002-MS-005","stage_id":"PRJ-002-MS-005-ST05","old_status":"pending","new_status":"in_progress","actual_end":null,"ts":"2026-05-22T01:23:23.326Z"}
 {"event":"task_deleted","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","stage_id":null,"task_id":"TSK-1779258377440","ts":"2026-05-22T01:30:29.698Z"}
+{"event":"update_added","project_id":"PRJ-001","milestone_id":"PRJ-001-MS-001","task_id":"TSK-1779258345283","update":{"update_id":"UPD-1779413667499","created_at":"2026-05-22T04:00:00.000Z","content":"5/28京城銀行人員會與法院去現勘,現勘完後會鑑價\n後續程序是:現勘>鑑價>通知其他持分人(因其他持分有優先購買權)>競拍","impact":"none","impact_days":null,"next_action":null},"ts":"2026-05-22T04:00:00.000Z"}
