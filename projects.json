@@ -15038,7 +15038,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-010",
-          "name": "芳苑九",
+          "name": "芳苑九_海尾段\t1590",
           "status": "active",
           "lots": [
             "芳苑鄉漢寶村海尾段1590",
@@ -15052,8 +15052,8 @@
             "芳苑鄉漢寶村海尾段541",
             "芳苑鄉王功村王功段1820-2"
           ],
-          "area_m2": 37100,
-          "capacity_kw": 5570.84
+          "area_m2": 9854.02,
+          "capacity_kw": 1471.36
         },
         {
           "parcel_id": "PRJ-006-PCL-1779422294510",
@@ -16867,7 +16867,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九",
+          "parcel_name": "芳苑九_海尾段\t1590",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -22405,7 +22405,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九",
+          "parcel_name": "芳苑九_海尾段\t1590",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -23690,7 +23690,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九",
+          "parcel_name": "芳苑九_海尾段\t1590",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -24855,7 +24855,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九",
+          "parcel_name": "芳苑九_海尾段\t1590",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -26545,7 +26545,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九",
+          "parcel_name": "芳苑九_海尾段\t1590",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -28498,7 +28498,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九",
+          "parcel_name": "芳苑九_海尾段\t1590",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
