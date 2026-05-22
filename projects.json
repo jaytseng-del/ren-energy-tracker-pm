@@ -13825,7 +13825,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-22T05:44:21.120Z",
+      "updated_at": "2026-05-22T05:45:28.690Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -14777,7 +14777,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779428713797",
-          "name": "芳苑五_北漢寶段669",
+          "name": "芳苑五_北漢寶段669,670",
           "status": "active",
           "lots": [],
           "area_m2": null,
@@ -17860,7 +17860,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779428713797",
-          "parcel_name": "芳苑五_北漢寶段669",
+          "parcel_name": "芳苑五_北漢寶段669,670",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -17871,7 +17871,7 @@
           "forecast_end": null,
           "actual_start": null,
           "actual_end": null,
-          "status": "pending",
+          "status": "in_progress",
           "notes": "",
           "stages": [
             {
@@ -17882,8 +17882,8 @@
               "cc": "55",
               "estimated_days": "30",
               "authority": "（內部）",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -17894,8 +17894,8 @@
               "cc": "5",
               "estimated_days": "1",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -17906,8 +17906,8 @@
               "cc": "3",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -17918,8 +17918,8 @@
               "cc": "2",
               "estimated_days": "30",
               "authority": "土地所屬鄉/鎮/市/區公所",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -17930,8 +17930,8 @@
               "cc": "5",
               "estimated_days": "7",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -17942,8 +17942,8 @@
               "cc": "8",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -17954,8 +17954,8 @@
               "cc": "4",
               "estimated_days": "90",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -17966,8 +17966,8 @@
               "cc": "5",
               "estimated_days": "14",
               "authority": "地方農業局",
-              "status": "pending",
-              "actual_end": null,
+              "status": "done",
+              "actual_end": "2026-05-22",
               "tasks": []
             },
             {
@@ -17983,7 +17983,8 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-22T05:45:13.797Z"
+          "updated_at": "2026-05-22T05:45:28.690Z",
+          "_origName": "農業容許"
         },
         {
           "milestone_id": "PRJ-006-MS-011",
