@@ -737,3 +737,4 @@
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779444271653","name":"光浴_王功段1508-1","area_m2":2800,"capacity_kw":402.03,"ts":"2026-05-22T10:05:09.226Z"}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779444271653","name":"光浴_王功段1508-1","area_m2":2800,"capacity_kw":402.03,"ts":"2026-05-22T10:05:09.402Z"}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779444271653","name":"光浴_王功段1508-1","area_m2":2800,"capacity_kw":402.03,"ts":"2026-05-22T10:05:09.561Z"}
+{"event":"parcel_updated","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-008","area_m2":2500,"capacity_kw":1694.66,"ts":"2026-05-22T12:58:51.201Z"}
