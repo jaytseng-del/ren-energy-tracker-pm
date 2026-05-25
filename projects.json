@@ -14896,7 +14896,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-002",
-          "name": "芳苑二_北漢寶段623,624",
+          "name": "09_芳苑二_北漢寶段623,624",
           "status": "active",
           "lots": [
             "芳苑鄉漢寶村北漢寶段342地號",
@@ -15612,7 +15612,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-002",
-          "parcel_name": "芳苑二_北漢寶段623,624",
+          "parcel_name": "09_芳苑二_北漢寶段623,624",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -22182,7 +22182,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-002",
-          "parcel_name": "芳苑二_北漢寶段623,624",
+          "parcel_name": "09_芳苑二_北漢寶段623,624",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -23357,7 +23357,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-002",
-          "parcel_name": "芳苑二_北漢寶段623,624",
+          "parcel_name": "09_芳苑二_北漢寶段623,624",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -24652,7 +24652,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-002",
-          "parcel_name": "芳苑二_北漢寶段623,624",
+          "parcel_name": "09_芳苑二_北漢寶段623,624",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -25872,7 +25872,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-002",
-          "parcel_name": "芳苑二_北漢寶段623,624",
+          "parcel_name": "09_芳苑二_北漢寶段623,624",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -28441,7 +28441,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-002",
-          "parcel_name": "芳苑二_北漢寶段623,624",
+          "parcel_name": "09_芳苑二_北漢寶段623,624",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
