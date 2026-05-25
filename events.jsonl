@@ -797,3 +797,4 @@
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779673733855","stage_id":"PRJ-006-MS-1779673733855-ST08","old_status":"pending","new_status":"done","actual_end":"2026-05-25","ts":"2026-05-25T01:49:18.342Z"}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779673733855","name":"芳苑七_北漢寶段602","area_m2":4577.03,"capacity_kw":620.73,"ts":"2026-05-25T01:49:37.735Z"}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-001","name":"1_芳苑一_海尾段\t839,840,841","area_m2":7055.06,"capacity_kw":1033.34,"ts":"2026-05-25T01:52:18.079Z"}
+{"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-001","name":"1_芳苑一_海尾段\t839,840,841","area_m2":7055.06,"capacity_kw":1033.34,"ts":"2026-05-25T01:52:29.660Z"}
