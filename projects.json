@@ -14217,7 +14217,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-25T01:49:18.342Z",
+      "updated_at": "2026-05-25T01:52:29.660Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -14874,7 +14874,7 @@
       "parcels": [
         {
           "parcel_id": "PRJ-006-PCL-001",
-          "name": "芳苑一_海尾段\t839,840,841",
+          "name": "01_芳苑一_海尾段\t839,840,841",
           "status": "active",
           "lots": [
             "芳苑鄉漢寶村海尾段839地號",
@@ -15089,7 +15089,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779422536577",
-          "name": "芳苑一_北漢寶段573,574,574-1",
+          "name": "02_芳苑一_北漢寶段573,574,574-1",
           "status": "active",
           "lots": [],
           "area_m2": 10199.56,
@@ -15383,7 +15383,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-001",
-          "parcel_name": "芳苑一_海尾段\t839,840,841",
+          "parcel_name": "01_芳苑一_海尾段\t839,840,841",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -17051,7 +17051,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779422536577",
-          "parcel_name": "芳苑一_北漢寶段573,574,574-1",
+          "parcel_name": "02_芳苑一_北漢寶段573,574,574-1",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -22065,7 +22065,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-001",
-          "parcel_name": "芳苑一_海尾段\t839,840,841",
+          "parcel_name": "01_芳苑一_海尾段\t839,840,841",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -23226,7 +23226,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-001",
-          "parcel_name": "芳苑一_海尾段\t839,840,841",
+          "parcel_name": "01_芳苑一_海尾段\t839,840,841",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -24536,7 +24536,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-001",
-          "parcel_name": "芳苑一_海尾段\t839,840,841",
+          "parcel_name": "01_芳苑一_海尾段\t839,840,841",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -25696,7 +25696,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-001",
-          "parcel_name": "芳苑一_海尾段\t839,840,841",
+          "parcel_name": "01_芳苑一_海尾段\t839,840,841",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -28340,7 +28340,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-001",
-          "parcel_name": "芳苑一_海尾段\t839,840,841",
+          "parcel_name": "01_芳苑一_海尾段\t839,840,841",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
