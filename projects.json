@@ -15289,7 +15289,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779430198158",
-          "name": "芳苑八_漢寶段66,67",
+          "name": "32_芳苑八_漢寶段66,67",
           "status": "active",
           "lots": [],
           "area_m2": 10516.66,
@@ -20433,7 +20433,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779430198158",
-          "parcel_name": "芳苑八_漢寶段66,67",
+          "parcel_name": "32_芳苑八_漢寶段66,67",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
