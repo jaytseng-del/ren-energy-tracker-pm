@@ -15019,7 +15019,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-009",
-          "name": "芳漁三_王功段1390,1390-1,1391",
+          "name": "38_芳漁三_王功段1390,1390-1,1391",
           "status": "active",
           "lots": [
             "芳苑鄉新寶村王功段1390",
@@ -15038,7 +15038,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-010",
-          "name": "芳苑九_海尾段\t1590",
+          "name": "39_芳苑九_海尾段\t1590",
           "status": "active",
           "lots": [
             "芳苑鄉漢寶村海尾段1590",
@@ -15313,7 +15313,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779443509874",
-          "name": "芳漁三_海尾段532",
+          "name": "42_芳漁三_海尾段532",
           "status": "active",
           "lots": [],
           "area_m2": 3685.17,
@@ -15337,7 +15337,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779443803940",
-          "name": "芳苑九_王功段1820,1820-2,1821,1822",
+          "name": "40_芳苑九_王功段1820,1820-2,1821,1822",
           "status": "active",
           "lots": [],
           "area_m2": 10500,
@@ -15345,7 +15345,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779443832340",
-          "name": "芳苑九_北漢寶段492",
+          "name": "41_芳苑九_北漢寶段492",
           "status": "active",
           "lots": [],
           "area_m2": 10000.05,
@@ -16770,7 +16770,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
+          "parcel_name": "38_芳漁三_王功段1390,1390-1,1391",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -16915,7 +16915,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九_海尾段\t1590",
+          "parcel_name": "39_芳苑九_海尾段\t1590",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -20853,7 +20853,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779443509874",
-          "parcel_name": "芳漁三_海尾段532",
+          "parcel_name": "42_芳漁三_海尾段532",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -21247,7 +21247,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779443803940",
-          "parcel_name": "芳苑九_王功段1820,1820-2,1821,1822",
+          "parcel_name": "40_芳苑九_王功段1820,1820-2,1821,1822",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -21378,7 +21378,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779443832340",
-          "parcel_name": "芳苑九_北漢寶段492",
+          "parcel_name": "41_芳苑九_北漢寶段492",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -23002,7 +23002,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
+          "parcel_name": "38_芳漁三_王功段1390,1390-1,1391",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -23118,7 +23118,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九_海尾段\t1590",
+          "parcel_name": "39_芳苑九_海尾段\t1590",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -24282,7 +24282,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
+          "parcel_name": "38_芳漁三_王功段1390,1390-1,1391",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -24413,7 +24413,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九_海尾段\t1590",
+          "parcel_name": "39_芳苑九_海尾段\t1590",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -25472,7 +25472,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
+          "parcel_name": "38_芳漁三_王功段1390,1390-1,1391",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -25588,7 +25588,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九_海尾段\t1590",
+          "parcel_name": "39_芳苑九_海尾段\t1590",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -27112,7 +27112,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
+          "parcel_name": "38_芳漁三_王功段1390,1390-1,1391",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -27288,7 +27288,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九_海尾段\t1590",
+          "parcel_name": "39_芳苑九_海尾段\t1590",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -29156,7 +29156,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-009",
-          "parcel_name": "芳漁三_王功段1390,1390-1,1391",
+          "parcel_name": "38_芳漁三_王功段1390,1390-1,1391",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
@@ -29257,7 +29257,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-010",
-          "parcel_name": "芳苑九_海尾段\t1590",
+          "parcel_name": "39_芳苑九_海尾段\t1590",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
