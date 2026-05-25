@@ -15265,11 +15265,11 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779430054378",
-          "name": "28_芳苑八_北漢寶段286",
+          "name": "29_芳苑八_北漢寶段293,294,297,298",
           "status": "active",
           "lots": [],
-          "area_m2": 4712.36,
-          "capacity_kw": 634.04
+          "area_m2": 4916.04,
+          "capacity_kw": 643.72
         },
         {
           "parcel_id": "PRJ-006-PCL-1779430109733",
@@ -20013,7 +20013,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779430054378",
-          "parcel_name": "28_芳苑八_北漢寶段286",
+          "parcel_name": "29_芳苑八_北漢寶段293,294,297,298",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
