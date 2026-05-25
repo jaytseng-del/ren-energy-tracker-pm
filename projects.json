@@ -15217,7 +15217,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779429178675",
-          "name": "芳苑六_海尾段759,760,761",
+          "name": "20_芳苑六_海尾段759,760,761",
           "status": "active",
           "lots": [],
           "area_m2": 5230.94,
@@ -19165,7 +19165,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779429178675",
-          "parcel_name": "芳苑六_海尾段759,760,761",
+          "parcel_name": "20_芳苑六_海尾段759,760,761",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
