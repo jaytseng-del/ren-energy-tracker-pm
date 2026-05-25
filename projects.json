@@ -14967,7 +14967,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-006",
-          "name": "芳苑八_北漢寶段286",
+          "name": "28_芳苑八_北漢寶段286",
           "status": "active",
           "lots": [
             "芳苑鄉漢寶村北漢寶段286",
@@ -16235,7 +16235,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-006",
-          "parcel_name": "芳苑八_北漢寶段286",
+          "parcel_name": "28_芳苑八_北漢寶段286",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -22654,7 +22654,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-006",
-          "parcel_name": "芳苑八_北漢寶段286",
+          "parcel_name": "28_芳苑八_北漢寶段286",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -23889,7 +23889,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-006",
-          "parcel_name": "芳苑八_北漢寶段286",
+          "parcel_name": "28_芳苑八_北漢寶段286",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -25124,7 +25124,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-006",
-          "parcel_name": "芳苑八_北漢寶段286",
+          "parcel_name": "28_芳苑八_北漢寶段286",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -26584,7 +26584,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-006",
-          "parcel_name": "芳苑八_北漢寶段286",
+          "parcel_name": "28_芳苑八_北漢寶段286",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -28853,7 +28853,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-006",
-          "parcel_name": "芳苑八_北漢寶段286",
+          "parcel_name": "28_芳苑八_北漢寶段286",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
