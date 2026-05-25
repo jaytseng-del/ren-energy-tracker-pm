@@ -14989,7 +14989,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-007",
-          "name": "光宜_漢興段356,357",
+          "name": "33_光宜_漢興段356,357",
           "status": "active",
           "lots": [
             "芳苑鄉漢寶村漢興段356",
@@ -15004,7 +15004,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-008",
-          "name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
+          "name": "34_光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "status": "active",
           "lots": [
             "芳苑鄉新寶村王功段1503-1",
@@ -15380,7 +15380,7 @@
           "name": "29_芳苑八_北漢寶段293,294,297,298",
           "area_m2": 4916.04,
           "capacity_kw": 643.72,
-          "status": "active",
+          "status": "deleted",
           "lots": []
         }
       ],
@@ -16379,7 +16379,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-007",
-          "parcel_name": "光宜_漢興段356,357",
+          "parcel_name": "33_光宜_漢興段356,357",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -16567,7 +16567,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
+          "parcel_name": "34_光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -22770,7 +22770,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-007",
-          "parcel_name": "光宜_漢興段356,357",
+          "parcel_name": "33_光宜_漢興段356,357",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -22886,7 +22886,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
+          "parcel_name": "34_光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "hard",
           "depends_on": [
             "農業容許"
@@ -24020,7 +24020,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-007",
-          "parcel_name": "光宜_漢興段356,357",
+          "parcel_name": "33_光宜_漢興段356,357",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -24151,7 +24151,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
+          "parcel_name": "34_光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "hard",
           "depends_on": [
             "建照"
@@ -25240,7 +25240,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-007",
-          "parcel_name": "光宜_漢興段356,357",
+          "parcel_name": "33_光宜_漢興段356,357",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -25356,7 +25356,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
+          "parcel_name": "34_光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "hard",
           "depends_on": [
             "室內養殖設施施工"
@@ -26760,7 +26760,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-007",
-          "parcel_name": "光宜_漢興段356,357",
+          "parcel_name": "33_光宜_漢興段356,357",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -26936,7 +26936,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
+          "parcel_name": "34_光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "condition",
           "depends_on": [
             "使照"
@@ -28954,7 +28954,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-007",
-          "parcel_name": "光宜_漢興段356,357",
+          "parcel_name": "33_光宜_漢興段356,357",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
@@ -29055,7 +29055,7 @@
           "group": "電業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-008",
-          "parcel_name": "光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
+          "parcel_name": "34_光浴_王功段1503-1,1504-1,1505-1,1506-1,1507-1",
           "dependency_type": "hard",
           "depends_on": [
             "光電施工許可"
