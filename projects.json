@@ -15169,7 +15169,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779428713797",
-          "name": "12_芳苑五_北漢寶段669,670",
+          "name": "13_芳苑五_北漢寶段669,670",
           "status": "active",
           "lots": [],
           "area_m2": 9698.56,
@@ -18324,7 +18324,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779428713797",
-          "parcel_name": "12_芳苑五_北漢寶段669,670",
+          "parcel_name": "13_芳苑五_北漢寶段669,670",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
