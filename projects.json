@@ -15361,7 +15361,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779444271653",
-          "name": "光浴_王功段1508-1",
+          "name": "35_光浴_王功段1508-1",
           "status": "active",
           "lots": [],
           "area_m2": 2800,
@@ -21640,7 +21640,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779444271653",
-          "parcel_name": "光浴_王功段1508-1",
+          "parcel_name": "35_光浴_王功段1508-1",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
