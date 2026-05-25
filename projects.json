@@ -15297,7 +15297,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779430423574",
-          "name": "光宜_王功段1766,1766-1",
+          "name": "36_光宜_王功段1766,1766-1",
           "status": "active",
           "lots": [],
           "area_m2": 15000,
@@ -15305,7 +15305,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779430469714",
-          "name": "光宜_王功段1786,1787",
+          "name": "37_光宜_王功段1786,1787",
           "status": "active",
           "lots": [],
           "area_m2": 10090,
@@ -20573,7 +20573,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779430423574",
-          "parcel_name": "光宜_王功段1766,1766-1",
+          "parcel_name": "36_光宜_王功段1766,1766-1",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -20713,7 +20713,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779430469714",
-          "parcel_name": "光宜_王功段1786,1787",
+          "parcel_name": "37_光宜_王功段1786,1787",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
