@@ -15353,7 +15353,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779443888944",
-          "name": "芳苑九_海尾段538,539,540,541",
+          "name": "43_芳苑九_海尾段538,539,540,541",
           "status": "active",
           "lots": [],
           "area_m2": 6778.35,
@@ -21509,7 +21509,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779443888944",
-          "parcel_name": "芳苑九_海尾段538,539,540,541",
+          "parcel_name": "43_芳苑九_海尾段538,539,540,541",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
