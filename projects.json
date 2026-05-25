@@ -15249,7 +15249,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779429873348",
-          "name": "芳苑七_海尾段1513",
+          "name": "26_芳苑七_海尾段1513",
           "status": "active",
           "lots": [],
           "area_m2": 17904.15,
@@ -15257,7 +15257,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779429907421",
-          "name": "芳苑七_漢寶段61",
+          "name": "27_芳苑七_漢寶段61",
           "status": "active",
           "lots": [],
           "area_m2": 7445.4,
@@ -19725,7 +19725,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779429873348",
-          "parcel_name": "芳苑七_海尾段1513",
+          "parcel_name": "26_芳苑七_海尾段1513",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -19865,7 +19865,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779429907421",
-          "parcel_name": "芳苑七_漢寶段61",
+          "parcel_name": "27_芳苑七_漢寶段61",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
