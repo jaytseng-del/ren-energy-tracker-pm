@@ -819,3 +819,4 @@
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-007","name":"33_光宜_漢興段356,357","area_m2":9663,"capacity_kw":1443.53,"ts":"2026-05-25T10:15:18.409Z"}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779430423574","name":"36_光宜_王功段1766,1766-1","area_m2":15000,"capacity_kw":2265.12,"ts":"2026-05-25T10:16:09.175Z"}
 {"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-009","name":"38_芳漁三_王功段1390,1390-1,1391","area_m2":35300,"capacity_kw":5290.725,"ts":"2026-05-25T10:16:42.899Z"}
+{"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-010","name":"39_芳苑九_海尾段\t1590","area_m2":37100,"capacity_kw":5570.84,"ts":"2026-05-25T10:16:58.601Z"}
