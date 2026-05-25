@@ -15177,7 +15177,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779428775386",
-          "name": "芳苑五_北漢寶段581,582",
+          "name": "14_芳苑五_北漢寶段581,582",
           "status": "active",
           "lots": [],
           "area_m2": 9842.34,
@@ -15185,7 +15185,7 @@
         },
         {
           "parcel_id": "PRJ-006-PCL-1779428814037",
-          "name": "芳苑五_北漢寶段643",
+          "name": "15_芳苑五_北漢寶段643",
           "status": "active",
           "lots": [],
           "area_m2": 6621.28,
@@ -18465,7 +18465,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779428775386",
-          "parcel_name": "芳苑五_北漢寶段581,582",
+          "parcel_name": "14_芳苑五_北漢寶段581,582",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
@@ -18605,7 +18605,7 @@
           "group": "農業",
           "application_scope": "per_parcel",
           "parcel_id": "PRJ-006-PCL-1779428814037",
-          "parcel_name": "芳苑五_北漢寶段643",
+          "parcel_name": "15_芳苑五_北漢寶段643",
           "dependency_type": "soft_concurrent",
           "depends_on": [
             "出流管制"
