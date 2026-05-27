@@ -14217,7 +14217,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-27T03:20:13.453Z",
+      "updated_at": "2026-05-27T03:21:44.268Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -21879,7 +21879,19 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-25",
-              "tasks": []
+              "tasks": [
+                {
+                  "task_id": "TSK-1779852104268",
+                  "name": "4/16會勘完成",
+                  "type": "one-off",
+                  "status": "open",
+                  "due_date": "2026-04-16",
+                  "notes": "",
+                  "updates": [],
+                  "created_at": "2026-05-27T03:21:44.268Z",
+                  "updated_at": "2026-05-27T03:21:44.268Z"
+                }
+              ]
             },
             {
               "stage_id": "PRJ-006-MS-1779673733855-ST09",
@@ -21894,7 +21906,8 @@
               "tasks": []
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T03:21:44.268Z",
+          "_origName": "農業容許"
         },
         {
           "milestone_id": "PRJ-006-MS-011",
