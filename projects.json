@@ -15052,8 +15052,8 @@
             "芳苑鄉漢寶村海尾段541",
             "芳苑鄉王功村王功段1820-2"
           ],
-          "area_m2": 37100,
-          "capacity_kw": 5570.84
+          "area_m2": 9854.02,
+          "capacity_kw": 1471.36
         },
         {
           "parcel_id": "PRJ-006-PCL-1779422294510",
@@ -15388,8 +15388,8 @@
           "name": "29_芳苑八_北漢寶段286,293,294,297,298",
           "status": "active",
           "lots": [],
-          "area_m2": null,
-          "capacity_kw": null
+          "area_m2": 4916.04,
+          "capacity_kw": 643.72
         }
       ],
       "milestones": [
