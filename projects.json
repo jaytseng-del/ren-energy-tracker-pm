@@ -14217,7 +14217,7 @@
       "start_date": "2024-09-15 00:00:00",
       "notes": null,
       "created_at": "2026-04-23T16:12:19+08:00",
-      "updated_at": "2026-05-27T03:24:23.665Z",
+      "updated_at": "2026-05-27T05:05:00.902Z",
       "lots": [
         {
           "lot_number": "芳苑鄉漢寶村海尾段839地號",
@@ -15382,6 +15382,14 @@
           "capacity_kw": 643.72,
           "status": "deleted",
           "lots": []
+        },
+        {
+          "parcel_id": "PRJ-006-PCL-1779858284923",
+          "name": "29_芳苑八_北漢寶段286,293,294,297,298",
+          "status": "active",
+          "lots": [],
+          "area_m2": null,
+          "capacity_kw": null
         }
       ],
       "milestones": [
@@ -15399,13 +15407,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "435",
-          "baseline_start": "2025-03-16",
-          "baseline_end": "2027-01-30",
-          "forecast_end": "2027-01-30",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_end": "2026-12-30",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-27T03:20:13.453Z",
+          "notes": "",
+          "updated_at": "2026-05-27T05:06:01.918Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-001-ST01",
@@ -15611,8 +15619,8 @@
           ],
           "tasks": [],
           "_origName": "農業容許",
-          "forecast_start": "2025-03-16",
-          "actual_start": "2025-03-16"
+          "forecast_start": "2025-08-07",
+          "actual_start": "2025-08-07"
         },
         {
           "milestone_id": "PRJ-006-MS-002",
@@ -15628,13 +15636,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "435",
-          "baseline_start": "2025-03-09",
-          "baseline_end": "2027-01-30",
-          "forecast_end": "2027-01-30",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_end": "2026-12-30",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-27T03:20:13.453Z",
+          "notes": "",
+          "updated_at": "2026-05-27T05:06:01.918Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-002-ST01",
@@ -15755,8 +15763,8 @@
             }
           ],
           "tasks": [],
-          "forecast_start": "2025-03-09",
-          "actual_start": "2025-03-09"
+          "forecast_start": "2025-08-07",
+          "actual_start": "2025-08-07"
         },
         {
           "milestone_id": "PRJ-006-MS-003",
@@ -15772,13 +15780,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "435",
-          "baseline_start": "2025-03-24",
-          "baseline_end": "2026-10-30",
-          "forecast_end": "2026-10-30",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_end": "2026-12-30",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-27T03:20:13.453Z",
+          "notes": "",
+          "updated_at": "2026-05-27T05:06:01.918Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-003-ST01",
@@ -15925,8 +15933,8 @@
           ],
           "tasks": [],
           "_origName": "農業容許",
-          "forecast_start": "2025-03-24",
-          "actual_start": "2025-03-24"
+          "forecast_start": "2025-08-07",
+          "actual_start": "2025-08-07"
         },
         {
           "milestone_id": "PRJ-006-MS-004",
@@ -15942,13 +15950,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "435",
-          "baseline_start": "2025-06-26",
-          "baseline_end": "2026-07-30",
-          "forecast_end": "2026-07-30",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_end": "2026-12-30",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-27T03:20:13.453Z",
+          "notes": "",
+          "updated_at": "2026-05-27T05:06:01.918Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-004-ST01",
@@ -16069,8 +16077,8 @@
             }
           ],
           "tasks": [],
-          "forecast_start": "2025-06-26",
-          "actual_start": "2025-06-26"
+          "forecast_start": "2025-08-07",
+          "actual_start": "2025-08-07"
         },
         {
           "milestone_id": "PRJ-006-MS-005",
@@ -16086,13 +16094,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "435",
-          "baseline_start": "2025-07-03",
-          "baseline_end": "2026-07-30",
-          "forecast_end": "2026-07-30",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_end": "2026-12-30",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-27T03:20:13.453Z",
+          "notes": "",
+          "updated_at": "2026-05-27T05:06:01.918Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-005-ST01",
@@ -16226,8 +16234,8 @@
             }
           ],
           "tasks": [],
-          "forecast_start": "2025-07-03",
-          "actual_start": "2025-07-03"
+          "forecast_start": "2025-08-07",
+          "actual_start": "2025-08-07"
         },
         {
           "milestone_id": "PRJ-006-MS-006",
@@ -16244,12 +16252,12 @@
           "payment_trigger": true,
           "standard_days": "435",
           "baseline_start": "2025-08-07",
-          "baseline_end": "2026-10-30",
-          "forecast_end": "2026-10-30",
+          "baseline_end": "2026-12-30",
+          "forecast_end": "2026-12-30",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-27T03:20:13.453Z",
+          "notes": "",
+          "updated_at": "2026-05-27T05:06:01.918Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-006-ST01",
@@ -16392,8 +16400,8 @@
           "forecast_end": "2026-12-30",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-27T03:20:13.453Z",
+          "notes": "",
+          "updated_at": "2026-05-27T05:06:01.918Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-007-ST01",
@@ -16575,13 +16583,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "435",
-          "baseline_start": "2024-09-14",
-          "baseline_end": "2025-07-22",
-          "forecast_end": "2025-07-22",
-          "actual_end": "2025-07-22",
-          "status": "done",
-          "notes": null,
-          "updated_at": "2026-05-27T03:20:13.453Z",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_end": "2026-12-30",
+          "actual_end": null,
+          "status": "in_progress",
+          "notes": "",
+          "updated_at": "2026-05-27T05:06:01.918Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-008-ST01",
@@ -16761,8 +16769,8 @@
             }
           ],
           "tasks": [],
-          "forecast_start": "2024-09-14",
-          "actual_start": "2024-09-14"
+          "forecast_start": "2025-08-07",
+          "actual_start": "2025-08-07"
         },
         {
           "milestone_id": "PRJ-006-MS-009",
@@ -16778,13 +16786,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "435",
-          "baseline_start": "2025-11-27",
-          "baseline_end": "2027-01-30",
-          "forecast_end": "2027-01-30",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_end": "2026-12-30",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-27T03:20:13.453Z",
+          "notes": "",
+          "updated_at": "2026-05-27T05:06:01.918Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-009-ST01",
@@ -16905,8 +16913,8 @@
             }
           ],
           "tasks": [],
-          "forecast_start": "2025-11-27",
-          "actual_start": "2025-11-27",
+          "forecast_start": "2025-08-07",
+          "actual_start": "2025-08-07",
           "_origName": "農業容許"
         },
         {
@@ -16923,13 +16931,13 @@
           "condition_description": null,
           "payment_trigger": true,
           "standard_days": "435",
-          "baseline_start": "2025-11-10",
-          "baseline_end": "2027-01-30",
-          "forecast_end": "2027-01-30",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_end": "2026-12-30",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
-          "updated_at": "2026-05-27T03:20:13.453Z",
+          "notes": "",
+          "updated_at": "2026-05-27T05:06:01.918Z",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-010-ST01",
@@ -17050,8 +17058,8 @@
             }
           ],
           "tasks": [],
-          "forecast_start": "2025-11-10",
-          "actual_start": "2025-11-10"
+          "forecast_start": "2025-08-07",
+          "actual_start": "2025-08-07"
         },
         {
           "milestone_id": "PRJ-006-MS-1779422536577",
@@ -17064,14 +17072,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-03-16",
-          "baseline_end": "2026-10-30",
-          "forecast_start": "2025-03-16",
-          "forecast_end": "2026-10-30",
-          "actual_start": "2025-03-16",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779422536577-ST01",
@@ -17191,7 +17199,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779422826927",
@@ -17204,14 +17212,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-03-16",
-          "baseline_end": "2026-10-30",
-          "forecast_start": "2025-03-16",
-          "forecast_end": "2026-10-30",
-          "actual_start": "2025-03-16",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779422826927-ST01",
@@ -17331,7 +17339,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779422835007",
@@ -17344,14 +17352,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-03-16",
-          "baseline_end": "2026-10-30",
-          "forecast_start": "2025-03-16",
-          "forecast_end": "2026-10-30",
-          "actual_start": "2025-03-16",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779422835007-ST01",
@@ -17471,7 +17479,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779422839322",
@@ -17484,14 +17492,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-03-16",
-          "baseline_end": "2026-11-29",
-          "forecast_start": "2025-03-16",
-          "forecast_end": "2026-11-29",
-          "actual_start": "2025-03-16",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779422839322-ST01",
@@ -17611,7 +17619,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428220457",
@@ -17624,14 +17632,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-03-09",
-          "baseline_end": "2026-11-29",
-          "forecast_start": "2025-03-09",
-          "forecast_end": "2026-11-29",
-          "actual_start": "2025-03-09",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779428220457-ST01",
@@ -17751,7 +17759,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428298220",
@@ -17764,14 +17772,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-03-09",
-          "baseline_end": "2026-11-29",
-          "forecast_start": "2025-03-09",
-          "forecast_end": "2026-06-29",
-          "actual_start": "2025-03-09",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779428298220-ST01",
@@ -17903,7 +17911,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:24:21.708Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428336604",
@@ -17916,14 +17924,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-03-09",
-          "baseline_end": "2026-11-29",
-          "forecast_start": "2025-03-09",
-          "forecast_end": "2026-11-29",
-          "actual_start": "2025-03-09",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779428336604-ST01",
@@ -18043,7 +18051,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z",
+          "updated_at": "2026-05-27T05:06:01.918Z",
           "_origName": "農業容許"
         },
         {
@@ -18057,14 +18065,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-03-09",
-          "baseline_end": "2026-11-29",
-          "forecast_start": "2025-03-09",
-          "forecast_end": "2026-11-29",
-          "actual_start": "2025-03-09",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779428540539-ST01",
@@ -18184,7 +18192,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428651125",
@@ -18197,14 +18205,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-03-24",
-          "baseline_end": "2026-09-29",
-          "forecast_start": "2025-03-24",
-          "forecast_end": "2026-09-29",
-          "actual_start": "2025-03-24",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779428651125-ST01",
@@ -18324,7 +18332,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428713797",
@@ -18337,14 +18345,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-03-24",
-          "baseline_end": "2026-06-29",
-          "forecast_start": "2025-03-24",
-          "forecast_end": "2026-06-29",
-          "actual_start": "2025-03-24",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779428713797-ST01",
@@ -18476,7 +18484,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:23:54.314Z",
+          "updated_at": "2026-05-27T05:06:01.918Z",
           "_origName": "農業容許"
         },
         {
@@ -18490,14 +18498,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-03-24",
-          "baseline_end": "2026-06-29",
-          "forecast_start": "2025-03-24",
-          "forecast_end": "2026-06-29",
-          "actual_start": "2025-03-24",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779428775386-ST01",
@@ -18629,7 +18637,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:23:14.892Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779428814037",
@@ -18642,14 +18650,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-03-24",
-          "baseline_end": "2026-09-29",
-          "forecast_start": "2025-03-24",
-          "forecast_end": "2026-09-29",
-          "actual_start": "2025-03-24",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779428814037-ST01",
@@ -18769,7 +18777,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429071660",
@@ -18782,14 +18790,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-06-26",
-          "baseline_end": "2026-08-30",
-          "forecast_start": "2025-06-26",
-          "forecast_end": "2026-08-30",
-          "actual_start": "2025-06-26",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779429071660-ST01",
@@ -18909,7 +18917,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429116205",
@@ -18922,14 +18930,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-06-26",
-          "baseline_end": "2026-08-30",
-          "forecast_start": "2025-06-26",
-          "forecast_end": "2026-08-30",
-          "actual_start": "2025-06-26",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779429116205-ST01",
@@ -19049,7 +19057,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429139419",
@@ -19062,14 +19070,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-06-26",
-          "baseline_end": "2026-07-30",
-          "forecast_start": "2025-06-26",
-          "forecast_end": "2026-07-30",
-          "actual_start": "2025-06-26",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779429139419-ST01",
@@ -19189,7 +19197,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429178675",
@@ -19202,14 +19210,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-06-26",
-          "baseline_end": "2026-09-29",
-          "forecast_start": "2025-06-26",
-          "forecast_end": "2026-09-29",
-          "actual_start": "2025-06-26",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779429178675-ST01",
@@ -19329,7 +19337,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429220206",
@@ -19342,14 +19350,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-06-26",
-          "baseline_end": "2026-07-30",
-          "forecast_start": "2025-06-26",
-          "forecast_end": "2026-07-30",
-          "actual_start": "2025-06-26",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779429220206-ST01",
@@ -19469,7 +19477,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429713775",
@@ -19482,14 +19490,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-07-03",
-          "baseline_end": "2026-09-29",
-          "forecast_start": "2025-07-03",
-          "forecast_end": "2026-09-29",
-          "actual_start": "2025-07-03",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779429713775-ST01",
@@ -19609,7 +19617,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429812702",
@@ -19622,14 +19630,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-07-03",
-          "baseline_end": "2026-08-30",
-          "forecast_start": "2025-07-03",
-          "forecast_end": "2026-08-30",
-          "actual_start": "2025-07-03",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779429812702-ST01",
@@ -19749,7 +19757,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429873348",
@@ -19762,14 +19770,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-07-03",
-          "baseline_end": "2026-08-30",
-          "forecast_start": "2025-07-03",
-          "forecast_end": "2026-08-30",
-          "actual_start": "2025-07-03",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779429873348-ST01",
@@ -19889,7 +19897,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779429907421",
@@ -19902,14 +19910,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-09-24",
-          "baseline_end": "2026-09-29",
-          "forecast_start": "2025-09-24",
-          "forecast_end": "2026-09-29",
-          "actual_start": "2025-09-24",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779429907421-ST01",
@@ -20029,7 +20037,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430109733",
@@ -20049,7 +20057,7 @@
           "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779430109733-ST01",
@@ -20169,7 +20177,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430167735",
@@ -20189,7 +20197,7 @@
           "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779430167735-ST01",
@@ -20309,7 +20317,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430198158",
@@ -20322,14 +20330,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-09-24",
+          "baseline_start": "2025-08-07",
           "baseline_end": "2026-12-30",
-          "forecast_start": "2025-09-24",
+          "forecast_start": "2025-08-07",
           "forecast_end": "2026-12-30",
-          "actual_start": "2025-09-24",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779430198158-ST01",
@@ -20449,7 +20457,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430423574",
@@ -20462,14 +20470,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-09-24",
-          "baseline_end": "2026-05-28",
-          "forecast_start": "2025-09-24",
-          "forecast_end": "2026-05-28",
-          "actual_start": "2025-09-24",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779430423574-ST01",
@@ -20601,7 +20609,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:22:31.687Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779430469714",
@@ -20614,14 +20622,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2024-10-01",
-          "baseline_end": "2025-10-01",
-          "forecast_start": "2024-10-01",
-          "forecast_end": "2025-10-01",
-          "actual_start": "2024-10-01",
-          "actual_end": "2025-10-01",
-          "status": "done",
-          "notes": null,
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
+          "actual_end": null,
+          "status": "in_progress",
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779430469714-ST01",
@@ -20741,7 +20749,7 @@
               "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779443509874",
@@ -20754,14 +20762,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-11-27",
-          "baseline_end": "2027-02-27",
-          "forecast_start": "2025-11-27",
-          "forecast_end": "2027-02-27",
-          "actual_start": "2025-11-27",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779443509874-ST01",
@@ -20773,7 +20781,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443509874-ST02",
@@ -20785,7 +20794,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443509874-ST03",
@@ -20797,7 +20807,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443509874-ST04",
@@ -20809,7 +20820,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443509874-ST05",
@@ -20821,7 +20833,8 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443509874-ST06",
@@ -20833,7 +20846,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443509874-ST07",
@@ -20845,7 +20859,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443509874-ST08",
@@ -20857,7 +20872,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443509874-ST09",
@@ -20869,10 +20885,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779443557753",
@@ -20885,14 +20902,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-11-27",
-          "baseline_end": "2027-02-27",
-          "forecast_start": "2025-11-27",
-          "forecast_end": "2027-02-27",
-          "actual_start": "2025-11-27",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779443557753-ST01",
@@ -20904,7 +20921,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443557753-ST02",
@@ -20916,7 +20934,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443557753-ST03",
@@ -20928,7 +20947,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443557753-ST04",
@@ -20940,7 +20960,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443557753-ST05",
@@ -20952,7 +20973,8 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443557753-ST06",
@@ -20964,7 +20986,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443557753-ST07",
@@ -20976,7 +20999,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443557753-ST08",
@@ -20988,7 +21012,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443557753-ST09",
@@ -21000,10 +21025,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779443579474",
@@ -21016,14 +21042,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-11-27",
-          "baseline_end": "2027-02-27",
-          "forecast_start": "2025-11-27",
-          "forecast_end": "2027-02-27",
-          "actual_start": "2025-11-27",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779443579474-ST01",
@@ -21035,7 +21061,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443579474-ST02",
@@ -21047,7 +21074,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443579474-ST03",
@@ -21059,7 +21087,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443579474-ST04",
@@ -21071,7 +21100,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443579474-ST05",
@@ -21083,7 +21113,8 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443579474-ST06",
@@ -21095,7 +21126,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443579474-ST07",
@@ -21107,7 +21139,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443579474-ST08",
@@ -21119,7 +21152,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443579474-ST09",
@@ -21131,10 +21165,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z",
+          "updated_at": "2026-05-27T05:06:01.918Z",
           "_origName": "農業容許"
         },
         {
@@ -21148,14 +21183,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-11-10",
-          "baseline_end": "2027-01-30",
-          "forecast_start": "2025-11-10",
-          "forecast_end": "2027-01-30",
-          "actual_start": "2025-11-10",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779443803940-ST01",
@@ -21167,7 +21202,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443803940-ST02",
@@ -21179,7 +21215,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443803940-ST03",
@@ -21191,7 +21228,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443803940-ST04",
@@ -21203,7 +21241,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443803940-ST05",
@@ -21215,7 +21254,8 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443803940-ST06",
@@ -21227,7 +21267,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443803940-ST07",
@@ -21239,7 +21280,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443803940-ST08",
@@ -21251,7 +21293,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443803940-ST09",
@@ -21263,10 +21306,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779443832340",
@@ -21279,14 +21323,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-11-10",
-          "baseline_end": "2027-02-27",
-          "forecast_start": "2025-11-10",
-          "forecast_end": "2027-02-27",
-          "actual_start": "2025-11-10",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779443832340-ST01",
@@ -21298,7 +21342,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443832340-ST02",
@@ -21310,7 +21355,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443832340-ST03",
@@ -21322,7 +21368,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443832340-ST04",
@@ -21334,7 +21381,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443832340-ST05",
@@ -21346,7 +21394,8 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443832340-ST06",
@@ -21358,7 +21407,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443832340-ST07",
@@ -21370,7 +21420,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443832340-ST08",
@@ -21382,7 +21433,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443832340-ST09",
@@ -21394,10 +21446,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779443888944",
@@ -21410,14 +21463,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-11-10",
-          "baseline_end": "2027-02-27",
-          "forecast_start": "2025-11-10",
-          "forecast_end": "2027-02-27",
-          "actual_start": "2025-11-10",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779443888944-ST01",
@@ -21429,7 +21482,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443888944-ST02",
@@ -21441,7 +21495,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443888944-ST03",
@@ -21453,7 +21508,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443888944-ST04",
@@ -21465,7 +21521,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443888944-ST05",
@@ -21477,7 +21534,8 @@
               "authority": "地方農業局",
               "status": "in_progress",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443888944-ST06",
@@ -21489,7 +21547,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443888944-ST07",
@@ -21501,7 +21560,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443888944-ST08",
@@ -21513,7 +21573,8 @@
               "authority": "地方農業局",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779443888944-ST09",
@@ -21525,10 +21586,11 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779444271653",
@@ -21541,14 +21603,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2024-09-14",
-          "baseline_end": "2025-09-04",
-          "forecast_start": "2024-09-14",
-          "forecast_end": "2025-09-04",
-          "actual_start": "2024-09-14",
-          "actual_end": "2025-09-04",
-          "status": "done",
-          "notes": null,
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
+          "actual_end": null,
+          "status": "in_progress",
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779444271653-ST01",
@@ -21560,7 +21622,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779444271653-ST02",
@@ -21572,7 +21635,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779444271653-ST03",
@@ -21584,7 +21648,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779444271653-ST04",
@@ -21596,7 +21661,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779444271653-ST05",
@@ -21608,7 +21674,8 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779444271653-ST06",
@@ -21620,7 +21687,8 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779444271653-ST07",
@@ -21632,7 +21700,8 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779444271653-ST08",
@@ -21644,7 +21713,8 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779444271653-ST09",
@@ -21656,10 +21726,11 @@
               "authority": "—",
               "status": "done",
               "actual_end": "2026-05-22",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:20:13.453Z"
+          "updated_at": "2026-05-27T05:06:01.918Z"
         },
         {
           "milestone_id": "PRJ-006-MS-1779673733855",
@@ -21672,14 +21743,14 @@
           "depends_on": [
             "出流管制"
           ],
-          "baseline_start": "2025-07-03",
-          "baseline_end": "2026-09-29",
-          "forecast_start": "2025-07-03",
-          "forecast_end": "2026-06-29",
-          "actual_start": "2025-07-03",
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
           "actual_end": null,
           "status": "in_progress",
-          "notes": null,
+          "notes": "",
           "stages": [
             {
               "stage_id": "PRJ-006-MS-1779673733855-ST01",
@@ -21691,7 +21762,8 @@
               "authority": "（內部）",
               "status": "done",
               "actual_end": "2026-05-25",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779673733855-ST02",
@@ -21703,7 +21775,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-25",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779673733855-ST03",
@@ -21715,7 +21788,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-25",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779673733855-ST04",
@@ -21727,7 +21801,8 @@
               "authority": "土地所屬鄉/鎮/市/區公所",
               "status": "done",
               "actual_end": "2026-05-25",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779673733855-ST05",
@@ -21739,7 +21814,8 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-25",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779673733855-ST06",
@@ -21751,7 +21827,8 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-25",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779673733855-ST07",
@@ -21763,7 +21840,8 @@
               "authority": "地方農業局",
               "status": "done",
               "actual_end": "2026-05-25",
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779673733855-ST08",
@@ -21787,7 +21865,8 @@
                   "created_at": "2026-05-27T03:21:44.268Z",
                   "updated_at": "2026-05-27T03:21:46.390Z"
                 }
-              ]
+              ],
+              "notes": ""
             },
             {
               "stage_id": "PRJ-006-MS-1779673733855-ST09",
@@ -21799,10 +21878,152 @@
               "authority": "—",
               "status": "pending",
               "actual_end": null,
-              "tasks": []
+              "tasks": [],
+              "notes": ""
             }
           ],
-          "updated_at": "2026-05-27T03:21:44.268Z",
+          "updated_at": "2026-05-27T05:06:01.918Z",
+          "_origName": "農業容許"
+        },
+        {
+          "milestone_id": "PRJ-006-MS-1779858284923",
+          "name": "農業容許",
+          "group": "農業",
+          "application_scope": "per_parcel",
+          "parcel_id": "PRJ-006-PCL-1779858284923",
+          "parcel_name": "29_芳苑八_北漢寶段286,293,294,297,298",
+          "dependency_type": "soft_concurrent",
+          "depends_on": [
+            "出流管制"
+          ],
+          "baseline_start": "2025-08-07",
+          "baseline_end": "2026-12-30",
+          "forecast_start": "2025-08-07",
+          "forecast_end": "2026-12-30",
+          "actual_start": "2025-08-07",
+          "actual_end": null,
+          "status": "in_progress",
+          "notes": "",
+          "stages": [
+            {
+              "stage_id": "PRJ-006-MS-1779858284923-ST01",
+              "sequence": 1,
+              "name": "申請文件準備",
+              "type": "fixed",
+              "cc": "55",
+              "estimated_days": "30",
+              "authority": "（內部）",
+              "status": "done",
+              "actual_end": "2026-05-27",
+              "tasks": [],
+              "notes": ""
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779858284923-ST02",
+              "sequence": 2,
+              "name": "送件",
+              "type": "fixed",
+              "cc": "5",
+              "estimated_days": "1",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "done",
+              "actual_end": "2026-05-27",
+              "tasks": [],
+              "notes": ""
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779858284923-ST03",
+              "sequence": 3,
+              "name": "區公所補正 #1",
+              "type": "skippable",
+              "cc": "3",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "done",
+              "actual_end": "2026-05-27",
+              "tasks": [],
+              "notes": ""
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779858284923-ST04",
+              "sequence": 4,
+              "name": "區公所補正 #2",
+              "type": "skippable",
+              "cc": "2",
+              "estimated_days": "30",
+              "authority": "土地所屬鄉/鎮/市/區公所",
+              "status": "done",
+              "actual_end": "2026-05-27",
+              "tasks": [],
+              "notes": ""
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779858284923-ST05",
+              "sequence": 5,
+              "name": "函轉地方政府",
+              "type": "fixed",
+              "cc": "5",
+              "estimated_days": "7",
+              "authority": "地方農業局",
+              "status": "in_progress",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779858284923-ST06",
+              "sequence": 6,
+              "name": "縣府補正 #1",
+              "type": "skippable",
+              "cc": "8",
+              "estimated_days": "90",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779858284923-ST07",
+              "sequence": 7,
+              "name": "縣府補正 #2",
+              "type": "skippable",
+              "cc": "4",
+              "estimated_days": "90",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779858284923-ST08",
+              "sequence": 8,
+              "name": "現勘",
+              "type": "skippable",
+              "cc": "5",
+              "estimated_days": "14",
+              "authority": "地方農業局",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
+            },
+            {
+              "stage_id": "PRJ-006-MS-1779858284923-ST09",
+              "sequence": 9,
+              "name": "取得農業容許",
+              "type": "fixed",
+              "cc": "13",
+              "estimated_days": "1",
+              "authority": "—",
+              "status": "pending",
+              "actual_end": null,
+              "tasks": [],
+              "notes": ""
+            }
+          ],
+          "updated_at": "2026-05-27T05:06:01.918Z",
           "_origName": "農業容許"
         },
         {
