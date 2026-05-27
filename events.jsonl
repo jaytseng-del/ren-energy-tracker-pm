@@ -843,3 +843,4 @@
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779858284923","stage_id":"PRJ-006-MS-1779858284923-ST03","old_status":"pending","new_status":"done","actual_end":"2026-05-27","ts":"2026-05-27T05:04:49.390Z"}
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779858284923","stage_id":"PRJ-006-MS-1779858284923-ST04","old_status":"pending","new_status":"done","actual_end":"2026-05-27","ts":"2026-05-27T05:04:50.459Z"}
 {"event":"stage_status_changed","project_id":"PRJ-006","milestone_id":"PRJ-006-MS-1779858284923","stage_id":"PRJ-006-MS-1779858284923-ST05","old_status":"pending","new_status":"in_progress","actual_end":null,"ts":"2026-05-27T05:05:00.902Z"}
+{"event":"parcel_edited","project_id":"PRJ-006","parcel_id":"PRJ-006-PCL-1779858284923","name":"29_芳苑八_北漢寶段286,293,294,297,298","area_m2":4916.04,"capacity_kw":643.72,"ts":"2026-05-27T05:13:17.336Z"}
